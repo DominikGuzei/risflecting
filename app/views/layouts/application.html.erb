@@ -8,17 +8,20 @@
 </head>
 <body>
 
-<%= link_to 'willkommen', static_path(:willkommen) %>
-<%= link_to 'konzept', static_path(:konzept) %>
-<%= link_to 'projekte', static_path(:projekte) %>
-<%= link_to 'weiterbildung', static_path(:weiterbildung) %>
-<%= link_to 'studie', static_path(:studie) %>
-<%= link_to 'faq', static_path(:faq) %>
-<%= link_to 'team', static_path(:team) %>
-<%= link_to 'publikationen', static_path(:publikationen) %>
-<%= link_to 'kontakt', static_path(:kontakt) %>
-<%= link_to 'impressum', static_path(:impressum) %>
-<%= link_to 'english', static_path(:english) %>
+<nav>
+  <%= link_to 'willkommen', static_path(:willkommen) %>
+  <%= link_to 'konzept', static_path(:konzept) %>
+  <%= link_to 'projekte', static_path(:projekte) %>
+  <%= link_to 'weiterbildung', static_path(:weiterbildung) %>
+  <%= link_to 'studie', static_path(:studie) %>
+  <%= link_to 'faq', static_path(:faq) %>
+  <%= link_to 'team', static_path(:team) %>
+  <%= link_to 'publikationen', static_path(:publikationen) %>
+  <%= link_to 'links', static_path(:links) %>
+  <%= link_to 'kontakt', static_path(:kontakt) %>
+  <%= link_to 'impressum', static_path(:impressum) %>
+  <%= link_to 'english', static_path(:english) %>
+</nav>
 
 <%= yield %>
 
