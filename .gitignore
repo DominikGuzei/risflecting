@@ -16,6 +16,7 @@
 
 # IDE Project Files
 .project
+.idea
 
 # ignore mac store files
 .DS_Store
