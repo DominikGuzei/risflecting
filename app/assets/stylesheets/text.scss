@@ -1,0 +1,27 @@
+/*
+  main font: 'Open Sans', sans-serif;
+  condensed font: 'Open Sans Condensed', sans-serif;
+*/
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+  font-size: 37px;
+  color: white;
+  font-weight: bold;
+  
+  text-shadow: -1px 1px 0 #000000;
+  filter: dropshadow(color=#000000, offx=-1, offy=1);
+}
+
+#sub-headline {
+  font-size: 17px;
+  font-weight: bold;
+  color: white;
+  margin-top: 10px;
+  
+  text-shadow: -1px 1px 0 #000000;
+  filter: dropshadow(color=#000000, offx=-1, offy=1);
+}

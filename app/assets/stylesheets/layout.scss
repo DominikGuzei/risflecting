@@ -1,0 +1,52 @@
+$layout-width: 1200px;
+$footer-height: 139px;
+
+html, body {
+  background-color: #e3e3e3;
+  height: 100%;
+}
+
+header {
+  position: absolute;
+  height: 252px;
+  width: 100%;
+  background: image-url('layout/header-background.jpg') 0 34px;
+  
+  #headline {
+    width: $layout-width;
+    height: 218px;
+    margin: 0 auto;
+    text-align: center;
+    background: image-url('layout/header-image-rope-dancing.jpg') no-repeat;
+    
+    h1 {
+      padding-top: 125px;
+    }
+    
+    #sub-headline {
+      
+    }
+  }
+}
+
+section#content {
+  width: $layout-width;
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto $footer-height * -1;
+  background: image-url('layout/content-background.png');
+  
+  article {
+    padding-top: $footer-height;
+  }
+  
+  #sticky-footer-pusher {
+    height: $footer-height;
+  }
+}
+
+footer {
+  height: $footer-height;
+  background: image-url('layout/footer-background.png')
+}
