@@ -1,4 +1,5 @@
-$layout-width: 1200px;
+$page-width: 1200px;
+$layout-width: 960px;
 $header-height: 252px;
 $footer-height: 139px;
 
@@ -14,7 +15,7 @@ header {
   background: image-url('layout/header-background.jpg') 0 34px;
   
   #headline {
-    width: $layout-width;
+    width: $page-width;
     height: 218px;
     margin: 0 auto;
     text-align: center;
@@ -23,15 +24,11 @@ header {
     h1 {
       padding-top: 125px;
     }
-    
-    #sub-headline {
-      
-    }
   }
 }
 
 section#content {
-  width: $layout-width;
+  width: $page-width;
   min-height: 100%;
   height: auto !important;
   height: 100%;
@@ -40,6 +37,8 @@ section#content {
   
   #content-wrap {
     padding-top: $header-height;
+    width: $layout-width;
+    margin: 0 auto;
   }
   
   #sticky-footer-pusher {

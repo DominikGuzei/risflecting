@@ -1,3 +1,5 @@
+$layout-width: 960px;
+
 nav {
   background-color: #222;
   height: 33px;
@@ -5,7 +7,7 @@ nav {
   font-size: 14px;
   
   ul {
-    width: 1200px;
+    width: $layout-width;
     margin: 0 auto;
   }
   
