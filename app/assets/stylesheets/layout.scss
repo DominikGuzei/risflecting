@@ -27,6 +27,11 @@ header {
   }
 }
 
+.layout-wrap {
+  width: $layout-width;
+  margin: 0 auto;
+}
+
 section#content {
   width: $page-width;
   min-height: 100%;
@@ -35,10 +40,8 @@ section#content {
   margin: 0 auto $footer-height * -1;
   background: image-url('layout/content-background.png');
   
-  #content-wrap {
+  .layout-wrap {
     padding-top: $header-height;
-    width: $layout-width;
-    margin: 0 auto;
   }
   
   #sticky-footer-pusher {
@@ -48,5 +51,38 @@ section#content {
 
 footer {
   height: $footer-height;
-  background: image-url('layout/footer-background.png')
+  background: image-url('layout/footer-background.png');
+
+  .layout-wrap {
+    padding-top: 25px;
+  }
+
+  section {
+    float: left;
+  }
+  
+  section.portrait {
+    width: 300px;
+    
+    img {
+      float: left;
+      margin-right: 10px;
+    }
+  }
+  
+  section.navigation {
+    border-left: 1px solid #666;
+    font-size: 13px;
+    height: 80px;
+    padding-right: 30px;
+    
+    ul {
+      float: left;
+      margin: 5px 0 0 30px;
+    }
+    
+    li {
+      margin-bottom: 5px;
+    }
+  }
 }

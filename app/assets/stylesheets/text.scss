@@ -5,6 +5,7 @@
 
 body {
   font-family: 'Open Sans', sans-serif;
+  color: white;
 }
 
 h1 {
@@ -24,4 +25,41 @@ h1 {
   
   text-shadow: -1px 1px 0 #000000;
   filter: dropshadow(color=#000000, offx=-1, offy=1);
+}
+
+a:link, a:visited {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+section#content {
+  color: #333;
+}
+
+footer {
+  font-size: 14px;
+  
+  img {
+    border: 1px solid white;
+    -webkit-box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.5);
+    box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.5);
+  }
+  
+  .name {
+    font-weight:bold;
+    margin: 10px 0;
+  }
+  
+  .info span{
+    display: block;
+    margin-bottom: 5px;
+    
+    &.email {
+      text-decoration: underline;
+    }
+  }
 }

@@ -6,17 +6,10 @@ nav {
   border-bottom: 1px solid #424242;
   font-size: 14px;
   
-  ul {
-    width: $layout-width;
-    margin: 0 auto;
-  }
-  
   a:link, a:visited {
     display: block;
     float: left;
     padding: 8px 15px;
-    color: white;
-    text-decoration: none;
   }
   
   a:hover {

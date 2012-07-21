@@ -10,7 +10,7 @@
   
   <header>
     <nav>
-      <ul>
+      <ul class="layout-wrap">
         <li>
           <a href="<%= static_path(:willkommen) %>" id="welcome">
             <span id="logo-text">risflecting</span>
@@ -40,7 +40,7 @@
   </header>
   
   <section id="content">
-    <div id="content-wrap">
+    <div class="layout-wrap">
       <%= yield %>
     </div>
     
@@ -48,10 +48,40 @@
   </section>
 
   <footer>
-    <div id="footer-navigation">
-      <%= link_to 'Studie', static_path(:studie) %>
-      <%= link_to 'Kontakt', static_path(:kontakt) %>
-      <%= link_to 'Impressum', static_path(:impressum) %>
+    <div class="layout-wrap">
+      <section class="portrait">
+        <%= image_tag('layout/footer-portrait-gerald-koller.jpg') %>
+        <p class="name">Gerald Koller<p>
+        <p class="info">
+          <span>risflecting focal point</span>
+          <span class="email">
+            <a href="mailto:gerald.koller@qualitaetleben.at">Email schicken</a>
+          </span>
+        </p>
+      </section>
+    
+      <section class="navigation">
+        <ul>          
+          <li><%= link_to 'Konzept', static_path(:konzept) %></li>
+          <li><%= link_to 'Studie', static_path(:studie) %></li>
+          <li><%= link_to 'Projekte', static_path(:projekte) %></li>
+          <li><%= link_to 'Weiterbildung', static_path(:weiterbildung) %></li>
+        </ul>
+        
+        <ul>
+          <li><%= link_to 'FAQs', static_path(:faq) %></li>
+          <li><%= link_to 'Team', static_path(:team) %></li>
+          <li><%= link_to 'Publikationen', static_path(:publikationen) %></li>
+          <li><%= link_to 'Links', static_path(:links) %></li>
+        </ul>
+      </section>
+    
+      <section class="navigation">
+        <ul>
+          <li><%= link_to 'Kontakt', static_path(:kontakt) %></li>
+          <li><%= link_to 'Impressum', static_path(:impressum) %></li>
+        </ul>
+      </section>
     </div>
   </footer>
 
