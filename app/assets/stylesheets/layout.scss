@@ -1,4 +1,5 @@
 $layout-width: 1200px;
+$header-height: 252px;
 $footer-height: 139px;
 
 html, body {
@@ -8,7 +9,7 @@ html, body {
 
 header {
   position: absolute;
-  height: 252px;
+  height: $header-height;
   width: 100%;
   background: image-url('layout/header-background.jpg') 0 34px;
   
@@ -37,8 +38,8 @@ section#content {
   margin: 0 auto $footer-height * -1;
   background: image-url('layout/content-background.png');
   
-  article {
-    padding-top: $footer-height;
+  #content-wrap {
+    padding-top: $header-height;
   }
   
   #sticky-footer-pusher {
