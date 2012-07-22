@@ -12,6 +12,7 @@ header {
   position: absolute;
   height: $header-height;
   width: 100%;
+  min-width: $page-width;
   background: image-url('layout/header-background.jpg') 0 34px;
   
   #headline {
@@ -54,7 +55,9 @@ section#content {
 footer {
   height: $footer-height;
   background: image-url('layout/footer-background.png');
-
+  width: 100%;
+  min-width: $page-width;
+  
   .layout-wrap {
     padding-top: 25px;
   }
