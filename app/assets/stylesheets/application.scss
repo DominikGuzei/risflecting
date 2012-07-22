@@ -1,6 +1,6 @@
 /*
  *= require_self
- *= require reset
- *= require fonts
- *= require_tree .
+ *= require base/reset
+ *= require base/fonts
+ *= require_tree ./base
  */

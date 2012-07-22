@@ -36,18 +36,8 @@ a:hover {
   text-decoration: underline;
 }
 
-section#content {
-  color: #333;
-}
-
 footer {
   font-size: 14px;
-  
-  img {
-    border: 1px solid white;
-    -webkit-box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.5);
-    box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.5);
-  }
   
   .name {
     font-weight:bold;
@@ -62,4 +52,44 @@ footer {
       text-decoration: underline;
     }
   }
+}
+
+section#content {
+  color: #333;
+}
+
+#content article {
+  
+  h2 {
+    font-size: 18px;
+  }
+
+  h3 {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  p, ul {
+    font-size: 14px;
+    margin-bottom: 18px;
+    line-height: 18px;
+  }
+  
+  ul {
+    list-style-type: disc;
+    padding-left: 20px;
+  }
+  
+  li {
+    margin-bottom: 10px;
+  }
+  
+  img {
+    width: 100%;
+    margin: 20px 0;
+  }
+}
+
+strong {
+  font-weight: bold;
 }

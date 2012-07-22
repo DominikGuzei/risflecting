@@ -3,7 +3,9 @@
 <head>
   <title>Risflecting</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= yield :stylesheet_includes %>
   <%= javascript_include_tag "application" %>
+  <%= yield :javascript_includes %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -40,7 +42,7 @@
   </header>
   
   <section id="content">
-    <div class="layout-wrap">
+    <div class="layout-wrap clearfix">
       <%= yield %>
     </div>
     

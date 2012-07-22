@@ -41,11 +41,13 @@ section#content {
   background: image-url('layout/content-background.png');
   
   .layout-wrap {
-    padding-top: $header-height;
+    padding-top: $header-height + 40px;
+    padding-bottom: 40px;
   }
   
   #sticky-footer-pusher {
     height: $footer-height;
+    clear: both;
   }
 }
 
@@ -67,6 +69,10 @@ footer {
     img {
       float: left;
       margin-right: 10px;
+      
+      border: 1px solid white;
+      -webkit-box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.5);
+      box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.5);
     }
   }
   
