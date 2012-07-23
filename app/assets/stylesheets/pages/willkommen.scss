@@ -1,0 +1,33 @@
+section#content .layout-wrap {
+  padding: 252px 0 0 0;
+}
+
+#circle-navigation {
+  text-align: center;
+}
+
+h2 {
+  font-size: 25px;
+  font-weight: bold;
+  position: absolute;
+  top: 500px;
+  left: 640px;
+  color: white;
+  z-index: 1000;
+}
+
+#info-text {
+  width: 250px;
+  font-size: 18px;
+  position: absolute;
+  top: 540px;
+  left: 575px;
+  z-index: 1000;
+  text-align: center;
+  line-height: 22px;
+  color: white;
+}
+
+svg a:hover {
+  text-decoration: none;
+}
