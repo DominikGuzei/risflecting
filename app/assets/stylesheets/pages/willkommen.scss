@@ -1,17 +1,35 @@
 section#content .layout-wrap {
-  padding: 252px 0 0 0;
   position: relative;
 }
 
 #circle-navigation {
   text-align: center;
+  position: relative;
+  
+  a {
+    
+    font-size: 20px;
+    color: #333;
+    font-weight: bold;
+    
+    &:hover {
+      text-decoration: none;
+      color: black;
+      cursor: pointer;
+    }
+    
+    span {
+      display: block;
+      margin-top: 10px;
+    }
+  }
 }
 
 h2 {
   font-size: 25px;
   font-weight: bold;
   position: absolute;
-  top: 500px;
+  top: 540px;
   left: 420px;
   color: white;
   z-index: 1000;
@@ -21,7 +39,7 @@ h2 {
   width: 250px;
   font-size: 18px;
   position: absolute;
-  top: 540px;
+  top: 580px;
   left: 356px;
   z-index: 1000;
   text-align: center;

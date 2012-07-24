@@ -3,7 +3,6 @@
 Raphael.fn.circleNavigation = (centerX, centerY, radius, linkList, infoText) ->
   
   paper = this
-  chart = @set()
   linkCount = linkList.length 
   sectorAngle = 360 / linkCount
   radiant = Math.PI / 180
@@ -38,32 +37,20 @@ Raphael.fn.circleNavigation = (centerX, centerY, radius, linkList, infoText) ->
       stroke: '#fff', 
       "stroke-width": 3
       href: link.attr('href')
-      
-    labelX = centerX + (radius-40) * Math.cos(-middleAngle * radiant)
-    labelY = centerY + (radius-40) * Math.sin(-middleAngle * radiant)
     
-    label = paper.text(labelX, labelY, link.text())
-                       
-    label.attr 
-      stroke: "none",  
-      "font-size": 20
-      "font-family": "'Open Sans', sans-serif"
-      href: link.attr('href')
+    linkX = centerX - link.outerWidth() / 2 + 80 + (radius-30) * Math.cos(-middleAngle * radiant)
+    linkY = centerY - 50 + (radius-30) * Math.sin(-middleAngle * radiant)
+    
+    link.css position: 'absolute', left: linkX, top: linkY
       
-    sectorGroup = paper.set()
-    sectorGroup.push(sector, label) 
+    sector.mouseover -> sector.stop().animate { "fill-opacity": 1 }, 200
+    
+    link.mouseover -> infoText.html link.attr('title')
       
-    sectorGroup.mouseover ->
-      sector.stop().animate { "fill-opacity": 1 }, 200
-      label.attr "font-weight": 'bold'
-      infoText.html link.attr('title')
+    sector.mouseout -> sector.stop().animate { "fill-opacity": 0 }, 200
       
-    sectorGroup.mouseout ->
-      sector.stop().animate { "fill-opacity": 0 }, 200
-      label.attr "font-weight": 'normal'
-      infoText.html neutralInfoText
+    link.mouseout -> infoText.html neutralInfoText
       
-    chart.push(sector)
   
   for index in [0...linkCount]
     createSector index, linkList.eq(index)
@@ -78,5 +65,3 @@ jQuery ->
   infoText = $('#info-text')
   
   Raphael('circle-navigation', 800, 600).circleNavigation 400, 300, 300, links, infoText
-  
-  links.remove()

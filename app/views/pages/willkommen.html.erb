@@ -17,10 +17,40 @@
 <p id="info-text">Leben in Rausch-<br /> und Risikobalance</p>
 
 <ul id="circle-navigation">
-  <li><%= link_to 'Konzept', static_path(:konzept), :title => 'Rausch- und Risikopädagogik fördert eine Kultur der Balance' %></li>
-  <li><%= link_to 'Projekte', static_path(:projekte), :title => 'Rausch- und Risikobalance heißt: das wilde Tier reiten zu lernen' %></li>
-  <li><%= link_to 'Weiterbildung', static_path(:weiterbildung), :title => 'Risikopädagogische BegleiterInnen vermitteln bewährte und gewinnbringende Kulturtechniken' %></li>
-  <li><%= link_to 'FAQs', static_path(:faq), :title => 'als pädagogischer Ansatz nimmt risflecting menschliche Bedürfnisse nach Rausch und Risiko ernst' %></li>
-  <li><%= link_to 'Team', static_path(:team), :title => 'Ein internationales Netzwerk von ExpertInnen entwickelt risflecting weiter' %></li>
-  <li><%= link_to 'Publikationen', static_path(:publikationen), :title => 'Balance kann nur in einem Klima des tabufreien Dialogs geübt werden' %></li>
+  <li>
+    <a href="<%= static_path(:konzept) %>" title="Rausch- und Risikopädagogik fördert eine Kultur der Balance">
+      <%= image_tag 'icons/icon-konzept.png' %>
+      <span>Konzept</span>
+    </a>
+  </li>
+  <li>
+    <a href="<%= static_path(:projekte) %>" title="Rausch- und Risikobalance heißt: das wilde Tier reiten zu lernen">
+      <%= image_tag 'icons/icon-projekte.png' %>
+      <span>Projekte</span>
+    </a>
+  </li>
+  <li>
+    <a href="<%= static_path(:weiterbildung) %>" title="Risikopädagogische BegleiterInnen vermitteln bewährte und gewinnbringende Kulturtechniken">
+      <%= image_tag 'icons/icon-weiterbildung.png' %>
+      <span>Weiterbildung</span>
+    </a>
+  </li>
+  <li>
+    <a href="<%= static_path(:faq) %>" title="als pädagogischer Ansatz nimmt risflecting menschliche Bedürfnisse nach Rausch und Risiko ernst">
+      <%= image_tag 'icons/icon-faqs.png' %>
+      <span>FAQs</span>
+    </a>
+  </li>
+  <li>
+    <a href="<%= static_path(:team) %>" title="Ein internationales Netzwerk von ExpertInnen entwickelt risflecting weiter">
+      <%= image_tag 'icons/icon-team.png' %>
+      <span>Team</span>
+    </a>
+  </li>
+  <li>
+    <a href="<%= static_path(:publikationen) %>" title="Balance kann nur in einem Klima des tabufreien Dialogs geübt werden">
+      <%= image_tag 'icons/icon-publikationen.png' %>
+      <span>Publikationen</span>
+    </a>
+  </li>
 </ul>
