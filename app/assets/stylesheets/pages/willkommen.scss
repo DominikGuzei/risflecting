@@ -1,5 +1,6 @@
 section#content .layout-wrap {
   padding: 252px 0 0 0;
+  position: relative;
 }
 
 #circle-navigation {
@@ -11,7 +12,7 @@ h2 {
   font-weight: bold;
   position: absolute;
   top: 500px;
-  left: 640px;
+  left: 420px;
   color: white;
   z-index: 1000;
 }
@@ -21,7 +22,7 @@ h2 {
   font-size: 18px;
   position: absolute;
   top: 540px;
-  left: 575px;
+  left: 356px;
   z-index: 1000;
   text-align: center;
   line-height: 22px;

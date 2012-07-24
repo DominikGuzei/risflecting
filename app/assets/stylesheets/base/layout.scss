@@ -10,6 +10,7 @@ html, body {
 
 header {
   position: absolute;
+  z-index: 1000;
   height: $header-height;
   width: 100%;
   min-width: $page-width;
