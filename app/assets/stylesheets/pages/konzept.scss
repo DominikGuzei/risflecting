@@ -1,8 +1,14 @@
 
-#content {
+section#content {
+  
+  .layout-wrap {
+    padding-top: 252px;
+  }
   
   h2 {
-    margin-bottom: 40px;
+    padding: 60px 0;
+    background: image-url('icons/icon-konzept.png') no-repeat 10px 30px;
+    text-align: center;
   }
   
   h3 {
