@@ -9,19 +9,9 @@ body {
 }
 
 h1 {
-  font-size: 37px;
+  font-size: 24px;
   color: white;
   font-weight: bold;
-  
-  text-shadow: -1px 1px 0 #000000;
-  filter: dropshadow(color=#000000, offx=-1, offy=1);
-}
-
-#sub-headline {
-  font-size: 17px;
-  font-weight: bold;
-  color: white;
-  margin-top: 10px;
   
   text-shadow: -1px 1px 0 #000000;
   filter: dropshadow(color=#000000, offx=-1, offy=1);
@@ -36,26 +26,9 @@ a:hover {
   text-decoration: underline;
 }
 
-footer {
-  font-size: 14px;
-  
-  .name {
-    font-weight:bold;
-    margin: 10px 0;
-  }
-  
-  .info span{
-    display: block;
-    margin-bottom: 5px;
-    
-    &.email {
-      text-decoration: underline;
-    }
-  }
-}
-
 section#content {
   color: #333;
+  line-height: 18px;
 }
 
 #content article {
@@ -72,7 +45,6 @@ section#content {
   p, ul {
     font-size: 14px;
     margin-bottom: 18px;
-    line-height: 18px;
   }
   
   ul {
@@ -92,4 +64,26 @@ section#content {
 
 strong {
   font-weight: bold;
+}
+
+footer {
+  font-size: 14px;
+  
+  ul {
+    list-style: none;
+  }
+  
+  .name {
+    font-weight:bold;
+    margin: 10px 0;
+  }
+  
+  .info span{
+    display: block;
+    margin-bottom: 5px;
+    
+    &.email {
+      text-decoration: underline;
+    }
+  }
 }

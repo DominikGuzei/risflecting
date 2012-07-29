@@ -1,27 +1,41 @@
-section#content .layout-wrap {
-  position: relative;
-}
-
 #circle-navigation {
   text-align: center;
   position: relative;
+  height: 577px;
+  
+  * {
+    z-index: 100;
+  }
+  
+  ul {
+    list-style: none;
+    margin: 0;
+  }
   
   a {
-    
+    position: absolute;
     font-size: 20px;
-    color: #333;
+    color: #666;
     font-weight: bold;
     
     &:hover {
       text-decoration: none;
       color: black;
       cursor: pointer;
+      text-decoration: underline;
     }
     
     span {
       display: block;
       margin-top: 10px;
     }
+  }
+  
+  img#background {
+    width: 80%;
+    position: absolute;
+    top: 0;
+    z-index: 99;
   }
 }
 
@@ -33,6 +47,14 @@ h2 {
   left: 420px;
   color: white;
   z-index: 1000;
+}
+
+#interaction-hint {
+  position: absolute;
+  top: 50px;
+  left: -50px;
+  width: 150px;
+  color: #A1A1A1;
 }
 
 #info-text {
@@ -47,6 +69,32 @@ h2 {
   color: white;
 }
 
-svg a:hover {
-  text-decoration: none;
+#circle-konzept {
+  top: 6%;
+  left: 23%;
+}
+
+#circle-projekte {
+  top: 6%;
+  left: 54%;
+}
+
+#circle-weiterbildung {
+  top: 40%;
+  left: 68%;
+}
+
+#circle-faq {
+  top: 76%;
+  left: 56%;
+}
+
+#circle-team {
+  top: 76%;
+  left: 24%;
+}
+
+#circle-publikationen {
+  top: 40%;
+  left: 1%;
 }
