@@ -1,1 +1,26 @@
-willkommen
+<% content_for :stylesheet_includes do %>
+  <%= stylesheet_link_tag "pages/willkommen", :media => "all" %>
+<% end %>
+
+<% content_for :javascript_includes do %>
+  <%= javascript_include_tag "pages/willkommen.js" %>
+<% end %>
+
+<% content_for :headline  do %>
+  <h1>Willkommen bei risflecting&copy;</h1>
+  <div id="sub-headline">
+    dem Entwicklungspool für Rauschkultur und Risikobalance
+  </div>
+<% end %>
+
+<h2>risflecting</h2>
+<p id="info-text">Leben in Rausch-<br /> und Risikobalance</p>
+
+<ul id="circle-navigation">
+  <li><%= link_to 'Konzept', static_path(:konzept), :title => 'Rausch- und Risikopädagogik fördert eine Kultur der Balance' %></li>
+  <li><%= link_to 'Projekte', static_path(:projekte), :title => 'Rausch- und Risikobalance heißt: das wilde Tier reiten zu lernen' %></li>
+  <li><%= link_to 'Weiterbildung', static_path(:weiterbildung), :title => 'Risikopädagogische BegleiterInnen vermitteln bewährte und gewinnbringende Kulturtechniken' %></li>
+  <li><%= link_to 'FAQs', static_path(:faq), :title => 'als pädagogischer Ansatz nimmt risflecting menschliche Bedürfnisse nach Rausch und Risiko ernst' %></li>
+  <li><%= link_to 'Team', static_path(:team), :title => 'Ein internationales Netzwerk von ExpertInnen entwickelt risflecting weiter' %></li>
+  <li><%= link_to 'Publikationen', static_path(:publikationen), :title => 'Balance kann nur in einem Klima des tabufreien Dialogs geübt werden' %></li>
+</ul>

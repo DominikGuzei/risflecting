@@ -1,0 +1,95 @@
+/*
+  main font: 'Open Sans', sans-serif;
+  condensed font: 'Open Sans Condensed', sans-serif;
+*/
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: white;
+}
+
+h1 {
+  font-size: 37px;
+  color: white;
+  font-weight: bold;
+  
+  text-shadow: -1px 1px 0 #000000;
+  filter: dropshadow(color=#000000, offx=-1, offy=1);
+}
+
+#sub-headline {
+  font-size: 17px;
+  font-weight: bold;
+  color: white;
+  margin-top: 10px;
+  
+  text-shadow: -1px 1px 0 #000000;
+  filter: dropshadow(color=#000000, offx=-1, offy=1);
+}
+
+a:link, a:visited {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  font-size: 14px;
+  
+  .name {
+    font-weight:bold;
+    margin: 10px 0;
+  }
+  
+  .info span{
+    display: block;
+    margin-bottom: 5px;
+    
+    &.email {
+      text-decoration: underline;
+    }
+  }
+}
+
+section#content {
+  color: #333;
+}
+
+#content article {
+  
+  h2 {
+    font-size: 18px;
+  }
+
+  h3 {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  p, ul {
+    font-size: 14px;
+    margin-bottom: 18px;
+    line-height: 18px;
+  }
+  
+  ul {
+    list-style-type: disc;
+    padding-left: 20px;
+  }
+  
+  li {
+    margin-bottom: 10px;
+  }
+  
+  img {
+    width: 100%;
+    margin: 20px 0;
+  }
+}
+
+strong {
+  font-weight: bold;
+}

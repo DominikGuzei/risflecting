@@ -1,0 +1,55 @@
+
+#content {
+  
+  h2 {
+    margin-bottom: 40px;
+  }
+  
+  h3 {
+    font-weight: bold;
+  }
+  
+  aside {
+    width: 250px;
+    float: left;
+    margin-right: 60px;
+    font-family: 'Open Sans Condensed', sans-serif;
+    
+    ol {
+      list-style-type: decimal;
+      
+      li {
+        margin-bottom: 10px;
+        font-weight: bold;
+        color: #C27410;
+        line-height: 18px;
+        
+        &.active {
+          color: #2e4672;
+          &:hover {
+            text-decoration: none;
+            cursor: default;
+          }
+        }
+        
+        &:hover {
+          text-decoration: underline;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  
+  article {
+    float:left;
+    width: 650px;
+    
+    section {
+      display: none;
+
+      &.active {
+        display: block;
+      }
+    }
+  }
+}

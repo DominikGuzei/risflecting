@@ -1,0 +1,98 @@
+$page-width: 1200px;
+$layout-width: 960px;
+$header-height: 252px;
+$footer-height: 139px;
+
+html, body {
+  background-color: #dadada;
+  height: 100%;
+}
+
+header {
+  position: absolute;
+  z-index: 1000;
+  height: $header-height;
+  width: 100%;
+  min-width: $page-width;
+  background: image-url('layout/header-background.jpg') 0 34px;
+  
+  #headline {
+    width: $page-width;
+    height: 218px;
+    margin: 0 auto;
+    text-align: center;
+    background: image-url('layout/header-image-rope-dancing.jpg') no-repeat;
+    
+    h1 {
+      padding-top: 125px;
+    }
+  }
+}
+
+.layout-wrap {
+  width: $layout-width;
+  margin: 0 auto;
+}
+
+section#content {
+  width: $page-width;
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto $footer-height * -1;
+  background: image-url('layout/content-background.png');
+  
+  .layout-wrap {
+    padding-top: $header-height + 40px;
+    padding-bottom: 40px;
+  }
+  
+  #sticky-footer-pusher {
+    height: $footer-height;
+    clear: both;
+  }
+}
+
+footer {
+  height: $footer-height;
+  background: image-url('layout/footer-background.png');
+  width: 100%;
+  min-width: $page-width;
+  
+  .layout-wrap {
+    padding-top: 25px;
+  }
+
+  section {
+    float: left;
+  }
+  
+  section.portrait {
+    width: 300px;
+    
+    img {
+      float: left;
+      margin-right: 10px;
+      
+      border: 1px solid white;
+      -webkit-box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.5);
+      box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.5);
+    }
+  }
+  
+  section.navigation {
+    border-left: 1px solid #666;
+    font-size: 13px;
+    height: 80px;
+    padding-right: 30px;
+    
+    ul {
+      float: left;
+      margin: 5px 0 0 30px;
+    }
+    
+    li {
+      margin-bottom: 5px;
+    }
+  }
+}

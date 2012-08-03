@@ -3,24 +3,89 @@
 <head>
   <title>Risflecting</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= yield :stylesheet_includes %>
   <%= javascript_include_tag "application" %>
+  <%= yield :javascript_includes %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  
+  <header>
+    <nav>
+      <ul class="layout-wrap">
+        <li>
+          <a href="<%= static_path(:willkommen) %>" id="welcome">
+            <span id="logo-text">risflecting</span>
+            <div id="slogan">
+              <span>Leben in Rausch&ndash;</span>
+              <span>und Risikobalance</span>
+            </div>
+          </a>
+        </li>
+      
+        <li><%= link_to 'Konzept', static_path(:konzept) %></li>
+        <li><%= link_to 'Projekte', static_path(:projekte) %></li>
+        <li><%= link_to 'Weiterbildung', static_path(:weiterbildung) %></li>
+        <li><%= link_to 'FAQs', static_path(:faq) %></li>
+        <li><%= link_to 'Team', static_path(:team) %></li>
+        <li><%= link_to 'Publikationen', static_path(:publikationen) %></li>
+        <li><%= link_to 'Links', static_path(:links) %></li>
 
-<%= link_to 'willkommen', static_path(:willkommen) %>
-<%= link_to 'konzept', static_path(:konzept) %>
-<%= link_to 'projekte', static_path(:projekte) %>
-<%= link_to 'lehrgang', static_path(:lehrgang) %>
-<%= link_to 'studie', static_path(:studie) %>
-<%= link_to 'faq', static_path(:faq) %>
-<%= link_to 'team', static_path(:team) %>
-<%= link_to 'publikationen', static_path(:publikationen) %>
-<%= link_to 'kontakt', static_path(:kontakt) %>
-<%= link_to 'impressum', static_path(:impressum) %>
-<%= link_to 'english', static_path(:english) %>
+        <li>
+          <%= link_to 'english version', static_path(:english), :id => 'language-switch' %>
+        </li>
+    </nav>
+    
+    <div id="headline">
+      <%= yield :headline %>
+    </div>
+  </header>
+  
+  <section id="content">
+    <div class="layout-wrap clearfix">
+      <%= yield %>
+    </div>
+    
+    <div id="sticky-footer-pusher">
+  </section>
 
-<%= yield %>
+  <footer>
+    <div class="layout-wrap">
+      <section class="portrait">
+        <%= image_tag('layout/footer-portrait-gerald-koller.jpg') %>
+        <p class="name">Gerald Koller<p>
+        <p class="info">
+          <span>risflecting focal point</span>
+          <span class="email">
+            <a href="mailto:gerald.koller@qualitaetleben.at">Email schicken</a>
+          </span>
+        </p>
+      </section>
+    
+      <section class="navigation">
+        <ul>          
+          <li><%= link_to 'Konzept', static_path(:konzept) %></li>
+          <li><%= link_to 'Studie', static_path(:studie) %></li>
+          <li><%= link_to 'Projekte', static_path(:projekte) %></li>
+          <li><%= link_to 'Weiterbildung', static_path(:weiterbildung) %></li>
+        </ul>
+        
+        <ul>
+          <li><%= link_to 'FAQs', static_path(:faq) %></li>
+          <li><%= link_to 'Team', static_path(:team) %></li>
+          <li><%= link_to 'Publikationen', static_path(:publikationen) %></li>
+          <li><%= link_to 'Links', static_path(:links) %></li>
+        </ul>
+      </section>
+    
+      <section class="navigation">
+        <ul>
+          <li><%= link_to 'Kontakt', static_path(:kontakt) %></li>
+          <li><%= link_to 'Impressum', static_path(:impressum) %></li>
+        </ul>
+      </section>
+    </div>
+  </footer>
 
 </body>
 </html>

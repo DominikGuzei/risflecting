@@ -1,0 +1,62 @@
+$layout-width: 960px;
+
+nav {
+  background-color: #222;
+  height: 33px;
+  border-bottom: 1px solid #424242;
+  font-size: 14px;
+  
+  a:link, a:visited {
+    display: block;
+    float: left;
+    padding: 8px 15px;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  a#language-switch {
+    background-color: #2e4672;
+    padding: 5px;
+    margin: 4px 0 0 20px;
+    font-size: 12px;
+    border: 1px solid #ccc;
+    float: right;
+    
+    &:hover {
+      text-decoration:none;
+      background-color: #375B9E;
+    }
+  }
+  
+  a#welcome {
+    text-align:center;
+    width: 169px;
+    height: 127px;
+    padding: 0;
+    background: image-url('layout/header-lesezeichen-background.png') no-repeat;
+  
+    &:hover {
+      text-decoration: none;
+      cursor: pointer;
+    }
+  
+    > * {
+      position: relative;
+      left: -3px;
+    }
+  
+    #logo-text {
+      font-size: 25px;
+      font-weight: bold;
+      margin: 2px 0 10px 0;
+    }
+    
+    span {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 15px;
+    }
+  }
+}
