@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe 'Intern' do
-  it 'routes GET /intern/ to the dashboard (internal website)' do
+  it 'should route GET /intern to the dashboard' do
     { :get => '/intern' }.should route_to(
       :controller => 'intern/dashboards',
       :action => 'show'
