@@ -1,0 +1,10 @@
+development: &defaults
+  secret_token:
+  postgres_username:
+  postgres_password:
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults

@@ -2,14 +2,14 @@
 <html>
 <head>
   <title>Risflecting</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= stylesheet_link_tag "application", :media => "all" %>
   <%= yield :stylesheet_includes %>
   <%= javascript_include_tag "application" %>
   <%= yield :javascript_includes %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  
+
   <header>
     <nav>
       <ul class="layout-wrap">
@@ -22,7 +22,7 @@
             </div>
           </a>
         </li>
-      
+
         <li><%= link_to 'Konzept', static_path(:konzept) %></li>
         <li><%= link_to 'Projekte', static_path(:projekte) %></li>
         <li><%= link_to 'Weiterbildung', static_path(:weiterbildung) %></li>
@@ -35,17 +35,17 @@
           <%= link_to 'english version', static_path(:english), :id => 'language-switch' %>
         </li>
     </nav>
-    
+
     <div id="headline">
       <%= yield :headline %>
     </div>
   </header>
-  
+
   <section id="content">
     <div class="layout-wrap clearfix">
       <%= yield %>
     </div>
-    
+
     <div id="sticky-footer-pusher">
   </section>
 
@@ -61,15 +61,15 @@
           </span>
         </p>
       </section>
-    
+
       <section class="navigation">
-        <ul>          
+        <ul>
           <li><%= link_to 'Konzept', static_path(:konzept) %></li>
           <li><%= link_to 'Studie', static_path(:studie) %></li>
           <li><%= link_to 'Projekte', static_path(:projekte) %></li>
           <li><%= link_to 'Weiterbildung', static_path(:weiterbildung) %></li>
         </ul>
-        
+
         <ul>
           <li><%= link_to 'FAQs', static_path(:faq) %></li>
           <li><%= link_to 'Team', static_path(:team) %></li>
@@ -77,7 +77,7 @@
           <li><%= link_to 'Links', static_path(:links) %></li>
         </ul>
       </section>
-    
+
       <section class="navigation">
         <ul>
           <li><%= link_to 'Kontakt', static_path(:kontakt) %></li>
