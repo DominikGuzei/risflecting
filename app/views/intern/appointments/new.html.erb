@@ -1,0 +1,30 @@
+<h2>Neuer Termin</h2>
+
+<%= form_for [:intern, @appointment] do |form| %>
+  <% if @appointment.errors.any? %>
+      <ul id="form-validation">
+      <% for message in @appointment.errors.full_messages %>
+          <li><%= message %></li>
+      <% end %>
+      </ul>
+  <% end %>
+  <p>
+    <%= form.label :title, "Titel" %><br/>
+    <%= form.text_field :title %>
+  </p>
+  <p>
+    <%= form.label :description, "Beschreibung" %><br/>
+    <%= form.text_area :description %>
+  </p>
+  <p>
+    <%= form.label :starttime, "Beginn" %><br/>
+    <%= form.text_field :starttime %>
+  </p>
+  <p>
+    <%= form.label :endtime, "Ende" %><br/>
+    <%= form.text_field :endtime %>
+  </p>
+  <p>
+    <%= form.submit "Termin speichern", :id => "submit" %>
+  </p>
+<% end %>
