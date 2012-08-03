@@ -15,7 +15,10 @@ end
 gem 'jquery-rails'
 
 group :development, :test do
+  gem 'rspec', '~> 2.10'
   gem 'rspec-rails'
   gem 'shoulda-matchers'
+  gem 'cucumber-rails', :require => false
+  gem 'database_cleaner' # needed for cucumber
 end
 
