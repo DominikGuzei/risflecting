@@ -3,7 +3,14 @@
   <title>Risflecting Intern</title>
 </head>
 <body>
-  Willkommen im Internen Bereich!
+
+  <h1>Willkommen im Internen Bereich!</h1>
+
+  <% flash.each do |key, value| %>
+    <%= content_tag(:div, value, :class => "flash-message #{key}") %>
+  <% end %>
+
+  <p><%= link_to "neuen Termin erstellen", new_intern_appointment_path %></p>
 
   <%= yield %>
 
