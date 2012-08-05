@@ -66,5 +66,8 @@ module Risflecting
 
     # Devise
     config.assets.initialize_on_precompile = false
+
+    # Send mails with Gmail
+    config.action_mailer.delivery_method = :smtp
   end
 end

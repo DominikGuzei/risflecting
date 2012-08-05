@@ -2,6 +2,8 @@ development: &defaults
   secret_token:
   postgres_username:
   postgres_password:
+  gmail_username:
+  gmail_password:
 
 test:
   <<: *defaults
