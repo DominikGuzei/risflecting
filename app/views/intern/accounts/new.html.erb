@@ -1,0 +1,10 @@
+<h2>Neuen Benutzer einladen</h2>
+
+<%= form_for [:intern, @user], :url => intern_accounts_path do |f| %>
+
+  <div><%= f.label :email %><br />
+  <%= f.email_field :email %></div>
+
+  <div><%= f.submit "Einladen" %></div>
+
+<% end %>

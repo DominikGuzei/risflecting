@@ -4,6 +4,8 @@ Risflecting::Application.routes.draw do
 
     resource :dashboard, :only => [:show]
     resources :appointments, :only => [:new, :create, :show, :index]
+    resources :accounts, :only => [ :create, :new ]
+  end
 
     root :to => 'dashboards#show'
   end
