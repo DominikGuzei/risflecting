@@ -1,11 +1,14 @@
 Risflecting::Application.routes.draw do
-
   namespace :intern do
+    devise_for :users, :controllers => { :sessions => 'intern/sessions' }
+
     resource :dashboard, :only => [:show]
     resources :appointments, :only => [:new, :create, :show, :index]
 
     root :to => 'dashboards#show'
   end
+
+  # Routes for external website
 
   match '/*id' => 'high_voltage/pages#show', :as => :static, :via => :get
 

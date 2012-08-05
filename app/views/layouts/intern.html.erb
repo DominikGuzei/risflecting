@@ -25,6 +25,15 @@
       <%= content_tag(:div, value, :class => "flash-message alert alert-#{key}") %>
     <% end %>
 
+    <% if intern_user_signed_in? %>
+      <%= current_intern_user.email %>
+      <%= link_to('Logout', destroy_intern_user_session_path, :method => :delete) %>
+    <% else %>
+      <%= link_to('Login', new_intern_user_session_path)  %>
+    <% end %>
+
+    <p><%= link_to "neuen Termin erstellen", new_intern_appointment_path %></p>
+
     <%= yield %>
   </div>
 </body>
