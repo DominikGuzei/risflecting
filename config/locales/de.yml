@@ -1,0 +1,12 @@
+de:
+  activerecord:
+    errors:
+      models:
+        appointment:
+          attributes:
+            title:
+              blank: 'ist ein Pflichtfeld, bitte ausfüllen.'
+            starttime:
+              blank: 'ist ein Pflichtfeld, bitte ausfüllen.'
+            endtime:
+              blank: 'ist ein Pflichtfeld, bitte ausfüllen.'
