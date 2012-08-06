@@ -8,10 +8,6 @@
     <%= form.text_area :description, :rows => 10, :class => 'span6', :label => { :text => 'Beschreibung' } %>
     <%= form.datetime_picker :starttime, :label => { :text => 'Beginn' }, :class => 'span2' %>
     <%= form.datetime_picker :endtime, :label => { :text => 'Ende' }, :class => 'span2' %>
-<%
-=begin %>
-<%
-=end %>
     <div class="form-actions">
       <%= form.submit 'Termin speichern' %>
       <%= link_to 'Abbrechen', :back, :class => 'btn' %>
