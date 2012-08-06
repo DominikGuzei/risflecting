@@ -10,6 +10,10 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
 
   gem 'uglifier', '>= 1.0.3'
+
+  # limit version to ensure that phantomjs works
+  # see https://github.com/jonleighton/poltergeist/issues/44
+  gem 'twitter-bootstrap-rails', '2.0.8'
 end
 
 gem 'jquery-rails'
