@@ -6,10 +6,13 @@ development:
   username: <%= ENV['POSTGRES_USERNAME'] %>
   password: <%= ENV['POSTGRES_PASSWORD'] %>
 
-test:
+test: &test
   adapter: postgresql
   encoding: unicode
   database: risflecting_test
   pool: 5
   username: <%= ENV['POSTGRES_USERNAME'] %>
   password: <%= ENV['POSTGRES_PASSWORD'] %>
+
+cucumber:
+  <<: *test
