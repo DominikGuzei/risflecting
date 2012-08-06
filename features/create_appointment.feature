@@ -3,6 +3,7 @@ Feature: Create Appointment
   As an admin
   I want to create a new appointment
 
+  @javascript
   Scenario: Fill all fields in
     Given I visit the form to create a new appointment
     When I fill in all fields

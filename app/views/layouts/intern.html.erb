@@ -1,18 +1,23 @@
 <html>
 <head>
   <title>Risflecting Intern</title>
+  <%= stylesheet_link_tag "intern/application", :media => "all" %>
+  <%= javascript_include_tag "intern/application" %>
+  <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
 </head>
 <body>
 
-  <h1>Willkommen im Internen Bereich!</h1>
+  <div class="container">
+    <h1>Willkommen im Internen Bereich!</h1>
 
-  <% flash.each do |key, value| %>
-    <%= content_tag(:div, value, :class => "flash-message #{key}") %>
-  <% end %>
+    <% flash.each do |key, value| %>
+      <%= content_tag(:div, value, :class => "flash-messages alert alert-#{key}") %>
+    <% end %>
 
-  <p><%= link_to "neuen Termin erstellen", new_intern_appointment_path %></p>
+    <p><%= link_to "neuen Termin erstellen", new_intern_appointment_path %></p>
 
-  <%= yield %>
-
+    <%= yield %>
+  </div>
 </body>
 </html>
