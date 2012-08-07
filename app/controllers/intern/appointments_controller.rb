@@ -1,5 +1,9 @@
 # encoding: UTF-8
 class Intern::AppointmentsController < InternController
+  def index
+    @appointments = Appointment.all
+  end
+
   def new
     @appointment = Appointment.new
   end
