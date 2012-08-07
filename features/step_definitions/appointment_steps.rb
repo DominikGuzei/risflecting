@@ -5,6 +5,7 @@ end
 When /^I fill in all fields$/ do
   fill_in 'appointment_title', :with => 'A new appointment'
   fill_in 'appointment_description', :with => 'Some descriptive words ...'
+  fill_in 'appointment_location', :with => 'Sonnenhof, A-7022 Schattendorf'
   fill_in 'starttime_date', :with => 4.days.from_now.strftime('%d.%m.%Y')
   fill_in 'endtime_date', :with => 5.days.from_now.strftime('%d.%m.%Y')
 end
