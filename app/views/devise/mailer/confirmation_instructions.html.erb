@@ -1,0 +1,12 @@
+<p>
+  Hallo,<br>
+  du wurdest mit deiner E-Mail <%= @resource.email %> zum Internen Bereich von Risflecting eingeladen!
+</p>
+
+<p>
+  Bevor du den Internen Bereich verwenden kannst, musst du ein Profil mit deinen Daten erstellen. Klicke dafür einfach auf den unten angeführten Link.
+</p>
+
+<p>
+  <%= link_to 'Mein Profil erstellen', confirmation_url(@resource, :confirmation_token => @resource.confirmation_token) %>
+</p>

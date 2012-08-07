@@ -1,10 +1,11 @@
-<h2>Neuen Benutzer einladen</h2>
+<%= form_for [:intern, @user], :url => intern_accounts_path, :html => { :class => 'form-horizontal well'} do |form| %>
+  <%= content_tag :legend, 'Neuen Benutzer einladen' %>
 
-<%= form_for [:intern, @user], :url => intern_accounts_path do |f| %>
+  <fieldset>
+    <%= form.email_field :email, :class => 'span4', :label => { :text => 'E-Mail' } %>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email %></div>
-
-  <div><%= f.submit "Einladen" %></div>
-
+    <div class="form-actions">
+      <%= form.submit 'Benutzer einladen' %>
+    </div>
+  </fieldset>
 <% end %>
