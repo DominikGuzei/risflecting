@@ -5,8 +5,10 @@ de:
         appointment:
           attributes:
             title:
-              blank: 'ist ein Pflichtfeld, bitte ausfüllen.'
+              blank: 'ist ein Pflichtfeld, bitte ausfüllen'
+            location:
+              blank: 'ist ein Pflichtfeld, bitte ausfüllen'
             starttime:
-              blank: 'ist ein Pflichtfeld, bitte ausfüllen.'
+              blank: 'ist ein Pflichtfeld, bitte ausfüllen'
             endtime:
-              blank: 'ist ein Pflichtfeld, bitte ausfüllen.'
+              blank: 'ist ein Pflichtfeld, bitte ausfüllen'

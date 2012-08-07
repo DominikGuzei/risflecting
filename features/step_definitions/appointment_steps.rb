@@ -5,6 +5,7 @@ end
 When /^I fill in all fields$/ do
   fill_in 'appointment_title', :with => 'A new appointment'
   fill_in 'appointment_description', :with => 'Some descriptive words ...'
+  fill_in 'appointment_location', :with => 'Sonnenhof, A-7022 Schattendorf'
   fill_in 'starttime_date', :with => 4.days.from_now.strftime('%d.%m.%Y')
   fill_in 'endtime_date', :with => 5.days.from_now.strftime('%d.%m.%Y')
 end
@@ -20,6 +21,7 @@ end
 Then /^I want to see the newly created appointment$/ do
   page.should have_content 'A new appointment'
   page.should have_content 'Some descriptive words ...'
+  page.should have_content 'Sonnenhof, A-7022 Schattendorf'
 end
 
 When /^I leave all fields empty$/ do

@@ -15,4 +15,4 @@ Feature: Create Appointment
     Given I visit the form to create a new appointment
     When I leave all fields empty
     And I save the appointment
-    Then I want to see 3 errors
+    Then I want to see 4 errors

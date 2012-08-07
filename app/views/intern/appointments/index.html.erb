@@ -9,10 +9,15 @@
 <% @appointments.each do |appointment| %>
   <li class="well">
     <div class="span3">
-      <%= appointment.starttime.strftime('%d.%B \'%y') %> &nbsp;<strong>bis</strong>&nbsp;
+      <%= appointment.starttime.strftime('%d.%B \'%y') %>
+      &nbsp;<strong>bis</strong>&nbsp;
       <%= appointment.endtime.strftime('%d.%B \'%y') %>
     </div>
-    <div class="span5"><h4><%= appointment.title %></h4></div>
+    <div class="span5">
+      <h4><%= appointment.title %></h4>
+      <small class="location"><%= appointment.location %></small>
+    </div>
+    <!-- <div class="span3 pull-right"><%= link_to 'Absagen', '#', :class => 'btn btn-danger' %> <%= link_to 'Teilnehmen', '#', :class => 'btn btn-success' %></div> -->
   </li>
 <% end %>
 </ul>

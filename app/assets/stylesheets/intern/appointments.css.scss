@@ -12,6 +12,11 @@
     padding: 7px 0;
     margin-bottom: 7px;
 
+    small.location {
+      color: #aaa;
+      font-size: 12px;
+    }
+
     @include clearfix;
   }
 }
