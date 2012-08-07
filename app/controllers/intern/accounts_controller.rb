@@ -5,15 +5,15 @@ class Intern::AccountsController < InternController
 
   def create
     if params[:user][:email].blank?
-      flash[:error] = 'E-Mail muss angegeben werden'
+      flash[:error] = "E-Mail muss angegeben werden"
     elsif User.exists? :email => params[:user][:email]
-      flash[:error] = 'Dieser Benutzer wurde bereits eingeladen'
+      flash[:error] = "Der Benutzer #{params[:user][:email]} wurde bereits eingeladen"
     else
       @user = User.create params[:user]
 
       @user.save :validate => false
 
-      flash[:success] = 'Benutzer wurde eingeladen'
+      flash[:success] = "Der Benutzer #{params[:user][:email]} wurde eingeladen"
     end
 
     flash.keep
