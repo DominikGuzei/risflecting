@@ -21,6 +21,7 @@ end
 Then /^I want to see the newly created appointment$/ do
   page.should have_content 'A new appointment'
   page.should have_content 'Some descriptive words ...'
+  page.should have_content 'Sonnenhof, A-7022 Schattendorf'
 end
 
 When /^I leave all fields empty$/ do
