@@ -4,7 +4,8 @@
   font-weight: normal;
   font-size: 13px;
   line-height: 1.2em;
-  margin-top: 5px;
+  margin-top: 15px;
+  &.btn { margin-top: 5px; }
 }
 
 #appointment-list {
@@ -18,5 +19,17 @@
     }
 
     @include clearfix;
+
+    a { margin-right: 15px; }
   }
+}
+
+#appointment-details {
+  dl { font-size: 14px; }
+  dt {
+    width: 60px;
+    text-align: left;
+  }
+  dd { margin-left: 70px; }
+  dt, dd { line-height: 1.4em; }
 }
