@@ -4,7 +4,7 @@ class Intern::ConfirmationsController < ::Devise::ConfirmationsController
   def show
     self.resource = resource_class.find_by_confirmation_token(params[:confirmation_token])
 
-    redirect_to intern_path if resource.nil? && intern_user_signed_in?
+    redirect_to intern_root_path if resource.nil? && intern_user_signed_in?
     super if resource.nil? && !intern_user_signed_in?
   end
 

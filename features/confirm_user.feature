@@ -36,4 +36,5 @@ Feature: Confirm User
     And I am signed out
     And I click the first link in the email
     And I fill in my email address
+    And I confirm my profile
     Then I want to see 1 error

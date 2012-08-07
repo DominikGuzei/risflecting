@@ -75,11 +75,11 @@ When /^I confirm my profile$/ do
 end
 
 Then /^I should be able to access the internal website$/ do
-  current_path.should == intern_path
+  current_path.should == intern_root_path
 end
 
 Then /^I should be redirected to the internal website$/ do
-  current_path.should == intern_path
+  current_path.should == intern_root_path
 end
 
 When /^I enter two different passwords$/ do
