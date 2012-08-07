@@ -18,7 +18,7 @@ class Intern::ConfirmationsController < ::Devise::ConfirmationsController
 
       sign_in_and_redirect(resource_name, resource)
     else
-      render :action => 'show'
+      render :action => :show
     end
   end
 end
