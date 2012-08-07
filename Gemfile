@@ -27,5 +27,7 @@ group :development, :test do
   gem 'database_cleaner' # needed for cucumber
   gem 'launchy' # allows to save and open page in browser during a test
   gem 'poltergeist' # headless browser, requires phantomjs
+
+  gem 'factory_girl_rails', '~> 4.0'
 end
 
