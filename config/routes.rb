@@ -2,8 +2,7 @@ Risflecting::Application.routes.draw do
 
   namespace :intern do
     resource :dashboard, :only => [:show]
-    resources :appointments, :only => [:new, :create, :show]
-  end
+    resources :appointments, :only => [:new, :create, :show, :index]
 
   match '/intern' => 'intern/dashboards#show'
 

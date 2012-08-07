@@ -1,0 +1,18 @@
+<div class="page-header">
+  <h2>Termine & Meetings
+  <%= link_to(new_intern_appointment_path, :class => 'pull-right btn btn-info') do %>
+    <i class="icon-plus"></i> &nbsp;neuen Termin eintragen
+  <% end %>
+  </h2>
+</div>
+<ul id="appointment-list" class="unstyled">
+<% @appointments.each do |appointment| %>
+  <li class="well">
+    <div class="span3">
+      <%= appointment.starttime.strftime('%d.%B \'%y') %> &nbsp;<strong>bis</strong>&nbsp;
+      <%= appointment.endtime.strftime('%d.%B \'%y') %>
+    </div>
+    <div class="span5"><h4><%= appointment.title %></h4></div>
+  </li>
+<% end %>
+</ul>

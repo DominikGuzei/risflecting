@@ -27,5 +27,22 @@ When /^I leave all fields empty$/ do
 end
 
 Then /^I want to see (\d+) errors$/ do |amount_of_errors|
-  all('.control-group.error').count == amount_of_errors
+  all('.control-group.error').count.should == amount_of_errors.to_i
+end
+
+Given /^I am on the Dashboard$/ do
+  visit '/intern/dashboard'
+end
+
+Given /^there are (\d+) appointments$/ do |amount_of_appointments|
+  @amount_of_appointments = amount_of_appointments.to_i
+  FactoryGirl.create_list(:appointment, @amount_of_appointments)
+end
+
+When /^I navigate to 'Termine' through the main navigation$/ do
+  click_on 'Termine'
+end
+
+Then /^I want to see a list of all appointments$/ do
+  find('#appointment-list').all('li').count.should == @amount_of_appointments
 end
