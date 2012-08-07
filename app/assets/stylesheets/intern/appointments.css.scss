@@ -1,0 +1,17 @@
+@import "mixins";
+
+.page-header h2 a {
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 1.2em;
+  margin-top: 5px;
+}
+
+#appointment-list {
+  li.well {
+    padding: 7px 0;
+    margin-bottom: 7px;
+
+    @include clearfix;
+  }
+}
