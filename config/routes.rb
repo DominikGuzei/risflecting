@@ -2,10 +2,10 @@ Risflecting::Application.routes.draw do
 
   namespace :intern do
     resource :dashboard, :only => [:show]
-    resources :appointments, :only => [:new, :create, :show]
-  end
+    resources :appointments, :only => [:new, :create, :show, :index]
 
-  match '/intern' => 'intern/dashboards#show'
+    root :to => 'dashboards#show'
+  end
 
   match '/*id' => 'high_voltage/pages#show', :as => :static, :via => :get
 

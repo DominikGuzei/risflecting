@@ -7,15 +7,23 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
 </head>
 <body>
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <%= link_to 'Risflecting Plattform', intern_root_path, :class => 'brand' %>
+        <ul class="nav">
+          <li><%= link_to 'Dashboard', intern_dashboard_path %></li>
+          <li class="divider-vertical"></li>
+          <li><%= link_to 'Termine', intern_appointments_path %></li>
+        </ul>
+      </div>
+    </div>
+  </div>
 
   <div class="container">
-    <h1>Willkommen im Internen Bereich!</h1>
-
     <% flash.each do |key, value| %>
       <%= content_tag(:div, value, :class => "flash-message alert alert-#{key}") %>
     <% end %>
-
-    <p><%= link_to "neuen Termin erstellen", new_intern_appointment_path %></p>
 
     <%= yield %>
   </div>
