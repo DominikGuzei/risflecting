@@ -3,6 +3,9 @@ Feature: Create Appointment
   As an admin
   I want to create a new appointment
 
+  Background: Signed in user
+    Given I am sign in as a user
+
   @javascript
   Scenario: Fill all fields in
     Given I visit the form to create a new appointment
