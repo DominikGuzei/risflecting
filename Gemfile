@@ -2,8 +2,10 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.6'
 gem 'pg'
-
+gem 'jquery-rails'
 gem 'high_voltage'
+gem 'rails-i18n'
+
 
 gem 'devise'
 
@@ -17,8 +19,6 @@ group :assets do
   # see https://github.com/jonleighton/poltergeist/issues/44
   gem 'twitter-bootstrap-rails', '2.0.8'
 end
-
-gem 'jquery-rails'
 
 group :development, :test do
   gem 'rspec', '~> 2.10'

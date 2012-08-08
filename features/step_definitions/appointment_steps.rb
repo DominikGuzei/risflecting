@@ -1,5 +1,5 @@
 Given /^I visit the form to create a new appointment$/ do
-  visit '/intern/appointments/new'
+  visit new_intern_appointment_path
 end
 
 When /^I fill in all fields$/ do
@@ -33,7 +33,7 @@ Then /^I want to see (\d+) errors?$/ do |amount_of_errors|
 end
 
 Given /^I am on the Dashboard$/ do
-  visit '/intern/dashboard'
+  visit intern_dashboard_path
 end
 
 Given /^there are (\d+) appointments$/ do |amount_of_appointments|
@@ -47,4 +47,22 @@ end
 
 Then /^I want to see a list of all appointments$/ do
   find('#appointment-list').all('li').count.should == @amount_of_appointments
+end
+
+Given /^there is an appointment$/ do
+  @appointment_data = { :title => "Test title", :description => "A quite short description ..." }
+  FactoryGirl.create(:appointment, @appointment_data)
+end
+
+Given /^I am on the appointments overview$/ do
+  visit intern_appointments_path
+end
+
+When /^I click on '(\w+)'$/ do |target_name|
+  click_on target_name.to_s
+end
+
+Then /^I want to see the details of an appointment$/ do
+  page.should have_content @appointment_data[:title]
+  page.should have_content @appointment_data[:description]
 end
