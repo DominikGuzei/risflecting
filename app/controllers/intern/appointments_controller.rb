@@ -23,4 +23,8 @@ class Intern::AppointmentsController < InternController
   def show
     @appointment = Appointment.find params[:id]
   end
+
+  def attend
+    render :nothing => true
+  end
 end
