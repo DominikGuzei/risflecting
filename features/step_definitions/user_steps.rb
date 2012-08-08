@@ -21,7 +21,7 @@ Given /^I am signed out$/ do
   visit '/intern/users/sign_out'
 end
 
-Given /^I visit the form to create a new user$/ do
+Given /^I visit the form to invite a new user$/ do
   visit new_intern_account_path
 end
 
@@ -37,12 +37,8 @@ Then /^I want to see feedback that the user was invited$/ do
   page.should have_selector '.flash-message.alert-success'
 end
 
-Then /^I want to see the form to create a new user again$/ do
+Then /^I want to see the form to invite a new user again$/ do
   current_path.should == new_intern_account_path
-end
-
-Then /^I want to see an error$/ do
-  page.should have_selector '.flash-message.alert-error'
 end
 
 Given /^I fill an already invited email address$/ do
@@ -93,4 +89,12 @@ end
 
 And /^I click the confirmation link in the email$/ do
   step 'I click the first link in the email'
+end
+
+Then /^I want to see feedback that I have to enter an email$/ do
+  page.should have_selector '.flash-message.alert-error'
+end
+
+Then /^I want to see feedback that the user is already invited$/ do
+  page.should have_selector '.flash-message.alert-error'
 end
