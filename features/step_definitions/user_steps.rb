@@ -1,19 +1,9 @@
-Given /^I am sign in as a user$/ do
-  email = 'test@test.com'
-  password = 'testtest'
-  user = User.new :email => email,
-                  :password => password,
-                  :password_confirmation => password,
-                  :forename => 'Test',
-                  :surname => 'Tester',
-                  :phone => '0900'
-
-  user.confirmed_at = Time.now
-  user.save!
+Given /^I am signed in as a user$/ do
+  user = FactoryGirl.create :user
 
   visit '/intern'
-  fill_in 'intern_user_email', :with => email
-  fill_in 'intern_user_password', :with => password
+  fill_in 'intern_user_email', :with => user.email
+  fill_in 'intern_user_password', :with => user.password
   click_on 'submit'
 end
 
@@ -58,7 +48,7 @@ When /^I open my invitation email$/ do
   open_email 'invite@test.com'
 end
 
-When /^I fill in my profile details$/ do
+When /^I fill in my account details$/ do
   fill_in 'intern_user_forename', :with => 'Walter'
   fill_in 'intern_user_surname', :with => 'White'
   fill_in 'intern_user_phone', :with => '42'
@@ -66,20 +56,20 @@ When /^I fill in my profile details$/ do
   fill_in 'intern_user_password_confirmation', :with => 'password'
 end
 
-When /^I confirm my profile$/ do
+When /^I confirm my account$/ do
   click_on 'submit'
 end
 
-Then /^I should be able to access the internal website$/ do
+Then /^I want to be able to access the internal website$/ do
   current_path.should == intern_root_path
 end
 
-Then /^I should be redirected to the internal website$/ do
+Then /^I want to be redirected to the internal website$/ do
   current_path.should == intern_root_path
 end
 
 When /^I enter two different passwords$/ do
-  step 'I fill in my profile details'
+  step 'I fill in my account details'
   fill_in 'intern_user_password', :with => 'differentpassword'
 end
 
@@ -97,4 +87,13 @@ end
 
 Then /^I want to see feedback that the user is already invited$/ do
   page.should have_selector '.flash-message.alert-error'
+end
+
+Given /^my account is confirmed$/ do
+  step 'I fill in my account details'
+  step 'I confirm my account'
+end
+
+When /^I sign out$/ do
+  step 'I am signed out'
 end

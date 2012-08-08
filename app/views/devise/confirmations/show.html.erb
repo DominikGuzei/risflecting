@@ -1,5 +1,5 @@
 <%= form_for resource, :as => resource_name, :url => intern_user_confirm_path, :html => { :class => 'form-horizontal well'} do |form| %>
-  <%= content_tag :legend, 'Profil erstellen' %>
+  <%= content_tag :legend, 'Account erstellen' %>
 
   <fieldset>
     <%= form.text_field :forename, :class => 'span4', :label => { :text => 'Vorname' } %>
@@ -10,7 +10,7 @@
     <%= form.hidden_field :confirmation_token %>
 
     <div class="form-actions">
-      <%= form.submit 'Profil erstellen und anmelden' %>
+      <%= form.submit 'Account erstellen und anmelden' %>
     </div>
   </fieldset>
 <% end %>
