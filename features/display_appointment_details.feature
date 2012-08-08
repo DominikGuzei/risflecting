@@ -8,6 +8,6 @@ Feature: Appoinment details
     And there is an appointment
 
   Scenario: View appointment
-    Given I am on the appointments overview
+    Given I am on the appointments overview page
     When I click on 'Details'
     Then I want to see the details of an appointment

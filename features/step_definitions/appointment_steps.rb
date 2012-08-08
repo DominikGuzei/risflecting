@@ -54,7 +54,7 @@ Given /^there is an appointment$/ do
   FactoryGirl.create(:appointment, @appointment_data)
 end
 
-Given /^I am on the appointments overview$/ do
+Given /^I am on the appointments overview page$/ do
   visit intern_appointments_path
 end
 

@@ -5,7 +5,7 @@ Feature: Appoinments list
 
   Background:
     Given I am signed in as a user
-    Given there are 5 appointments
+    And there are 5 appointments
 
   Scenario: View appointment
     Given I am on the Dashboard
