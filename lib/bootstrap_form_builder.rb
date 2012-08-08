@@ -63,6 +63,25 @@ module BootstrapFormBuilder
       super(value, {:class => "btn btn-inverse", :id => 'submit'}.merge(options), *args)
     end
 
+    def check_box(field, options = {}, *args)
+      object = @template.instance_variable_get("@#{@object_name}")
+
+      labelTag = get_label(field, options)
+
+      errorText = get_error_text(object, field, options)
+
+      wrapperClass = 'control-group' + (errorText.empty? ? '' : ' error')
+      errorSpan = if errorText.empty? then "" else "<span class='help-inline'>#{errorText}</span>" end
+      ("<div class='#{wrapperClass}'>" +
+          "<div class='controls'><label class='checkbox'>" +
+            super(field, *args) +
+            options[:label][:text] +
+            errorSpan +
+          "</label></div>" +
+        "</div>"
+      ).html_safe
+    end
+
     def datetime_picker(field, options = {})
       id = get_object_id(field, options)
 
@@ -134,7 +153,7 @@ module BootstrapFormBuilder
     end
 
 
-    basic_helpers = %w{text_field text_area select email_field password_field check_box number_field}
+    basic_helpers = %w{text_field text_area select email_field password_field number_field}
 
     multipart_helpers = %w{date_select datetime_select}
 

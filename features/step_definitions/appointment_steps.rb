@@ -28,7 +28,7 @@ When /^I leave all fields empty$/ do
   # do not fill any of the form fields
 end
 
-Then /^I want to see (\d+) errors$/ do |amount_of_errors|
+Then /^I want to see (\d+) errors?$/ do |amount_of_errors|
   all('.control-group.error').count.should == amount_of_errors.to_i
 end
 

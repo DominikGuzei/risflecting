@@ -1,0 +1,13 @@
+<%= form_for resource, :as => resource_name, :url => confirmation_path(resource_name), :html => { :method => :post, :class => 'form-horizontal well'} do |form| %>
+  <%= content_tag :legend, 'Einladung erneut senden' %>
+
+  <fieldset>
+    <%= form.email_field :email, :class => 'span4', :label => { :text => 'E-Mail' } %>
+
+    <div class="form-actions">
+      <%= form.submit 'Einladung erneut senden' %>
+      <br><br>
+      <%= render "devise/shared/links" %>
+    </div>
+  </fieldset>
+<% end %>
