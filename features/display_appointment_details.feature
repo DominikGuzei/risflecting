@@ -4,7 +4,8 @@ Feature: Appoinment details
   I want to view the details of an appointment
 
   Background:
-    Given there is an appointment
+    Given I am signed in as a user
+    And there is an appointment
 
   Scenario: View appointment
     Given I am on the appointments overview
