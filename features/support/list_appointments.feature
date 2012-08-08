@@ -4,6 +4,7 @@ Feature: Appoinments list
   I want to view a list of all appointments
 
   Background:
+    Given I am signed in as a user
     Given there are 5 appointments
 
   Scenario: View appointment

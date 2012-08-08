@@ -1,0 +1,15 @@
+<%= form_for resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put, :class => 'form-horizontal well'} do |form| %>
+  <%= content_tag :legend, 'Passwort ändern' %>
+
+  <fieldset>
+    <%= form.password_field :password, :class => 'span4', :label => { :text => 'Neues Passwort' } %>
+    <%= form.password_field :password_confirmation, :class => 'span4', :label => { :text => 'Passwort wiederholen' } %>
+    <%= form.hidden_field :reset_password_token %>
+
+    <div class="form-actions">
+      <%= form.submit 'Passwort ändern' %>
+      <br><br>
+      <%= render "devise/shared/links" %>
+    </div>
+  </fieldset>
+<% end %>

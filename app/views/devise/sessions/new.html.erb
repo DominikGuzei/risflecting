@@ -1,0 +1,20 @@
+<div class="row">
+
+  <%= form_for resource, :as => resource_name, :url => session_path(resource_name), :html => { :class => 'form-vertical well span4 offset4'} do |form| %>
+    <%= content_tag :legend, 'Anmeldung' %>
+
+    <fieldset>
+      <%= form.email_field :email, :class => 'span4', :label => { :text => 'E-Mail' } %>
+      <%= form.password_field :password, :class => 'span4', :label => { :text => 'Passwort' } %>
+      <% if devise_mapping.rememberable? -%>
+        <%= form.check_box :remember_me, :label => { :text => 'Angemeldet bleiben' } %>
+      <% end -%>
+      <div class="form-actions">
+        <%= form.submit 'Anmelden' %>
+        <br><br>
+        <%= render "devise/shared/links" %>
+      </div>
+    </fieldset>
+  <% end %>
+
+</div>
