@@ -7,7 +7,7 @@ Feature: Confirm User
     Given I am signed out
     And I have an invitation email
     And I open my invitation email
-    And I click the first link in the email
+    And I click the confirmation link in the email
 
   Scenario: Fill in all fields
     When I fill in my profile details

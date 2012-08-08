@@ -90,3 +90,7 @@ end
 And /^I fill in my email address$/ do
   fill_in 'intern_user_email', :with => 'invite@test.com'
 end
+
+And /^I click the confirmation link in the email$/ do
+  step 'I click the first link in the email'
+end
