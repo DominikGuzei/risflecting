@@ -1,6 +1,6 @@
 Risflecting::Application.routes.draw do
   namespace :intern do
-    devise_for :users, :controllers => { :sessions => 'intern/sessions' }
+    devise_for :users, :controllers => { :sessions => 'devise/sessions', :registrations => 'devise/registrations', :passwords => 'devise/passwords' }
 
     devise_scope :intern_user do
       put '/user/confirm' => 'confirmations#confirm'

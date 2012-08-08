@@ -1,6 +1,4 @@
 class Intern::ConfirmationsController < ::Devise::ConfirmationsController
-  layout 'intern'
-
   def show
     self.resource = resource_class.find_by_confirmation_token(params[:confirmation_token])
 
