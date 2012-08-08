@@ -5,6 +5,8 @@ gem 'pg'
 
 gem 'high_voltage'
 
+gem 'devise'
+
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
@@ -27,7 +29,7 @@ group :development, :test do
   gem 'database_cleaner' # needed for cucumber
   gem 'launchy' # allows to save and open page in browser during a test
   gem 'poltergeist' # headless browser, requires phantomjs
-
   gem 'factory_girl_rails', '~> 4.0'
+  gem 'email_spec'
 end
 
