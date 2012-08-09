@@ -1,1 +1,4 @@
 de-AT:
+  unauthorized:
+    manage:
+      all: "Du hast nicht genügend Rechte"
