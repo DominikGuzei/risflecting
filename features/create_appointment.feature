@@ -4,7 +4,7 @@ Feature: Create Appointment
   I want to create a new appointment
 
   Background: Signed in user
-    Given I am signed in as a user
+    Given I am signed in as an admin
 
   @javascript
   Scenario: Fill all fields in
