@@ -70,3 +70,24 @@ end
 Then /^I do not want to see a link to create a new appointment$/ do
   page.should have_no_content('neuen Termin eintragen')
 end
+
+Then /^I want to get feedback that my acceptance succeeded$/ do
+  page.should_not have_selector('.btn-success')
+  page.should have_content('zugesagt')
+end
+
+Given /^I have already accepted (\d+) appointments?$/ do |amount_of_appointments|
+  amount_of_appointments = amount_of_appointments.to_i
+
+  while amount_of_appointments > 0 do
+    visit intern_appointments_path
+    first('.btn-success').click
+
+    amount_of_appointments -= 1
+  end
+end
+
+Then /^I want to see (\d+) appointments? accepted$/ do |amount_of_appointments|
+  sleep 0.3 # ugly – but I couldn´t find a better solution
+  all('.label').count.should == amount_of_appointments.to_i
+end
