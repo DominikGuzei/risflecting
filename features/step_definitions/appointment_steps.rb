@@ -66,3 +66,7 @@ Then /^I want to see the details of an appointment$/ do
   page.should have_content @appointment_data[:title]
   page.should have_content @appointment_data[:description]
 end
+
+Then /^I do not want to see a link to create a new appointment$/ do
+  page.should have_no_content('neuen Termin eintragen')
+end
