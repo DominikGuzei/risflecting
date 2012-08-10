@@ -6,7 +6,7 @@ gem 'jquery-rails'
 gem 'high_voltage'
 gem 'rails-i18n'
 
-
+gem 'cancan'
 gem 'devise'
 
 group :assets do

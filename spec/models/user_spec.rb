@@ -1,9 +1,11 @@
 require 'spec_helper'
+require 'cancan/matchers'
 
 describe User do
   it { should validate_presence_of :forename }
   it { should validate_presence_of :surname }
   it { should validate_presence_of :phone }
+  it { should have_and_belong_to_many :roles }
 
   describe 'passwords_match?' do
     it 'should return true if both passwords match' do
@@ -22,6 +24,52 @@ describe User do
       user = User.new :password => '', :password_confirmation => ''
 
       user.passwords_match?.should be false
+    end
+  end
+
+  describe 'has_role?' do
+    let(:user) { FactoryGirl.create :user }
+
+    before :each do
+      Role.create! :name => 'Admin'
+      Role.create! :name => 'SuperAdmin'
+    end
+
+    it 'should return true if the user has a specific role' do
+      user.roles << Role.find_by_name('Admin')
+
+      user.has_role?(:admin).should be true
+    end
+
+    it 'should return false if the user does not have the specific role' do
+      user.has_role?(:admin).should be false
+    end
+
+    it 'should also work with two worded roles' do
+      user.roles << Role.find_by_name('SuperAdmin')
+
+      user.has_role?(:super_admin).should be true
+    end
+  end
+
+  describe 'abilities' do
+    subject { ability }
+
+    let(:ability) { Ability.new user }
+
+    context 'admin user' do
+      let(:user) { FactoryGirl.create :admin }
+
+      it { should be_able_to(:manage, :all) }
+    end
+
+    context 'normal user' do
+      let(:user) { FactoryGirl.create :user }
+
+      it { should_not be_able_to(:create, Appointment.new) }
+      it { should_not be_able_to(:update, Appointment.new) }
+      it { should_not be_able_to(:destroy, Appointment.new) }
+      it { should_not be_able_to(:create, User.new) }
     end
   end
 end

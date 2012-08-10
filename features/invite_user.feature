@@ -4,7 +4,7 @@ Feature: Invite User
   I want to invite a new user
 
   Background: Signed in user
-    Given I am signed in as a user
+    Given I am signed in as an admin
     And I visit the form to invite a new user
 
   Scenario: Fill all fields in
