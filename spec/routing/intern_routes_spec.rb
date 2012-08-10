@@ -31,10 +31,10 @@ describe 'Intern::Appointment' do
     )
   end
 
-  it 'should route POST /intern/appointments/1/attend to the appointment attend action' do
-    { :post => '/intern/appointments/1/attend' }.should route_to(
+  it 'should route POST /intern/appointments/1/accept to the appointment attend action' do
+    { :post => '/intern/appointments/1/accept' }.should route_to(
       :controller => 'intern/appointments',
-      :action => 'attend',
+      :action => 'accept',
       :id => '1'
     )
   end
