@@ -17,6 +17,3 @@ jQuery ->
     $container = $(this).parent()
     $container.find('.btn').fadeOut 200, ->
       $container.empty().hide().html(response).fadeIn 400
-
-  $('.buttons a[data-remote]').on 'ajax:error', ->
-    alert('Es ist etwas schief gelaufen. Bitte noch einmal versuchen!')
