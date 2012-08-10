@@ -3,12 +3,27 @@ ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'rspec/autorun'
+require 'factory_girl'
+require 'factory_girl_rails'
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
 Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 
 RSpec.configure do |config|
+
+  # Use DatabaseCleaner instead of Rpsec´s transactional fixture
+  # config.before :suite do
+  #   DatabaseCleaner.strategy = :transaction
+  #   DatabaseCleaner.clean_with(:truncation)
+  # end
+  # config.before do
+  #   DatabaseCleaner.start
+  # end
+  # config.after do
+  #   DatabaseCleaner.clean
+  # end
+
   # == Mock Framework
   #
   # If you prefer to use mocha, flexmock or RR, uncomment the appropriate line:
