@@ -7,6 +7,7 @@
   <% end %>
   </h2>
 </div>
+
 <ul id="appointment-list" class="unstyled">
 <% @appointments.each do |appointment| %>
   <li class="well">
@@ -19,6 +20,15 @@
       <h4><%= appointment.title %></h4>
       <small class="location"><%= appointment.location %></small>
     </div>
+
+    <div class="pull-right buttons">
+    <% unless @accepted_appointments.include? appointment %>
+      <%= link_to 'Teilnehmen', accept_intern_appointment_path(appointment), :method => :post, :remote => true, :class => 'btn btn-success' %>
+    <% else %>
+      <%= render :partial => 'accepted_appointment', :locals => { :status => 'zugesagt' } %>
+    <% end %>
+    </div>
+
     <%= link_to 'Details', intern_appointment_path(appointment), :class => 'pull-right' %>
   </li>
 <% end %>

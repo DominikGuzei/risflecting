@@ -7,6 +7,9 @@ describe User do
   it { should validate_presence_of :phone }
   it { should have_and_belong_to_many :roles }
 
+  it { should have_many :appointment_responses }
+  it { should have_many(:accepted_appointments).through :appointment_responses }
+
   describe 'passwords_match?' do
     it 'should return true if both passwords match' do
       user = User.new :password => 'test', :password_confirmation => 'test'
@@ -49,6 +52,18 @@ describe User do
       user.roles << Role.find_by_name('SuperAdmin')
 
       user.has_role?(:super_admin).should be true
+    end
+  end
+
+  describe 'accept_appointment' do
+
+    let(:user) { FactoryGirl.create :user }
+    let(:appointment) { FactoryGirl.create :appointment }
+
+    it 'should create an appointment acceptance using the passed id' do
+      user.accept_appointment appointment.id
+
+      user.accepted_appointments.should include(appointment)
     end
   end
 
