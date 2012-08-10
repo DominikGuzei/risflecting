@@ -1,4 +1,4 @@
 de-AT:
   unauthorized:
     manage:
-      all: "Du hast nicht genügend Rechte"
+      all: "Du bist nicht berechtigt diesen Bereich zu verwenden"

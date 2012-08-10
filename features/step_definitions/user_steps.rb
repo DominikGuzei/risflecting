@@ -107,6 +107,6 @@ When /^I sign out$/ do
   step 'I am signed out'
 end
 
-Then /^I do not want to see an invite new user link$/ do
+Then /^I do not want to see a link to invite a new user$/ do
   page.should have_no_content('Benutzer erstellen')
 end

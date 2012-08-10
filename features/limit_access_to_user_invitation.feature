@@ -5,4 +5,4 @@ Feature: Limit access to user invitation
 
   Scenario: As an user
     Given I am signed in as a user
-    Then I do not want to see an invite new user link
+    Then I do not want to see a link to invite a new user
