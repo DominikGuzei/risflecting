@@ -13,6 +13,16 @@
 
 ActiveRecord::Schema.define(:version => 20120809062547) do
 
+  create_table "appointment_responses", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "appointment_id"
+    t.boolean  "accepted"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  add_index "appointment_responses", ["user_id", "appointment_id"], :name => "index_appointment_responses_on_user_id_and_appointment_id", :unique => true
+
   create_table "appointments", :force => true do |t|
     t.string   "title"
     t.text     "description"

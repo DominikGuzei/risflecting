@@ -4,6 +4,7 @@ class Intern::AppointmentsController < InternController
 
   def index
     @appointments = Appointment.all
+    @accepted_appointments = current_intern_user.accepted_appointments
   end
 
   def new
@@ -16,11 +17,19 @@ class Intern::AppointmentsController < InternController
       flash[:success] = "Ein neuer Termin wurde erstellt und veröffentlicht."
       redirect_to intern_appointment_path @appointment
     else
-      render :action => :new
+      render :new
     end
   end
 
   def show
     @appointment = Appointment.find params[:id]
+  end
+
+  def accept
+    if current_intern_user.accept_appointment params[:id]
+      render :partial => 'accepted_appointment', :locals => { :status => 'zugesagt' }, :status => 200
+    else
+      head :error
+    end
   end
 end

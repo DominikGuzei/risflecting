@@ -5,5 +5,5 @@ Feature: Limit access to appointment creation
 
   Scenario: As an user
     Given I am signed in as a user
-    And I am on the appointments overview
+    And I am on the appointments overview page
     Then I do not want to see a link to create a new appointment
