@@ -1,7 +1,9 @@
 <div class="page-header">
   <h2>Termine & Meetings
-  <%= link_to(new_intern_appointment_path, :class => 'pull-right btn btn-info') do %>
-    <i class="icon-plus"></i> &nbsp;neuen Termin eintragen
+  <% if can? :create, Appointment %>
+    <%= link_to(new_intern_appointment_path, :class => 'pull-right btn btn-info') do %>
+      <i class="icon-plus"></i> &nbsp;neuen Termin eintragen
+    <% end %>
   <% end %>
   </h2>
 </div>

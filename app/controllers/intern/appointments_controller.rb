@@ -1,5 +1,7 @@
 # encoding: UTF-8
 class Intern::AppointmentsController < InternController
+  load_and_authorize_resource
+
   def index
     @appointments = Appointment.all
   end
