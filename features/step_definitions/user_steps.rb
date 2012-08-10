@@ -7,6 +7,15 @@ Given /^I am signed in as a user$/ do
   click_on 'submit'
 end
 
+Given /^I am signed in as an admin$/ do
+  user = FactoryGirl.create :admin
+
+  visit '/intern'
+  fill_in 'intern_user_email', :with => user.email
+  fill_in 'intern_user_password', :with => user.password
+  click_on 'submit'
+end
+
 Given /^I am signed out$/ do
   visit '/intern/users/sign_out'
 end
@@ -96,4 +105,8 @@ end
 
 When /^I sign out$/ do
   step 'I am signed out'
+end
+
+Then /^I do not want to see a link to invite a new user$/ do
+  page.should have_no_content('Benutzer erstellen')
 end

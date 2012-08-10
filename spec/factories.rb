@@ -14,6 +14,11 @@ FactoryGirl.define do
     password              "password"
     password_confirmation "password"
     confirmed_at          Time.now
+    roles                 { [ Role.find_or_create_by_name('Member') ] }
+  end
+
+  factory :admin, :parent => :user do
+    roles { [ Role.find_or_create_by_name('Admin') ] }
   end
 
   sequence :date do |n|

@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  include CancanOverride
+
   protect_from_forgery
 
   layout :layout_by_resource
