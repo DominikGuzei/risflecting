@@ -32,4 +32,7 @@ class Intern::AppointmentsController < InternController
       head :error
     end
   end
+
+  def reject
+  end
 end
