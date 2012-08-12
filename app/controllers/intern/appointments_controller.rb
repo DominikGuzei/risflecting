@@ -5,6 +5,7 @@ class Intern::AppointmentsController < InternController
   def index
     @appointments = Appointment.all
     @accepted_appointments = current_intern_user.accepted_appointments
+    @rejected_appointments = current_intern_user.rejected_appointments
   end
 
   def new
