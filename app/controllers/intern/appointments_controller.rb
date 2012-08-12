@@ -28,12 +28,17 @@ class Intern::AppointmentsController < InternController
 
   def accept
     if current_intern_user.accept_appointment params[:id]
-      render :partial => 'accepted_appointment', :locals => { :status => 'zugesagt' }, :status => 200
+      render :partial => 'accepted_appointment', :status => 200
     else
       head :error
     end
   end
 
   def reject
+    if current_intern_user.reject_appointment params[:id]
+      render :partial => 'rejected_appointment', :status => 200
+    else
+      head :error
+    end
   end
 end
