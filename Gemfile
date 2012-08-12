@@ -23,13 +23,20 @@ end
 group :development, :test do
   gem 'rspec', '~> 2.10'
   gem 'rspec-rails'
-  gem 'shoulda-matchers'
 
   gem 'cucumber-rails', :require => false
-  gem 'database_cleaner' # needed for cucumber
   gem 'launchy' # allows to save and open page in browser during a test
   gem 'poltergeist' # headless browser, requires phantomjs
+
+  gem 'database_cleaner'
   gem 'factory_girl_rails', '~> 4.0'
+  gem 'shoulda-matchers'
   gem 'email_spec'
+
+  gem 'guard-rspec'
+  gem 'guard-cucumber'
+  gem 'guard-spork'
+  gem 'guard-pow'
+  gem 'spork'
 end
 
