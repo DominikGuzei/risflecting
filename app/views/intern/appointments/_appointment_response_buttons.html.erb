@@ -1,7 +1,0 @@
-<% if local_assigns.has_key? :send_remote && :send_remote == false %>
-  <%= link_to 'Teilnehmen', accept_intern_appointment_path(appointment), :method => :post, :class => 'btn btn-success' %>
-  <%= link_to 'Absagen', reject_intern_appointment_path(appointment), :method => :post, :class => 'btn btn-danger' %>
-<% else %>
-  <%= link_to 'Teilnehmen', accept_intern_appointment_path(appointment, :remote => true), :method => :post, :remote => true, :class => 'btn btn-success' %>
-  <%= link_to 'Absagen', reject_intern_appointment_path(appointment, :remote => true), :method => :post, :remote => true, :class => 'btn btn-danger' %>
-<% end %>

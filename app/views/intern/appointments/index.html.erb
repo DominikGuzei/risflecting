@@ -24,10 +24,13 @@
     <div class="pull-right buttons">
     <% if @accepted_appointments.include? appointment %>
       <%= render :partial => 'accepted_appointment' %>
+      <%= rejection_button 'Absagen', { :appointment => appointment, :remote => true }%>
     <% elsif @rejected_appointments.include? appointment %>
       <%= render :partial => 'rejected_appointment' %>
+      <%= acceptance_button 'Zusagen', { :appointment => appointment, :remote => true } %>
     <% else %>
-      <%= render :partial => 'appointment_response_buttons', :locals => { :appointment => appointment } %>
+      <%= acceptance_button 'Zusagen', { :appointment => appointment, :remote => true } %>
+      <%= rejection_button 'Absagen', { :appointment => appointment, :remote => true }%>
     <% end %>
     </div>
 
