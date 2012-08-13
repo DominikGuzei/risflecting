@@ -16,4 +16,4 @@ jQuery ->
   $('.buttons a[data-remote]').on 'ajax:success', (event, response, status) ->
     $container = $(this).parent()
     $container.find('.btn').fadeOut 200, ->
-      $container.empty().hide().html(response).fadeIn 400
+      $container.css('opacity', 0).html(response).animate { 'opacity': 1 }, 400

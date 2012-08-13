@@ -9,7 +9,7 @@ describe AppointmentResponse do
     @appointment_response.destroy
   end
 
-  it { should validate_presence_of :accepted }
+  it { should ensure_inclusion_of(:accepted).in_array [true, false] }
   it { should validate_uniqueness_of(:appointment_id).scoped_to :user_id }
 
   it { should allow_mass_assignment_of :appointment_id }
