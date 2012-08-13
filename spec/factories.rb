@@ -10,7 +10,7 @@ FactoryGirl.define do
     email                 { generate :email }
     forename              "Marvin"
     surname               "Hubot"
-    phone                 "0664 12 43 343"
+    phone                 "+436642312342"
     password              "password"
     password_confirmation "password"
     confirmed_at          Time.now
