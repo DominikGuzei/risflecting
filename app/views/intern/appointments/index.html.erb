@@ -27,8 +27,7 @@
     <% elsif @rejected_appointments.include? appointment %>
       <%= render :partial => 'rejected_appointment' %>
     <% else %>
-      <%= link_to 'Teilnehmen', accept_intern_appointment_path(appointment), :method => :post, :remote => true, :class => 'btn btn-success' %>
-      <%= link_to 'Absagen', reject_intern_appointment_path(appointment), :method => :post, :remote => true, :class => 'btn btn-danger' %>
+      <%= render :partial => 'appointment_response_buttons', :locals => { :appointment => appointment } %>
     <% end %>
     </div>
 
