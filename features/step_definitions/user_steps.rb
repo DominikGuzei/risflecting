@@ -60,7 +60,7 @@ end
 When /^I fill in my account details$/ do
   fill_in 'intern_user_forename', :with => 'Walter'
   fill_in 'intern_user_surname', :with => 'White'
-  fill_in 'intern_user_phone', :with => '42'
+  fill_in 'intern_user_phone', :with => '+436642312342'
   fill_in 'intern_user_password', :with => 'password'
   fill_in 'intern_user_password_confirmation', :with => 'password'
 end

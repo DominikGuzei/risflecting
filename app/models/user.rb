@@ -14,6 +14,21 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :roles
 
   validates :forename, :surname, :phone, :presence => true
+  validate :phone_number_has_correct_format
+
+  before_save :normalize_phone
+
+  def normalize_phone
+    unless phone.nil?
+      self.phone = Phony.formatted(Phony.normalize(self.phone), :format => :international, :spaces => '')
+    end
+  end
+
+  def phone_number_has_correct_format
+    unless Phony.plausible? phone
+      errors.add :phone, 'muss richtig formatiert sein (z.B. +436642312342)'
+    end
+  end
 
   def passwords_match?
     password == password_confirmation && !password.blank?

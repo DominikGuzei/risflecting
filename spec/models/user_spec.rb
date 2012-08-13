@@ -79,6 +79,25 @@ describe User do
     end
   end
 
+  describe '#phone_number_has_correct_format' do
+    it 'validates that the phone number is correctly formatted' do
+      user = User.new :phone => '123'
+      user.valid?
+
+      user.errors[:phone].length.should equal 1
+    end
+  end
+
+  describe '#normalize_phone' do
+    it 'normalizes the phone number consistently' do
+      user = FactoryGirl.build :user
+      user.phone = '+43 664 2222 233'
+      user.save
+
+      user.phone.should eq '+436642222233'
+    end
+  end
+
   describe 'abilities' do
     subject { ability }
 

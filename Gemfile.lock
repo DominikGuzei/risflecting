@@ -107,7 +107,6 @@ GEM
     json (1.7.4)
     jwt (0.1.5)
       multi_json (>= 1.0)
-    launchy (2.1.1)
     launchy (2.1.2)
       addressable (~> 2.3)
     less (2.2.1)
@@ -131,6 +130,7 @@ GEM
     nokogiri (1.5.5)
     orm_adapter (0.4.0)
     pg (0.14.0)
+    phony (1.7.7)
     poltergeist (0.7.0)
       capybara (~> 1.1)
       childprocess (~> 0.3)
@@ -247,6 +247,7 @@ DEPENDENCIES
   jquery-rails
   launchy
   pg
+  phony
   poltergeist
   rails (= 3.2.6)
   rails-i18n
