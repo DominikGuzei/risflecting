@@ -35,6 +35,7 @@
       <%= content_tag(:div, value, :class => "flash-message alert alert-#{key}") %>
     <% end %>
 
+    <%= bootstrap_flash_messages %>
     <%= yield %>
   </div>
 </body>
