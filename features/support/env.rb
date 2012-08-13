@@ -17,7 +17,7 @@ Spork.prefork do
   # steps to use the XPath syntax.
   Capybara.default_selector = :css
 
-  # Sets the javascript driver for specs. Other possible options: webkit, selenium
+  # Sets the javascript driver for specs. Possible options: webkit, selenium, poltergeist
   Capybara.javascript_driver = :poltergeist
 
 end
