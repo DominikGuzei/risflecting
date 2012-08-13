@@ -23,6 +23,20 @@
   <div class="span6">
     <div class="row">
       <div class="span6">
+        <div class="buttons">
+        <% if @accepting_users.include? current_intern_user %>
+          <div class="pull-left">Du hast <%= render :partial => 'accepted_appointment' %>.</div>
+        <% elsif @rejecting_users.include? current_intern_user %>
+          <div class="pull-left">Du hast <%= render :partial => 'rejected_appointment' %>.</div>
+        <% else %>
+          <div class="pull-left">Du hast noch keine Entscheidung getroffen.</div>
+          <div class="pull-right"><%= render :partial => 'appointment_response_buttons', :locals => { :appointment => @appointment, :send_remote => false } %></div>
+        <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="span6">
         <div class="well">
           <h4>Zusagen<span class="badge badge-info pull-right"><%= @accepting_users.length %></span></h4>
           <% unless @accepting_users.length == 0 %>
