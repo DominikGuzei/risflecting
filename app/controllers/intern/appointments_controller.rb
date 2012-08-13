@@ -24,6 +24,8 @@ class Intern::AppointmentsController < InternController
 
   def show
     @appointment = Appointment.find params[:id]
+    @accepting_users = @appointment.accepting_users
+    @rejecting_users = @appointment.rejecting_users
   end
 
   def accept

@@ -37,4 +37,18 @@
   }
   dd { margin-left: 70px; }
   dt, dd { line-height: 1.4em; }
+
+  hr { margin: 8px 0; }
+
+  .well { padding: 10px 20px; }
+
+  #acceptances, #rejections {
+    margin-bottom: 0;
+    @include clearfix;
+
+    li {
+      width: 200px;
+      &.odd { margin-left: 20px; }
+    }
+  }
 }
