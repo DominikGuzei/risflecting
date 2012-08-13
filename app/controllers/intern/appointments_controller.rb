@@ -30,25 +30,19 @@ class Intern::AppointmentsController < InternController
 
   def accept
     if current_intern_user.accept_appointment params[:id]
-      if params[:remote]
-        render :partial => 'accepted_appointment', :status => 200
-      else
-        redirect_to intern_appointment_path params[:id]
-      end
+      return redirect_to intern_appointment_path(params[:id]) unless params[:remote]
+      render :partial => 'acceptance_remote_response', :locals => { :appointment => params[:id] }
     else
-      head :error
+      return head :error
     end
   end
 
   def reject
     if current_intern_user.reject_appointment params[:id]
-      if params[:remote]
-        render :partial => 'rejected_appointment', :status => 200
-      else
-        redirect_to intern_appointment_path params[:id]
-      end
+      return redirect_to intern_appointment_path(params[:id]) unless params[:remote]
+      render :partial => 'rejection_remote_response', :locals => { :appointment => params[:id] }
     else
-      head :error
+      return head :error
     end
   end
 end
