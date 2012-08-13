@@ -20,7 +20,12 @@
 
     @include clearfix;
 
-    a { margin-right: 15px; }
+    .buttons {
+      text-align: right;
+      padding: 0 7px;
+      .btn { line-height: 1em; }
+      .label { font-size: 12px; }
+    }
   }
 }
 

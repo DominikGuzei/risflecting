@@ -11,6 +11,7 @@ gem 'devise'
 gem 'twilio-ruby'
 
 group :assets do
+  gem 'sass', '3.1.20'
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
 
@@ -25,14 +26,21 @@ group :development, :test do
   gem 'rspec', '~> 2.10'
   gem 'rspec-rails'
   gem 'rspec-mocks'
-  gem 'shoulda-matchers'
 
   gem 'cucumber-rails', :require => false
-  gem 'database_cleaner' # needed for cucumber
   gem 'launchy' # allows to save and open page in browser during a test
   gem 'poltergeist' # headless browser, requires phantomjs
+
+  gem 'database_cleaner'
   gem 'factory_girl_rails', '~> 4.0'
+  gem 'shoulda-matchers'
   gem 'email_spec'
+
+  gem 'guard-rspec'
+  gem 'guard-cucumber'
+  gem 'guard-spork'
+  gem 'guard-pow'
+  gem 'spork'
 end
 
 group :test do

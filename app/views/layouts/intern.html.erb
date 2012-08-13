@@ -15,26 +15,30 @@
           <li><%= link_to 'Dashboard', intern_dashboard_path %></li>
           <li class="divider-vertical"></li>
           <li><%= link_to 'Termine', intern_appointments_path %></li>
-          <% if can? :create, User %>
-          <li class="divider-vertical"></li>
-          <li><%= link_to 'Benutzer einladen', new_intern_account_path %></li>
-          <% end %>
         </ul>
+
+        <% if intern_user_signed_in? %>
+        <ul class="nav pull-right">
+          <li class="dropdown">
+            <%= link_to '#', :class => 'dropdown-toggle', :data => { :toggle => 'dropdown'} do %>
+              <%= current_intern_user.email %> <b class="caret"></b>
+            <% end %>
+            <ul class="dropdown-menu">
+              <% if can? :create, User %>
+              <li><%= link_to new_intern_account_path do %><i class="icon-user"></i> Benutzer einladen<% end %></li>
+              <% end %>
+              <li><%= link_to destroy_intern_user_session_path, :method => :delete do %><i class="icon-off"></i> Abmelden<% end %></li>
+            </ul>
+          </li>
+        </ul>
+        <% end %>
+
       </div>
     </div>
   </div>
 
   <div class="container">
-    <% if intern_user_signed_in? %>
-      <p>
-        Eingeloggt als: <%= current_intern_user.email %> <%= link_to('Abmelden', destroy_intern_user_session_path, :method => :delete) %>
-      </p>
-    <% end %>
-
-    <% flash.each do |key, value| %>
-      <%= content_tag(:div, value, :class => "flash-message alert alert-#{key}") %>
-    <% end %>
-
+    <%= bootstrap_flash_messages %>
     <%= yield %>
   </div>
 </body>
