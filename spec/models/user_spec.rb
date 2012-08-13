@@ -10,7 +10,7 @@ describe User do
   it { should have_many :appointment_responses }
   it { should have_many(:accepted_appointments).through :appointment_responses }
 
-  describe 'passwords_match?' do
+  describe '#passwords_match?' do
     it 'should return true if both passwords match' do
       user = User.new :password => 'test', :password_confirmation => 'test'
 
@@ -30,7 +30,7 @@ describe User do
     end
   end
 
-  describe 'has_role?' do
+  describe '#has_role?' do
     let(:user) { FactoryGirl.create :user }
 
     before :each do
@@ -55,7 +55,7 @@ describe User do
     end
   end
 
-  describe 'accept_appointment' do
+  describe '#accept_appointment' do
 
     let(:user) { FactoryGirl.create :user }
     let(:appointment) { FactoryGirl.create :appointment }
@@ -64,6 +64,18 @@ describe User do
       user.accept_appointment appointment.id
 
       user.accepted_appointments.should include(appointment)
+    end
+  end
+
+  describe '#reject_appointment' do
+
+    let(:user) { FactoryGirl.create :user }
+    let(:appointment) { FactoryGirl.create :appointment }
+
+    it 'should create an appointment rejection using the passed id' do
+      user.reject_appointment appointment.id
+
+      user.rejected_appointments.should include(appointment)
     end
   end
 

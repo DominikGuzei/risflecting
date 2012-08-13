@@ -3,6 +3,9 @@ class User < ActiveRecord::Base
   has_many :accepted_appointments, :through => :appointment_responses,
     :source => :appointment,
     :conditions => { :appointment_responses => { :accepted => true } }
+  has_many :rejected_appointments, :through => :appointment_responses,
+    :source => :appointment,
+    :conditions => { :appointment_responses => { :accepted => false } }
 
   devise :database_authenticatable, :confirmable, :recoverable, :rememberable, :trackable, :validatable
 
@@ -21,6 +24,10 @@ class User < ActiveRecord::Base
   end
 
   def accept_appointment appointment_id
-    appointment_responses.create! :appointment_id => appointment_id, :accepted => true
+    appointment_responses.create :appointment_id => appointment_id, :accepted => true
+  end
+
+  def reject_appointment appointment_id
+    appointment_responses.create :appointment_id => appointment_id, :accepted => false
   end
 end

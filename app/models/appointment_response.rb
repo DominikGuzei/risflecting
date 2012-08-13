@@ -5,5 +5,5 @@ class AppointmentResponse < ActiveRecord::Base
   attr_accessible :appointment_id, :user_id, :accepted
 
   validates :appointment_id, :uniqueness => { :scope => :user_id }
-  validates :accepted, :presence => true
+  validates :accepted, :inclusion => { :in => [true, false] }
 end

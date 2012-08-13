@@ -53,4 +53,23 @@ describe Intern::AppointmentsController do
       response.code.to_i.should == 200
     end
   end
+
+  describe '#reject' do
+    before :each do
+      sign_in FactoryGirl.create(:user)
+      @appointment = FactoryGirl.create :appointment
+    end
+
+    it 'should create an appointment rejection for the current user' do
+      post :reject, :id => @appointment
+
+      response.code.should render_template :rejected_appointment
+    end
+
+    it 'should return status 200 if the creation of the appointment rejection was successful' do
+      post :reject, :id => @appointment
+
+      response.code.to_i.should == 200
+    end
+  end
 end

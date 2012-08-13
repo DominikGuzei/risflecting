@@ -22,10 +22,13 @@
     </div>
 
     <div class="pull-right buttons">
-    <% unless @accepted_appointments.include? appointment %>
-      <%= link_to 'Teilnehmen', accept_intern_appointment_path(appointment), :method => :post, :remote => true, :class => 'btn btn-success' %>
+    <% if @accepted_appointments.include? appointment %>
+      <%= render :partial => 'accepted_appointment' %>
+    <% elsif @rejected_appointments.include? appointment %>
+      <%= render :partial => 'rejected_appointment' %>
     <% else %>
-      <%= render :partial => 'accepted_appointment', :locals => { :status => 'zugesagt' } %>
+      <%= link_to 'Teilnehmen', accept_intern_appointment_path(appointment), :method => :post, :remote => true, :class => 'btn btn-success' %>
+      <%= link_to 'Absagen', reject_intern_appointment_path(appointment), :method => :post, :remote => true, :class => 'btn btn-danger' %>
     <% end %>
     </div>
 
