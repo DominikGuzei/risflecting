@@ -51,7 +51,7 @@ end
 
 Given /^there is an appointment$/ do
   @appointment_data = { :title => "Test title", :description => "A quite short description ..." }
-  FactoryGirl.create(:appointment, @appointment_data)
+  @appointment = FactoryGirl.create(:appointment, @appointment_data)
 end
 
 Given /^I am on the appointments overview page$/ do
@@ -109,4 +109,38 @@ end
 
 Then /^I want to see (\d+) appointments rejected$/ do |amount_of_appointments|
   all('.label').count == amount_of_appointments.to_i
+end
+
+Given /^(\d+) users accepted the appointment$/ do |amount_of_accepting_users|
+  amount_of_accepting_users = amount_of_accepting_users.to_i
+
+  while amount_of_accepting_users > 0 do
+    user = FactoryGirl.create :user
+    user.accept_appointment @appointment.id
+
+    amount_of_accepting_users -= 1
+  end
+end
+
+Given /^I am on the appointments detail page$/ do
+  visit intern_appointment_path @appointment
+end
+
+Then /^I want to see a list containing (\d+) users who accepted$/ do |amount_of_list_items|
+  find('#acceptances').all('li').count == amount_of_list_items.to_i
+end
+
+Given /^(\d+) users rejected the appointment$/ do |amount_of_rejecting_users|
+  amount_of_rejecting_users = amount_of_rejecting_users.to_i
+
+  while amount_of_rejecting_users > 0 do
+    user = FactoryGirl.create :user
+    user.reject_appointment @appointment.id
+
+    amount_of_rejecting_users -= 1
+  end
+end
+
+Then /^I want to see a list containing (\d+) users who rejected$/ do |amount_of_list_items|
+  find('#rejections').all('li').count == amount_of_list_items.to_i
 end
