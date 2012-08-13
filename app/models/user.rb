@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
     password == password_confirmation && !password.blank?
   end
 
-  def has_role?(role)
+  def has_role? role
     self.roles.exists?(:name => role.to_s.camelize)
   end
 
