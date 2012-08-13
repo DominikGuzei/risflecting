@@ -8,6 +8,7 @@ gem 'rails-i18n'
 
 gem 'cancan'
 gem 'devise'
+gem 'twilio-ruby'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -23,6 +24,7 @@ end
 group :development, :test do
   gem 'rspec', '~> 2.10'
   gem 'rspec-rails'
+  gem 'rspec-mocks'
   gem 'shoulda-matchers'
 
   gem 'cucumber-rails', :require => false
@@ -31,5 +33,9 @@ group :development, :test do
   gem 'poltergeist' # headless browser, requires phantomjs
   gem 'factory_girl_rails', '~> 4.0'
   gem 'email_spec'
+end
+
+group :test do
+  gem 'sms-spec'
 end
 
