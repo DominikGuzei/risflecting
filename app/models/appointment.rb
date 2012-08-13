@@ -3,10 +3,10 @@ class Appointment < ActiveRecord::Base
 
   validates :title, :location, :starttime, :endtime, presence: true
 
-  after_create :appointment_created
+  after_create :created
 
   protected
-  def appointment_created
+  def created
     SmsHub.appointment_created self
   end
 end
