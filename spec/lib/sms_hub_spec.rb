@@ -59,7 +59,7 @@ describe SmsHub do
     end
 
     it 'should send an sms if #should_send_sms? returns true' do
-      SmsHub.stub(:should_send_sms?).and_return(true)
+      SmsHub.stub(:should_send_sms?).and_return true
 
       SmsHub.send @sms
 
@@ -68,7 +68,7 @@ describe SmsHub do
     end
 
     it 'should not send an sms if #should_send_sms? returns false' do
-      SmsHub.stub(:should_send_sms?).and_return(false)
+      SmsHub.stub(:should_send_sms?).and_return false
 
       SmsHub.send @sms
 
