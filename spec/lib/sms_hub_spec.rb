@@ -17,7 +17,7 @@ describe SmsHub do
 
   describe '#should_send_sms?' do
     before :each do
-      number = '+4915115217077'
+      number = '+491111111'
       ENV['DEVELOPER_PHONE_NUMBERS'] = number
       @sms = { :to => '+333869513692' }
       @whitelisted_sms = { :to => number }
