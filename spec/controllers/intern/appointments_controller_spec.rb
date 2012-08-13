@@ -1,3 +1,4 @@
+# encoding: utf-8
 require 'spec_helper'
 
 describe Intern::AppointmentsController do
@@ -37,39 +38,59 @@ describe Intern::AppointmentsController do
 
   describe '#accept' do
     before :each do
-      sign_in FactoryGirl.create(:user)
+      @user = FactoryGirl.create(:user)
+      sign_in @user
       @appointment = FactoryGirl.create :appointment
     end
 
     it 'should create an appointment acceptance for the current user' do
       post :accept, :id => @appointment
 
-      response.code.should render_template :accepted_appointment
+      @user.accepted_appointments.should include @appointment
     end
 
-    it 'should return status 200 if the creation of the appointment acceptance was successful' do
+    it 'should redirect to the appointment´s detail page if successful' do
       post :accept, :id => @appointment
 
-      response.code.to_i.should == 200
+      should redirect_to intern_appointment_path @appointment
+    end
+
+    describe 'when passing remote=true' do
+      it 'should return status 200 and render an HTML response if creation of an appointment rejection succeeded' do
+        post :accept, :id => @appointment, :remote => true
+
+        should render_template :accepted_appointment
+        response.should be_success
+      end
     end
   end
 
   describe '#reject' do
     before :each do
-      sign_in FactoryGirl.create(:user)
+      @user = FactoryGirl.create(:user)
+      sign_in @user
       @appointment = FactoryGirl.create :appointment
     end
 
     it 'should create an appointment rejection for the current user' do
       post :reject, :id => @appointment
 
-      response.code.should render_template :rejected_appointment
+      @user.rejected_appointments.should include @appointment
     end
 
-    it 'should return status 200 if the creation of the appointment rejection was successful' do
+    it 'should redirect to the appointment´s detail page if successful' do
       post :reject, :id => @appointment
 
-      response.code.to_i.should == 200
+      should redirect_to intern_appointment_path @appointment
+    end
+
+    describe 'when passing remote=true' do
+      it 'should return status 200 and render an HTML response if creation of an appointment rejection succeeded' do
+        post :reject, :id => @appointment, :remote => true
+
+        should render_template :rejected_appointment
+        response.should be_success
+      end
     end
   end
 end
