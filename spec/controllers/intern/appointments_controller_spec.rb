@@ -14,8 +14,8 @@ describe Intern::AppointmentsController do
       sign_in FactoryGirl.create(:user)
       get :new
 
-      response.should redirect_to intern_root_url
-      flash[:error].should_not be_nil
+      should redirect_to intern_root_url
+      should set_the_flash
     end
   end
 
@@ -24,15 +24,15 @@ describe Intern::AppointmentsController do
       sign_in FactoryGirl.create(:admin)
       post :create, :appointment => { :title => 'Title', :location => 'Here', :starttime => Time.now, :endtime => Time.now }
 
-      response.should redirect_to intern_appointment_path Appointment.last
+      should redirect_to intern_appointment_path Appointment.last
     end
 
     it 'should deny normal users access' do
       sign_in FactoryGirl.create(:user)
       post :create
 
-      response.should redirect_to intern_root_url
-      flash[:error].should_not be_nil
+      should redirect_to intern_root_url
+      should set_the_flash
     end
   end
 
