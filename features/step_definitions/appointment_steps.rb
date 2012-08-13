@@ -58,6 +58,10 @@ Given /^I am on the appointments overview page$/ do
   visit intern_appointments_path
 end
 
+When /^I visit the appointments overview page$/ do
+  visit intern_appointments_path
+end
+
 When /^I click on '(\w+)'$/ do |target_name|
   click_on target_name.to_s
 end
