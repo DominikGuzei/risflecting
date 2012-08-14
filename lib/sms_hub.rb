@@ -13,11 +13,11 @@ module SmsHub
     Role.find_by_name('Admin').users.each do |user|
       self.send :from => ENV['TWILIO_PHONE_NUMBER'],
                 :to   => user.phone,
-                :body => self.appointment_response_saved_message(appointment_response)
+                :body => self.generate_appointment_response_saved_message(appointment_response)
     end
   end
 
-  def self.appointment_response_saved_message appointment_response
+  def self.generate_appointment_response_saved_message appointment_response
     user = appointment_response.user
 
     if appointment_response.accepted
