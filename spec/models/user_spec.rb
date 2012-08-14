@@ -6,6 +6,7 @@ describe User do
   it { should validate_presence_of :surname }
   it { should validate_presence_of :phone }
   it { should have_and_belong_to_many :roles }
+  it { should have_many :posts }
 
   it { should have_many :appointment_responses }
   it { should have_many(:accepted_appointments).through :appointment_responses }
