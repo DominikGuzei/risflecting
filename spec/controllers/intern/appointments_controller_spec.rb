@@ -59,7 +59,7 @@ describe Intern::AppointmentsController do
       it 'should return status 200 and render an HTML response if creation of an appointment rejection succeeded' do
         post :accept, :id => @appointment, :remote => true
 
-        should render_template :accepted_appointment
+        should render_template :acceptance_remote_response
         response.should be_success
       end
     end
@@ -88,7 +88,7 @@ describe Intern::AppointmentsController do
       it 'should return status 200 and render an HTML response if creation of an appointment rejection succeeded' do
         post :reject, :id => @appointment, :remote => true
 
-        should render_template :rejected_appointment
+        should render_template :rejection_remote_response
         response.should be_success
       end
     end
