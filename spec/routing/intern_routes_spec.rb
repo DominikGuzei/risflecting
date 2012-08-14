@@ -47,3 +47,26 @@ describe 'Intern::Appointment' do
     )
   end
 end
+
+describe 'Intern::Post' do
+  it 'should route GET /intern/posts to the posts list' do
+    { :get => '/intern/posts' }.should route_to(
+      :controller => 'intern/posts',
+      :action => 'index'
+    )
+  end
+
+  it 'should route GET /intern/posts/new to the post creation form' do
+    { :get => '/intern/posts/new' }.should route_to(
+      :controller => 'intern/posts',
+      :action => 'new'
+    )
+  end
+
+  it 'should route POST /intern/posts to the post create action' do
+    { :post => '/intern/posts' }.should route_to(
+      :controller => 'intern/posts',
+      :action => 'create'
+    )
+  end
+end

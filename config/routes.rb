@@ -8,6 +8,7 @@ Risflecting::Application.routes.draw do
 
     resource :dashboard, :only => [:show]
     resources :accounts, :only => [:create, :new]
+    resources :posts, :only => [:index, :show, :new, :create]
     resources :appointments, :only => [:new, :create, :show, :index] do
       post :accept, :on => :member
       post :reject, :on => :member
@@ -17,8 +18,6 @@ Risflecting::Application.routes.draw do
   end
 
   # Routes for external website
-
   match '/*id' => 'high_voltage/pages#show', :as => :static, :via => :get
-
   root :to => 'high_voltage/pages#show', :id => 'willkommen'
 end
