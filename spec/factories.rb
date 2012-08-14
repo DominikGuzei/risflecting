@@ -2,8 +2,8 @@ FactoryGirl.define do
   factory :appointment do
     title         "What a beautiful title!"
     location      "Somewhere in Austria"
-    starttime     { generate :starttime }
-    endtime       { generate :endtime }
+    starttime     { generate :date }
+    endtime       { generate :date }
   end
 
   factory :user do
@@ -21,12 +21,8 @@ FactoryGirl.define do
     roles { [ Role.find_or_create_by_name('Admin') ] }
   end
 
-  sequence :starttime do |n|
+  sequence :date do |n|
     n.days.from_now
-  end
-
-  sequence :endtime do |n|
-    (n + 1).days.from_now
   end
 
   sequence :email do |n|
