@@ -21,6 +21,11 @@ FactoryGirl.define do
     roles { [ Role.find_or_create_by_name('Admin') ] }
   end
 
+  factory :post do
+    title "A superb title"
+    body  "I have some big problems and I have no clue how to solve them. Please help."
+  end
+
   factory :appointment_response do
     association :user, :factory => :user, :strategy=> :build
     association :appointment, :factory => :appointment, :strategy => :build
