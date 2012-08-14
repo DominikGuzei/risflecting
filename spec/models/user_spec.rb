@@ -63,7 +63,16 @@ describe User do
     it 'should create an appointment acceptance using the passed id' do
       user.accept_appointment appointment.id
 
-      user.accepted_appointments.should include(appointment)
+      user.accepted_appointments.should include appointment
+    end
+
+    it 'should update an appointment rejection and make it an acceptance' do
+      user.reject_appointment appointment.id
+
+      user.accept_appointment appointment.id
+
+      user.rejected_appointments.should_not include appointment
+      user.accepted_appointments.should include appointment
     end
   end
 
@@ -75,7 +84,16 @@ describe User do
     it 'should create an appointment rejection using the passed id' do
       user.reject_appointment appointment.id
 
-      user.rejected_appointments.should include(appointment)
+      user.rejected_appointments.should include appointment
+    end
+
+    it 'should update an appointment acceptance and make it a rejection' do
+      user.accept_appointment appointment.id
+
+      user.reject_appointment appointment.id
+
+      user.accepted_appointments.should_not include appointment
+      user.rejected_appointments.should include appointment
     end
   end
 
@@ -87,16 +105,16 @@ describe User do
     context 'admin user' do
       let(:user) { FactoryGirl.create :admin }
 
-      it { should be_able_to(:manage, :all) }
+      it { should be_able_to :manage, :all }
     end
 
     context 'normal user' do
       let(:user) { FactoryGirl.create :user }
 
-      it { should_not be_able_to(:create, Appointment.new) }
-      it { should_not be_able_to(:update, Appointment.new) }
-      it { should_not be_able_to(:destroy, Appointment.new) }
-      it { should_not be_able_to(:create, User.new) }
+      it { should_not be_able_to :create,  Appointment.new }
+      it { should_not be_able_to :update,  Appointment.new }
+      it { should_not be_able_to :destroy, Appointment.new }
+      it { should_not be_able_to :create,  User.new }
     end
   end
 end

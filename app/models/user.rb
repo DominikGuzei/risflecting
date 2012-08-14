@@ -24,10 +24,20 @@ class User < ActiveRecord::Base
   end
 
   def accept_appointment appointment_id
-    appointment_responses.create :appointment_id => appointment_id, :accepted => true
+    create_or_update_appointment_response appointment_id, true
   end
 
   def reject_appointment appointment_id
-    appointment_responses.create :appointment_id => appointment_id, :accepted => false
+    create_or_update_appointment_response appointment_id, false
+  end
+
+  private
+  def create_or_update_appointment_response appointment_id, accepted
+    if response = appointment_responses.find_by_appointment_id(appointment_id)
+      response.update_attribute :accepted, accepted
+      response.save
+    else
+      appointment_responses.create :appointment_id => appointment_id, :accepted => accepted
+    end
   end
 end
