@@ -6,4 +6,11 @@ class AppointmentResponse < ActiveRecord::Base
 
   validates :appointment_id, :uniqueness => { :scope => :user_id }
   validates :accepted, :inclusion => { :in => [true, false] }
+
+  after_save :saved
+
+  protected
+  def saved
+    SmsHub.appointment_response_saved self
+  end
 end
