@@ -25,7 +25,12 @@ Spork.prefork do
       DatabaseCleaner.clean_with :truncation
     end
 
-    config.before(:each) { DatabaseCleaner.start }
+    config.before(:each) do
+      DatabaseCleaner.start
+
+      load "#{Rails.root}/db/seeds.rb"
+    end
+
     config.after(:each)  { DatabaseCleaner.clean }
 
     # == Mock Framework

@@ -35,24 +35,24 @@ describe User do
     let(:user) { FactoryGirl.create :user }
 
     before :each do
-      Role.create! :name => 'Admin'
-      Role.create! :name => 'SuperAdmin'
+      Role.create! :name => 'Test'
+      Role.create! :name => 'TestTest'
     end
 
     it 'should return true if the user has a specific role' do
-      user.roles << Role.find_by_name('Admin')
+      user.roles << Role.find_by_name('Test')
 
-      user.has_role?(:admin).should be true
+      user.has_role?(:test).should be true
     end
 
     it 'should return false if the user does not have the specific role' do
-      user.has_role?(:admin).should be false
+      user.has_role?(:test).should be false
     end
 
     it 'should also work with two worded roles' do
-      user.roles << Role.find_by_name('SuperAdmin')
+      user.roles << Role.find_by_name('TestTest')
 
-      user.has_role?(:super_admin).should be true
+      user.has_role?(:test_test).should be true
     end
   end
 

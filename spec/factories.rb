@@ -26,6 +26,12 @@ FactoryGirl.define do
     body  "I have some big problems and I have no clue how to solve them. Please help."
   end
 
+  factory :appointment_response do
+    association :user, :factory => :user, :strategy=> :build
+    association :appointment, :factory => :appointment, :strategy => :build
+    accepted    { true }
+  end
+
   sequence :date do |n|
     n.days.from_now
   end
