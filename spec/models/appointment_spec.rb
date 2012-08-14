@@ -6,7 +6,7 @@ describe Appointment do
   it { should validate_presence_of :starttime }
   it { should validate_presence_of :endtime }
 
-  it 'should not allow an startime after the endtime' do
+  it 'should not allow an starttime after the endtime' do
     appointment = FactoryGirl.build :appointment
 
     appointment.valid?.should be true
@@ -21,7 +21,7 @@ describe Appointment do
     it 'should call the SmsHub method and pass an instance of itself' do
       appointment = FactoryGirl.build :appointment
 
-      SmsHub.should_receive(:appointment_created).with(appointment)
+      SmsHub.should_receive(:appointment_created).with appointment
 
       appointment.save
     end
