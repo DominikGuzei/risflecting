@@ -9,6 +9,7 @@ gem 'rails-i18n'
 gem 'cancan'
 gem 'devise'
 gem 'twilio-ruby'
+gem 'phony'
 
 group :assets do
   gem 'sass', '3.1.20'
