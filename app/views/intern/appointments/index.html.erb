@@ -11,27 +11,30 @@
 <ul id="appointment-list" class="unstyled">
 <% @appointments.each do |appointment| %>
   <li class="well">
-    <div class="span3">
+    <div class="span3 date-time">
       <%= appointment.starttime.strftime('%d.%B \'%y') %>
       &nbsp;<strong>bis</strong>&nbsp;
       <%= appointment.endtime.strftime('%d.%B \'%y') %>
     </div>
-    <div class="span5">
-      <h4><%= appointment.title %></h4>
-      <small class="location"><%= appointment.location %></small>
+    <div class="span6">
+      <h4>
+        <%= link_to appointment.title, intern_appointment_path(appointment) %>
+        <br><small class="location"><%= appointment.location %></small>
+      </h4>
     </div>
 
     <div class="pull-right buttons">
     <% if @accepted_appointments.include? appointment %>
       <%= render :partial => 'accepted_appointment' %>
+      <%= rejection_button 'Absagen', { :appointment => appointment, :remote => true }%>
     <% elsif @rejected_appointments.include? appointment %>
       <%= render :partial => 'rejected_appointment' %>
+      <%= acceptance_button 'Zusagen', { :appointment => appointment, :remote => true } %>
     <% else %>
-      <%= render :partial => 'appointment_response_buttons', :locals => { :appointment => appointment } %>
+      <%= acceptance_button 'Zusagen', { :appointment => appointment, :remote => true } %>
+      <%= rejection_button 'Absagen', { :appointment => appointment, :remote => true }%>
     <% end %>
     </div>
-
-    <%= link_to 'Details', intern_appointment_path(appointment), :class => 'pull-right' %>
   </li>
 <% end %>
 </ul>
