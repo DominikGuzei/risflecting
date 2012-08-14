@@ -2,7 +2,7 @@ Given /^I visit the form to create a new appointment$/ do
   visit new_intern_appointment_path
 end
 
-When /^I fill in all fields$/ do
+When /^I fill in all fields of the appointment form$/ do
   fill_in 'appointment_title', :with => 'A new appointment'
   fill_in 'appointment_description', :with => 'Some descriptive words ...'
   fill_in 'appointment_location', :with => 'Sonnenhof, A-7022 Schattendorf'
@@ -62,7 +62,7 @@ When /^I visit the appointments overview page$/ do
   visit intern_appointments_path
 end
 
-When /^I click on '(\w+)'$/ do |target_name|
+When /^I click on '([\w\s]+)'$/ do |target_name|
   click_on target_name.to_s
 end
 
