@@ -9,7 +9,7 @@ Feature: Create Appointment
   @javascript
   Scenario: Fill all fields in
     Given I visit the form to create a new appointment
-    When I fill in all fields
+    When I fill in all fields of the appointment form
     And I save the appointment
     Then I want some feedback that the appointment was created successfully
     And I want to see the newly created appointment

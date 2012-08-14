@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  has_and_belongs_to_many :roles
+  has_many :posts
   has_many :appointment_responses
   has_many :accepted_appointments, :through => :appointment_responses,
     :source => :appointment,
@@ -10,8 +12,6 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :confirmable, :recoverable, :rememberable, :trackable, :validatable
 
   attr_accessible :email, :password, :password_confirmation, :remember_me, :forename, :surname, :phone
-
-  has_and_belongs_to_many :roles
 
   validates :forename, :surname, :phone, :presence => true
   validate :phone_number_has_correct_format
