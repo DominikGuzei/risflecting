@@ -41,7 +41,7 @@ Given /^there are (\d+) appointments$/ do |amount_of_appointments|
   FactoryGirl.create_list(:appointment, @amount_of_appointments)
 end
 
-When /^I navigate to '(\w+)' through the main navigation$/ do |label|
+When /^I navigate to '([^"]+?)' through the main navigation$/ do |label|
   click_on label
 end
 
