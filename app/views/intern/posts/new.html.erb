@@ -1,0 +1,15 @@
+# encoding: utf-8
+<%= form_for [:intern, @post], :html => { :class => 'form-horizontal well'} do |form| %>
+  <%= content_tag :legend, 'Neue Frage oder Mitteilung verfassen' %>
+  <fieldset>
+    <% if @post.errors.any? %>
+    <div class="alert alert-error"><strong>Achtung!</strong> Beim Versuch die Frage/Mitteilung zu speichern sind Fehler aufgetreten.</div>
+    <% end %>
+    <%= form.text_field :title, :class => 'span6', :label => { :text => 'Titel' } %>
+    <%= form.text_area :body, :rows => 15, :class => 'span6', :label => { :text => 'Beschreibung' } %>
+    <div class="form-actions">
+      <%= form.submit 'Termin speichern' %>
+      <%= link_to 'Abbrechen', intern_posts_path, :class => 'btn' %>
+    </div>
+  </fieldset>
+<% end %>
