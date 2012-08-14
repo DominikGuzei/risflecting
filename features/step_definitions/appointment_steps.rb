@@ -41,8 +41,8 @@ Given /^there are (\d+) appointments$/ do |amount_of_appointments|
   FactoryGirl.create_list(:appointment, @amount_of_appointments)
 end
 
-When /^I navigate to 'Termine' through the main navigation$/ do
-  click_on 'Termine'
+When /^I navigate to '(\w+)' through the main navigation$/ do |label|
+  click_on label
 end
 
 Then /^I want to see a list of all appointments$/ do
@@ -76,7 +76,7 @@ Then /^I do not want to see a link to create a new appointment$/ do
 end
 
 Then /^I want to get feedback that my acceptance succeeded$/ do
-  page.should_not have_selector('.btn-success')
+  page.should_not have_button('Zusagen')
   page.should have_content('zugesagt')
 end
 
@@ -96,11 +96,11 @@ Then /^I want to see (\d+) appointments? accepted$/ do |amount_of_appointments|
 end
 
 Then /^I want to get feedback that my rejection succeeded$/ do
-  page.should_not have_selector('.btn-danger')
+  page.should_not have_button('Absagen')
   page.should have_content('abgesagt')
 end
 
-Given /^I have already rejected (\d+) appointment$/ do |amount_of_appointments|
+Given /^I have already rejected (\d+) appointments?$/ do |amount_of_appointments|
   amount_of_appointments = amount_of_appointments.to_i
 
   while amount_of_appointments > 0 do
@@ -111,7 +111,7 @@ Given /^I have already rejected (\d+) appointment$/ do |amount_of_appointments|
   end
 end
 
-Then /^I want to see (\d+) appointments rejected$/ do |amount_of_appointments|
+Then /^I want to see (\d+) appointments? rejected$/ do |amount_of_appointments|
   all('.label').count == amount_of_appointments.to_i
 end
 
@@ -127,6 +127,10 @@ Given /^(\d+) users accepted the appointment$/ do |amount_of_accepting_users|
 end
 
 Given /^I am on the appointments detail page$/ do
+  visit intern_appointment_path @appointment
+end
+
+When /^I visit the appointment details page$/ do
   visit intern_appointment_path @appointment
 end
 

@@ -4,16 +4,16 @@ jQuery ->
     placement: 'right'
     trigger: 'focus'
 
-  $('.buttons a[data-remote]').on 'ajax:beforeSend', ->
+  $('.buttons').on 'ajax:beforeSend', 'a[data-remote]', ->
     $(this).parent().find('a').addClass 'disabled'
     $(this).data 'title', $(this).text()
-    $(this).text 'wird verarbeitet …'
+    $(this).text ' lädt … '
 
-  $('.buttons a[data-remote]').on 'ajax:complete', ->
+  $('.buttons').on 'ajax:complete', 'a[data-remote]', ->
     $(this).parent().find('.btn').removeClass 'disabled'
     $(this).text $(this).data('title')
 
-  $('.buttons a[data-remote]').on 'ajax:success', (event, response, status) ->
+  $('.buttons').on 'ajax:success', 'a[data-remote]', (event, response, status) ->
     $container = $(this).parent()
-    $container.find('.btn').fadeOut 200, ->
+    $container.animate { 'opacity': 0 }, 300, ->
       $container.css('opacity', 0).html(response).animate { 'opacity': 1 }, 400
