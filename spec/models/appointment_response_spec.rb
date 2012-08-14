@@ -1,11 +1,11 @@
 require 'spec_helper'
 
 describe AppointmentResponse do
-  before :all do
-    @appointment_response = AppointmentResponse.create :appointment_id => 1, :user_id => 1, :accepted => true
+  before :each do
+    @appointment_response = FactoryGirl.create :appointment_response
   end
 
-  after :all do
+  after :each do
     @appointment_response.destroy
   end
 
@@ -18,4 +18,12 @@ describe AppointmentResponse do
 
   it { should belong_to :user }
   it { should belong_to :appointment }
+
+  describe '#saved' do
+    it 'should call the SmsHub method and pass an instance of itself' do
+      SmsHub.should_receive(:appointment_response_saved).with(@appointment_response).once
+
+      @appointment_response.save
+    end
+  end
 end

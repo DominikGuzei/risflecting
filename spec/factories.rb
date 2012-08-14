@@ -21,6 +21,12 @@ FactoryGirl.define do
     roles { [ Role.find_or_create_by_name('Admin') ] }
   end
 
+  factory :appointment_response do
+    association :user, :factory => :user, :strategy=> :build
+    association :appointment, :factory => :appointment, :strategy => :build
+    accepted    { true }
+  end
+
   sequence :date do |n|
     n.days.from_now
   end
