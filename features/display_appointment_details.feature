@@ -9,5 +9,5 @@ Feature: Appoinment details
 
   Scenario: View appointment
     Given I am on the appointments overview page
-    When I click on 'Details'
-    Then I want to see the details of an appointment
+    When I click on the title of the appointment
+    Then I want to see the details of the appointment

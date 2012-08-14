@@ -16,9 +16,11 @@
       &nbsp;<strong>bis</strong>&nbsp;
       <%= appointment.endtime.strftime('%d.%B \'%y') %>
     </div>
-    <div class="span5">
-      <h4><%= appointment.title %></h4>
-      <small class="location"><%= appointment.location %></small>
+    <div class="span6">
+      <h4>
+        <%= link_to appointment.title, intern_appointment_path(appointment) %>
+        <br><small class="location"><%= appointment.location %></small>
+      </h4>
     </div>
 
     <div class="pull-right buttons">
@@ -33,8 +35,6 @@
       <%= rejection_button 'Absagen', { :appointment => appointment, :remote => true }%>
     <% end %>
     </div>
-
-    <%= link_to 'Details', intern_appointment_path(appointment), :class => 'pull-right' %>
   </li>
 <% end %>
 </ul>

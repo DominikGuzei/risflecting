@@ -66,7 +66,11 @@ When /^I click on '(\w+)'$/ do |target_name|
   click_on target_name.to_s
 end
 
-Then /^I want to see the details of an appointment$/ do
+When /^I click on the title of the appointment$/ do
+  click_on @appointment_data[:title]
+end
+
+Then /^I want to see the details of the appointment$/ do
   page.should have_content @appointment_data[:title]
   page.should have_content @appointment_data[:description]
 end
