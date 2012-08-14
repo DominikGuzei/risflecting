@@ -1,6 +1,7 @@
 # encoding: utf-8
 class Intern::PostsController < InternController
   def index
+    @posts = Post.order(:updated_at).reverse_order
   end
 
   def show
