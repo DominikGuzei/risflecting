@@ -165,7 +165,7 @@ module BootstrapFormBuilder
         options = args.last.is_a?(Hash) ? args.last : {}
         object = @template.instance_variable_get("@#{@object_name}")
 
-        labelTag = get_label(field, options)
+        labelTag = options[:label] == false ? '' : get_label(field, options)
 
         errorText = get_error_text(object, field, options)
 
