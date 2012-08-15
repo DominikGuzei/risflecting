@@ -6,6 +6,9 @@
         <small><%= link_to intern_posts_path, :class => 'pull-right' do %>&laquo; zurück zur Übersicht<% end %></small>
       </h2>
     </div>
+    <p>
+      Erstellt am <strong><%= @post.created_at.strftime('%d. %B \'%y') %></strong> von <strong><%= @post.author.surname %> <%= @post.author.forename %></strong>
+    </p>
   </div>
 
   <div class="span8">
