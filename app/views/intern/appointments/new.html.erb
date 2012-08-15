@@ -1,0 +1,17 @@
+<%= form_for [:intern, @appointment], :html => { :class => 'form-horizontal well'} do |form| %>
+  <%= content_tag :legend, 'Neuen Termin eintragen' %>
+  <fieldset>
+    <% if @appointment.errors.any? %>
+    <div class="alert alert-error"><strong>Achtung!</strong> Beim Versuch den Termin zu speichern sind Fehler aufgetreten.</div>
+    <% end %>
+    <%= form.text_field :title, :class => 'span6', :label => { :text => 'Titel' } %>
+    <%= form.text_area :description, :rows => 10, :class => 'span6', :label => { :text => 'Beschreibung' } %>
+    <%= form.text_field :location, :class => 'span6', :label => { :text => 'Ort / Treffpunkt' } %>
+    <%= form.datetime_picker :starttime, :label => { :text => 'Beginn' }, :class => 'span2' %>
+    <%= form.datetime_picker :endtime, :label => { :text => 'Ende' }, :class => 'span2' %>
+    <div class="form-actions">
+      <%= form.submit 'Termin speichern' %>
+      <%= link_to 'Abbrechen', intern_appointments_path, :class => 'btn' %>
+    </div>
+  </fieldset>
+<% end %>

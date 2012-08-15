@@ -1,0 +1,78 @@
+<div id="appointment-details" class="row">
+  <div class="span12">
+    <div class="page-header">
+      <h2>
+        <%= @appointment.title %>
+        <small><%= link_to intern_appointments_path, :class => 'pull-right' do %>&laquo; zurück zur Terminübersicht<% end %></small>
+      </h2>
+    </div>
+  </div>
+
+  <div class="span6">
+    <dl class="dl-horizontal">
+      <dt>Ort</dt>
+      <dd><%= @appointment.location %></dd>
+      <dt>Beginn</dt>
+      <dd><%= l @appointment.starttime, :format => :long %></dd>
+      <dt>Ende</dt>
+      <dd><%= l @appointment.endtime, :format => :long %></dd>
+    </dl>
+    <p><%= @appointment.description %></p>
+  </div>
+
+  <div class="span6">
+    <div class="row">
+      <div class="span6">
+        <div class="buttons">
+        <% if @accepting_users.include? current_intern_user %>
+          <div class="pull-left">Du hast <%= render :partial => 'accepted_appointment' %>.</div>
+          <div class="pull-right">
+            <%= rejection_button 'Absagen', { :appointment => @appointment } %>
+          </div>
+        <% elsif @rejecting_users.include? current_intern_user %>
+          <div class="pull-left">Du hast <%= render :partial => 'rejected_appointment' %>.</div>
+          <div class="pull-right">
+            <%= acceptance_button 'Zusagen', { :appointment => @appointment } %>
+          </div>
+        <% else %>
+          <div class="pull-left">Du hast noch keine Entscheidung getroffen.</div>
+          <div class="pull-right">
+            <%= acceptance_button 'Zusagen', { :appointment => @appointment } %>
+            <%= rejection_button 'Absagen', { :appointment => @appointment } %>
+          </div>
+        <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="span6">
+        <div class="well">
+          <h4>Zusagen<span class="badge badge-info pull-right"><%= @accepting_users.length %></span></h4>
+          <% unless @accepting_users.length == 0 %>
+          <hr>
+          <ul id="acceptances" class="unstyled">
+          <% @accepting_users.each_with_index do |user, index| %>
+            <li class="pull-left <%= index % 2 == 0 ? 'even' : 'odd' %>"><%= user.surname %> <%= user.forename %></li>
+          <% end %>
+          </ul>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="span6">
+        <div class="well">
+          <h4>Absagen<span class="badge badge-info pull-right"><%= @rejecting_users.length %></span></h4>
+          <% unless @rejecting_users.length == 0 %>
+          <hr>
+          <ul id="rejections" class="unstyled">
+          <% @rejecting_users.each_with_index do |user, index| %>
+            <li class="pull-left <%= index % 2 == 0 ? 'even' : 'odd' %>"><%= user.surname %> <%= user.forename %></li>
+          <% end %>
+          </ul>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

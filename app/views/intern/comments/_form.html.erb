@@ -1,0 +1,10 @@
+<%= form_for [:intern, post, comment], :html => { :class => 'form-vertical well', :id => 'comment-form'} do |form| %>
+  <%= content_tag :legend, 'Neuen Kommentar verfassen' %>
+  <fieldset>
+    <% if comment.errors.any? %>
+    <div class="alert alert-error"><strong>Achtung!</strong> Beim Versuch den Kommentar zu speichern sind Fehler aufgetreten.</div>
+    <% end %>
+    <%= form.text_area :text, :rows => 3, :label => false %>
+    <div class="pull-right"><%= form.submit 'Kommentar speichern' %></div>
+  </fieldset>
+<% end %>

@@ -1,0 +1,32 @@
+<div id="post-details" class="row">
+  <div class="span12">
+    <div class="page-header">
+      <h2>
+        <%= @post.title %>
+        <small><%= link_to intern_posts_path, :class => 'pull-right' do %>&laquo; zurück zur Übersicht<% end %></small>
+      </h2>
+    </div>
+  </div>
+
+  <div class="span8">
+    <p><%= @post.body %></p>
+    <p>
+      Erstellt am <strong><%= @post.created_at.strftime('%d. %B \'%y') %></strong> von <strong><%= @post.author.surname %> <%= @post.author.forename %></strong>
+    </p>
+    <%= render :partial => 'intern/comments/form', :locals => { :post => @post, :comment => @comment ||= @post.comments.new } %>
+  </div>
+
+  <div class="span4">
+    <% unless @post.recent_alternative_posts.empty? %>
+      <h4>Andere Fragen / Mitteilungen</h4>
+      <ul id="recent-alternative-posts">
+        <% @post.recent_alternative_posts.each do |post| %>
+          <li>
+            <%= link_to post.title, intern_post_path(post) %><br>
+            <small>von <strong><%= post.author.surname %> <%= post.author.forename %></strong> am <strong><%= post.created_at.strftime('%d. %B \'%y') %></strong></small>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
+</div>

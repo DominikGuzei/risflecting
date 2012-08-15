@@ -1,0 +1,28 @@
+<div class="page-header">
+  <h2>Fragen & Mitteilungen
+    <%= link_to new_intern_post_path, :class => 'pull-right btn btn-info' do %>
+      <i class="icon-plus"></i> &nbsp;Frage oder Mitteilung verfassen
+    <% end %>
+  </h2>
+</div>
+
+<ul id="posts-list" class="unstyled">
+<% @posts.each do |post| %>
+  <li class="well">
+    <div class="row">
+      <div class="span3 date">
+        <strong><%= post.created_at.strftime('%d. %B %Y') %></strong>
+      </div>
+      <div class="span6">
+        <h4>
+          <%= link_to post.title, intern_post_path(post) %>
+          <br><small class="author">von <%= post.author.surname %> <%= post.author.forename %></small>
+        </h4>
+      </div>
+      <div class="span3 bonus-info">
+        <span class="updated-at">zuletzt geändert <em><%= post.updated_at.strftime('%d. %b, %H:%I Uhr') %></em></span>
+      </div>
+    </div>
+  </li>
+<% end %>
+</ul>

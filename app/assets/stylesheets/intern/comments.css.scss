@@ -1,0 +1,14 @@
+@import "mixins";
+
+#comment-form {
+  margin-top: 30px;
+  &.well { padding: 15px 20px; }
+  textarea { width: 580px; }
+  legend {
+    margin-bottom: 10px;
+    font-size: 17px;
+    line-height: 1.5em;
+  }
+  .control-group { margin-bottom: 0; }
+  .pull-right { @include clearfix; }
+}

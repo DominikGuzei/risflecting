@@ -1,0 +1,77 @@
+@import "mixins";
+
+.page-header h2 a {
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 1.2em;
+  margin-top: 15px;
+  &.btn { margin-top: 5px; }
+}
+
+#appointment-list {
+  li.well {
+    padding: 5px 0;
+    margin-bottom: 7px;
+    @include clearfix;
+
+    .date-time { margin: 8px 0 6px 15px; }
+    h4 { line-height: 1.3em; }
+
+    small.location {
+      color: #aaa;
+      font-size: 12px;
+    }
+
+    .buttons {
+      height: 28px;
+      padding: 4px 7px 0;
+      @include clearfix;
+
+      .btn {
+        margin: 0 0 0 3px;
+      }
+      .label {
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 12px;
+        margin: 6px 0 4px;
+      }
+    }
+  }
+}
+
+#appointment-details {
+  dl {
+    font-size: 14px;
+    margin-top: 0px;
+  }
+  dt {
+    width: 60px;
+    text-align: left;
+  }
+  dd { margin-left: 70px; }
+  dt, dd { line-height: 1.4em; }
+
+  hr { margin: 8px 0; }
+
+  .well {
+    padding: 10px 20px;
+  }
+
+  .buttons {
+    margin-bottom: 20px;
+    @include clearfix;
+
+    .pull-left { line-height: 30px; }
+  }
+
+  #acceptances, #rejections {
+    margin-bottom: 0;
+    @include clearfix;
+
+    li {
+      width: 200px;
+      &.odd { margin-left: 20px; }
+    }
+  }
+}

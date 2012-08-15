@@ -1,0 +1,50 @@
+@import "mixins";
+
+#posts-list {
+  li.well {
+    padding: 5px 0;
+    margin-bottom: 7px;
+    @include clearfix;
+
+    h4 { line-height: 1.3em; }
+    .date {
+      margin: 2px 0 2px -22px;
+      text-align: right;
+      font-size: 16px;
+      line-height: 2em;
+      padding-right: 20px;
+      border-right: 2px solid #ccc;
+    }
+
+    small.author {
+      color: #aaa;
+      font-size: 12px;
+    }
+
+    .bonus-info { text-align: right; }
+    .updated-at {
+      color: #bbb;
+      line-height: 2.6em;
+    }
+  }
+}
+
+#recent-alternative-posts {
+  margin-left: 0px;
+
+  li {
+    list-style-type: none;
+    padding: 5px 0;
+    margin: 5px 0;
+    border-bottom: 1px dotted #bbb;
+
+    &:last-child {
+      border-bottom: 0px;
+    }
+  }
+
+  small {
+    color: #aaa;
+    font-size: 12px;
+  }
+}

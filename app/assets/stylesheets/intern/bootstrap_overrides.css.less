@@ -1,0 +1,35 @@
+// Your custom LESS stylesheets goes here
+//
+// Since bootstrap was imported above you have access to its mixins which
+// you may use and inherit here
+//
+// If you'd like to override bootstrap's own variables, you can do so here as well
+// See http://twitter.github.com/bootstrap/less.html for their names and documentation
+//
+// Example:
+// @linkColor: #ff0000;
+
+@gridColumns: 12;
+@gridColumnWidth: 60px;
+@gridGutterWidth: 20px;
+
+input[type=text], input[type=email], input[type=password], textarea {
+  height: auto;
+}
+
+.datepicker.dropdown-menu { font-size: 10px; }
+
+select.hours-select, select.minutes-select {
+  margin-left: 6px;
+}
+
+.page-header {
+  padding-bottom: 0px;
+  h1 { padding-bottom: 5px; }
+  h2, h3, h4, h5, h6 { padding-bottom: 0px; }
+}
+
+.form-vertical .form-actions {
+  padding-left: 0;
+  padding-right: 0;
+}
