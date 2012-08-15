@@ -2,16 +2,21 @@ require 'spec_helper'
 
 describe Intern::CommentsController do
   describe '#create' do
-    before(:each)      { sign_in FactoryGirl.create :user }
+    before :each do
+      @user = FactoryGirl.create :user
+      sign_in @user
+    end
+    after(:each) { @user.destroy }
     let(:post_instance) { FactoryGirl.create :post } # uses post_instance because of naming conflicts with 'post' method
 
-    it 'should create a comment to a given post' do
+    it 'should create a comment to a given post with the current user as author' do
       comment_text = 'Some special text'
 
       post :create, :comment => { :text => comment_text }, :post_id => post_instance.id
 
       last_comment = Comment.last
       last_comment.post.should == post_instance
+      last_comment.author.should == @user
       last_comment.text.should == comment_text
     end
 
@@ -23,7 +28,7 @@ describe Intern::CommentsController do
     end
 
     it 'should render the post details page if comment could not be created' do
-      post :create, :comment => {}, :post_id => post_instance.id
+      post :create, :comment => {}, :post_id => post_instance.id # pass empty comment params to force an error
 
       should render_template 'intern/posts/show'
     end
