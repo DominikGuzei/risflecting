@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   has_and_belongs_to_many :roles
   has_many :posts
+  has_many :comments
   has_many :appointment_responses
   has_many :accepted_appointments, :through => :appointment_responses,
     :source => :appointment,

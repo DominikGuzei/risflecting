@@ -48,7 +48,7 @@ describe 'Intern::Appointment' do
   end
 end
 
-describe 'Intern::Post' do
+describe 'Intern::Posts' do
   it 'should route GET /intern/posts to the posts list' do
     { :get => '/intern/posts' }.should route_to(
       :controller => 'intern/posts',
@@ -70,3 +70,14 @@ describe 'Intern::Post' do
     )
   end
 end
+
+describe 'Intern::Comments' do
+  it 'should route POST /intern/posts/1/comments to the post create action' do
+    { :post => '/intern/posts/1/comments' }.should route_to(
+      :controller => 'intern/comments',
+      :post_id => '1',
+      :action => 'create'
+    )
+  end
+end
+
