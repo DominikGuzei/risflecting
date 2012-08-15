@@ -28,3 +28,23 @@
     }
   }
 }
+
+#recent-alternative-posts {
+  margin-left: 0px;
+
+  li {
+    list-style-type: none;
+    padding: 5px 0;
+    margin: 5px 0;
+    border-bottom: 1px dotted #bbb;
+
+    &:last-child {
+      border-bottom: 0px;
+    }
+  }
+
+  small {
+    color: #aaa;
+    font-size: 12px;
+  }
+}
