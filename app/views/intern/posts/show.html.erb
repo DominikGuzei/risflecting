@@ -16,7 +16,7 @@
   </div>
 
   <div class="span4">
-    <% if @post.recent_alternative_posts.length > 0 %>
+    <% unless @post.recent_alternative_posts.empty? %>
       <h4>Andere Fragen / Mitteilungen</h4>
       <ul id="recent-alternative-posts">
         <% @post.recent_alternative_posts.each do |post| %>
