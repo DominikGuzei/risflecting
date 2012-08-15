@@ -1,4 +1,8 @@
 Risflecting::Application.routes.draw do
+  get "comments/create"
+
+  get "comment/create"
+
   namespace :intern do
     devise_for :users, :controllers => { :sessions => 'devise/sessions', :registrations => 'devise/registrations', :passwords => 'devise/passwords' }
 
@@ -8,7 +12,9 @@ Risflecting::Application.routes.draw do
 
     resource :dashboard, :only => [:show]
     resources :accounts, :only => [:create, :new]
-    resources :posts, :only => [:index, :show, :new, :create]
+    resources :posts, :only => [:index, :show, :new, :create] do
+      resources :comments, :only => [:create]
+    end
     resources :appointments, :only => [:new, :create, :show, :index] do
       post :accept, :on => :member
       post :reject, :on => :member
