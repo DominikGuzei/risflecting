@@ -4,6 +4,7 @@
 */
 
 body {
+  font-size: 14px;
   font-family: 'Open Sans', sans-serif;
   color: white;
 }
@@ -31,35 +32,39 @@ section#content {
   line-height: 18px;
 }
 
-#content article {
-  
-  h2 {
-    font-size: 18px;
-  }
+#content {
 
-  h3 {
-    font-size: 16px;
-    margin-bottom: 20px;
+  article {
+
+    p, ul {
+      margin-bottom: 18px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    h3 {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    ul {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    img {
+      width: 100%;
+      margin: 20px 0;
+    }
   }
   
-  p, ul {
-    font-size: 14px;
-    margin-bottom: 18px;
-  }
-  
-  ul {
-    list-style-type: disc;
-    padding-left: 20px;
-  }
-  
-  li {
-    margin-bottom: 10px;
-  }
-  
-  img {
-    width: 100%;
-    margin: 20px 0;
-  }
+
 }
 
 strong {

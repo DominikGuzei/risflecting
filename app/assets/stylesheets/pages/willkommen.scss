@@ -40,11 +40,11 @@
 }
 
 h2 {
-  font-size: 25px;
+  font-size: 30px;
   font-weight: bold;
   position: absolute;
-  top: 540px;
-  left: 420px;
+  top: 270px;
+  left: 270px;
   color: white;
   z-index: 1000;
 }
@@ -57,16 +57,17 @@ h2 {
   color: #A1A1A1;
 }
 
-#info-text {
-  width: 250px;
-  font-size: 18px;
+#circle-info-text {
+  font-size: 16px;
   position: absolute;
-  top: 580px;
-  left: 356px;
-  z-index: 1000;
+  top: 47%;
+  width: 30%;
   text-align: center;
-  line-height: 22px;
+  left: 28.5%;
   color: white;
+  z-index: 1000;
+  font-family: 'Open Sans Condensed', sans-serif;
+  display: none;
 }
 
 #circle-konzept {

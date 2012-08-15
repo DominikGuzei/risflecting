@@ -1,5 +1,6 @@
 <% page_title('Willkommen') %>
 <% page_stylesheet('pages/willkommen', :media => 'all') %>
+<% page_javascript('pages/willkommen') %>
 
 <% content_for :headline  do %>
   <h1>risflecting: Leben in Rausch- und Risikobalance</h1>
@@ -18,10 +19,14 @@
   
     <p id="interaction-hint">
       Entdecke risflecting!<br />
-      Fahre mit deiner Maus über die Kreissymbole
+      Bewege deine Maus über die Kreissymbole
+    </p>
+
+    <p id="circle-info-text">
+      Risikopädagogische BegleiterInnen vermitteln bewährte und gewinnbringende Kulturtechniken
     </p>
   
-    <ul>
+    <ul id="circle-links">
       <li>
         <a href="<%= static_path(:konzept) %>" id="circle-konzept" title="Rausch- und Risikopädagogik fördert eine Kultur der Balance">
           <%= image_tag 'icons/icon-konzept.png' %>
