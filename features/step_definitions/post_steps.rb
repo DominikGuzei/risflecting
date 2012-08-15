@@ -56,3 +56,14 @@ end
 Then /^I want to see a list containing (\d+) items$/ do |amount_of_posts|
   find('#posts-list').all('li').count == amount_of_posts.to_i
 end
+
+When /^I click on the title of the question$/ do
+  click_on @post_data[:title]
+end
+
+Then /^I want to see the details of the question$/ do
+  page.should have_content @post_data[:title]
+  page.should have_content @post_data[:body]
+  page.should have_content @author[:surname]
+  page.should have_content @author[:forename]
+end
