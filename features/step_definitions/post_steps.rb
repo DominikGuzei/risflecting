@@ -10,10 +10,6 @@ Given /^I visit the form to create a new question$/ do
   visit new_intern_post_path
 end
 
-When /^I save the question$/ do
-  click_on 'submit'
-end
-
 When /^I fill in all fields of the question form$/ do
   fill_in 'post_title', :with => 'A new question'
   fill_in 'post_body', :with => 'Some big problems ...'
@@ -66,4 +62,12 @@ Then /^I want to see the details of the question$/ do
   page.should have_content @post_data[:body]
   page.should have_content @author[:surname]
   page.should have_content @author[:forename]
+end
+
+Given /^I am on the question details page$/ do
+  visit intern_post_path @post
+end
+
+When /^I fill in the comment form$/ do
+  fill_in 'comment_text', :with => 'A new refreshing comment.'
 end
