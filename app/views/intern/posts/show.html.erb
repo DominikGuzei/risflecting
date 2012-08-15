@@ -15,5 +15,15 @@
     <p><%= @post.body %></p>
   </div>
 
-  <div class="span4"></div>
+  <div class="span4">
+    <h4>Andere Fragen / Mitteilungen</h4>
+    <ul id="recent-alternative-posts">
+      <% @post.recent_alternative_posts.each do |post| %>
+        <li>
+          <%= link_to post.title, intern_post_path(post) %><br>
+          <small>von <strong><%= post.author.surname %> <%= post.author.forename %></strong> am <strong><%= post.created_at.strftime('%d. %B \'%y') %></strong></small>
+        </li>
+      <% end %>
+    </ul>
+  </div>
 </div>
