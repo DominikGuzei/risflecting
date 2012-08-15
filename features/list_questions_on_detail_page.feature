@@ -1,4 +1,4 @@
-Feature: Questions on details page
+Feature: List questions on details page
   In order to switch between questions rapidly
   As a user
   I want to see a other questions on every details page
