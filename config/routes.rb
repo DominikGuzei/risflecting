@@ -1,8 +1,4 @@
 Risflecting::Application.routes.draw do
-  get "comments/create"
-
-  get "comment/create"
-
   namespace :intern do
     devise_for :users, :controllers => { :sessions => 'devise/sessions', :registrations => 'devise/registrations', :passwords => 'devise/passwords' }
 
