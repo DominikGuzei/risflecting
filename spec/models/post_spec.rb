@@ -16,8 +16,10 @@ describe Post do
     it 'should not include itself' do
       FactoryGirl.create_list :post, 5
 
-      Post.first.recent_alternative_posts.length.should be 4
-      Post.first.recent_alternative_posts.include?(Post.first).should be false
+      posts = Post.first.recent_alternative_posts
+
+      posts.length.should be 4
+      posts.include?(Post.first).should be false
     end
 
     it 'should include the most recent posts' do
