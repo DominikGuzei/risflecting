@@ -2,6 +2,6 @@ class Comment < ActiveRecord::Base
   belongs_to :post, :touch => true
   belongs_to :author, :class_name => 'User', :foreign_key => :user_id
 
-  attr_accessible :text
-  validates :text, :presence => true
+  attr_accessible :text, :author
+  validates :text, :user_id, :post_id, :presence => true
 end
