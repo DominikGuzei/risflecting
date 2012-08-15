@@ -1,0 +1,16 @@
+development: &defaults
+  secret_token:
+  postgres_username:
+  postgres_password:
+  gmail_username:
+  gmail_password:
+  twilio_account_sid:
+  twilio_auth_token:
+  twilio_phone_number:
+  developer_phone_numbers:
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults

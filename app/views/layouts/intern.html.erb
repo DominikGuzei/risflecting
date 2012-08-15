@@ -1,0 +1,47 @@
+<html>
+<head>
+  <title>Risflecting Intern</title>
+  <%= stylesheet_link_tag "intern/application", :media => "all" %>
+  <%= javascript_include_tag "intern/application" %>
+  <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+</head>
+<body>
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <%= link_to 'Risflecting', intern_root_path, :class => 'brand' %>
+        <ul class="nav">
+          <li><%= link_to 'Dashboard', intern_dashboard_path %></li>
+          <li class="divider-vertical"></li>
+          <li><%= link_to 'Termine', intern_appointments_path %></li>
+          <li class="divider-vertical"></li>
+          <li><%= link_to 'Fragen & Mitteilungen', intern_posts_path %></li>
+        </ul>
+
+        <% if intern_user_signed_in? %>
+        <ul class="nav pull-right">
+          <li class="dropdown">
+            <%= link_to '#', :class => 'dropdown-toggle', :data => { :toggle => 'dropdown'} do %>
+              <%= current_intern_user.email %> <b class="caret"></b>
+            <% end %>
+            <ul class="dropdown-menu">
+              <% if can? :create, User %>
+              <li><%= link_to new_intern_account_path do %><i class="icon-user"></i> Benutzer einladen<% end %></li>
+              <% end %>
+              <li><%= link_to destroy_intern_user_session_path, :method => :delete do %><i class="icon-off"></i> Abmelden<% end %></li>
+            </ul>
+          </li>
+        </ul>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <%= bootstrap_flash_messages %>
+    <%= yield %>
+  </div>
+</body>
+</html>
