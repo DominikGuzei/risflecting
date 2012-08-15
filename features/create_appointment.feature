@@ -11,7 +11,7 @@ Feature: Create Appointment
     Given I visit the form to create a new appointment
     When I fill in all fields of the appointment form
     And I save the appointment
-    Then I want some feedback that the appointment was created successfully
+    Then I want to get feedback that the appointment was created successfully
     And I want to see the newly created appointment
 
   Scenario: Leave all fields empty

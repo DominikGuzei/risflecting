@@ -5,6 +5,7 @@ describe Post do
   it { should validate_presence_of :body }
 
   it { should belong_to :author }
+  it { should have_many :comments }
 
   describe '#recent_alternative_posts' do
     it 'should get a maximum of 5 alternative posts' do

@@ -10,10 +10,6 @@ Given /^I visit the form to create a new question$/ do
   visit new_intern_post_path
 end
 
-When /^I save the question$/ do
-  click_on 'submit'
-end
-
 When /^I fill in all fields of the question form$/ do
   fill_in 'post_title', :with => 'A new question'
   fill_in 'post_body', :with => 'Some big problems ...'
@@ -72,7 +68,14 @@ When /^I click on the first question$/ do
   click_on Post.first.title
 end
 
-
 Then /^I want to see a list containing (\d+) recent alternative questions$/ do |amount_of_list_items|
   find('#recent-alternative-posts').all('li').count == amount_of_list_items.to_i
+end
+
+Given /^I am on the question details page$/ do
+  visit intern_post_path @post
+end
+
+When /^I fill in the comment form$/ do
+  fill_in 'comment_text', :with => 'A new refreshing comment.'
 end
