@@ -1,7 +1,7 @@
 module ApplicationHelper
   
   def page_title(title)
-    content_for :page_title do title end
+    content_for :page_title { title }
   end
   
   def page_stylesheet(path, options)
