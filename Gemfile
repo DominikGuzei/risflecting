@@ -1,9 +1,12 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.6'
+
 gem 'pg'
 gem 'jquery-rails'
+
 gem 'high_voltage'
+gem 'simple-navigation' # navigation for external website
 gem 'rails-i18n'
 
 gem 'cancan'
@@ -47,4 +50,3 @@ end
 group :test do
   gem 'sms-spec'
 end
-
