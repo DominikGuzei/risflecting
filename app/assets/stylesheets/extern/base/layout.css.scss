@@ -1,4 +1,4 @@
-$header-height: 232px;
+$header-height: 189px;
 $footer-height: 139px;
 
 html, body {
@@ -14,10 +14,10 @@ header {
   background-color: #2e4672;
   
   h1 {
-    margin: 0 auto;
     text-align: center;
     position: absolute;
-    bottom: 4%;
+    left: 0;
+    bottom: 2%;
     width: 100%;
   }
   
@@ -27,6 +27,7 @@ header {
   
   #headline {
     position: relative;
+    padding-top: 33px;
   }
 }
 

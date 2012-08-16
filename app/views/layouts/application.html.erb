@@ -2,6 +2,10 @@
 <html lang="de">
 <head>
   <title><%= yield :page_title %> | Risflecting</title>
+  <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+  <![endif]-->
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <%= stylesheet_link_tag    "extern/application", :media => "all" %>
@@ -35,6 +39,7 @@
       <%= image_tag 'layout/header-image-rope-dancing.jpg', :id => 'header-image' %>
       <%= yield :headline %>
     </div>
+    
   </header>
 
   <section id="content">

@@ -1,7 +1,7 @@
 #circle-navigation {
   text-align: center;
   position: relative;
-  height: 577px;
+  height: 461px;
   
   * {
     z-index: 100;
@@ -14,7 +14,7 @@
   
   a {
     position: absolute;
-    font-size: 20px;
+    font-size: 16px;
     color: #666;
     font-weight: bold;
     
@@ -35,12 +35,13 @@
     width: 80%;
     position: absolute;
     top: 0;
+    left: 0;
     z-index: 99;
   }
 }
 
 h2 {
-  font-size: 30px;
+  font-size: 24px;
   font-weight: bold;
   position: absolute;
   top: 45%;
@@ -51,14 +52,14 @@ h2 {
 
 #interaction-hint {
   position: absolute;
-  top: 50px;
+  top: 30px;
   left: -50px;
   width: 150px;
   color: #A1A1A1;
 }
 
 #circle-info-text {
-  font-size: 16px;
+  font-size: 14px;
   position: absolute;
   top: 47%;
   width: 30%;
@@ -100,26 +101,26 @@ h2 {
   left: 1%;
 }
 
-// portrait tablet screen
-@media (max-width: 1199px) {
+// changes for big desktop screens
+@media (min-width: 1200px) {
 
   #circle-navigation {
-    height: 461px;
+    height: 577px;
 
     a {
-      font-size: 16px;
+      font-size: 20px;
     }
   }
 
   h2 {
-    font-size: 24px;
+    font-size: 30px;
   }
 
   #circle-info-text {
-    font-size: 14px;
+    font-size: 16px;
   }
 
   #interaction-hint {
-    top: 30px;
+    top: 50px;
   }
 }
