@@ -6,6 +6,7 @@ class Intern::PostsController < InternController
 
   def show
     @post = Post.find params[:id]
+    @comments = @post.comments.order :created_at
   end
 
   def new

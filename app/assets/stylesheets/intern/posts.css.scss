@@ -33,7 +33,6 @@
   margin-left: 0px;
 
   li {
-    list-style-type: none;
     padding: 5px 0;
     margin: 5px 0;
     border-bottom: 1px dotted #bbb;
@@ -47,4 +46,9 @@
     color: #aaa;
     font-size: 12px;
   }
+}
+
+#post-details {
+  .description { margin-bottom: 10px; }
+  .author-details { margin-bottom: 20px; }
 }
