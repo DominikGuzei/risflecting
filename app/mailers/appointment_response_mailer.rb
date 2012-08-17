@@ -1,5 +1,5 @@
 class AppointmentResponseMailer < ActionMailer::Base
-  default from: 'risflecting@gmail.com'
+  default from: ENV['APPLICATION_EMAIL_ADDRESS']
 
   def last_minute_acceptance_information recipient, user, appointment
     @user = user
