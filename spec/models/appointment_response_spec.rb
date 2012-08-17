@@ -20,7 +20,7 @@ describe AppointmentResponse do
   it { should belong_to :appointment }
 
   describe '#saved' do
-    it 'should call the deliver_last_minute_acceptance_informations method if it is a last minute acceptance' do
+    it 'should call the deliver_last_minute_acceptance_informations method if the acceptance happened in the last 7 days before the appointment' do
       appointment_response = FactoryGirl.build :appointment_response, :accepted => true
 
       appointment_response.should_receive(:deliver_last_minute_acceptance_information).once
