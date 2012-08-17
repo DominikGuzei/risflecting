@@ -77,5 +77,24 @@ Given /^I am on the question details page$/ do
 end
 
 When /^I fill in the comment form$/ do
-  fill_in 'comment_text', :with => 'A new refreshing comment.'
+  @comment_data = { :text => 'A new refreshing comment.' }
+  fill_in 'comment_text', :with => @comment_data[:text]
+end
+
+Given /^the question has (\d+) comments$/ do |amount_of_comments|
+  user = FactoryGirl.create :user
+  @post.comments = FactoryGirl.create_list :comment, amount_of_comments.to_i, :author => user, :post => @post
+end
+
+Then /^I want to see (\d+) comments listed$/ do |amount_of_comments|
+  find('#comments-list').all('li').count == amount_of_comments
+end
+
+When /^I add a comment$/ do
+  step 'I fill in the comment form'
+  step 'I save the comment'
+end
+
+Then /^I want to see my comment in the list$/ do
+  page.should have_content @comment_data[:text]
 end
