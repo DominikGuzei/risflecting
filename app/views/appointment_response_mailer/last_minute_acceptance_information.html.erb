@@ -1,7 +1,8 @@
 <%= @user.surname %> <%= @user.forename %> hat zum Termin "<%= @appointment.title %>" zugesagt.
 
 Folgende Benutzer haben zu diesem Termin zugesagt:
+<br>
 
 <% @appointment.accepting_users.each do |user| %>
-  <%= user.surname %> <%= user.forename %>
+  <br><%= user.surname %> <%= user.forename %>
 <% end %>
