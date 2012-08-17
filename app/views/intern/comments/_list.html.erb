@@ -1,0 +1,22 @@
+<% unless comments.empty? %>
+<div class="well headline">
+  <h4>
+    Kommentare
+    <span class="badge pull-right"><%= comments.length %></span>
+  </h4>
+</div>
+<ul id="comments-list" class="unstyled">
+<% comments.each do |comment| %>
+  <li>
+    <div class="pull-left"><%= image_tag('intern/default-avatar.jpg', :class => 'avatar') %></div>
+    <div class="span7 comment pull-right">
+      <div class="head">
+        <em><%= link_to '#' do %><%= comment.author.forename %> <%= comment.author.surname %><% end %> schrieb:</em>
+        <em class="pull-right"><%= comment.created_at.strftime('%d. %b, %H:%I Uhr') %></em>
+      </div>
+      <p><%= comment.text %></p>
+    </div>
+  </li>
+<% end %>
+</ul>
+<% end %>
