@@ -1,0 +1,28 @@
+
+#content {
+  
+  aside.intro {
+    min-height: 76px;
+    padding: 10px 0 20px 80px;
+    background: image-url('icons/icon-projekte.png') no-repeat 0 5px;
+  }
+  
+  article {
+    border: 1px solid #eee;
+    padding: 20px;
+    
+    h2 {
+      margin-bottom: 20px;
+    }
+    
+    .description {
+      float: left;
+      width: 600px;
+    }
+    
+    .persona {
+      width: 300px;
+      float: left;
+    }
+  }
+}

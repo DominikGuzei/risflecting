@@ -1,48 +1,43 @@
-$page-width: 1200px;
-$layout-width: 960px;
-$header-height: 252px;
+$header-height: 189px;
 $footer-height: 139px;
 
 html, body {
-  background-color: #dadada;
   height: 100%;
+  padding: 0;
 }
 
 header {
   position: absolute;
+  top: 0;
   z-index: 1000;
-  height: $header-height;
   width: 100%;
-  min-width: $page-width;
-  background: image-url('layout/header-background.jpg') 0 34px;
+  background-color: #2e4672;
+  
+  h1 {
+    text-align: center;
+    position: absolute;
+    left: 0;
+    bottom: 2%;
+    width: 100%;
+  }
+  
+  #header-image {
+    width: 100%;
+  }
   
   #headline {
-    width: $page-width;
-    height: 218px;
-    margin: 0 auto;
-    text-align: center;
-    background: image-url('layout/header-image-rope-dancing.jpg') no-repeat;
-    
-    h1 {
-      padding-top: 125px;
-    }
+    position: relative;
+    padding-top: 33px;
   }
 }
 
-.layout-wrap {
-  width: $layout-width;
-  margin: 0 auto;
-}
-
 section#content {
-  width: $page-width;
   min-height: 100%;
   height: auto !important;
   height: 100%;
   margin: 0 auto $footer-height * -1;
-  background: image-url('layout/content-background.png');
   
-  .layout-wrap {
+  .container {
     padding-top: $header-height + 40px;
     padding-bottom: 40px;
   }
@@ -57,19 +52,12 @@ footer {
   height: $footer-height;
   background: image-url('layout/footer-background.png');
   width: 100%;
-  min-width: $page-width;
-  
-  .layout-wrap {
-    padding-top: 25px;
-  }
 
   section {
-    float: left;
+    margin-top: 20px;
   }
   
-  section.portrait {
-    width: 300px;
-    
+  section.portrait {    
     img {
       float: left;
       margin-right: 10px;
@@ -81,10 +69,7 @@ footer {
   }
   
   section.navigation {
-    border-left: 1px solid #666;
     font-size: 13px;
-    height: 80px;
-    padding-right: 30px;
     
     ul {
       float: left;

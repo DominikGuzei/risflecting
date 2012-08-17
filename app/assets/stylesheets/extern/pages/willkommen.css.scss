@@ -1,0 +1,126 @@
+#circle-navigation {
+  text-align: center;
+  position: relative;
+  height: 461px;
+  
+  * {
+    z-index: 100;
+  }
+  
+  ul {
+    list-style: none;
+    margin: 0;
+  }
+  
+  a {
+    position: absolute;
+    font-size: 16px;
+    color: #666;
+    font-weight: bold;
+    
+    &:hover {
+      text-decoration: none;
+      color: black;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+    
+    span {
+      display: block;
+      margin-top: 10px;
+    }
+  }
+  
+  img#background {
+    width: 80%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99;
+  }
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+  position: absolute;
+  top: 45%;
+  left: 35%;
+  color: white;
+  z-index: 1000;
+}
+
+#interaction-hint {
+  position: absolute;
+  top: 30px;
+  left: -50px;
+  width: 150px;
+  color: #A1A1A1;
+}
+
+#circle-info-text {
+  font-size: 14px;
+  position: absolute;
+  top: 47%;
+  width: 30%;
+  text-align: center;
+  left: 28.5%;
+  color: white;
+  z-index: 1000;
+  font-family: 'Open Sans Condensed', sans-serif;
+  display: none;
+}
+
+#circle-konzept {
+  top: 6%;
+  left: 23%;
+}
+
+#circle-projekte {
+  top: 6%;
+  left: 54%;
+}
+
+#circle-weiterbildung {
+  top: 40%;
+  left: 68%;
+}
+
+#circle-faq {
+  top: 76%;
+  left: 56%;
+}
+
+#circle-team {
+  top: 76%;
+  left: 24%;
+}
+
+#circle-publikationen {
+  top: 40%;
+  left: 1%;
+}
+
+// changes for big desktop screens
+@media (min-width: 1200px) {
+
+  #circle-navigation {
+    height: 577px;
+
+    a {
+      font-size: 20px;
+    }
+  }
+
+  h2 {
+    font-size: 30px;
+  }
+
+  #circle-info-text {
+    font-size: 16px;
+  }
+
+  #interaction-hint {
+    top: 50px;
+  }
+}

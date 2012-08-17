@@ -196,6 +196,8 @@ GEM
       rubyzip
     shoulda-matchers (1.2.0)
       activesupport (>= 3.0.0)
+    simple-navigation (3.5.1)
+      activesupport (>= 2.3.2)
     sms-spec (0.1.5)
       rspec
     spork (0.9.2)
@@ -257,6 +259,7 @@ DEPENDENCIES
   sass (= 3.1.20)
   sass-rails (~> 3.2.3)
   shoulda-matchers
+  simple-navigation
   sms-spec
   spork
   twilio-ruby
