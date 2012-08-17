@@ -20,10 +20,5 @@ describe AppointmentResponse do
   it { should belong_to :appointment }
 
   describe '#saved' do
-    it 'should call the SmsHub method and pass an instance of itself' do
-      SmsHub.should_receive(:appointment_response_saved).with(@appointment_response).once
-
-      @appointment_response.save
-    end
   end
 end

@@ -11,6 +11,5 @@ class AppointmentResponse < ActiveRecord::Base
 
   protected
   def saved
-    SmsHub.appointment_response_saved self
   end
 end
