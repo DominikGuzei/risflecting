@@ -67,6 +67,7 @@ strong {
 
 footer {
   font-size: 14px;
+  color: white;
   
   ul {
     list-style: none;
@@ -74,12 +75,12 @@ footer {
   
   .name {
     font-weight:bold;
-    margin: 10px 0;
   }
   
   .info span{
     display: block;
     margin-bottom: 5px;
+    font-size: 13px;
     
     &.email {
       text-decoration: underline;

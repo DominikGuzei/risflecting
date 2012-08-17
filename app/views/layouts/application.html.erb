@@ -54,7 +54,7 @@
     <div class="container">
       <div class="row">
       
-        <section class="portrait span3 offset2">
+        <section class="portrait span4 offset1">
           <%= image_tag('layout/footer-portrait-gerald-koller.jpg') %>
           <p class="name">Gerald Koller<p>
           <p class="info">
@@ -65,23 +65,25 @@
           </p>
         </section>
     
-        <section class="navigation span3">
-          <ul>          
-            <li><%= link_to 'Konzept', static_path(:konzept) %></li>
-            <li><%= link_to 'Studie', static_path(:studie) %></li>
-            <li><%= link_to 'Projekte', static_path(:projekte) %></li>
-            <li><%= link_to 'Weiterbildung', static_path(:weiterbildung) %></li>
-          </ul>
+        <section class="navigation span4">
+          <div class="row">
+            <ul class="span2">          
+              <li><%= link_to 'Konzept', static_path(:konzept) %></li>
+              <li><%= link_to 'Studie', static_path(:studie) %></li>
+              <li><%= link_to 'Projekte', static_path(:projekte) %></li>
+              <li><%= link_to 'Weiterbildung', static_path(:weiterbildung) %></li>
+            </ul>
         
-          <ul>
-            <li><%= link_to 'FAQs', static_path(:faq) %></li>
-            <li><%= link_to 'Team', static_path(:team) %></li>
-            <li><%= link_to 'Publikationen', static_path(:publikationen) %></li>
-            <li><%= link_to 'Links', static_path(:links) %></li>
-          </ul>
+            <ul class="span2">
+              <li><%= link_to 'FAQs', static_path(:faq) %></li>
+              <li><%= link_to 'Team', static_path(:team) %></li>
+              <li><%= link_to 'Publikationen', static_path(:publikationen) %></li>
+              <li><%= link_to 'Links', static_path(:links) %></li>
+            </ul>
+          </div>
         </section>
     
-        <section class="navigation span4">
+        <section class="navigation span3">
           <ul>
             <li><%= link_to 'Kontakt', static_path(:kontakt) %></li>
             <li><%= link_to 'Impressum', static_path(:impressum) %></li>
