@@ -9,7 +9,7 @@ class AppointmentResponse < ActiveRecord::Base
 
   after_save :saved
 
-  def last_minute_acceptance?
+  def is_last_minute_acceptance?
     if accepted && appointment.starttime <= 7.days.from_now
       return true
     else
@@ -19,7 +19,7 @@ class AppointmentResponse < ActiveRecord::Base
 
   protected
   def saved
-    deliver_last_minute_acceptance_information if last_minute_acceptance?
+    deliver_last_minute_acceptance_information if is_last_minute_acceptance?
   end
 
   def deliver_last_minute_acceptance_information

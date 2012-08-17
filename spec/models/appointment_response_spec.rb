@@ -33,7 +33,7 @@ describe AppointmentResponse do
     end
   end
 
-  describe '#last_minute_acceptance?' do
+  describe '#is_last_minute_acceptance?' do
     it 'should only return true for acceptances' do
       accepted_appointment_response = FactoryGirl.create :appointment_response, :accepted => true
       accepted_appointment_response.appointment.starttime = 4.days.from_now
@@ -41,21 +41,21 @@ describe AppointmentResponse do
       rejected_appointment_response = FactoryGirl.create :appointment_response, :accepted => false
       rejected_appointment_response.appointment.starttime = 4.days.from_now
 
-      accepted_appointment_response.last_minute_acceptance?.should be true
-      rejected_appointment_response.last_minute_acceptance?.should be false
+      accepted_appointment_response.is_last_minute_acceptance?.should be true
+      rejected_appointment_response.is_last_minute_acceptance?.should be false
     end
 
     it 'should only return true for acceptances in the last 7 days before the appointment' do
       appointment_response = FactoryGirl.create :appointment_response, :accepted => true
 
       appointment_response.appointment.starttime = 8.days.from_now
-      appointment_response.last_minute_acceptance?.should be false
+      appointment_response.is_last_minute_acceptance?.should be false
 
       appointment_response.appointment.starttime = 7.days.from_now
-      appointment_response.last_minute_acceptance?.should be true
+      appointment_response.is_last_minute_acceptance?.should be true
 
       appointment_response.appointment.starttime = 6.days.from_now
-      appointment_response.last_minute_acceptance?.should be true
+      appointment_response.is_last_minute_acceptance?.should be true
     end
   end
 
