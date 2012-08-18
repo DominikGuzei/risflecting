@@ -39,6 +39,7 @@ class ChaptersController
     @currentChapter = chapterNumber
     
     @renderPagingButtons(chapterNumber)
+    @scrollToTop()
     
   renderPagingButtons: (chapterNumber) ->
     totalChapters = @chapters.length
@@ -53,6 +54,8 @@ class ChaptersController
       @nextChapterButton.show()
       @nextChapterButton.attr('href', "#chapter-#{@currentChapter+1}")
     else @nextChapterButton.hide()
+    
+  scrollToTop: -> $(window).scrollTop(0)
 
 jQuery ->
   
