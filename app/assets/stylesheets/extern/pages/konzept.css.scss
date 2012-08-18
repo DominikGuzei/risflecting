@@ -54,3 +54,11 @@ section#content {
 .no-js section#content article section {
   display: block;
 }
+
+// changes for big desktop screens
+@media (min-width: 1200px) {
+  #content article img {
+    width: 80%;
+    margin-left: 10%;
+  }
+}
