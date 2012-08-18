@@ -11,10 +11,8 @@
 <ul id="appointment-list" class="unstyled">
 <% @appointments.each do |appointment| %>
   <li class="well">
-    <div class="span3 date-time">
-      <%= appointment.starttime.strftime('%d.%B \'%y') %>
-      &nbsp;<strong>bis</strong>&nbsp;
-      <%= appointment.endtime.strftime('%d.%B \'%y') %>
+    <div class="span3 date">
+      <%= format_time_period appointment.starttime, appointment.endtime %>
     </div>
     <div class="span6">
       <h4>

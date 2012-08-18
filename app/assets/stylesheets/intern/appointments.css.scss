@@ -14,8 +14,26 @@
     margin-bottom: 7px;
     @include clearfix;
 
-    .date-time { margin: 8px 0 6px 15px; }
-    h4 { line-height: 1.3em; }
+    .date {
+      text-align: right;
+      font-weight: bold;
+      font-size: 15px;
+      min-height: 35px;
+      margin-left: -22px;
+      padding-right: 20px;
+      border-right: 2px solid #ccc;
+    }
+    .times {
+      font-size: 12px;
+      line-height: 1.8em;
+      font-weight: normal;
+      color: #aaa;
+    }
+
+    h4 {
+      font-size: 15px;
+      line-height: 1.3em;
+    }
 
     small.location {
       color: #aaa;
@@ -24,7 +42,7 @@
 
     .buttons {
       height: 28px;
-      padding: 4px 7px 0;
+      padding: 6px 7px;
       @include clearfix;
 
       .btn {

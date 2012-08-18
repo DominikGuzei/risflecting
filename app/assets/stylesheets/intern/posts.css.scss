@@ -6,24 +6,25 @@
     margin-bottom: 7px;
     @include clearfix;
 
+    .title {
+      padding-left: 10px;
+    }
     h4 { line-height: 1.3em; }
-    .date {
-      margin: 2px 0 2px -22px;
+    .creation-date {
       text-align: right;
-      font-size: 16px;
-      line-height: 2em;
       padding-right: 20px;
       border-right: 2px solid #ccc;
     }
 
     small.author {
       color: #aaa;
-      font-size: 12px;
     }
 
-    .bonus-info { text-align: right; }
-    .updated-at {
-      color: #bbb;
+    .bonus-info {
+      text-align: right;
+      padding-right: 10px;
+    }
+    .update-date {
       line-height: 2.6em;
     }
   }

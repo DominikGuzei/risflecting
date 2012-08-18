@@ -10,17 +10,17 @@
 <% @posts.each do |post| %>
   <li class="well">
     <div class="row">
-      <div class="span3 date">
-        <strong><%= post.created_at.strftime('%d. %B %Y') %></strong>
-      </div>
-      <div class="span6">
+      <div class="span6 title">
         <h4>
           <%= link_to post.title, intern_post_path(post) %>
           <br><small class="author">von <%= post.author.surname %> <%= post.author.forename %></small>
         </h4>
       </div>
-      <div class="span3 bonus-info">
-        <span class="updated-at">zuletzt geändert <em><%= post.updated_at.strftime('%d. %b, %H:%I Uhr') %></em></span>
+      <div class="span3 pull-right bonus-info">
+        <span class="update-date">zuletzt geändert <em><%= l post.updated_at, :format => '%d. %b, %H:%I Uhr' %></em></span>
+      </div>
+      <div class="span2 pull-right creation-date">
+        erstellt am<br/><%= l post.created_at, :format => '%d. %B %Y' %>
       </div>
     </div>
   </li>
