@@ -15,18 +15,6 @@ describe SmsHub do
     end
   end
 
-  describe '#appointment_response_saved' do
-    it 'calls send only for admins' do
-      number_of_admins = 3
-      FactoryGirl.create_list :admin, number_of_admins
-      FactoryGirl.create_list :user, 2
-
-      SmsHub.should_receive(:send).exactly(number_of_admins).times
-
-      SmsHub.appointment_response_saved FactoryGirl.build :appointment_response
-    end
-  end
-
   describe '#should_send_sms?' do
     before :each do
       number = '+491111111'

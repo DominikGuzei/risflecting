@@ -9,8 +9,22 @@ class AppointmentResponse < ActiveRecord::Base
 
   after_save :saved
 
+  def is_last_minute_acceptance?
+    if accepted && appointment.starttime <= 7.days.from_now
+      return true
+    else
+      return false
+    end
+  end
+
   protected
   def saved
-    SmsHub.appointment_response_saved self
+    deliver_last_minute_acceptance_information if is_last_minute_acceptance?
+  end
+
+  def deliver_last_minute_acceptance_information
+    Role.find_by_name('Admin').users.each do |admin|
+      AppointmentResponseMailer.last_minute_acceptance_information(admin, user, appointment).deliver
+    end
   end
 end
