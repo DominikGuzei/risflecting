@@ -1,8 +1,8 @@
+//= require ./sticky_footer
+
 $header-height: 189px;
-$footer-height: 139px;
 
 html, body {
-  height: 100%;
   padding: 0;
 }
 
@@ -32,24 +32,14 @@ header {
 }
 
 section#content {
-  min-height: 100%;
-  height: auto !important;
-  height: 100%;
-  margin: 0 auto $footer-height * -1;
   
   .container {
     padding-top: $header-height + 40px;
     padding-bottom: 40px;
   }
-  
-  #sticky-footer-pusher {
-    height: $footer-height;
-    clear: both;
-  }
 }
 
 footer {
-  height: $footer-height;
   background: image-url('layout/footer-background.png');
   width: 100%;
 
@@ -70,11 +60,6 @@ footer {
   
   section.navigation {
     font-size: 13px;
-    
-    ul {
-      float: left;
-      margin: 5px 0 0 30px;
-    }
     
     li {
       margin-bottom: 5px;

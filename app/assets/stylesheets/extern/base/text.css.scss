@@ -1,13 +1,3 @@
-/*
-  main font: 'Open Sans', sans-serif;
-  condensed font: 'Open Sans Condensed', sans-serif;
-*/
-
-body {
-  font-size: 14px;
-  font-family: 'Open Sans', sans-serif;
-  color: white;
-}
 
 h1 {
   font-size: 22px;
@@ -29,24 +19,26 @@ a:hover {
 
 section#content {
   color: #333;
-  line-height: 18px;
 }
 
 #content {
 
+  a:link, a:visited {
+    color: #C27410;
+  }
+
   article {
 
-    p, ul {
-      margin-bottom: 18px;
-    }
-
     h2 {
-        font-size: 18px;
+      font-size: 18px;
+      line-height: 24px;
+      margin-bottom: 24px;
     }
 
     h3 {
       font-size: 16px;
-      margin-bottom: 20px;
+      line-height: 20px;
+      margin: 20px 0;
     }
 
     ul {
@@ -73,6 +65,7 @@ strong {
 
 footer {
   font-size: 14px;
+  color: white;
   
   ul {
     list-style: none;
@@ -80,12 +73,12 @@ footer {
   
   .name {
     font-weight:bold;
-    margin: 10px 0;
   }
   
   .info span{
     display: block;
     margin-bottom: 5px;
+    font-size: 13px;
     
     &.email {
       text-decoration: underline;
