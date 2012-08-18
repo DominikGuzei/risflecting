@@ -65,7 +65,7 @@
           </p>
         </section>
     
-        <section class="navigation span4">
+        <section class="navigation span7">
           <div class="row">
             <ul class="span2">          
               <li><%= link_to 'Konzept', static_path(:konzept) %></li>
@@ -80,16 +80,14 @@
               <li><%= link_to 'Publikationen', static_path(:publikationen) %></li>
               <li><%= link_to 'Links', static_path(:links) %></li>
             </ul>
+            
+            <ul class="span3">
+              <li><%= link_to 'Kontakt', static_path(:kontakt) %></li>
+              <li><%= link_to 'Impressum', static_path(:impressum) %></li>
+            </ul>
           </div>
         </section>
     
-        <section class="navigation span3">
-          <ul>
-            <li><%= link_to 'Kontakt', static_path(:kontakt) %></li>
-            <li><%= link_to 'Impressum', static_path(:impressum) %></li>
-          </ul>
-        </section>
-        
       </div>
     </div>
   </footer>
