@@ -1,0 +1,40 @@
+#= require vendor/jquery.hashchange
+
+UrlHash = 
+  getChapter: -> 
+    hash = location.hash
+    chapterNumberString = hash.substring(hash.indexOf('-') + 1)
+    parseInt(chapterNumberString)
+    
+  setChapter: (chapterNumber) -> location.hash = "chapter-#{chapterNumber}"
+
+class ChaptersController
+  links: null
+  chapters: null
+  
+  currentChapter: 0
+  
+  activeLink: null
+  activeChapter: null
+  
+  constructor: (@links, @chapters, startChapter=1) ->
+    @activateChapter(startChapter)
+  
+  activateChapter: (chapterNumber) ->
+    chapterNumber = 1 if isNaN chapterNumber
+    
+    @activeLink.removeClass('active') if @activeLink
+    @activeChapter.removeClass('active') if @activeChapter
+    
+    @activeLink = @links.eq(chapterNumber - 1).addClass('active')
+    @activeChapter = @chapters.eq(chapterNumber - 1).addClass('active')
+
+jQuery ->
+  
+  links = $('#article-navigation li')
+  chapters = $('article section')
+  startChapter = UrlHash.getChapter()
+  
+  chaptersController = new ChaptersController links, chapters, startChapter 
+  
+  $(window).hashchange -> chaptersController.activateChapter UrlHash.getChapter()

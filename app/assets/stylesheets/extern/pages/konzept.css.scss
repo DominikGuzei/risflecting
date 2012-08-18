@@ -1,25 +1,15 @@
 
 section#content {
   
-  .layout-wrap {
-    padding-top: 252px;
-  }
-  
-  h2 {
-    padding: 60px 0;
-    background: image-url('icons/icon-konzept.png') no-repeat 10px 35px;
+  p.intro {
     text-align: center;
-  }
-  
-  h3 {
-    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 40px;
   }
   
   aside {
-    width: 250px;
-    float: left;
-    margin-right: 60px;
     font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 15px;
     
     ol {
       list-style-type: decimal;
@@ -28,10 +18,10 @@ section#content {
         margin-bottom: 10px;
         font-weight: bold;
         color: #C27410;
-        line-height: 18px;
         
-        &.active {
+        &.active, &.active a {
           color: #2e4672;
+          
           &:hover {
             text-decoration: none;
             cursor: default;
@@ -47,15 +37,16 @@ section#content {
   }
   
   article {
-    float:left;
-    width: 650px;
-    
     section {
       display: none;
-
+      
       &.active {
         display: block;
       }
     }
   }
+}
+
+.no-js section#content article section {
+  display: block;
 }
