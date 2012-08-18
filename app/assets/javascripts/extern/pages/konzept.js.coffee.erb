@@ -11,14 +11,21 @@ UrlHash =
 class ChaptersController
   links: null
   chapters: null
+  previousChapterButton: null
+  nextChapterButton: null
   
   currentChapter: 0
   
   activeLink: null
   activeChapter: null
   
-  constructor: (@links, @chapters, startChapter=1) ->
-    @activateChapter(startChapter)
+  constructor: (options) ->
+    @links = options.links
+    @chapters = options.chapters
+    @previousChapterButton = options.previousChapterButton
+    @nextChapterButton = options.nextChapterButton
+    
+    @activateChapter(options.startChapter)
   
   activateChapter: (chapterNumber) ->
     chapterNumber = 1 if isNaN chapterNumber
@@ -28,13 +35,32 @@ class ChaptersController
     
     @activeLink = @links.eq(chapterNumber - 1).addClass('active')
     @activeChapter = @chapters.eq(chapterNumber - 1).addClass('active')
+    
+    @currentChapter = chapterNumber
+    
+    @renderPagingButtons(chapterNumber)
+    
+  renderPagingButtons: (chapterNumber) ->
+    totalChapters = @chapters.length
+    
+    if @currentChapter > 1 
+      @previousChapterButton.show()
+      @previousChapterButton.attr('href', "#chapter-#{@currentChapter-1}")
+    else 
+      @previousChapterButton.hide()
+    
+    if @currentChapter < totalChapters 
+      @nextChapterButton.show()
+      @nextChapterButton.attr('href', "#chapter-#{@currentChapter+1}")
+    else @nextChapterButton.hide()
 
 jQuery ->
   
-  links = $('#article-navigation li')
-  chapters = $('article section')
-  startChapter = UrlHash.getChapter()
-  
-  chaptersController = new ChaptersController links, chapters, startChapter 
+  chaptersController = new ChaptersController 
+    links: $('#article-navigation li') 
+    chapters: $('article section')
+    startChapter: UrlHash.getChapter()
+    previousChapterButton: $('#previous-chapter-button')
+    nextChapterButton: $('#next-chapter-button')
   
   $(window).hashchange -> chaptersController.activateChapter UrlHash.getChapter()
