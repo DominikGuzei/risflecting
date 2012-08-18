@@ -9,24 +9,6 @@ module SmsHub
     end
   end
 
-  def self.appointment_response_saved appointment_response
-    Role.find_by_name('Admin').users.each do |user|
-      self.send :from => ENV['TWILIO_PHONE_NUMBER'],
-                :to   => user.phone,
-                :body => self.generate_appointment_response_saved_message(appointment_response)
-    end
-  end
-
-  def self.generate_appointment_response_saved_message appointment_response
-    user = appointment_response.user
-
-    if appointment_response.accepted
-      "#{user.surname} #{user.forename} hat dem Termin '#{appointment_response.appointment.title}' zugesagt."
-    else
-      "#{user.surname} #{user.forename} hat dem Termin '#{appointment_response.appointment.title}' abgesagt."
-    end
-  end
-
   def self.send sms
     if self.should_send_sms? sms
       client = Twilio::REST::Client.new ENV['TWILIO_ACCOUNT_SID'], ENV['TWILIO_AUTH_TOKEN']
