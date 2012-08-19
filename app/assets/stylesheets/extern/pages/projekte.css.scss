@@ -1,8 +1,13 @@
 
 #content {
   
+  aside.intro {
+    margin-bottom: 20px;
+  }
+  
   article {
-    margin-top: 40px;
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
     
     img {
       margin: 0;
