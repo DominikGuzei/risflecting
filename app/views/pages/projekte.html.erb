@@ -1,218 +1,225 @@
-<% content_for :stylesheet_includes do %>
-  <%= stylesheet_link_tag "pages/projekte", :media => "all" %>
-<% end %>
+<% page_title('Projekte') %>
+<% page_stylesheet('extern/pages/projekte', :media => 'all') %>
 
 <% content_for :headline  do %>
   <h1>Projekte aus der Praxis</h1>
-  <div id="sub-headline">
-    Rausch- und Risikobalance heißt: das wilde Tier reiten zu lernen
-  </div>
 <% end %>
 
-<aside class="intro">
-  Im Rahmen des risflecting-Entwicklungspools werden Projekte durchgeführt und 
-  dokumentiert, die der Haltung, dem methodischen Ansatz und den Qualitätskriterien 
-  von risflecting entsprechen. Hier finden Sie beispielhafte Beschreibungen solcher 
-  Projekte, die Ihnen Anregung für Ihre praktische Tätigkeit bieten können.
-</aside>
-
-<article class="clearfix">
+<div class="span10 offset1">
   
-  <h2>Wagnis Leben (<a href="<%= asset_path 'wagnis-leben.pdf' %>">PDF</a>)</h2>
-  
-  <div class="description">
-    
-    <p>
-      In der Übergangszeit vom Jugendlichen zum Erwachsenen ändert sich alles: der 
-      Körper, die Gefühle, das Rollenbild, die Beziehungsstrukturen, ... . Dieser 
-      Übergang wird in Industriegesellschaften oft vergessen und verdrängt Nicht 
-      selten versuchen Jugendliche sehr risikoreich, diese Initiation selbst nach 
-      zu holen:
-    </p>
+  <aside class="intro">
+    Im Rahmen des risflecting-Entwicklungspools werden Projekte durchgeführt und 
+    dokumentiert, die der Haltung, dem methodischen Ansatz und den Qualitätskriterien 
+    von risflecting entsprechen. Hier finden Sie beispielhafte Beschreibungen solcher 
+    Projekte, die Ihnen Anregung für Ihre praktische Tätigkeit bieten können.
+  </aside>
 
-    <p>
-      Die Auswirkungen von nichtvollzogenen Übergängen sind überall zu sehen: 
-      Leidensdruck durch Leistungsdruck.Das Österreichische Pilotprojekt "Wagnis-Leben" 
-      soll eine bewusste Auseinandersetzung der Gesellschaft für die Übergangszeit 
-      von der Kindheit zum Erwachsenen in Gemeinden und Regionen einleiten.
-    </p>
-
-    <p>
-      In der Zielgruppe der jugendlichen Mädchen und Buben sollen durch 
-      geschlechtsbezogene Praxisansätze: Stärkung der soz. Kompetenzen, des 
-      Selbstwerts, der Suchtresistenz, der Rolle als Mann/Frau und der 
-      Eigenverantwortlichkeit erreicht werden und somit Rausch- und Risikokompetenzen 
-      verbessert werden.
-    </p>
-
-    <p>
-      In der Zielgruppe der Eltern, der GemeindebürgerInnen und der Gemeindestruktur 
-      (Gemeinderat, Bürgermeister) liegt der Nutzen in der Unterstützung der Eltern 
-      bei der Erziehungsarbeit (Elternbildung) und der Ausbildung von 
-      MultiplikatorInnen, welche die nachhaltige Umsetzung in der Gemeinde sichern.
-    </p>
-    
-  </div>
+  <article class="row">
   
-  <div class="persona">
-    
-    <%= image_tag 'projekte/wolfgang-schoengruber.jpeg' %>
-    
-    <p>
-      <strong>Wolfgang Schöngruber</strong>, geb. 02.11.1957 - Familienvater mit 2 
-      Pflegekindern Seit 1998 Projektleiter des Projekts "Lebens- und 
-      famlilienfreundliche Gemeinde" in Roßleithen. Projektbegleiter des Regionalen 
-      Projektes >Agenda 21> im Ennstal. Ausbildung zum Familienbegleiter mit dem 
-      Schwerpunkt Männerarbeit.
-    </p>
+    <h2 class="span10">Wagnis Leben (<a href="<%= asset_path 'wagnis-leben.pdf' %>">PDF</a>)</h2>
   
-  </div>
+    <div class="description span7">
+    
+      <p>
+        In der Übergangszeit vom Jugendlichen zum Erwachsenen ändert sich alles: der 
+        Körper, die Gefühle, das Rollenbild, die Beziehungsstrukturen, ... . Dieser 
+        Übergang wird in Industriegesellschaften oft vergessen und verdrängt Nicht 
+        selten versuchen Jugendliche sehr risikoreich, diese Initiation selbst nach 
+        zu holen:
+      </p>
 
-</article>
+      <p>
+        Die Auswirkungen von nichtvollzogenen Übergängen sind überall zu sehen: 
+        Leidensdruck durch Leistungsdruck.Das Österreichische Pilotprojekt "Wagnis-Leben" 
+        soll eine bewusste Auseinandersetzung der Gesellschaft für die Übergangszeit 
+        von der Kindheit zum Erwachsenen in Gemeinden und Regionen einleiten.
+      </p>
 
-<article class="clearfix">
+      <p>
+        In der Zielgruppe der jugendlichen Mädchen und Buben sollen durch 
+        geschlechtsbezogene Praxisansätze: Stärkung der soz. Kompetenzen, des 
+        Selbstwerts, der Suchtresistenz, der Rolle als Mann/Frau und der 
+        Eigenverantwortlichkeit erreicht werden und somit Rausch- und Risikokompetenzen 
+        verbessert werden.
+      </p>
+
+      <p>
+        In der Zielgruppe der Eltern, der GemeindebürgerInnen und der Gemeindestruktur 
+        (Gemeinderat, Bürgermeister) liegt der Nutzen in der Unterstützung der Eltern 
+        bei der Erziehungsarbeit (Elternbildung) und der Ausbildung von 
+        MultiplikatorInnen, welche die nachhaltige Umsetzung in der Gemeinde sichern.
+      </p>
+    
+    </div>
   
-  <h2>Das Hawara system (<a href="<%= asset_path 'das-hawara-system.pdf' %>">PDF</a>)</h2>
+    <div class="persona span3">
+      
+      <div class="wrapper">
+        <%= image_tag 'projekte/wolfgang-schoengruber.jpeg' %>
+    
+        <h3>Wolfgang Schöngruber</h3>
+        <p>
+          geb. 02.11.1957 - Familienvater mit 2 
+          Pflegekindern Seit 1998 Projektleiter des Projekts "Lebens- und 
+          famlilienfreundliche Gemeinde" in Roßleithen. Projektbegleiter des Regionalen 
+          Projektes >Agenda 21> im Ennstal. Ausbildung zum Familienbegleiter mit dem 
+          Schwerpunkt Männerarbeit.
+        </p>
+      </div>
   
-  <section class="description">
+    </div>
+
+  </article>
+
+  <article class="row">
+  
+    <h2 class="span10">Das Hawara system (<a href="<%= asset_path 'das-hawara-system.pdf' %>">PDF</a>)</h2>
+  
+    <div class="description span7">
     
-    <h3>Ein Konzept und Praxismodell zur Rausch– und Risikobegleitung.</h3>
+      <p><strong>Ein Konzept und Praxismodell zur Rausch– und Risikobegleitung.</strong></p>
     
-    <p>
-      Dieses Projekt ist ein Modell für den kompetenten Umgang mit Rauschsituationen 
-      und das Erlernen von sozialen Kompetenzen. Getragen wird es durch die Erfahrungen 
-      Peer Group Education und der Begleitung von ausgebildeten Betreuern.
-    </p>
+      <p>
+        Dieses Projekt ist ein Modell für den kompetenten Umgang mit Rauschsituationen 
+        und das Erlernen von sozialen Kompetenzen. Getragen wird es durch die Erfahrungen 
+        Peer Group Education und der Begleitung von ausgebildeten Betreuern.
+      </p>
     
-    <p>
-      Es war mein Wunsch, einen Weg zu finden, Jugendliche im Umgang mit legalen und 
-      illegalen Drogen zu begleiten. Angesichts der Rechtslage unserer politischen 
-      „Kultur“ kein leichtes Unterfangen. Da Jugendliche authentischen Erwachsenen 
-      aber eine Chance geben, konnten wir gemeinsam in die Materie einsteigen.
-    </p>
+      <p>
+        Es war mein Wunsch, einen Weg zu finden, Jugendliche im Umgang mit legalen und 
+        illegalen Drogen zu begleiten. Angesichts der Rechtslage unserer politischen 
+        „Kultur“ kein leichtes Unterfangen. Da Jugendliche authentischen Erwachsenen 
+        aber eine Chance geben, konnten wir gemeinsam in die Materie einsteigen.
+      </p>
     
-    <p>
-      Die wenigsten Eltern und Erwachsenen sind dabei wenn Jugendliche ihre ersten 
-      Rauscherfahrungen erleben. Aus dieser Ungewissheit heraus sollten Jugendliche 
-      stabilisiert werden. Wichtig ist ein soziales Netz auf das sie zurückgreifen 
-      können und die Möglichkeit im geschützten Rahmen über Rauscherfahrungen mit 
-      ausgebildeten Erwachsenen zu sprechen.
-    </p>
+      <p>
+        Die wenigsten Eltern und Erwachsenen sind dabei wenn Jugendliche ihre ersten 
+        Rauscherfahrungen erleben. Aus dieser Ungewissheit heraus sollten Jugendliche 
+        stabilisiert werden. Wichtig ist ein soziales Netz auf das sie zurückgreifen 
+        können und die Möglichkeit im geschützten Rahmen über Rauscherfahrungen mit 
+        ausgebildeten Erwachsenen zu sprechen.
+      </p>
     
-    <h3>Praxis:</h3>
+      <h3>Praxis:</h3>
     
+      <ul>
+      
+        <li>
+          Mittels Fragebögen die auf die Zielgruppe zugeschnitten sind, wird gemeinsam 
+          in der Gruppe diskutiert. Das sind Fragen über Rauschkompetenz und den sozialen 
+          Umgang der Gruppe in Rauschsituationen unter Einbeziehung der Ersten Hilfe, 
+          sollte etwas „schief gehen“. Der/die BetreuerIn greift nur dann ein wenn 
+          gewisse Fragen nicht oder falsch beantwortet wurden.
+        </li>
+      
+        <li>
+          In Abständen werden den Jugendlichen sogenannte „Lokalrunden“ angeboten, bei 
+          denen sie von BetreuerInnen einen Abend lang begleitet werden. Der Ablauf 
+          unterliegt einer festgelegten Struktur.
+        </li>
+      
+        <li>
+          Von ärztlichem Personal geleitete Erste Hilfe Kurse gehen auf das Thema Rausch 
+          ein. Viele Jugendliche werden dadurch auf den „Ernstfall“ vorbereitet.
+        </li>
+      
+        <li>
+          „The day after“. Jugendliche haben die Möglichkeit nach dem Wochenende mit 
+          Betreuern über ihre „Räusche“ im geschützten Rahmen zu sprechen. Dazu gehören 
+          unter anderen Themen, wie Kater und dazugehörige Stimmung.
+        </li>
+      
+      </ul>
+    </div>
+  
+    <div class="persona span3">
+      <div class="wrapper">
+        <%= image_tag 'projekte/daniela-drueding.jpeg' %>
+        <h3>Daniela Drüding</h3>
+        <p>
+          geboren 1975, Projektentwicklerin, Streetworkerin und Ritualpädagogin. 
+          Ausbildung in bildender Kunst und Tanz. Mutter und Weltenbürgerin.
+        </p>
+      </div>
+    </div>
+  
+  </article>
+
+  <article class="row">
+  
+    <h2 class="span10">Alternative Happy Hours (<a href="http://www.alternativehappyhours.com/">Webseite</a>)</h2>
+  
+    <div class="description span8">
+      <p>
+        Am Anfang stand ein Gedanke: Es muss doch möglich sein, mit GastronomInnen 
+        zu kooperieren, wenn es um die Entwicklung von Alkoholkultur insbesondere 
+        Jugendlicher geht. Der alte Graben zwischen Suchtprävention, Pädagogik und 
+        Politik auf der einen Seite und Gastronomie und Freizeitindustrie auf der 
+        anderen Seite verhindert, dass sich, wenn es um die Prävention von 
+        problematischem Alkoholkonsum und Sucht geht, sich alle gemeinsam ihrer 
+        Verantwortung bewusst werden.
+      </p>
+    
+      <p>
+        Wer anderen den Schwarzen Peter zuschiebt, vergisst, dass er ihn selbst in 
+        der Hand gehabt hat. Die komplexe Problematik der Veränderung unserer 
+        Konsumgewohnheiten hat viele Ursachen – und braucht daher viele 
+        Kooperationspartner, wenn sie verändert werden will.
+      </p>
+    
+      <p>
+        Ganz vorrangig braucht es dabei die Kooperation mit der Gastronomie, die 
+        Jugendlichen Freizeiterlebnisse anbietet, zu denen auch der Alkoholkonsum 
+        gehört. An der Art, wie sie dies tut, wird sich mitentscheiden, wie 
+        Jugendliche mit Alkohol umgehen. Gastronomie und Freizeiteinrichtungen 
+        aller Art sind also nicht die Gegner, sondern die wichtigsten Partner 
+        von Prävention und Gesundheitsförderung.
+      </p>
+    
+      <p>
+        So ist AHA – alternative happy hours entstanden: Mit GastronomInnen gemeinsam 
+        Settings und Konsumangebote so zu gestalten, dass nicht der Exzess sondern 
+        die Balance im Vordergrund steht. Denn das Gegenteil von Exzess ist nicht 
+        die Abstinenz sondern: der Genuss...
+      </p>
+    </div>
+  
+  </article>
+
+  <aside class="info">
+    <h4>
+      Außerdem möchten wir Ihr Interesse auf Maßnahmen lenken, die dem 
+      risflecting-Ansatz entsprechen:
+    </h4>
+
     <ul>
-      
       <li>
-        Mittels Fragebögen die auf die Zielgruppe zugeschnitten sind, wird gemeinsam 
-        in der Gruppe diskutiert. Das sind Fragen über Rauschkompetenz und den sozialen 
-        Umgang der Gruppe in Rauschsituationen unter Einbeziehung der Ersten Hilfe, 
-        sollte etwas „schief gehen“. Der/die BetreuerIn greift nur dann ein wenn 
-        gewisse Fragen nicht oder falsch beantwortet wurden.
+        Die Suchtpräventionsstelle der Stadt Zürich hat einen bemerkenswerten 
+        Risikotest auf Basis der Arbeiten von Michael Guzei und des risflecting-pools 
+        entwickelt: <a href="www.stadt-zuerich.ch/risikotest">www.stadt-zuerich.ch/risikotest</a>
       </li>
-      
+    
       <li>
-        In Abständen werden den Jugendlichen sogenannte „Lokalrunden“ angeboten, bei 
-        denen sie von BetreuerInnen einen Abend lang begleitet werden. Der Ablauf 
-        unterliegt einer festgelegten Struktur.
+        Drugtesting im großstädtischen Bereich: 
+        <a href="www.vws.or.at/checkit">www.vws.or.at/checkit</a>
       </li>
-      
+    
       <li>
-        Von ärztlichem Personal geleitete Erste Hilfe Kurse gehen auf das Thema Rausch 
-        ein. Viele Jugendliche werden dadurch auf den „Ernstfall“ vorbereitet.
+        Ein europaweites Projekt zur Erhöhung der Risikokompetenz von Jugendlichen 
+        im Straßenverkehr finden sie bei 
+        <a href="www.kfv.at/heim-freizeit-sport/internationale-zusammenarbeit/adrisk-projekt">www.kfv.at/heim-freizeit-sport/internationale-zusammenarbeit/adrisk-projekt</a>.
       </li>
-      
+    
       <li>
-        „The day after“. Jugendliche haben die Möglichkeit nach dem Wochenende mit 
-        Betreuern über ihre „Räusche“ im geschützten Rahmen zu sprechen. Dazu gehören 
-        unter anderen Themen, wie Kater und dazugehörige Stimmung.
+        B`rauschend - Alkohol Kultur im ländlichen Raum: 
+        <a href="www.akzente.net/b.rauschend">www.akzente.net/b.rauschend</a>
       </li>
-      
+    
+      <li>
+        Und das weltweit erste peer group-education-Projekt zur Risikooptimierung 
+        unter: <a href="www.risk-fun.com">www.risk-fun.com</a>
+      </li>
     </ul>
-  </section>
+  </aside>
   
-  <section class="persona">
-    <%= image_tag 'projekte/daniela-drueding.jpeg' %>
-    <p>
-      <strong>Daniela Drüding</strong>, geboren 1975, Projektentwicklerin, Streetworkerin und Ritualpädagogin. Ausbildung in bildender Kunst und Tanz. Mutter und Weltenbürgerin.
-    </p>
-  </section>
-  
-</article>
-
-<article class="clearfix">
-  
-  <h2>Alternative Happy Hours (<a href="http://www.alternativehappyhours.com/">Webseite</a>)</h2>
-  
-  <div class="description">
-    <p>
-      Am Anfang stand ein Gedanke: Es muss doch möglich sein, mit GastronomInnen 
-      zu kooperieren, wenn es um die Entwicklung von Alkoholkultur insbesondere 
-      Jugendlicher geht. Der alte Graben zwischen Suchtprävention, Pädagogik und 
-      Politik auf der einen Seite und Gastronomie und Freizeitindustrie auf der 
-      anderen Seite verhindert, dass sich, wenn es um die Prävention von 
-      problematischem Alkoholkonsum und Sucht geht, sich alle gemeinsam ihrer 
-      Verantwortung bewusst werden.
-    </p>
-    
-    <p>
-      Wer anderen den Schwarzen Peter zuschiebt, vergisst, dass er ihn selbst in 
-      der Hand gehabt hat. Die komplexe Problematik der Veränderung unserer 
-      Konsumgewohnheiten hat viele Ursachen – und braucht daher viele 
-      Kooperationspartner, wenn sie verändert werden will.
-    </p>
-    
-    <p>
-      Ganz vorrangig braucht es dabei die Kooperation mit der Gastronomie, die 
-      Jugendlichen Freizeiterlebnisse anbietet, zu denen auch der Alkoholkonsum 
-      gehört. An der Art, wie sie dies tut, wird sich mitentscheiden, wie 
-      Jugendliche mit Alkohol umgehen. Gastronomie und Freizeiteinrichtungen 
-      aller Art sind also nicht die Gegner, sondern die wichtigsten Partner 
-      von Prävention und Gesundheitsförderung.
-    </p>
-    
-    <p>
-      So ist AHA – alternative happy hours entstanden: Mit GastronomInnen gemeinsam 
-      Settings und Konsumangebote so zu gestalten, dass nicht der Exzess sondern 
-      die Balance im Vordergrund steht. Denn das Gegenteil von Exzess ist nicht 
-      die Abstinenz sondern: der Genuss...
-    </p>
-  </div>
-  
-</article>
-
-<aside class="info">
-  <p>
-    Außerdem möchten wir Ihr Interesse auf Maßnahmen lenken, die dem 
-    risflecting-Ansatz entsprechen:
-  </p>
-
-  <ul>
-    <li>
-      Die Suchtpräventionsstelle der Stadt Zürich hat einen bemerkenswerten 
-      Risikotest auf Basis der Arbeiten von Michael Guzei und des risflecting-pools 
-      entwickelt: <a href="www.stadt-zuerich.ch/risikotest">www.stadt-zuerich.ch/risikotest</a>
-    </li>
-    
-    <li>
-      Drugtesting im großstädtischen Bereich: 
-      <a href="www.vws.or.at/checkit">www.vws.or.at/checkit</a>
-    </li>
-    
-    <li>
-      Ein europaweites Projekt zur Erhöhung der Risikokompetenz von Jugendlichen 
-      im Straßenverkehr finden sie bei 
-      <a href="www.kfv.at/heim-freizeit-sport/internationale-zusammenarbeit/adrisk-projekt">www.kfv.at/heim-freizeit-sport/internationale-zusammenarbeit/adrisk-projekt</a>.
-    </li>
-    
-    <li>
-      B`rauschend - Alkohol Kultur im ländlichen Raum: 
-      <a href="www.akzente.net/b.rauschend">www.akzente.net/b.rauschend</a>
-    </li>
-    
-    <li>
-      Und das weltweit erste peer group-education-Projekt zur Risikooptimierung 
-      unter: <a href="www.risk-fun.com">www.risk-fun.com</a>
-    </li>
-  </ul>
-</aside>
+</div>
