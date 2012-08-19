@@ -1,12 +1,6 @@
 <% page_title('Konzept') %>
-
-<% content_for :stylesheet_includes do %>
-  <%= stylesheet_link_tag "extern/pages/konzept", :media => "all" %>
-<% end %>
-
-<% content_for :javascript_includes do %>
-  <%= javascript_include_tag "extern/pages/konzept.js" %>
-<% end %>
+<% page_stylesheet('extern/pages/konzept', :media => 'all') %>
+<% page_javascript('extern/pages/konzept') %>
 
 <% content_for :headline  do %>
   <h1>Das Konzept</h1>
