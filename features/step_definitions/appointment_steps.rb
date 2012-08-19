@@ -76,6 +76,7 @@ Given /^I have already accepted (\d+) appointments?$/ do |amount_of_appointments
 end
 
 Then /^I want to see (\d+) appointments? accepted$/ do |amount_of_appointments|
+  sleep 0.3 # Without this there is a deadlock detected PG:Error
   all('.label').count == amount_of_appointments.to_i
 end
 
