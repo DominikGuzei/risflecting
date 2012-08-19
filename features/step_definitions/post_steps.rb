@@ -1,3 +1,5 @@
+#encoding: utf-8
+
 Given /^I am on the posts overview page$/ do
   visit intern_posts_path
 end
@@ -36,13 +38,7 @@ Then /^I want to see the title and author of the question$/ do
 end
 
 Given /^there are (\d+) questions$/ do |amount_of_posts|
-  amount_of_posts = amount_of_posts.to_i
-  author = FactoryGirl.create :user
-
-  while amount_of_posts > 0 do
-    FactoryGirl.create :post, :author => author
-    amount_of_posts -= 1
-  end
+  FactoryGirl.create_list :post, amount_of_posts.to_i
 end
 
 Given /^I am on the questions and messages page$/ do
@@ -50,7 +46,7 @@ Given /^I am on the questions and messages page$/ do
 end
 
 Then /^I want to see a list containing (\d+) items$/ do |amount_of_posts|
-  find('#posts-list').all('li').count == amount_of_posts.to_i
+  find('#posts-list').all('li').count.should == amount_of_posts.to_i
 end
 
 When /^I click on the title of the question$/ do
@@ -97,4 +93,8 @@ end
 
 Then /^I want to see my comment in the list$/ do
   page.should have_content @comment_data[:text]
+end
+
+Given /^I navigate to the next questions page$/ do
+  click_on 'Nächste'
 end

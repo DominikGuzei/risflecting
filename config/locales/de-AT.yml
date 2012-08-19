@@ -2,3 +2,10 @@ de-AT:
   unauthorized:
     manage:
       all: "Du bist nicht berechtigt diesen Bereich zu verwenden"
+  views:
+    pagination:
+      first: "&laquo; Erste"
+      last: "Letzte &raquo;"
+      previous: "&lsaquo; Vorherige"
+      next: "Nächste &rsaquo;"
+      truncate: "..."

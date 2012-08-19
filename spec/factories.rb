@@ -22,8 +22,9 @@ FactoryGirl.define do
   end
 
   factory :post do
-    title "A superb title"
-    body  "I have some big problems and I have no clue how to solve them. Please help."
+    title       "A superb title"
+    body        "I have some big problems and I have no clue how to solve them. Please help."
+    association :author, :factory => :user
   end
 
   factory :comment do

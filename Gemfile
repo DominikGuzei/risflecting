@@ -13,6 +13,7 @@ gem 'cancan'
 gem 'devise'
 gem 'twilio-ruby'
 gem 'phony'
+gem 'kaminari', '>= 0.13.0'
 
 group :assets do
   gem 'sass', '3.1.20'

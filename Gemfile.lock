@@ -107,6 +107,10 @@ GEM
     json (1.7.4)
     jwt (0.1.5)
       multi_json (>= 1.0)
+    kaminari (0.13.0)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
+      railties (>= 3.0.0)
     launchy (2.1.2)
       addressable (~> 2.3)
     less (2.2.1)
@@ -247,6 +251,7 @@ DEPENDENCIES
   guard-spork
   high_voltage
   jquery-rails
+  kaminari (>= 0.13.0)
   launchy
   pg
   phony
