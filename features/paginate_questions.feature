@@ -9,5 +9,5 @@ Feature: Paginate questions
   Scenario: List all questions
     Given there are 20 questions
     And I am on the questions and messages page
-    And I click on the next questions page
+    And I navigate to the next questions page
     Then I want to see a list containing 5 items

@@ -95,6 +95,6 @@ Then /^I want to see my comment in the list$/ do
   page.should have_content @comment_data[:text]
 end
 
-Given /^I click on the next questions page$/ do
+Given /^I navigate to the next questions page$/ do
   click_on 'Nächste'
 end
