@@ -98,3 +98,19 @@ end
 Given /^I navigate to the next questions page$/ do
   click_on 'Nächste'
 end
+
+When /^I enter a URL in the comment field$/ do
+  fill_in 'comment_text', :with => 'www.example.com'
+end
+
+Then /^I want the URL in the saved comment to be clickable$/ do
+  page.find_link('www.example.com').should be_visible
+end
+
+When /^I enter a URL in the description field$/ do
+  fill_in 'post_body', :with => 'https://www.example.com'
+end
+
+Then /^I want the entered URL in the question details to be clickable$/ do
+  page.find_link('https://www.example.com').should be_visible
+end
