@@ -1,7 +1,14 @@
+#content article {
+  width: 620px;
+  margin: 0 auto;
+  text-align: justify;
+}
+
 #circle-navigation {
   text-align: center;
   position: relative;
   height: 461px;
+  left: 30px;
   
   * {
     z-index: 100;
@@ -97,6 +104,10 @@
 
 // changes for big desktop screens
 @media (min-width: 1200px) {
+
+  #content article {
+    width: 770px;
+  }
 
   #circle-navigation {
     height: 577px;
