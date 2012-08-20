@@ -10,6 +10,7 @@ Risflecting::Application.routes.draw do
     resources :accounts, :only => [:create, :new]
     resources :posts, :only => [:index, :show, :new, :create] do
       resources :comments, :only => [:create]
+      resources :attachments, :only => [:create]
     end
     resources :appointments, :except => [:edit, :update] do
       post :accept, :on => :member

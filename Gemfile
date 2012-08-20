@@ -16,6 +16,9 @@ gem 'phony'
 gem 'kaminari', '>= 0.13.0'
 gem 'rinku', '~> 1.7.0', :require => 'rails_rinku'
 
+gem 'carrierwave'
+gem 'fog'
+
 group :assets do
   gem 'sass', '3.1.20'
   gem 'sass-rails',   '~> 3.2.3'

@@ -137,5 +137,19 @@ describe User do
       it { should_not be_able_to :destroy, Appointment.new }
       it { should_not be_able_to :create,  User.new }
     end
+
+    context 'add attachments to post for user' do
+      let(:user) { FactoryGirl.create :user }
+
+      it { should be_able_to :add_attachment, user.posts.new }
+      it { should_not be_able_to :add_attachment, Post.new }
+    end
+
+    context 'add attachments to post for admin' do
+      let(:user) { FactoryGirl.create :admin }
+
+      it { should be_able_to :add_attachment, user.posts.new }
+      it { should_not be_able_to :add_attachment, Post.new }
+    end
   end
 end

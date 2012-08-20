@@ -99,6 +99,39 @@ Given /^I navigate to the next questions page$/ do
   click_on 'Nächste'
 end
 
+Given /^there is one question from a different user$/ do
+  step 'there is a question'
+end
+
+Then /^I do not want to see the attachment upload form$/ do
+  page.should_not have_content 'Neue Datei hinzufügen'
+end
+
+Given /^there is one question from myself$/ do
+  @post_data = { :title => 'Stupid title', :body => 'A question or message ...', :author => @current_user }
+  @post = FactoryGirl.create :post, @post_data
+end
+
+Then /^I want to see the attachment upload form$/ do
+  page.should have_content 'Neue Datei hinzufügen'
+end
+
+When /^I add an attachment$/ do
+  attach_file('attachment_file', "#{Rails.root}/features/fixtures/test.png")
+end
+
+When /^I upload the attachment$/ do
+  click_on 'Datei hinzufügen'
+end
+
+Then /^I want some feedback that the attachment was successfully uploaded$/ do
+  page.should have_selector('.flash-message.alert-success')
+end
+
+Then /^I want to be on the question details page$/ do
+  current_path.should == intern_post_path(@post)
+end
+
 When /^I enter a URL in the comment field$/ do
   fill_in 'comment_text', :with => 'www.example.com'
 end
