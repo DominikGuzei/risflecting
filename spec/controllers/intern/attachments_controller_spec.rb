@@ -25,7 +25,7 @@ describe Intern::AttachmentsController do
       post :create, :attachment => { }, :post_id => @post_instance.id
 
       should redirect_to intern_root_path
-      flash[:error].should_not be_nil
+      should set_the_flash[:error]
     end
   end
 end
