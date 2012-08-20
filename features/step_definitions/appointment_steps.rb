@@ -137,3 +137,12 @@ end
 Then /^I want to see a list containing (\d+) users who rejected$/ do |amount_of_list_items|
   find('#rejections').all('li').count == amount_of_list_items.to_i
 end
+
+When /^I fill in a URL in the description field$/ do
+  fill_in 'appointment_description', :with => 'http://example.com'
+end
+
+Then /^I want the entered URL in the appointment description to be clickable$/ do
+  page.find_link('http://example.com').visible?
+end
+

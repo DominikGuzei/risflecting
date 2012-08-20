@@ -14,7 +14,7 @@
         <em><%= link_to '#' do %><%= comment.author.forename %> <%= comment.author.surname %><% end %> schrieb:</em>
         <em class="pull-right"><%= comment.created_at.strftime('%d. %b, %H:%I Uhr') %></em>
       </div>
-      <p><%= comment.text %></p>
+      <p><%= auto_link comment.text, :html => { :target => '_blank' } %></p>
     </div>
   </li>
 <% end %>
