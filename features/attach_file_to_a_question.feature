@@ -15,13 +15,13 @@ Feature: Attach a file to a question
   Scenario: Question of my own
     Given there is one question from myself
     And I am on the posts overview page
-    When I click on the first question
+    When I click on the title of the question
     Then I want to see the attachment upload form
 
   Scenario: Add an attachment
     Given there is one question from myself
     And I am on the posts overview page
-    And I click on the first question
+    When I click on the title of the question
     When I add an attachment
     And I upload the attachment
     Then I want some feedback that the attachment was successfully uploaded
