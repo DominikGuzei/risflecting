@@ -1,3 +1,4 @@
+# encoding: utf-8
 <div class="page-header">
   <h2>Termine & Meetings
   <% if can? :create, Appointment %>
@@ -20,6 +21,17 @@
         <br><small class="location"><%= appointment.location %></small>
       </h4>
     </div>
+
+    <% if can? :destroy, Appointment %>
+      <div class="pull-right admin-tools">
+        <%= link_to '',
+          intern_appointment_path(appointment),
+          :method => :delete,
+          :data => { :confirm => 'Soll dieser Termin tatsächlich gelöscht werden? Diese Aktion kann nicht mehr rückgängig gemacht werden.' },
+          :class => 'trash icon-trash'
+        %>
+      </div>
+    <% end %>
 
     <div class="pull-right buttons">
     <% if @accepted_appointments.include? appointment %>
