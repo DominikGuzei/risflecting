@@ -14,6 +14,7 @@ gem 'devise'
 gem 'twilio-ruby'
 gem 'phony'
 gem 'kaminari', '>= 0.13.0'
+gem 'rinku', '~> 1.7.0', :require => 'rails_rinku'
 
 gem 'carrierwave'
 gem 'fog'
@@ -30,7 +31,7 @@ group :assets do
   gem 'twitter-bootstrap-rails', '2.0.8'
 end
 
-group :development, :test do
+group :test do
   gem 'rspec', '~> 2.10'
   gem 'rspec-rails'
   gem 'rspec-mocks'
@@ -43,14 +44,11 @@ group :development, :test do
   gem 'factory_girl_rails', '~> 4.0'
   gem 'shoulda-matchers'
   gem 'email_spec'
+  gem 'sms-spec'
 
   gem 'guard-rspec'
   gem 'guard-cucumber'
   gem 'guard-spork'
   gem 'guard-pow'
   gem 'spork'
-end
-
-group :test do
-  gem 'sms-spec'
 end

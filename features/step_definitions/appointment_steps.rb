@@ -137,3 +137,32 @@ end
 Then /^I want to see a list containing (\d+) users who rejected$/ do |amount_of_list_items|
   find('#rejections').all('li').count == amount_of_list_items.to_i
 end
+
+When /^I fill in a URL in the description field$/ do
+  fill_in 'appointment_description', :with => 'http://example.com'
+end
+
+Then /^I want the entered URL in the appointment description to be clickable$/ do
+  page.find_link('http://example.com').visible?
+end
+
+When /^I click on the trash bin icon$/ do
+  find('.admin-tools a.trash').click
+end
+
+When /^I confirm the upcoming dialog$/ do
+  # accept the confirmation if we use selenium - the poltergeist driver automatically confirms dialog popups
+  page.driver.browser.switch_to.alert.accept unless Capybara.javascript_driver == :poltergeist
+end
+
+Then /^I want to get feedback that the appointment was deleted$/ do
+  page.should have_selector('.flash-message.alert-success')
+end
+
+Then /^I want the appointment to be removed from the list$/ do
+  find('ul#appointment-list').all('li').count == 0
+end
+
+Then /^I do not want to see a trash bin icon$/ do
+  page.should_not have_selector '.admin-tools a.trash'
+end
