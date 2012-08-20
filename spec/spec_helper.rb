@@ -20,6 +20,10 @@ Spork.prefork do
 
   RSpec.configure do |config|
 
+    config.after :all do
+      FileUtils.rm_r "#{Rails.root}/public/uploads/", :force => true
+    end
+
     # Use DatabaseCleaner instead of Rpsec´s transactional fixture
     config.before :suite do
       DatabaseCleaner.strategy = :transaction

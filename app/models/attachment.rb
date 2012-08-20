@@ -3,5 +3,7 @@ class Attachment < ActiveRecord::Base
 
   attr_accessible :file
 
+  validates :file, :presence => true
+
   mount_uploader :file, AttachmentUploader
 end

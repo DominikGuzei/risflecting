@@ -18,7 +18,7 @@
   </div>
 
   <% if can? :add_attachment, @post %>
-    <%= render :partial => 'intern/attachments/form', :locals => { :resource => @post } %>
+    <%= render :partial => 'intern/attachments/form', :locals => { :resource => @post, :attachment => @attachment ||= @post.attachments.new } %>
   <% end %>
 
   <div class="span4">
