@@ -9,7 +9,7 @@
   </div>
 
   <div class="span8">
-    <p class="description"><%= @post.body %></p>
+    <p class="description"><%= auto_link @post.body, :html => { :target => '_blank' } %></p>
     <p class="author-details">
       Erstellt am <strong><%= @post.created_at.strftime('%d. %B \'%y') %></strong> von <strong><%= @post.author.surname %> <%= @post.author.forename %></strong>
     </p>
