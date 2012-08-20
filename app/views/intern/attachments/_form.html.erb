@@ -1,0 +1,9 @@
+<div class="span4">
+  <%= form_for [:intern, resource, resource.attachments.new], :html => { :class => 'form-vertical well', :id => 'attachment-form'} do |form| %>
+    <%= content_tag :legend, 'Neue Datei hinzufügen' %>
+    <fieldset>
+      <%= form.file_field :file, :rows => 3, :label => false %>
+      <div class="pull-right"><%= form.submit 'Datei hinzufügen' %></div>
+    </fieldset>
+  <% end %>
+</div>

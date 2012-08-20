@@ -5,6 +5,8 @@ Given /^I am signed in as a user$/ do
   fill_in 'intern_user_email', :with => user.email
   fill_in 'intern_user_password', :with => user.password
   click_on 'submit'
+
+  @current_user = user
 end
 
 Given /^I am signed in as an admin$/ do
