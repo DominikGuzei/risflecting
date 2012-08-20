@@ -15,6 +15,9 @@ gem 'twilio-ruby'
 gem 'phony'
 gem 'kaminari', '>= 0.13.0'
 
+gem 'carrierwave'
+gem 'fog'
+
 group :assets do
   gem 'sass', '3.1.20'
   gem 'sass-rails',   '~> 3.2.3'
