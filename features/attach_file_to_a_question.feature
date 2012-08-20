@@ -25,4 +25,4 @@ Feature: Attach a file to a question
     When I add an attachment
     And I upload the attachment
     Then I want some feedback that the attachment was successfully uploaded
-    And I am on the question details page
+    And I want to be on the question details page

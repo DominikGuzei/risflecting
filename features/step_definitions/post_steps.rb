@@ -127,3 +127,7 @@ end
 Then /^I want some feedback that the attachment was successfully uploaded$/ do
   page.should have_selector('.flash-message.alert-success')
 end
+
+Then /^I want to be on the question details page$/ do
+  current_path.should == intern_post_path(@post)
+end
