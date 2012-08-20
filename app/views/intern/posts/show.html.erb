@@ -17,6 +17,10 @@
     <%= render :partial => 'intern/comments/form', :locals => { :post => @post, :comment => @comment ||= @post.comments.new } %>
   </div>
 
+  <% if can? :add_attachment, @post %>
+    <%= render :partial => 'intern/attachments/form', :locals => { :resource => @post, :attachment => @attachment ||= @post.attachments.new } %>
+  <% end %>
+
   <div class="span4">
     <% unless @post.recent_alternative_posts.empty? %>
       <div class="well headline">

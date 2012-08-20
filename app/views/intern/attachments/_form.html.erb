@@ -1,0 +1,12 @@
+<div class="span4">
+  <%= form_for [:intern, resource, attachment], :html => { :class => 'form-vertical well', :id => 'attachment-form'} do |form| %>
+    <%= content_tag :legend, 'Neue Datei hinzufügen' %>
+    <fieldset>
+      <% if attachment.errors.any? %>
+      <div class="alert alert-error"><strong>Achtung!</strong> Beim Versuch die Datei hochzuladen sind Fehler aufgetreten.</div>
+      <% end %>
+      <%= form.file_field :file, :rows => 3, :label => false %>
+      <div class="pull-right"><%= form.submit 'Datei hinzufügen' %></div>
+    </fieldset>
+  <% end %>
+</div>

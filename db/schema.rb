@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120815074633) do
+ActiveRecord::Schema.define(:version => 20120820103542) do
 
   create_table "appointment_responses", :force => true do |t|
     t.integer  "user_id"
@@ -31,6 +31,14 @@ ActiveRecord::Schema.define(:version => 20120815074633) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
     t.string   "location"
+  end
+
+  create_table "attachments", :force => true do |t|
+    t.string   "file"
+    t.integer  "attachable_id"
+    t.string   "attachable_type"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
   create_table "comments", :force => true do |t|

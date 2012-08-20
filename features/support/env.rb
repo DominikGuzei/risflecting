@@ -69,3 +69,7 @@ Spork.each_run do
   Cucumber::Rails::Database.javascript_strategy = :truncation
 
 end
+
+at_exit do
+  FileUtils.rm_r "#{Rails.root}/public/uploads/", :force => true
+end

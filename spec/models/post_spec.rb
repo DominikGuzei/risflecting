@@ -6,6 +6,7 @@ describe Post do
 
   it { should belong_to :author }
   it { should have_many :comments }
+  it { should have_many :attachments }
 
   describe '#recent_alternative_posts' do
     it 'should get a maximum of 5 alternative posts' do
