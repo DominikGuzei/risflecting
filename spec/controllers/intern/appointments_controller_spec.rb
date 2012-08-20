@@ -93,4 +93,37 @@ describe Intern::AppointmentsController do
       end
     end
   end
+
+  describe '#destroy' do
+    describe 'when logged in as an admin' do
+      before :each do
+        sign_in FactoryGirl.create(:admin)
+        @appointment = FactoryGirl.create :appointment
+      end
+
+      it 'should delete the appointment' do
+        delete :destroy, :id => @appointment
+
+        Appointment.all.should_not include @appointment
+      end
+
+      it 'should set the flash if deletion was successful' do
+        delete :destroy, :id => @appointment
+
+        should set_the_flash.to /erfolgreich/i
+      end
+    end
+
+    describe 'when logged in as a user' do
+      it 'should deny normal user access' do
+        sign_in FactoryGirl.create :user
+        appointment = FactoryGirl.create :appointment
+
+        delete :destroy, :id => appointment
+
+        should redirect_to intern_root_url
+        should set_the_flash
+      end
+    end
+  end
 end

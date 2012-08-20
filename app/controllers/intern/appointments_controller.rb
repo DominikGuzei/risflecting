@@ -45,4 +45,15 @@ class Intern::AppointmentsController < InternController
       return head :error
     end
   end
+
+  def destroy
+    appointment = Appointment.find params[:id]
+    if appointment.destroy
+      flash[:success] = "Der Termin '#{appointment.title}' wurde erfolgreich gelöscht."
+    else
+      flash[:error] = "Der Termin '#{appointment.title}' konnte nicht gelöscht werden. Bitte versuche es erneut, oder wende dich an das Entwicklerteam."
+    end
+
+    redirect_to intern_appointments_path
+  end
 end
