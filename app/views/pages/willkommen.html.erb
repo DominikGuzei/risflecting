@@ -28,34 +28,28 @@
   
     <ul id="circle-links">
       <li>
-        <a href="<%= static_path(:konzept) %>" id="circle-konzept" title="Rausch- und Risikopädagogik fördert eine Kultur der Balance">
-          Konzept
-        </a>
+        <%= link_to "Konzept", static_path(:konzept), :id => "circle-konzept", 
+              :title => "Rausch- und Risikopädagogik fördert eine Kultur der Balance" %>
       </li>
       <li>
-        <a href="<%= static_path(:projekte) %>" id="circle-projekte" title="Rausch- und Risikobalance heißt: das wilde Tier reiten zu lernen">
-          Projekte
-        </a>
+        <%= link_to "Projekte", static_path(:projekte), :id => "circle-projekte",
+              :title => "Rausch- und Risikobalance heißt: das wilde Tier reiten zu lernen" %>
       </li>
       <li>
-        <a href="<%= static_path(:weiterbildung) %>" id="circle-weiterbildung" title="Risikopädagogische BegleiterInnen vermitteln bewährte und gewinnbringende Kulturtechniken">
-          Weiterbildung
-        </a>
+        <%= link_to "Weiterbildung", static_path(:weiterbildung), :id => "circle-weiterbildung", 
+              :title => "Risikopädagogische BegleiterInnen vermitteln bewährte und gewinnbringende Kulturtechniken" %>
       </li>
       <li>
-        <a href="<%= static_path(:faq) %>" id="circle-faq" title="als pädagogischer Ansatz nimmt risflecting menschliche Bedürfnisse nach Rausch und Risiko ernst">
-          FAQs
-        </a>
+        <%= link_to "FAQs", static_path(:faq), :id => "circle-faq", 
+              :title => "als pädagogischer Ansatz nimmt risflecting menschliche Bedürfnisse nach Rausch und Risiko ernst" %>
       </li>
       <li>
-        <a href="<%= static_path(:team) %>" id="circle-team" title="Ein internationales Netzwerk von ExpertInnen entwickelt risflecting weiter">
-          Team
-        </a>
+        <%= link_to "Team", static_path(:team), :id => "circle-team", 
+              :title => "Ein internationales Netzwerk von ExpertInnen entwickelt risflecting weiter" %>
       </li>
       <li>
-        <a href="<%= static_path(:publikationen) %>" id="circle-publikationen" title="Balance kann nur in einem Klima des tabufreien Dialogs geübt werden">
-          Publikationen
-        </a>
+        <%= link_to "Publikationen", static_path(:publikationen), :id => "circle-publikationen", 
+              :title => "Balance kann nur in einem Klima des tabufreien Dialogs geübt werden" %>
       </li>
     </ul>
     

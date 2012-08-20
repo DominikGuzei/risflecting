@@ -16,7 +16,7 @@
 
   <article class="row">
   
-    <h2 class="span10">Wagnis Leben (<a href="<%= asset_path 'wagnis-leben.pdf' %>" target="_blank">PDF</a>)</h2>
+    <h2 class="span10">Wagnis Leben (<%= link_to "PDF", asset_path('wagnis-leben.pdf'), :target => '_blank' %>)</h2>
   
     <div class="description span7">
     
@@ -73,7 +73,7 @@
 
   <article class="row">
   
-    <h2 class="span10">Das Hawara system (<a href="<%= asset_path 'das-hawara-system.pdf' %>" target="_blank">PDF</a>)</h2>
+    <h2 class="span10">Das Hawara system (<%= link_to "PDF", asset_path('das-hawara-system.pdf'), :target => '_blank' %>)</h2>
   
     <div class="description span7">
     
@@ -147,7 +147,7 @@
 
   <article class="row">
   
-    <h2 class="span10">Alternative Happy Hours (<a href="http://www.alternativehappyhours.com/" target="_blank">Webseite</a>)</h2>
+    <h2 class="span10">Alternative Happy Hours (<%= link_to "Webseite", "http://www.alternativehappyhours.com/", :target => "_blank" %>)</h2>
   
     <div class="description span8">
       <p>
@@ -196,28 +196,28 @@
       <li>
         Die Suchtpräventionsstelle der Stadt Zürich hat einen bemerkenswerten 
         Risikotest auf Basis der Arbeiten von Michael Guzei und des risflecting-pools 
-        entwickelt: <a href="http://www.stadt-zuerich.ch/risikotest" target="_blank">www.stadt-zuerich.ch/risikotest</a>
+        entwickelt: <%= link_to "www.stadt-zuerich.ch/risikotest", "http://www.stadt-zuerich.ch/risikotest", :target => "_blank" %>
       </li>
     
       <li>
         Drugtesting im großstädtischen Bereich: 
-        <a href="http://www.checkyourdrugs.at/" target="_blank">www.vws.or.at/checkit</a>
+        <%= link_to "www.checkyourdrugs.at/", "http://www.checkyourdrugs.at/", :target => "_blank" %>
       </li>
     
       <li>
         Ein europaweites Projekt zur Erhöhung der Risikokompetenz von Jugendlichen 
         im Straßenverkehr finden sie bei 
-        <a href="http://www.kfv.at/heim-freizeit-sport/internationale-zusammenarbeit/adrisk-projekt" target="_blank">www.kfv.at/heim-freizeit-sport/internationale-zusammenarbeit/adrisk-projekt</a>.
+        <%= link_to "www.kfv.at/heim-freizeit-sport/internationale-zusammenarbeit/adrisk-projekt", "http://www.kfv.at/heim-freizeit-sport/internationale-zusammenarbeit/adrisk-projekt", :target => "_blank" %>.
       </li>
     
       <li>
         B`rauschend - Alkohol Kultur im ländlichen Raum: 
-        <a href="http://www.akzente.net/b.rauschend" target="_blank">www.akzente.net/b.rauschend</a>
+        <%= link_to "www.akzente.net/b.rauschend", "http://www.akzente.net/b.rauschend", :target => "_blank" %>
       </li>
     
       <li>
         Und das weltweit erste peer group-education-Projekt zur Risikooptimierung 
-        unter: <a href="http://www.risk-fun.com" target="_blank">www.risk-fun.com</a>
+        unter: <%= link_to "www.risk-fun.com", "http://www.risk-fun.com", :target => "_blank" %>
       </li>
     </ul>
   </aside>
