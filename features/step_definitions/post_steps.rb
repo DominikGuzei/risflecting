@@ -65,7 +65,7 @@ When /^I click on the first question$/ do
 end
 
 Then /^I want to see a list containing (\d+) recent alternative questions$/ do |amount_of_list_items|
-  find('#recent-alternative-posts').all('li').count == amount_of_list_items.to_i
+  find('#recent-alternative-questions').all('li').count.should == amount_of_list_items.to_i
 end
 
 Given /^I am on the question details page$/ do

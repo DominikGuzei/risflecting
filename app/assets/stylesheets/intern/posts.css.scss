@@ -1,6 +1,6 @@
 @import "mixins";
 
-#posts-list {
+#questions-list {
   li.well {
     padding: 5px 0;
     margin-bottom: 7px;
@@ -30,7 +30,7 @@
   }
 }
 
-#recent-alternative-posts {
+#recent-alternative-questions {
   margin-left: 0px;
 
   li {
@@ -49,7 +49,7 @@
   }
 }
 
-#post-details {
+#question-details {
   .description { margin-bottom: 10px; }
   .author-details { margin-bottom: 20px; }
 }
