@@ -8,16 +8,19 @@ Risflecting::Application.routes.draw do
 
     resource :dashboard, :only => [:show]
     resources :accounts, :only => [:create, :new]
+
     resources :questions, :only => [:index, :show, :new, :create] do
       resources :comments, :only => [:create]
       resources :attachments, :only => [:create]
     end
+
     resources :appointments, :except => [:edit, :update] do
       post :accept, :on => :member
       post :reject, :on => :member
     end
     resources :projects, :only => [:new, :create, :index, :show]
 
+    match 'profile' => 'accounts#show'
     root :to => 'dashboards#show'
   end
 

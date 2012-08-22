@@ -1,7 +1,7 @@
 unless User.exists? :email => 'admin@risflecting.dev'
   user = User.new :email => 'admin@risflecting.dev',
-                  :forename => 'Admin',
-                  :surname => 'Admin',
+                  :forename => 'Marvin',
+                  :surname => 'Levenstein',
                   :phone => '+41 44 111 22 33',
                   :password => 'password',
                   :password_confirmation => 'password'

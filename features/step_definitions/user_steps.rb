@@ -112,3 +112,18 @@ end
 Then /^I do not want to see a link to invite a new user$/ do
   page.should have_no_content('Benutzer erstellen')
 end
+
+When /^I click on my name in the main navigation$/ do
+  within('#main-navigation') { click_on @current_user.full_name }
+end
+
+When /^I navigate to '([^"]+?)'$/ do |word|
+  within('#account-dropdown') { click_on word }
+end
+
+Then /^I want to see my account details$/ do
+  page.should have_content @current_user.full_name
+  page.should have_content @current_user.email
+  page.should have_content @current_user.phone
+end
+
