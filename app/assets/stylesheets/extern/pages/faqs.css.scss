@@ -1,0 +1,46 @@
+
+#content {
+  
+  aside {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 15px;
+    
+    ul {
+      list-style-type: disc;
+      
+      li {
+        margin-bottom: 10px;
+        font-weight: bold;
+        color: #C27410;
+        
+        &.active, &.active a {
+          color: #2e4672;
+          
+          &:hover {
+            text-decoration: none;
+            cursor: default;
+          }
+        }
+        
+        &:hover {
+          text-decoration: underline;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  
+  article {
+    section {
+      display: none;
+      
+      &.active {
+        display: block;
+      }
+    }
+  }
+}
+
+.no-js section#content article section {
+  display: block;
+}
