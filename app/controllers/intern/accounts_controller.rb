@@ -1,7 +1,11 @@
 class Intern::AccountsController < InternController
+  def show
+    authorize! :show, User
+    @user = params[:id] ? User.find(params[:id]) : current_intern_user
+  end
+
   def new
     authorize! :new, User
-
     @user = User.new
   end
 
