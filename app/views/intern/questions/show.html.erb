@@ -1,0 +1,28 @@
+<div id="question-details" class="row">
+  <div class="span12">
+    <div class="page-header">
+      <h2>
+        <%= @question.title %>
+        <small><%= link_to intern_questions_path, :class => 'pull-right' do %>&laquo; zurück zur Übersicht<% end %></small>
+      </h2>
+    </div>
+  </div>
+
+  <div class="span8">
+    <p class="description"><%= auto_link @question.body, :html => { :target => '_blank' } %></p>
+    <p class="author-details">
+      Erstellt am <strong><%= @question.created_at.strftime('%d. %B \'%y') %></strong> von <strong><%= @question.author.surname %> <%= @question.author.forename %></strong>
+    </p>
+    <%= render :partial => 'intern/comments/list', :locals => { :comments => @question.comments(true) } %>
+    <%= render :partial => 'intern/comments/form', :locals => { :question => @question, :comment => @comment ||= @question.comments.new } %>
+  </div>
+
+
+  <div class="span4">
+    <%= render :partial => 'intern/attachments/list', :locals => { :attachments => @question.attachments(true) } %>
+    <% if can? :add_attachment, @question %>
+      <%= render :partial => 'intern/attachments/form', :locals => { :resource => @question, :attachment => @attachment ||= @question.attachments.new } %>
+    <% end %>
+    <%= render :partial => 'intern/questions/recent_alternatives', :locals => { :recent_alternative_questions => @question.recent_alternative_questions } %>
+  </div>
+</div>

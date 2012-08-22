@@ -7,7 +7,7 @@ describe User do
   it { should validate_presence_of :phone }
 
   it { should have_and_belong_to_many :roles }
-  it { should have_many :posts }
+  it { should have_many :questions }
   it { should have_many :comments }
   it { should have_many :appointment_responses }
   it { should have_many(:accepted_appointments).through :appointment_responses }
@@ -138,18 +138,18 @@ describe User do
       it { should_not be_able_to :create,  User.new }
     end
 
-    context 'add attachments to post for user' do
+    context 'add attachments to question for user' do
       let(:user) { FactoryGirl.create :user }
 
-      it { should be_able_to :add_attachment, user.posts.new }
-      it { should_not be_able_to :add_attachment, Post.new }
+      it { should be_able_to :add_attachment, user.questions.new }
+      it { should_not be_able_to :add_attachment, Question.new }
     end
 
-    context 'add attachments to post for admin' do
+    context 'add attachments to question for admin' do
       let(:user) { FactoryGirl.create :admin }
 
-      it { should be_able_to :add_attachment, user.posts.new }
-      it { should_not be_able_to :add_attachment, Post.new }
+      it { should be_able_to :add_attachment, user.questions.new }
+      it { should_not be_able_to :add_attachment, Question.new }
     end
   end
 end

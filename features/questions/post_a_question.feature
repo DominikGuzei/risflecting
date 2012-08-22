@@ -7,7 +7,7 @@ Feature: Post a question
     Given I am signed in as a user
 
   Scenario: Navigate to the creation form
-    Given I am on the posts overview page
+    Given I am on the questions overview page
     When I click on 'Frage oder Mitteilung verfassen'
     Then I want to see the form to create a new question
 

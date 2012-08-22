@@ -32,7 +32,6 @@ Spork.prefork do
 
     config.before(:each) do
       DatabaseCleaner.start
-
       load "#{Rails.root}/db/seeds.rb"
     end
 
