@@ -1,0 +1,14 @@
+<%= form_for [:intern, @project], :html => { :class => 'form-horizontal well'} do |form| %>
+  <%= content_tag :legend, 'Neuen Eintrag verfassen' %>
+  <fieldset>
+    <% if @project.errors.any? %>
+    <div class="alert alert-error"><strong>Achtung!</strong> Beim Versuch den Eintrag zu speichern sind Fehler aufgetreten.</div>
+    <% end %>
+    <%= form.text_field :title, :class => 'span6', :label => { :text => 'Titel' } %>
+    <%= form.text_area :body, :rows => 15, :class => 'span6', :label => { :text => 'Beschreibung' } %>
+    <div class="form-actions">
+      <%= form.submit 'Eintrag speichern' %>
+      <%= link_to 'Abbrechen', intern_questions_path, :class => 'btn' %>
+    </div>
+  </fieldset>
+<% end %>

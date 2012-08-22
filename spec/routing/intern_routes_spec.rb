@@ -80,6 +80,13 @@ describe 'Intern::Questions' do
 end
 
 describe 'Intern::Projects' do
+  it 'should route GET /intern/projects to the projects list' do
+    { :get => '/intern/projects' }.should route_to(
+      :controller => 'intern/projects',
+      :action => 'index'
+    )
+  end
+
   it 'should route GET /intern/projects/new to the project creation form' do
     { :get => '/intern/projects/new' }.should route_to(
       :controller => 'intern/projects',

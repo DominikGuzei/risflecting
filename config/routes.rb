@@ -16,7 +16,7 @@ Risflecting::Application.routes.draw do
       post :accept, :on => :member
       post :reject, :on => :member
     end
-    resources :projects, :only => [:new, :create]
+    resources :projects, :only => [:new, :create, :index, :show]
 
     root :to => 'dashboards#show'
   end
