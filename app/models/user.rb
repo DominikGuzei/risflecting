@@ -39,6 +39,10 @@ class User < ActiveRecord::Base
     self.roles.exists?(:name => role.to_s.camelize)
   end
 
+  def full_name
+    [surname, forename].join(' ')
+  end
+
   def accept_appointment appointment_id
     create_or_update_appointment_response appointment_id, true
   end

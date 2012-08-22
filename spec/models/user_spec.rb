@@ -1,3 +1,4 @@
+# encoding: utf-8
 require 'spec_helper'
 require 'cancan/matchers'
 
@@ -115,6 +116,16 @@ describe User do
       user.save
 
       user.phone.should eq '+436642222233'
+    end
+  end
+
+  describe '#full_name' do
+    it 'should return the user´s full name' do
+      user = FactoryGirl.create :user
+
+      full_name = user.full_name
+      full_name.should include user.surname
+      full_name.should include user.forename
     end
   end
 

@@ -52,7 +52,7 @@
           <hr>
           <ul id="acceptances" class="unstyled">
           <% @accepting_users.each_with_index do |user, index| %>
-            <li class="pull-left <%= index % 2 == 0 ? 'even' : 'odd' %>"><%= user.surname %> <%= user.forename %></li>
+            <li class="pull-left <%= index % 2 == 0 ? 'even' : 'odd' %>"><%= user.full_name %></li>
           <% end %>
           </ul>
           <% end %>
@@ -67,7 +67,7 @@
           <hr>
           <ul id="rejections" class="unstyled">
           <% @rejecting_users.each_with_index do |user, index| %>
-            <li class="pull-left <%= index % 2 == 0 ? 'even' : 'odd' %>"><%= user.surname %> <%= user.forename %></li>
+            <li class="pull-left <%= index % 2 == 0 ? 'even' : 'odd' %>"><%= user.full_name %></li>
           <% end %>
           </ul>
           <% end %>
