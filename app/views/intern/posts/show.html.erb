@@ -22,18 +22,7 @@
   <% end %>
 
   <div class="span4">
-    <% unless @post.recent_alternative_posts.empty? %>
-      <div class="well headline">
-        <h4>Andere Fragen / Mitteilungen</h4>
-      </div>
-      <ul id="recent-alternative-posts" class="unstyled">
-        <% @post.recent_alternative_posts.each do |post| %>
-          <li>
-            <%= link_to post.title, intern_post_path(post) %><br>
-            <small>von <strong><%= post.author.surname %> <%= post.author.forename %></strong> am <strong><%= post.created_at.strftime('%d. %B \'%y') %></strong></small>
-          </li>
-        <% end %>
-      </ul>
     <% end %>
+    <%= render :partial => 'intern/posts/recent_alternatives', :locals => { :recent_alternative_posts => @post.recent_alternative_posts } %>
   </div>
 </div>
