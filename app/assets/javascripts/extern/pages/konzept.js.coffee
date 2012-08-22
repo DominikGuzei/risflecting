@@ -31,7 +31,7 @@ class risflecting.ConceptViewer extends risflecting.ChaptersViewer
 
 jQuery ->
   
-  chaptersController = new risflecting.ConceptViewer 
+  new risflecting.ConceptViewer 
     links: $('#article-navigation li') 
     chapters: $('article section')
     previousChapterButton: $('#previous-chapter-button')

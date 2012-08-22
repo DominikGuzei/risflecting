@@ -2,6 +2,6 @@
 
 jQuery ->
   
-  chaptersController = new risflecting.ChaptersViewer 
+  new risflecting.ChaptersViewer 
     links: $('#faqs-navigation li') 
     chapters: $('article section')
