@@ -8,6 +8,6 @@ Feature: List questions on details page
     And there are 6 questions
 
   Scenario:
-    Given I am on the posts overview page
+    Given I am on the questions overview page
     And I click on the first question
     Then I want to see a list containing 5 recent alternative questions

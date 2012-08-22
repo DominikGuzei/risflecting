@@ -1,22 +1,22 @@
 require 'spec_helper'
 
 describe Comment do
-  let(:post_instance) { FactoryGirl.create :post }
+  let(:question) { FactoryGirl.create :question }
   let(:user) { FactoryGirl.create :user }
 
   it { should belong_to :author }
-  it { should belong_to :post }
+  it { should belong_to :question }
 
   it { should validate_presence_of :text }
   it { should validate_presence_of :user_id }
-  it { should validate_presence_of :post_id }
+  it { should validate_presence_of :question_id }
 
-  it 'should touch the post on creation' do
-    post_instance.update_attribute :updated_at, 1.day.ago
-    original_updated_at = post_instance.updated_at
+  it 'should touch the associated question on creation' do
+    question.update_attribute :updated_at, 1.day.ago
+    original_updated_at = question.updated_at
 
-    post_instance.comments.create :text => 'Some text', :author => user
+    question.comments.create :text => 'Some text', :author => user
 
-    original_updated_at.should_not == Post.last.updated_at # performs new query - post_instance.updated_at is cached
+    original_updated_at.should_not == Question.last.updated_at # performs new query - question.updated_at is cached
   end
 end

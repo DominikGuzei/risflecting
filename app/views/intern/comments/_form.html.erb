@@ -1,4 +1,4 @@
-<%= form_for [:intern, post, comment], :html => { :class => 'form-vertical well', :id => 'comment-form'} do |form| %>
+<%= form_for [:intern, question, comment], :html => { :class => 'form-vertical well', :id => 'comment-form'} do |form| %>
   <%= content_tag :legend, 'Neuen Kommentar verfassen' %>
   <fieldset>
     <% if comment.errors.any? %>

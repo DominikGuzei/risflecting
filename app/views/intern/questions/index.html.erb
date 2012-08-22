@@ -1,0 +1,30 @@
+<div class="page-header">
+  <h2>Fragen & Mitteilungen
+    <%= link_to new_intern_question_path, :class => 'pull-right btn btn-info' do %>
+      <i class="icon-plus"></i> &nbsp;Frage oder Mitteilung verfassen
+    <% end %>
+  </h2>
+</div>
+
+<ul id="questions-list" class="unstyled">
+<% @questions.each do |question| %>
+  <li class="well">
+    <div class="row">
+      <div class="span6 title">
+        <h4>
+          <%= link_to question.title, intern_question_path(question) %>
+          <br><small class="author">von <%= question.author.surname %> <%= question.author.forename %></small>
+        </h4>
+      </div>
+      <div class="span3 pull-right bonus-info">
+        <span class="update-date">zuletzt geändert <em><%= l question.updated_at, :format => '%d. %b, %H:%I Uhr' %></em></span>
+      </div>
+      <div class="span2 pull-right creation-date">
+        erstellt am<br/><%= l question.created_at, :format => '%d. %B %Y' %>
+      </div>
+    </div>
+  </li>
+<% end %>
+</ul>
+
+<%= paginate @questions %>

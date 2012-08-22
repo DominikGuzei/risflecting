@@ -8,19 +8,19 @@ Feature: Attach a file to a question
 
   Scenario: Question from a different user
     Given there is one question from a different user
-    And I am on the posts overview page
+    And I am on the questions overview page
     When I click on the title of the question
     Then I do not want to see the attachment upload form
 
   Scenario: Question of my own
     Given there is one question from myself
-    And I am on the posts overview page
+    And I am on the questions overview page
     When I click on the title of the question
     Then I want to see the attachment upload form
 
   Scenario: Add an attachment
     Given there is one question from myself
-    And I am on the posts overview page
+    And I am on the questions overview page
     When I click on the title of the question
     When I add an attachment
     And I upload the attachment
