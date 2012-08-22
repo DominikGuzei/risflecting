@@ -79,6 +79,22 @@ describe 'Intern::Questions' do
   end
 end
 
+describe 'Intern::Projects' do
+  it 'should route GET /intern/projects/new to the project creation form' do
+    { :get => '/intern/projects/new' }.should route_to(
+      :controller => 'intern/projects',
+      :action => 'new'
+    )
+  end
+
+  it 'should route POST /intern/projects to the project create action' do
+    { :post => '/intern/projects' }.should route_to(
+      :controller => 'intern/projects',
+      :action => 'create'
+    )
+  end
+end
+
 describe 'Intern::Comments' do
   it 'should route POST /intern/questions/:id/comments to the question create action' do
     { :post => '/intern/questions/1/comments' }.should route_to(
