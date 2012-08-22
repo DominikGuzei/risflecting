@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
 </head>
 <body>
-  <div class="navbar navbar-fixed-top">
+  <div class="navbar navbar-fixed-top" id="main-navigation">
     <div class="navbar-inner">
       <div class="container">
         <%= link_to 'risflecting Intern', intern_root_path, :class => 'brand' %>
@@ -19,15 +19,16 @@
         </ul>
 
         <% if intern_user_signed_in? %>
-        <ul class="nav pull-right">
+        <ul class="nav pull-right" id="account-dropdown">
           <li class="dropdown">
             <%= link_to '#', :class => 'dropdown-toggle', :data => { :toggle => 'dropdown'} do %>
-              <%= current_intern_user.email %> <b class="caret"></b>
+              <%= current_intern_user.full_name %> <b class="caret"></b>
             <% end %>
             <ul class="dropdown-menu">
               <% if can? :create, User %>
-              <li><%= link_to new_intern_account_path do %><i class="icon-user"></i> Benutzer einladen<% end %></li>
+              <li><%= link_to new_intern_account_path do %><i class="icon-envelope"></i> Benutzer einladen<% end %></li>
               <% end %>
+              <li><%= link_to intern_profile_path do %><i class="icon-user"></i> Mein Profil<% end %></li>
               <li><%= link_to destroy_intern_user_session_path, :method => :delete do %><i class="icon-off"></i> Abmelden<% end %></li>
             </ul>
           </li>

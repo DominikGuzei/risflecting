@@ -17,12 +17,12 @@ describe AppointmentResponseMailer do
     end
 
     it 'should contain user and appointment information in the subject' do
-      @mail.should have_subject /#{@user.surname} #{@user.forename}/
+      @mail.should have_subject /#{@user.full_name}/
       @mail.should have_subject /#{@appointment.title}/
     end
 
     it 'should contain user and appointment information in the body' do
-      @mail.should have_body_text /#{@user.surname} #{@user.forename}/
+      @mail.should have_body_text /#{@user.full_name}/
       @mail.should have_body_text /#{@appointment.title}/
     end
   end
