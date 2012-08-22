@@ -8,6 +8,7 @@ describe User do
 
   it { should have_and_belong_to_many :roles }
   it { should have_many :questions }
+  it { should have_many :projects }
   it { should have_many :comments }
   it { should have_many :appointment_responses }
   it { should have_many(:accepted_appointments).through :appointment_responses }

@@ -1,0 +1,17 @@
+<div id="project-details" class="row">
+  <div class="span12">
+    <div class="page-header">
+      <h2>
+        <%= @project.title %>
+        <small><%= link_to intern_projects_path, :class => 'pull-right' do %>&laquo; zurück zur Übersicht<% end %></small>
+      </h2>
+    </div>
+  </div>
+
+  <div class="span8">
+    <p class="description"><%= auto_link @project.body, :html => { :target => '_blank' } %></p>
+    <p class="author-details">
+      Erstellt am <strong><%= @project.created_at.strftime('%d. %B \'%y') %></strong> von <strong><%= @project.author.surname %> <%= @project.author.forename %></strong>
+    </p>
+  </div>
+</div>
