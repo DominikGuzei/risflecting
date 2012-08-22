@@ -146,4 +146,21 @@ end
 
 Then /^I want the entered URL in the question details to be clickable$/ do
   page.find_link('https://www.example.com').should be_visible
+
+Given /^the question has (\d+) attached files?$/ do |amount_of_attachments|
+  FactoryGirl.create_list :attachment, amount_of_attachments.to_i, :attachable => @post
+end
+
+Then /^I want to see a list containing (\d+) linked file names$/ do |amount_of_files|
+  find('#attachments-list').all('li').count.should == amount_of_files.to_i
+  find('#attachments-list').all('a').count.should == amount_of_files.to_i
+end
+
+When /^I click on the filename in the attachments section$/ do
+  find('#attachments-list a').click
+end
+
+Then /^I want to receive a file$/ do
+  # test file is a PNG image - this is not a proper solution
+  page.response_headers['Content-Type'].should == 'image/png'
 end

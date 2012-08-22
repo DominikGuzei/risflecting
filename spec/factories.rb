@@ -37,6 +37,11 @@ FactoryGirl.define do
     accepted    { true }
   end
 
+  factory :attachment do
+    association :attachable, :factory => :post, :strategy => :build
+    file        { File.open "#{Rails.root}/features/fixtures/test.png" }
+  end
+
   sequence :date do |n|
     n.days.from_now
   end
