@@ -26,7 +26,7 @@ When /^I navigate to '([^"]+?)' through the main navigation$/ do |label|
 end
 
 Then /^I want to see a list of all appointments$/ do
-  find('#appointment-list').all('li').count == @amount_of_appointments
+  find('#appointment-list').all('li').count.should == @amount_of_appointments
 end
 
 Given /^there is an appointment$/ do
@@ -76,8 +76,8 @@ Given /^I have already accepted (\d+) appointments?$/ do |amount_of_appointments
 end
 
 Then /^I want to see (\d+) appointments? accepted$/ do |amount_of_appointments|
-  sleep 0.3 # Without this there is a deadlock detected PG:Error
-  all('.label').count == amount_of_appointments.to_i
+  sleep 0.5 # wait for ajax response - without this there is a deadlock detected PG:Error
+  all('.label').count.should == amount_of_appointments.to_i
 end
 
 Then /^I want to get feedback that my rejection succeeded$/ do
@@ -97,7 +97,8 @@ Given /^I have already rejected (\d+) appointments?$/ do |amount_of_appointments
 end
 
 Then /^I want to see (\d+) appointments? rejected$/ do |amount_of_appointments|
-  all('.label').count == amount_of_appointments.to_i
+  sleep 0.5 # wait for ajax response
+  all('.label').count.should == amount_of_appointments.to_i
 end
 
 Given /^(\d+) users accepted the appointment$/ do |amount_of_accepting_users|
@@ -120,7 +121,7 @@ When /^I visit the appointment details page$/ do
 end
 
 Then /^I want to see a list containing (\d+) users who accepted$/ do |amount_of_list_items|
-  find('#acceptances').all('li').count == amount_of_list_items.to_i
+  find('#acceptances').all('li').count.should == amount_of_list_items.to_i
 end
 
 Given /^(\d+) users rejected the appointment$/ do |amount_of_rejecting_users|
@@ -135,7 +136,7 @@ Given /^(\d+) users rejected the appointment$/ do |amount_of_rejecting_users|
 end
 
 Then /^I want to see a list containing (\d+) users who rejected$/ do |amount_of_list_items|
-  find('#rejections').all('li').count == amount_of_list_items.to_i
+  find('#rejections').all('li').count.should == amount_of_list_items.to_i
 end
 
 When /^I fill in a URL in the description field$/ do
@@ -143,7 +144,7 @@ When /^I fill in a URL in the description field$/ do
 end
 
 Then /^I want the entered URL in the appointment description to be clickable$/ do
-  page.find_link('http://example.com').visible?
+  within('#appointment-details') { find_link('http://example.com').should be_visible }
 end
 
 When /^I click on the trash bin icon$/ do
@@ -160,7 +161,7 @@ Then /^I want to get feedback that the appointment was deleted$/ do
 end
 
 Then /^I want the appointment to be removed from the list$/ do
-  find('ul#appointment-list').all('li').count == 0
+  find('ul#appointment-list').all('li').count.should == 0
 end
 
 Then /^I do not want to see a trash bin icon$/ do
