@@ -46,7 +46,7 @@ Given /^I am on the questions and messages page$/ do
 end
 
 Then /^I want to see a list containing (\d+) items$/ do |amount_of_posts|
-  find('#posts-list').all('li').count.should == amount_of_posts.to_i
+  find('#questions-list').all('li').count.should == amount_of_posts.to_i
 end
 
 When /^I click on the title of the question$/ do
@@ -65,7 +65,7 @@ When /^I click on the first question$/ do
 end
 
 Then /^I want to see a list containing (\d+) recent alternative questions$/ do |amount_of_list_items|
-  find('#recent-alternative-posts').all('li').count == amount_of_list_items.to_i
+  find('#recent-alternative-questions').all('li').count.should == amount_of_list_items.to_i
 end
 
 Given /^I am on the question details page$/ do
@@ -83,7 +83,7 @@ Given /^the question has (\d+) comments$/ do |amount_of_comments|
 end
 
 Then /^I want to see (\d+) comments listed$/ do |amount_of_comments|
-  find('#comments-list').all('li').count == amount_of_comments
+  find('#comments-list').all('li').count.should == amount_of_comments.to_i
 end
 
 When /^I add a comment$/ do
@@ -117,15 +117,15 @@ Then /^I want to see the attachment upload form$/ do
 end
 
 When /^I add an attachment$/ do
-  attach_file('attachment_file', "#{Rails.root}/features/fixtures/test.png")
+  attach_file 'attachment_file', "#{Rails.root}/features/fixtures/test.png"
 end
 
 When /^I upload the attachment$/ do
-  click_on 'Datei hinzufügen'
+  within('#attachment-form') { click_on 'Hochladen' }
 end
 
 Then /^I want some feedback that the attachment was successfully uploaded$/ do
-  page.should have_selector('.flash-message.alert-success')
+  page.should have_selector '.flash-message.alert-success'
 end
 
 Then /^I want to be on the question details page$/ do
@@ -137,7 +137,7 @@ When /^I enter a URL in the comment field$/ do
 end
 
 Then /^I want the URL in the saved comment to be clickable$/ do
-  page.find_link('www.example.com').should be_visible
+  find_link('www.example.com').should be_visible
 end
 
 When /^I enter a URL in the description field$/ do
@@ -145,5 +145,23 @@ When /^I enter a URL in the description field$/ do
 end
 
 Then /^I want the entered URL in the question details to be clickable$/ do
-  page.find_link('https://www.example.com').should be_visible
+  within('#question-details') { find_link('https://www.example.com').should be_visible }
+end
+
+Given /^the question has (\d+) attached files?$/ do |amount_of_attachments|
+  FactoryGirl.create_list :attachment, amount_of_attachments.to_i, :attachable => @post
+end
+
+Then /^I want to see a list containing (\d+) linked file names$/ do |amount_of_files|
+  find('#attachments-list').all('li').count.should == amount_of_files.to_i
+  find('#attachments-list').all('a').count.should == amount_of_files.to_i
+end
+
+When /^I click on the filename in the attachments section$/ do
+  find('#attachments-list a').click
+end
+
+Then /^I want to receive a file$/ do
+  # test file is a PNG image - this is not a proper solution
+  page.response_headers['Content-Type'].should == 'image/png'
 end
