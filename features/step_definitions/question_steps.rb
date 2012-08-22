@@ -1,20 +1,20 @@
 #encoding: utf-8
 
-Given /^I am on the posts overview page$/ do
-  visit intern_posts_path
+Given /^I am on the questions overview page$/ do
+  visit intern_questions_path
 end
 
 Then /^I want to see the form to create a new question$/ do
-  current_path.should == new_intern_post_path
+  current_path.should == new_intern_question_path
 end
 
 Given /^I visit the form to create a new question$/ do
-  visit new_intern_post_path
+  visit new_intern_question_path
 end
 
 When /^I fill in all fields of the question form$/ do
-  fill_in 'post_title', :with => 'A new question'
-  fill_in 'post_body', :with => 'Some big problems ...'
+  fill_in 'question_title', :with => 'A new question'
+  fill_in 'question_body', :with => 'Some big problems ...'
 end
 
 Then /^I want some feedback that the question was created successfully$/ do
@@ -28,40 +28,40 @@ end
 
 Given /^there is a question$/ do
   @author = FactoryGirl.create :user
-  @post_data = { :title => 'Stupid title', :body => 'A question or message ...', :author => @author }
-  @post = FactoryGirl.create :post, @post_data
+  @question_data = { :title => 'Stupid title', :body => 'A question or message ...', :author => @author }
+  @question = FactoryGirl.create :question, @question_data
 end
 
 Then /^I want to see the title and author of the question$/ do
-  page.should have_content @post_data[:title]
-  page.should have_content @post_data[:author].surname
+  page.should have_content @question_data[:title]
+  page.should have_content @question_data[:author].surname
 end
 
-Given /^there are (\d+) questions$/ do |amount_of_posts|
-  FactoryGirl.create_list :post, amount_of_posts.to_i
+Given /^there are (\d+) questions$/ do |amount_of_questions|
+  FactoryGirl.create_list :question, amount_of_questions.to_i
 end
 
 Given /^I am on the questions and messages page$/ do
-  visit intern_posts_path
+  visit intern_questions_path
 end
 
-Then /^I want to see a list containing (\d+) items$/ do |amount_of_posts|
-  find('#questions-list').all('li').count.should == amount_of_posts.to_i
+Then /^I want to see a list containing (\d+) items$/ do |amount_of_questions|
+  find('#questions-list').all('li').count.should == amount_of_questions.to_i
 end
 
 When /^I click on the title of the question$/ do
-  click_on @post_data[:title]
+  click_on @question_data[:title]
 end
 
 Then /^I want to see the details of the question$/ do
-  page.should have_content @post_data[:title]
-  page.should have_content @post_data[:body]
+  page.should have_content @question_data[:title]
+  page.should have_content @question_data[:body]
   page.should have_content @author[:surname]
   page.should have_content @author[:forename]
 end
 
 When /^I click on the first question$/ do
-  click_on Post.first.title
+  click_on Question.first.title
 end
 
 Then /^I want to see a list containing (\d+) recent alternative questions$/ do |amount_of_list_items|
@@ -69,7 +69,7 @@ Then /^I want to see a list containing (\d+) recent alternative questions$/ do |
 end
 
 Given /^I am on the question details page$/ do
-  visit intern_post_path @post
+  visit intern_question_path @question
 end
 
 When /^I fill in the comment form$/ do
@@ -79,7 +79,7 @@ end
 
 Given /^the question has (\d+) comments$/ do |amount_of_comments|
   user = FactoryGirl.create :user
-  @post.comments = FactoryGirl.create_list :comment, amount_of_comments.to_i, :author => user, :post => @post
+  @question.comments = FactoryGirl.create_list :comment, amount_of_comments.to_i, :author => user, :question => @question
 end
 
 Then /^I want to see (\d+) comments listed$/ do |amount_of_comments|
@@ -108,8 +108,8 @@ Then /^I do not want to see the attachment upload form$/ do
 end
 
 Given /^there is one question from myself$/ do
-  @post_data = { :title => 'Stupid title', :body => 'A question or message ...', :author => @current_user }
-  @post = FactoryGirl.create :post, @post_data
+  @question_data = { :title => 'Stupid title', :body => 'A question or message ...', :author => @current_user }
+  @question = FactoryGirl.create :question, @question_data
 end
 
 Then /^I want to see the attachment upload form$/ do
@@ -129,7 +129,7 @@ Then /^I want some feedback that the attachment was successfully uploaded$/ do
 end
 
 Then /^I want to be on the question details page$/ do
-  current_path.should == intern_post_path(@post)
+  current_path.should == intern_question_path(@question)
 end
 
 When /^I enter a URL in the comment field$/ do
@@ -141,7 +141,7 @@ Then /^I want the URL in the saved comment to be clickable$/ do
 end
 
 When /^I enter a URL in the description field$/ do
-  fill_in 'post_body', :with => 'https://www.example.com'
+  fill_in 'question_body', :with => 'https://www.example.com'
 end
 
 Then /^I want the entered URL in the question details to be clickable$/ do
@@ -149,7 +149,7 @@ Then /^I want the entered URL in the question details to be clickable$/ do
 end
 
 Given /^the question has (\d+) attached files?$/ do |amount_of_attachments|
-  FactoryGirl.create_list :attachment, amount_of_attachments.to_i, :attachable => @post
+  FactoryGirl.create_list :attachment, amount_of_attachments.to_i, :attachable => @question
 end
 
 Then /^I want to see a list containing (\d+) linked file names$/ do |amount_of_files|

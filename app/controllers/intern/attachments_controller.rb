@@ -1,15 +1,15 @@
 class Intern::AttachmentsController < InternController
   def create
-    @post = Post.find params[:post_id]
-    authorize! :add_attachment, @post
+    @question = Question.find params[:question_id]
+    authorize! :add_attachment, @question
 
-    @attachment = @post.attachments.new params[:attachment]
+    @attachment = @question.attachments.new params[:attachment]
 
     if @attachment.save
-      redirect_to intern_post_path @post
+      redirect_to intern_question_path @question
       flash[:success] = 'Deine Datei wurde erfolgreich hochgeladen'
     else
-      render 'intern/posts/show'
+      render 'intern/questions/show'
     end
   end
 end

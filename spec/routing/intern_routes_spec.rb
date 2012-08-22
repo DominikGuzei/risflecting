@@ -56,34 +56,34 @@ describe 'Intern::Appointment' do
   end
 end
 
-describe 'Intern::Posts' do
-  it 'should route GET /intern/posts to the posts list' do
-    { :get => '/intern/posts' }.should route_to(
-      :controller => 'intern/posts',
+describe 'Intern::Questions' do
+  it 'should route GET /intern/questions to the questions list' do
+    { :get => '/intern/questions' }.should route_to(
+      :controller => 'intern/questions',
       :action => 'index'
     )
   end
 
-  it 'should route GET /intern/posts/new to the post creation form' do
-    { :get => '/intern/posts/new' }.should route_to(
-      :controller => 'intern/posts',
+  it 'should route GET /intern/questions/new to the question creation form' do
+    { :get => '/intern/questions/new' }.should route_to(
+      :controller => 'intern/questions',
       :action => 'new'
     )
   end
 
-  it 'should route POST /intern/posts to the post create action' do
-    { :post => '/intern/posts' }.should route_to(
-      :controller => 'intern/posts',
+  it 'should route POST /intern/questions to the question create action' do
+    { :post => '/intern/questions' }.should route_to(
+      :controller => 'intern/questions',
       :action => 'create'
     )
   end
 end
 
 describe 'Intern::Comments' do
-  it 'should route POST /intern/posts/:id/comments to the post create action' do
-    { :post => '/intern/posts/1/comments' }.should route_to(
+  it 'should route POST /intern/questions/:id/comments to the question create action' do
+    { :post => '/intern/questions/1/comments' }.should route_to(
       :controller => 'intern/comments',
-      :post_id => '1',
+      :question_id => '1',
       :action => 'create'
     )
   end

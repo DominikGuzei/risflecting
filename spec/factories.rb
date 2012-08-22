@@ -18,27 +18,27 @@ FactoryGirl.define do
   end
 
   factory :admin, :parent => :user do
-    roles { [ Role.find_or_create_by_name('Admin') ] }
+    roles       { [ Role.find_or_create_by_name('Admin') ] }
   end
 
-  factory :post do
+  factory :question do
     title       "A superb title"
     body        "I have some big problems and I have no clue how to solve them. Please help."
     association :author, :factory => :user
   end
 
   factory :comment do
-    text "A comment text"
+    text        "A comment text"
   end
 
   factory :appointment_response do
-    association :user, :factory => :user, :strategy=> :build
+    association :user, :factory => :user, :strategy => :build
     association :appointment, :factory => :appointment, :strategy => :build
     accepted    { true }
   end
 
   factory :attachment do
-    association :attachable, :factory => :post, :strategy => :build
+    association :attachable, :factory => :question, :strategy => :build
     file        { File.open "#{Rails.root}/features/fixtures/test.png" }
   end
 

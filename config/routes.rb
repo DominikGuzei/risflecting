@@ -8,7 +8,7 @@ Risflecting::Application.routes.draw do
 
     resource :dashboard, :only => [:show]
     resources :accounts, :only => [:create, :new]
-    resources :posts, :only => [:index, :show, :new, :create] do
+    resources :questions, :only => [:index, :show, :new, :create] do
       resources :comments, :only => [:create]
       resources :attachments, :only => [:create]
     end
