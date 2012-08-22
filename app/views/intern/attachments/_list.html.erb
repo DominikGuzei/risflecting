@@ -1,0 +1,17 @@
+<% unless attachments.empty? %>
+<div class="well headline">
+  <h4>
+    Dateien / Material
+    <span class="badge pull-right"><%= attachments.length %></span>
+  </h4>
+</div>
+<ul id="attachments-list" class="unstyled">
+<% attachments.each do |attachment| %>
+  <li>
+    <span class="icon"><%= generate_file_type_icon File.extname attachment.file.url %></span>
+    <%= link_to File.basename(attachment.file.url), attachment.file.url, :target => '_blank' %>
+    <small class="pull-right"><%= number_to_human_size attachment.file.file.size %></small>
+  </li>
+<% end %>
+</ul>
+<% end %>

@@ -1,0 +1,13 @@
+<% unless recent_alternative_posts.empty? %>
+  <div class="well headline">
+    <h4>Andere Fragen / Mitteilungen</h4>
+  </div>
+  <ul id="recent-alternative-questions" class="unstyled">
+    <% recent_alternative_posts.each do |post| %>
+      <li>
+        <%= link_to post.title, intern_post_path(post) %><br>
+        <small>von <strong><%= post.author.surname %> <%= post.author.forename %></strong> am <strong><%= post.created_at.strftime('%d. %B \'%y') %></strong></small>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
