@@ -13,15 +13,15 @@
     <p class="author-details">
       Erstellt am <strong><%= @post.created_at.strftime('%d. %B \'%y') %></strong> von <strong><%= @post.author.surname %> <%= @post.author.forename %></strong>
     </p>
-    <%= render :partial => 'intern/comments/list', :locals => { :comments => @comments ||= [] } %>
+    <%= render :partial => 'intern/comments/list', :locals => { :comments => @post.comments(true) } %>
     <%= render :partial => 'intern/comments/form', :locals => { :post => @post, :comment => @comment ||= @post.comments.new } %>
   </div>
 
-  <% if can? :add_attachment, @post %>
-    <%= render :partial => 'intern/attachments/form', :locals => { :resource => @post, :attachment => @attachment ||= @post.attachments.new } %>
-  <% end %>
 
   <div class="span4">
+    <%= render :partial => 'intern/attachments/list', :locals => { :attachments => @post.attachments(true) } %>
+    <% if can? :add_attachment, @post %>
+      <%= render :partial => 'intern/attachments/form', :locals => { :resource => @post, :attachment => @attachment ||= @post.attachments.new } %>
     <% end %>
     <%= render :partial => 'intern/posts/recent_alternatives', :locals => { :recent_alternative_posts => @post.recent_alternative_posts } %>
   </div>
