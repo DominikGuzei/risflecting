@@ -67,11 +67,10 @@ module BootstrapFormBuilder
       object = @template.instance_variable_get("@#{@object_name}")
 
       labelTag = get_label(field, options)
-
       errorText = get_error_text(object, field, options)
-
       wrapperClass = 'control-group' + (errorText.empty? ? '' : ' error')
       errorSpan = if errorText.empty? then "" else "<span class='help-inline'>#{errorText}</span>" end
+
       ("<div class='#{wrapperClass}'>" +
           "<div class='controls'><label class='checkbox'>" +
             super(field, *args) +
@@ -83,8 +82,7 @@ module BootstrapFormBuilder
     end
 
     def datetime_picker(field, options = {})
-      id = get_object_id(field, options)
-
+      # uses: https://github.com/eternicode/bootstrap-datepicker
       datetime_picker_javascript = "
         <script type='text/javascript'>
           $(function() { " +
@@ -112,13 +110,11 @@ module BootstrapFormBuilder
           "});
         </script>"
 
-      placeholder_text = options[:placeholder_text] || ''
       id = get_object_id(field, options)
-
+      placeholder_text = options[:placeholder_text] || ''
       errorText = get_error_text(object, field, options)
       wrapperClass = 'control-group' + (errorText.empty? ? '' : ' error')
       errorSpan = if errorText.empty? then "" else "<span class='help-inline'>#{errorText}</span>" end
-
       labelTag = get_label(field, options)
 
       date_time =
@@ -152,6 +148,44 @@ module BootstrapFormBuilder
       "</div>").html_safe
     end
 
+    def file_field(field, options = {})
+      id = get_object_id(field, options)
+      placeholder_text = options[:placeholder_text] || ''
+
+      file_input_javascript = "
+        <script type='text/javascript'>
+          $(function() {
+            $('##{@object_name}_#{field}').css({ visibility: 'hidden', height: '1px', opacity: 0 });
+            $('.file-input.hidden').removeClass('hidden');
+            $('##{@object_name}_#{field}').change(function() {
+              var value = $(this).val()
+              var parts = value.split(/[\\\\/]/);
+              $('#file_name_field').val(parts[parts.length-1]);
+            });
+            $('#file_browse_button, #file_name_field').click(function() {
+              $('##{@object_name}_#{field}').click();
+            });
+          });
+        </script>"
+
+      errorText = get_error_text(object, field, options)
+      wrapperClass = 'control-group' + (errorText.empty? ? '' : ' error')
+      errorSpan = if errorText.empty? then "" else "<span class='help-inline'>#{errorText}</span>" end
+
+      labelTag = options[:label] ? get_label(field, options) : ''
+      ("<div class='#{wrapperClass}'>" +
+        labelTag +
+        "<div class='controls'>" +
+          "<div class='input-prepend file-input hidden'>" +
+            @template.button_tag(options[:button_label], :class => 'btn', :id => 'file_browse_button', :type => 'button') +
+            @template.text_field_tag("file_name_field", '', { :placeholder => placeholder_text, :class => options[:class], :disabled => true }) +
+            super(field, {:id => id }) +
+          "</div>" +
+          errorSpan +
+          file_input_javascript +
+        "</div>" +
+      "</div>").html_safe
+    end
 
     basic_helpers = %w{text_field text_area select email_field password_field number_field}
 

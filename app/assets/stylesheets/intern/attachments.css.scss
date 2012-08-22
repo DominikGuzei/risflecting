@@ -1,7 +1,47 @@
+@import "mixins";
+
 #attachment-form {
+  padding: 10px;
   legend {
     margin-bottom: 10px;
-    font-size: 17px;
+    font-size: 15px;
     line-height: 1.5em;
+  }
+  #file_name_field { width: 194px; }
+}
+
+#attachments-list {
+  margin-bottom: 20px;
+  @include clearfix;
+
+  li {
+    span.icon {
+      display: inline-block;
+      width: 22px;
+      padding: 0 2px;
+      line-height: 1;
+      vertical-align: middle;
+    }
+    img {
+      width: 18px;
+      height: 18px;
+    }
+    a {
+      line-height: 1.3em;
+      vertical-align: middle;
+    }
+    padding: 7px 0;
+    border-bottom: 1px dotted #bbb;
+
+    &:last-child {
+      border-bottom: 0px;
+    }
+  }
+
+  small {
+    color: #aaa;
+    font-size: 12px;
+    line-height: 1.8em;
+    text-align: right;
   }
 }
