@@ -1,11 +1,15 @@
 <div class="row">
-  <div class="span4" id="avatar"></div>
-  <div class="span4" id="activities"></div>
+  <div class="span3" id="avatar">
+    <%= image_tag avatar_url(@user.avatar), :alt => "#{@user.forename} #{@user.surname}" %><br/><br/>
+    <%= link_to 'Profil bearbeiten', edit_intern_profile_path, :class => 'btn btn-info' %><br/>
+  </div>
   <div class="span4" id="info">
     <strong>Name</strong>: <%= @user.full_name %><br/>
     <strong>E-Mail</strong>: <%= @user.email %><br/>
     <strong>Telefon</strong>: <%= @user.phone %><br/>
     <strong>Mitglied seit</strong>: <%= l @user.created_at, :format => :short %><br/>
     <strong>Zuletzt online</strong>: <%= l @user.current_sign_in_at, :format => :short %><br/>
+  </div>
+  <div class="span5" id="activities">
   </div>
 </div>

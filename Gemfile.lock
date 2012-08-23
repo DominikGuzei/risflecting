@@ -193,6 +193,7 @@ GEM
     rdoc (3.12)
       json (~> 1.4)
     rinku (1.7.0)
+    rmagick (2.13.1)
     rspec (2.11.0)
       rspec-core (~> 2.11.0)
       rspec-expectations (~> 2.11.0)
@@ -281,6 +282,7 @@ DEPENDENCIES
   rails (= 3.2.6)
   rails-i18n
   rinku (~> 1.7.0)
+  rmagick
   rspec (~> 2.10)
   rspec-mocks
   rspec-rails
