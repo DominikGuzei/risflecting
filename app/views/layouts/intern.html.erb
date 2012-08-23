@@ -11,6 +11,8 @@
     <div class="navbar-inner">
       <div class="container">
         <%= link_to 'risflecting Intern', intern_root_path, :class => 'brand' %>
+
+        <% if intern_user_signed_in? %>
         <ul class="nav">
           <li><%= link_to 'Dashboard', intern_dashboard_path %></li>
           <li><%= link_to 'Termine', intern_appointments_path %></li>
@@ -18,11 +20,10 @@
           <li><%= link_to 'Tatenbank', intern_projects_path %></li>
         </ul>
 
-        <% if intern_user_signed_in? %>
         <ul class="nav pull-right" id="account-dropdown">
           <li class="dropdown">
             <%= link_to '#', :class => 'dropdown-toggle', :data => { :toggle => 'dropdown'} do %>
-              <%= current_intern_user.full_name %> <b class="caret"></b>
+              <%= image_tag avatar_url(current_intern_user.avatar, :tiny), :alt => current_intern_user.full_name %>&nbsp;&nbsp;<%= current_intern_user.full_name %> <b class="caret"></b>
             <% end %>
             <ul class="dropdown-menu">
               <% if can? :create, User %>
