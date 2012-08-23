@@ -1,3 +1,4 @@
+# encoding: utf-8
 de-AT:
   unauthorized:
     manage:
@@ -9,3 +10,13 @@ de-AT:
       previous: "&lsaquo; Vorherige"
       next: "Nächste &rsaquo;"
       truncate: "..."
+  errors:
+    messages:
+      carrierwave_processing_error: konnte nicht verarbeitet werden
+      carrierwave_integrity_error: hat einen nicht erlaubten Dateityp
+      carrierwave_download_error: konnte nicht heruntergeladen werden
+      extension_white_list_error: "Es ist nicht erlaubt %{extension} Dateien hochzuladen, erlaubte Dateitypen: %{allowed_types}"
+      extension_black_list_error: "Es ist nicht erlaubt %{extension} Dateien hochzuladen, andere verbotene Dateitypen: %{prohibited_types}"
+      rmagick_processing_error: "Die Bearbeitung mit rmagick ist fehlgeschlagen, möglicherweise handelt es sich nicht um ein Bild? Ursprünglicher Fehler: %{e}"
+      mime_types_processing_error: "Die Verarbeitung der Datei mit MIME::Types ist fehlgeschlagen, möglicherweise handelt es sich um einen unbekannten Content-Typ? Ursprünglicher Fehler: %{e}"
+      mini_magick_processing_error: "Die Bearbeitung mit MiniMagick ist fehlgeschlagen, möglicherweise handelt es sich nicht um ein Bild? Ursprünglicher Fehler: %{e}"
