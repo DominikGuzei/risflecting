@@ -49,4 +49,6 @@ When /^I chose a file to add to the project$/ do
   attach_file 'attachment_file', "#{Rails.root}/features/fixtures/test.png"
 end
 
-
+Given /^the project has (\d+) attached files?$/ do |amount_of_attachments|
+  FactoryGirl.create_list :attachment, amount_of_attachments.to_i, :attachable => @project
+end
