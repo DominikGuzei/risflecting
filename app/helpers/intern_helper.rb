@@ -22,4 +22,13 @@ module InternHelper
 
     image_tag asset_path("intern/file-types/#{icon_type.downcase}.png")
   end
+
+  def avatar_url file, size=:normal
+    if file.url.blank?
+      asset_path "intern/#{['default', 'avatar', size.to_s].join('-')}.jpg"
+    else
+      file = file.send(size.to_sym) unless size == :normal
+      file.url
+    end
+  end
 end
