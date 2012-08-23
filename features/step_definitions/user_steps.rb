@@ -127,3 +127,22 @@ Then /^I want to see my account details$/ do
   page.should have_content @current_user.phone
 end
 
+Given /^I am on my profile page$/ do
+  visit intern_profile_path
+end
+
+Then /^I want to see the form to edit my profile information$/ do
+  page.should have_selector '#account-edit-form'
+end
+
+Given /^I am on the page with the profile edit form$/ do
+  visit edit_intern_profile_path
+end
+
+When /^I choose a new avatar image$/ do
+  attach_file 'user_avatar', "#{Rails.root}/features/fixtures/test.png"
+end
+
+Then /^I want to see the newly uploaded avatar on my profile page$/ do
+  page.should have_image "test.jpg" # this must be .jpg as the uploader converts it
+end
