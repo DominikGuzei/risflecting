@@ -23,6 +23,10 @@ FactoryGirl.define do
     roles   { [ Role.find_or_create_by_name('Admin') ] }
   end
 
+  factory :coordinator, :parent => :user do
+    roles       { [ Role.find_or_create_by_name('Coordinator') ] }
+  end
+
   factory :question do
     title   "A superb title"
     body    "I have some big problems and I have no clue how to solve them. Please help."

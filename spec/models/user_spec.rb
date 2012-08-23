@@ -167,5 +167,20 @@ describe User do
       it { should be_able_to :add_attachment, user.projects.new }
       it { should_not be_able_to :add_attachment, Project.new }
     end
+
+    context 'coordinator user' do
+      let(:user) { FactoryGirl.create :coordinator }
+
+      it { should_not be_able_to :create,  Appointment.new }
+      it { should_not be_able_to :update,  Appointment.new }
+      it { should_not be_able_to :destroy, Appointment.new }
+      it { should_not be_able_to :create,  User.new }
+
+      it { should be_able_to :add_attachment, user.questions.new }
+      it { should_not be_able_to :add_attachment, Question.new }
+
+      it { should be_able_to :add_attachment, user.projects.new }
+      it { should_not be_able_to :add_attachment, Project.new }
+    end
   end
 end
