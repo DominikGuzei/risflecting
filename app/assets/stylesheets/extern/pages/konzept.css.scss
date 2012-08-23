@@ -1,3 +1,4 @@
+//= require extern/pages/shared/chapter_viewer
 
 section#content {
   
@@ -7,52 +8,6 @@ section#content {
     margin-bottom: 40px;
   }
   
-  aside {
-    font-family: 'Open Sans Condensed', sans-serif;
-    font-size: 15px;
-    
-    ol {
-      list-style-type: decimal;
-      
-      li {
-        margin-bottom: 10px;
-        font-weight: bold;
-        color: #C27410;
-        
-        &.active, &.active a {
-          color: #2e4672;
-          
-          &:hover {
-            text-decoration: none;
-            cursor: default;
-          }
-        }
-        
-        &:hover {
-          text-decoration: underline;
-          cursor: pointer;
-        }
-      }
-    }
-  }
-  
-  article {
-    section {
-      display: none;
-      
-      &.active {
-        display: block;
-      }
-    }
-  }
-  
-  #chapter-page-navigation {
-    margin-top: 20px;
-  }
-}
-
-.no-js section#content article section {
-  display: block;
 }
 
 // changes for big desktop screens

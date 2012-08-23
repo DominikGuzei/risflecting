@@ -1,0 +1,59 @@
+#content {
+  
+  aside {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 15px;
+    
+    ol {
+      
+      li {
+        margin-bottom: 10px;
+        font-weight: bold;
+        color: #C27410;
+        
+        &.active, &.active a {
+          color: #2e4672;
+          
+          &:hover {
+            text-decoration: none;
+            cursor: default;
+          }
+        }
+        
+        &:hover {
+          text-decoration: underline;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  
+  article {
+    section {
+      display: none;
+      
+      &.active {
+        display: block;
+      }
+    }
+  }
+}
+
+.no-js section#content article section {
+  display: block;
+}
+
+#chapter-page-navigation {
+  margin-top: 20px;
+  
+  a {
+    margin-right: 5px;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    background-color: #eee;
+    
+    &:hover {
+      border: 1px solid #C27410;
+    }
+  }
+}

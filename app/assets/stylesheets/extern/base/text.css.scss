@@ -57,11 +57,21 @@ section#content {
     width: 100%;
     margin: 20px 0;
   }
+  
+  cite {
+    font-style: italic;
+    margin: 20px 0;
+    display: block;
+  }
 
 }
 
 strong {
   font-weight: bold;
+}
+
+em {
+  font-style: italic;
 }
 
 footer {
