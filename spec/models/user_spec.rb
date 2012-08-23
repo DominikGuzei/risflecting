@@ -130,7 +130,7 @@ describe User do
     end
   end
 
-  describe 'abilities' do
+  describe Ability do
     subject { ability }
 
     let(:ability) { Ability.new user }
@@ -139,6 +139,12 @@ describe User do
       let(:user) { FactoryGirl.create :admin }
 
       it { should be_able_to :manage, :all }
+
+      it { should be_able_to :add_attachment, user.questions.new }
+      it { should_not be_able_to :add_attachment, Question.new }
+
+      it { should be_able_to :add_attachment, user.projects.new }
+      it { should_not be_able_to :add_attachment, Project.new }
     end
 
     context 'normal user' do
@@ -148,20 +154,12 @@ describe User do
       it { should_not be_able_to :update,  Appointment.new }
       it { should_not be_able_to :destroy, Appointment.new }
       it { should_not be_able_to :create,  User.new }
-    end
-
-    context 'add attachments to question for user' do
-      let(:user) { FactoryGirl.create :user }
 
       it { should be_able_to :add_attachment, user.questions.new }
       it { should_not be_able_to :add_attachment, Question.new }
-    end
 
-    context 'add attachments to question for admin' do
-      let(:user) { FactoryGirl.create :admin }
-
-      it { should be_able_to :add_attachment, user.questions.new }
-      it { should_not be_able_to :add_attachment, Question.new }
+      it { should be_able_to :add_attachment, user.projects.new }
+      it { should_not be_able_to :add_attachment, Project.new }
     end
   end
 end
