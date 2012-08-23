@@ -1,0 +1,33 @@
+//= require extern/pages/shared/chapter_viewer
+
+#studie, #sponsors {
+  margin-top: 20px;
+}
+
+#chapter-page-navigation {
+  margin-top: 20px;
+}
+
+#content {
+  .subline {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: normal;
+  }
+  
+  .content-box {
+    border-top: 1px solid #eee;
+    margin-bottom: 20px;
+    
+    p {
+      padding: 0 20px;
+    }
+  }
+}
+
+#sponsors {
+  background-color: #E8F1FF;
+  
+  p {
+    padding: 10px;
+  }
+}
