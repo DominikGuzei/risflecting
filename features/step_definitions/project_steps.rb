@@ -52,3 +52,20 @@ end
 Given /^the project has (\d+) attached files?$/ do |amount_of_attachments|
   FactoryGirl.create_list :attachment, amount_of_attachments.to_i, :attachable => @project
 end
+
+Given /^there are (\d+) projects$/ do |amount_of_projects|
+  FactoryGirl.create_list :project, amount_of_projects.to_i
+end
+
+Given /^I am on the projects page$/ do
+  visit intern_projects_path
+end
+
+Then /^I want to see the title and author of the project$/ do
+  page.should have_content @project.title
+  page.should have_content @project.author.surname
+end
+
+Then /^I want to see a list of (\d+) projects$/ do |amount_of_projects|
+  find('#projects-list').all('li').count.should == amount_of_projects.to_i
+end

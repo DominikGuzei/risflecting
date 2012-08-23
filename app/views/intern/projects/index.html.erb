@@ -5,3 +5,24 @@
     <% end %>
   </h2>
 </div>
+
+<ul id="projects-list" class="unstyled">
+<% @projects.each do |project| %>
+  <li class="well">
+    <div class="row">
+      <div class="span6 title">
+        <h4>
+          <%= link_to project.title, intern_project_path(project) %>
+          <br><small class="author">von <%= project.author.surname %> <%= project.author.forename %></small>
+        </h4>
+      </div>
+      <div class="span3 pull-right bonus-info">
+        <span class="update-date">zuletzt geändert <em><%= l project.updated_at, :format => '%d. %b, %H:%I Uhr' %></em></span>
+      </div>
+      <div class="span2 pull-right creation-date">
+        erstellt am<br/><%= l project.created_at, :format => '%d. %B %Y' %>
+      </div>
+    </div>
+  </li>
+<% end %>
+</ul>
