@@ -111,6 +111,24 @@ describe 'Intern::Projects' do
   end
 end
 
+describe 'Intern::Attachments' do
+  it 'should route POST /intern/projects/:id/attachments to the project attachment create action' do
+    { :post => '/intern/projects/1/attachments' }.should route_to(
+      :controller => 'intern/attachments',
+      :project_id => '1',
+      :action => 'create'
+    )
+  end
+
+  it 'should route POST /intern/questions/:id/attachments to the question attachment create action' do
+    { :post => '/intern/questions/1/attachments' }.should route_to(
+      :controller => 'intern/attachments',
+      :question_id => '1',
+      :action => 'create'
+    )
+  end
+end
+
 describe 'Intern::Comments' do
   it 'should route POST /intern/questions/:id/comments to the question create action' do
     { :post => '/intern/questions/1/comments' }.should route_to(

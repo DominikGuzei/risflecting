@@ -14,7 +14,7 @@ class Ability
       cannot :create, User
     end
 
-    cannot :add_attachment, Question
-    can :add_attachment, Question, :user_id => user.id
+    cannot :add_attachment, [Question, Project]
+    can :add_attachment, [Question, Project], :user_id => user.id
   end
 end

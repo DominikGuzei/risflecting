@@ -27,6 +27,12 @@ FactoryGirl.define do
     association :author, :factory => :user
   end
 
+  factory :project do
+    title       "A bombastic title"
+    body        "I have some lovely project experiences which I want to share with you."
+    association :author, :factory => :user
+  end
+
   factory :comment do
     text        "A comment text"
   end
