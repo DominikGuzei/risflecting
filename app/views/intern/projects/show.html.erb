@@ -14,4 +14,10 @@
       Erstellt am <strong><%= @project.created_at.strftime('%d. %B \'%y') %></strong> von <strong><%= @project.author.surname %> <%= @project.author.forename %></strong>
     </p>
   </div>
+
+  <div class="span4">
+    <% if can? :add_attachment, @project %>
+      <%= render :partial => 'intern/attachments/form', :locals => { :resource => @project, :attachment => @attachment ||= @project.attachments.new } %>
+    <% end %>
+  </div>
 </div>

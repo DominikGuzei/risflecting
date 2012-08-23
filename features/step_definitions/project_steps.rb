@@ -23,3 +23,30 @@ Then /^I want to see the newly created project$/ do
   page.should have_content 'A new project'
   page.should have_content 'Some awesome stuff I did ...'
 end
+
+Given /^there is a project$/ do
+  @project_data = { :title => 'Stupid title', :body => 'A question or message ...' }
+  @project = FactoryGirl.create :project, @project_data
+end
+
+Given /^there is a project from another user$/ do
+  step 'there is a project'
+end
+
+Given /^I am on the project details page$/ do
+  visit intern_project_path @project
+end
+
+Given /^there is a project of my own$/ do
+  @project = FactoryGirl.create :project, :author => @current_user
+end
+
+Then /^I want to be on the project details page$/ do
+  current_path.should == intern_project_path(@project)
+end
+
+When /^I chose a file to add to the project$/ do
+  attach_file 'attachment_file', "#{Rails.root}/features/fixtures/test.png"
+end
+
+
