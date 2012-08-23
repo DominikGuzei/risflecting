@@ -15,6 +15,7 @@ class Intern::ProjectsController < InternController
   end
 
   def index
+    @projects = Project.order(:updated_at).reverse_order
   end
 
   def show
