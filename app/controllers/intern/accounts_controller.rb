@@ -1,3 +1,4 @@
+# encoding: utf-8
 class Intern::AccountsController < InternController
   def show
     @user = params[:id] ? User.find(params[:id]) : current_intern_user
@@ -26,5 +27,18 @@ class Intern::AccountsController < InternController
 
     flash.keep
     redirect_to new_intern_account_path
+  end
+
+  def edit
+    @user = current_intern_user
+  end
+
+  def update
+    if current_intern_user.update_attributes params[:user]
+      redirect_to intern_profile_path
+      flash[:success] = 'Deine Änderungen wurden erfolgreich gespeichert'
+    else
+      render :edit
+    end
   end
 end
