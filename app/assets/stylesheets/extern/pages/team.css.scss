@@ -1,0 +1,82 @@
+#content {
+  .portrait {
+    position: relative;
+    margin-bottom: 20px;
+    
+    img {
+      outline: 1px solid white;
+      margin: 0;
+    }
+    
+    &:hover img {
+      -webkit-box-shadow: 1px 1px 8px 0px rgba(100, 100, 100, 0.5);
+      box-shadow: 1px 1px 8px 0px rgba(100, 100, 100, 0.5);
+    }
+    
+    .details {
+      width: 100%;
+      position: absolute;
+
+      left: 0;
+      bottom: 0;
+      margin: 0;
+      padding: 10px 0;
+      
+      font-family: 'Open Sans Condensed', sans-serif;
+      background-color: white;
+      
+      .name {
+        font-weight: bold;
+        margin-left: 10px;
+      }
+      
+      .email {
+        margin: 0 10px;
+      }
+    }
+  }
+  
+  ul#sponsors {
+    margin:0;
+    list-style-type: none;
+    
+    li {
+      float: left;
+      padding: 5px 10px;
+      margin-right: 10px;
+      border: 1px solid #E9E9E9;
+      background-color: #F8F8F8;
+    }
+  }
+}
+
+// only use these styles if browser supports csstransitions
+.csstransitions {
+  #content .portrait {
+    .details {
+      opacity: 0;
+      
+      /* Firefox */
+      -moz-transition-property: opacity;
+  		-moz-transition-duration: 0.2s;
+
+  		/* WebKit */
+  		-webkit-transition-property: opacity;
+  		-webkit-transition-duration: 0.2s;
+
+  		/* Opera */
+  		-o-transition-property: opacity;
+  		-o-transition-duration: 0.2s;
+
+  		/* Standard */
+  		transition-property: opacity;
+  		transition-duration: 0.2s;
+    }
+    
+    &:hover {
+      .details {
+        opacity: 1;
+      }
+    }
+  }
+}
