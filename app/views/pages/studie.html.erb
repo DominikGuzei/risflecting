@@ -1,8 +1,9 @@
+<% page_title('Studie') %>
+<% page_stylesheet('extern/pages/studie', :media => 'all') %>
+<% page_javascript('extern/pages/studie') %>
+
 <% content_for :headline  do %>
   <h1>Die Studie</h1>
-  <div id="sub-headline">
-    risflecting entwickelt mit Menschen, Gruppen und Gesellschaften den souveränen Umgang mit Rausch und Risiko
-  </div>
 <% end %>
 
 <section>
@@ -11,48 +12,60 @@
   </p>
   <p>
      Die Studie behandelt Grundlagen, Statements und Modelle zur Rausch und Risikopädagogik.
-  </p>
-  <p>
-    <a href="<%= asset_path 'studie.pdf' %>">Studie als PDF ansehen.</a>
-  </p>
-  <p>
-    Erstellt im Auftrag von Akzente Salzburg, der österreichischen Alpenvereinsjugend, dem Landesjugendreferat Wien und dem Amt für Jugendarbeit der Provinz Bozen – Südtirol. Gefördert aus Mitteln des Fonds Gesundes Österreich.
+     <%= link_to 'Gesamte Studie downloaden (PDF)', asset_path('studie.pdf'), :target => :new %>
   </p>
 </section>
 
-<section>
-  <h4>Fokusthemen der Studie</h4>
-  <ul>
-    <li>
-      Grundlegende Begriffe
-    </li>
-    <li>
-      Kritik am Status Quo
-    </li>
-    <li>
-      Das risflecting-Konzept
-    </li>
-    <li>
-      Literaturanalyse: Genuss
-    </li>
-    <li>
-      Literaturanalyse: Risiko
-    </li>
-    <li>
-      Literaturanalyse: Rausch
-    </li>
-    <li>
-      Literaturanalyse: Tanz, Techno u. Ekstase
-    </li>
-    <li>
-      Pädagogische Konsequenzen
-    </li>
-    <li>
-      Methoden
-    </li>
-    <li>
-      Die AutorInnen
-    </li>
-  </ul>
-</section>
+<div id="studie" class="row">
+  
+  <aside id="chapter-navigation" class="span3">
+    <ol>
+      <li><a href="#chapter-1">Grundlegende Begriffe</a></li>
+      <li><a href="#chapter-2">Kritik am Status Quo</a></li>
+      <li><a href="#chapter-3">Das risflecting-Konzept</a></li>
+      <li><a href="#chapter-4">Literaturanalyse: Genuss</a></li>
+      <li><a href="#chapter-5">Literaturanalyse: Risiko</a></li>
+      <li><a href="#chapter-6">Literaturanalyse: Rausch</a></li>
+      <li><a href="#chapter-7">Literaturanalyse: Tanz, Techno u. Ekstase</a></li>
+      <li><a href="#chapter-8">Pädagogische Konsequenzen</a></li>
+      <li><a href="#chapter-9">Methoden</a></li>
+      <li><a href="#chapter-10">Die AutorInnen</a></li>
+    </ol>
+  </aside>
 
+  <article class="span9">
+
+    <%= render 'pages/studie/chapter_1' %>
+    <%= render 'pages/studie/chapter_2' %>
+    <%= render 'pages/studie/chapter_3' %>
+    <%= render 'pages/studie/chapter_4' %>
+    <%= render 'pages/studie/chapter_5' %>
+    <%= render 'pages/studie/chapter_6' %>
+    <%= render 'pages/studie/chapter_7' %>
+    <%= render 'pages/studie/chapter_8' %>
+    <%= render 'pages/studie/chapter_9' %>
+    <%= render 'pages/studie/chapter_10' %>
+    
+  </article>
+  
+  <div id="chapter-page-navigation" class="span9 offset3">
+    <a href="" id="previous-chapter-button">&lt; voriges Kapitel</a>
+    <a href="" id="next-chapter-button">nächstes Kapitel &gt;</a>
+  </div>
+
+  <div id="sponsors" class="span9 offset3">
+  <p>
+    Erstellt im Auftrag von <%= link_to 'Akzente Salzburg', 'http://www.akzente.net', :target => :new %>, 
+    der <%= link_to 'österreichischen Alpenvereinsjugend', 'http://www.alpenverein.at', :target => :new %>, 
+    dem <%= link_to 'Landesjugendreferat Wien', 'http://www.bildungjugend.wien.at', :target => :new %> 
+    und dem <%= link_to 'Amt für Jugendarbeit der Provinz Bozen – Südtirol', 'http://www.provinz.bz.it/kulturabteilung/jugendarbeit/', :target => :new %>.
+    <br />
+  </p>
+
+  <p>Die erste umfassende Anwendungsstudie für risflecting im Bereich des 
+    Alkoholkonsums hat <strong>Claudia Fröse</strong> verfasst. Auszüge daraus finden Sie auf 
+    <%= link_to 'www.genusskultur.eu', 'http://www.genusskultur.eu', :target => :new %>
+  </p>
+  
+  <p><strong>Gefördert aus Mitteln des Fonds Gesundes Österreich.</strong></p>
+</div>
