@@ -6,35 +6,38 @@ FactoryGirl.define do
     endtime       { generate :date }
   end
 
-  factory :user do
+  factory :user, :aliases => [:author] do
     email                 { generate :email }
-    forename              "Marvin"
-    surname               "Hubot"
+    forename              { generate :forename }
+    surname               { generate :surname }
     phone                 "+436642312342"
     password              "password"
     password_confirmation "password"
     confirmed_at          Time.now
+    current_sign_in_at    Time.now
+    last_sign_in_at       Time.now
     roles                 { [ Role.find_or_create_by_name('Member') ] }
   end
 
   factory :admin, :parent => :user do
-    roles       { [ Role.find_or_create_by_name('Admin') ] }
+    roles   { [ Role.find_or_create_by_name('Admin') ] }
   end
 
   factory :question do
-    title       "A superb title"
-    body        "I have some big problems and I have no clue how to solve them. Please help."
-    association :author, :factory => :user
+    title   "A superb title"
+    body    "I have some big problems and I have no clue how to solve them. Please help."
+    author
   end
 
   factory :project do
-    title       "A bombastic title"
-    body        "I have some lovely project experiences which I want to share with you."
-    association :author, :factory => :user
+    title   "A bombastic title"
+    body    "I have some lovely project experiences which I want to share with you."
+    author
   end
 
   factory :comment do
-    text        "A comment text"
+    text    "A comment text"
+    author
   end
 
   factory :appointment_response do
@@ -48,11 +51,8 @@ FactoryGirl.define do
     file        { File.open "#{Rails.root}/features/fixtures/test.png" }
   end
 
-  sequence :date do |n|
-    n.days.from_now
-  end
-
-  sequence :email do |n|
-    "tester#{n}@test.com"
-  end
+  sequence(:date)     { |n| n.days.from_now }
+  sequence(:email)    { |n| "tester#{n}@test.com" }
+  sequence(:forename) { |n| "Marvin#{n}" }
+  sequence(:surname)  { |n| "Hubot#{n}" }
 end
