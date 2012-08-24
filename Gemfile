@@ -17,6 +17,7 @@ gem 'kaminari', '>= 0.13.0'
 gem 'rinku', '~> 1.7.0', :require => 'rails_rinku'
 
 gem 'carrierwave'
+gem 'rmagick'
 gem 'fog'
 
 group :assets do
