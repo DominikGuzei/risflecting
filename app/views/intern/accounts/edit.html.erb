@@ -15,7 +15,7 @@
         <%= image_tag avatar_url(@user.avatar, :small) %>
       </div>
     </div>
-    <%= form.file_field :avatar, :label => { :text => 'neues Avatarbild' }, :button_label => 'Auswählen' %>
+    <%= form.file_field :avatar, :label => { :text => 'neues Avatarbild' }, :button => { :label => 'Auswählen' } %>
     <%= form.hidden_field :avatar_cache %>
 
     <div class="form-actions">
