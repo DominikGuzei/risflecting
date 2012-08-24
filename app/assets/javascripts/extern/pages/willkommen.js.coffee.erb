@@ -1,0 +1,33 @@
+#= require vendor/supersized
+
+jQuery ->
+  
+  # full screen background images with fading effect
+  $.supersized
+    
+    slide_interval: 8000,
+    transition_speed: 2000,
+    
+    slides: [
+      { image: '<%= asset_path("willkommen/background-rope.jpg") %>'},
+      { image: '<%= asset_path("willkommen/background-biker.jpg") %>'}
+    ]
+
+  # dynamic circluar menu
+  circleInfoText = $('#circle-info-text')
+  defaultInfoText = circleInfoText.html()
+
+  showText = (text) -> circleInfoText.html(text).fadeIn('slow')
+
+  cancelCurrentAnimations = -> circleInfoText.stop().hide()
+
+  mouseInHandler = ->
+    cancelCurrentAnimations()
+    titleOfHoveredLink = ($(this).attr 'title')
+    showText(titleOfHoveredLink)
+
+  mouseOutHandler = -> 
+    cancelCurrentAnimations()
+    showText(defaultInfoText)
+
+  $('#circle-links a').hover(mouseInHandler, mouseOutHandler)
