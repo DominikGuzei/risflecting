@@ -1,11 +1,23 @@
 <%= form_for [:intern, @user], :url => intern_profile_path, :html => { :class => 'form-horizontal well', :id => 'account-edit-form'} do |form| %>
-  <%= content_tag :legend, 'Benutzer Informationen ändern' %>
+  <%= content_tag :legend, 'Benutzerinformationen ändern' %>
   <fieldset>
     <% if @user.errors.any? %>
     <div class="alert alert-error"><strong>Achtung!</strong> Beim Versuch deine Angaben zu ändern sind Fehler aufgetreten.</div>
     <% end %>
-    <%= form.file_field :avatar, :label => { :text => 'Avatarbild' }, :button_label => 'Auswählen' %>
+    <%= form.text_field :forename, :class => 'span4', :label => { :text => 'Vorname' } %>
+    <%= form.text_field :surname, :class => 'span4', :label => { :text => 'Nachname' } %>
+    <%= form.text_field :email, :class => 'span4', :label => { :text => 'E-Mail Adresse' } %>
+    <%= form.text_field :phone, :class => 'span4', :label => { :text => 'Handy Nummer' } %>
+    <hr/>
+    <div class="control-group">
+      <label class="control-label">aktuelles Avatarbild</label>
+      <div class="controls">
+        <%= image_tag avatar_url(@user.avatar, :small) %>
+      </div>
+    </div>
+    <%= form.file_field :avatar, :label => { :text => 'neues Avatarbild' }, :button_label => 'Auswählen' %>
     <%= form.hidden_field :avatar_cache %>
+
     <div class="form-actions">
       <%= form.submit 'Änderungen speichern' %>
       <%= link_to 'Abbrechen', intern_profile_path, :class => 'btn' %>
