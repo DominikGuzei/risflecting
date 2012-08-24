@@ -56,7 +56,7 @@ SimpleNavigation::Configuration.run do |navigation|
     primary.item :faq, 'FAQs', static_path(:faq)
     primary.item :team, 'Team', static_path(:team)
     primary.item :publikationen, 'Publikationen', static_path(:publikationen)
-    primary.item :english, 'english version', static_path(:english), :id => 'language-switch'
+    primary.item :english, 'english', static_path(:english), :id => 'language-switch'
 
     # you can also specify a css id or class to attach to this particular level
     # works for all levels of the menu
