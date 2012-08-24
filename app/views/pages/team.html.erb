@@ -43,26 +43,11 @@
     <section id="portraits" class="row">
     
       <div class="portrait span3">
-        <%= image_tag 'portraits/portrait-daniela-drueding.jpg' %>
-        <p class="details">
-          <span class="name">Daniela Drüding</span>
-          <span class="email">Email schicken</span>
-        </p>
-      </div>
-    
-      <div class="portrait span3">
         <%= image_tag 'portraits/portrait-frank-schulte-derne.jpg' %>
         <p class="details">
           <span class="name">Frank Schulte-Derne</span>
           <span class="email">
-            <script type="text/javascript" language="javascript"><!--
-            ML="mEst -u:aif<e@/=l.rdhc>\"kon";
-            MI=";84DB<:?G089@3I7:2ED6@3<5C<BJ<=8BEIBAC<GF1089@42ED9EH<J;>8F";
-            OT="";
-            for(j=0;j<MI.length;j++){
-            OT+=ML.charAt(MI.charCodeAt(j)-48);
-            }document.write(OT);
-            // --></script>
+            <%= encoded_email 'Email senden', 'fschulte-derne@arcor.de' %>
           </span>
         </p>
       </div>
@@ -72,14 +57,7 @@
         <p class="details">
           <span class="name">Herbert Tarmann</span>
           <span class="email">
-            <script type="text/javascript" language="javascript"><!--
-            ML=":k\"tol =shifcr/<@a_m.>neE";
-            MI="?A69=G;72CA:53409G=B3A=CAFF@943CA:5D<4C2EHCA:568<9:<1GF?>AE";
-            OT="";
-            for(j=0;j<MI.length;j++){
-            OT+=ML.charAt(MI.charCodeAt(j)-48);
-            }document.write(OT);
-            // --></script>
+            <%= encoded_email 'Email senden', 'her_tarmann@hotmail.com' %>
           </span>
         </p>
       </div>
@@ -89,24 +67,17 @@
         <p class="details">
           <span class="name">Agnes Koller</span>
           <span class="email">
-            <script type="text/javascript" language="javascript"><!--
-            ML="banfs\"ui:<ql.@kto=eEgrh/> mc";
-            MI="91IFEB3A5J17;?@81D2B4<>@;;BE=:61;7?1B?;B0B2<1?5HCJ17;I4KF7K>B29G1H";
-            OT="";
-            for(j=0;j<MI.length;j++){
-            OT+=ML.charAt(MI.charCodeAt(j)-48);
-            }document.write(OT);
-            // --></script>
+            <%= encoded_email 'Email senden', 'agnes.koller@qualitaetleben.at' %>
           </span>
         </p>
       </div>
     
       <div class="portrait span3">
-        <%= image_tag 'portraits/portrait-eva-maerz.jpg' %>
+        <%= image_tag 'portraits/portrait-eva-deutsch.jpg' %>
         <p class="details">
-          <span class="name">Eva März</span>
+          <span class="name">Eva Deutsch</span>
           <span class="email">
-            Email schicken
+            Email senden
           </span>
         </p>
       </div>
@@ -116,14 +87,7 @@
         <p class="details">
           <span class="name">Gerald Koller</span>
           <span class="email">
-            <script type="text/javascript" language="javascript"><!--
-            ML="afEuem=hsr.ci> q<gtlnd/k\"o@:b";
-            MI="@0>79416H50<CBIKA490CE:GICC49J?30C<B04BC4L4D:0BH=250<C>8;7<;G4D@F0=";
-            OT="";
-            for(j=0;j<MI.length;j++){
-            OT+=ML.charAt(MI.charCodeAt(j)-48);
-            }document.write(OT);
-            // --></script>
+            <%= encoded_email 'Email senden', 'gerald.koller@qualitaetleben.at' %>
           </span>
         </p>
       </div>
@@ -133,14 +97,7 @@
         <p class="details">
           <span class="name">Stefan Deuss</span>
           <span class="email">
-            <script type="text/javascript" language="javascript"><!--
-            ML="tka<hd/iE fbno:.@rlcu>mse\"=";
-            MI="3294AH:JIF27B0=>G0H:2<@42:H<D<52;H<0HDHA?5HIE8F27B9GC47C1H<362E";
-            OT="";
-            for(j=0;j<MI.length;j++){
-            OT+=ML.charAt(MI.charCodeAt(j)-48);
-            }document.write(OT);
-            // --></script>
+            <%= encoded_email 'Email senden', 'stefan@hafenundabenteuer.de' %>
           </span>
         </p>
       </div>
@@ -150,7 +107,7 @@
         <p class="details">
           <span class="name">Wolfgang Schöngruber</span>
           <span class="email">
-            Email schicken
+            Email senden
           </span>
         </p>
       </div>
