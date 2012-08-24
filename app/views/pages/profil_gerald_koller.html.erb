@@ -1,9 +1,38 @@
-<%= image_tag "portrait-gerald-koller.png" %>
+<% page_title('Gerald Koller') %>
+<% page_stylesheet('extern/pages/profil_gerald_koller', :media => 'all') %>
 
-<h3>Gerald Koller: Bildungsmensch, Zusammendenker, changemaker</h3>
+<% content_for :headline  do %>
+  <h1>Gerald Koller</h1>
+<% end %>
 
-<p>Gerald Koller ist seit 25 Jahren als Fachberater, Referent und Autor im Brückenbereich zwischen Gesundheit und Kommunikation unterwegs - und dabei Baupläne für die präventive Arbeit mit Jugendlichen entwickelt, die europaweit Anwendung finden. Nach seiner Mitarbeit beim Aufbau der modernen Suchtprävention in Österreich und der peer group education in verschiedenen europäischen Regionen sah er die pädagogische Aufgabe, das Bedürfnis von (jungen) Menschen nach Rausch und Risiko als Entwicklungspotential zu erkennen - und ihnen Möglichkeiten in die Hand zu geben, ihren Umgang damit zu kultivieren. Die dabei notwendige Ent-tabuisierung öffnet den Weg von der Bewahrungs- zur Bewährungspädagogik. Auf ihr basiert risflecting, der von Gerald Koller entwickelte Ansatz der Rausch- und Risikopädagogik. Heute wird im gesamten deutschsprachigen Raum dieses Konzept von ausgebildeten Fachleuten in Schulen, Betrieben, Beratungseinrichtungen, Jugendzentren, Freizeitparks im Dienste der Sucht- und Gewaltprävention, der alpinen und der Verkehrserziehung angewandt und weiter entwickelt.</p>
 
-<p><strong>Für seine Entwicklungsarbeit wurde Gerald Koller von Ashoka, der weltgrößten Organisation für social change, zum Ashoka fellow berufen.</strong></p>
+<article class="row">
+  
+  <div class="span4">
+    <%= image_tag "portraits/portrait-gerald-koller.jpg" %>
+  </div>
 
-<%= link_to "zum Film", "http://youtu.be/p3e9-B_icRM", target: :new %>
+  <div class="span8">
+    <h2>Gerald Koller: Bildungsmensch, Zusammendenker, changemaker</h2>
+
+    <p>Gerald Koller ist seit 25 Jahren als Fachberater, Referent und Autor im 
+      Brückenbereich zwischen Gesundheit und Kommunikation unterwegs - und dabei 
+      Baupläne für die präventive Arbeit mit Jugendlichen entwickelt, die europaweit 
+      Anwendung finden. Nach seiner Mitarbeit beim Aufbau der modernen Suchtprävention 
+      in Österreich und der peer group education in verschiedenen europäischen Regionen 
+      sah er die pädagogische Aufgabe, das Bedürfnis von (jungen) Menschen nach Rausch 
+      und Risiko als Entwicklungspotential zu erkennen - und ihnen Möglichkeiten in die 
+      Hand zu geben, ihren Umgang damit zu kultivieren. Die dabei notwendige 
+      Ent-tabuisierung öffnet den Weg von der Bewahrungs- zur Bewährungspädagogik. 
+      Auf ihr basiert risflecting, der von Gerald Koller entwickelte Ansatz der Rausch- 
+      und Risikopädagogik. Heute wird im gesamten deutschsprachigen Raum dieses Konzept 
+      von ausgebildeten Fachleuten in Schulen, Betrieben, Beratungseinrichtungen, 
+      Jugendzentren, Freizeitparks im Dienste der Sucht- und Gewaltprävention, der 
+      alpinen und der Verkehrserziehung angewandt und weiter entwickelt.</p>
+
+    <p><strong>Für seine Entwicklungsarbeit wurde Gerald Koller von Ashoka, der 
+      weltgrößten Organisation für social change, zum Ashoka Fellow berufen.</strong></p>
+
+    <%= link_to "zum Ashoka Film-Portrait über Gerald Koller", "http://youtu.be/p3e9-B_icRM", target: :new %>
+  </div>
+</article>
