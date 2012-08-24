@@ -1,0 +1,23 @@
+#content {
+  
+  h2 {
+    margin: 10px 0;
+  }
+  
+  section ul {
+    margin:0;
+    list-style-type: none;
+  
+    li {
+      float: left;
+      padding: 5px 10px;
+      margin-right: 10px;
+      border: 1px solid #E9E9E9;
+      background-color: #F8F8F8;
+    }
+  }
+  
+  .vertical li {
+    float: none;
+  }
+}
