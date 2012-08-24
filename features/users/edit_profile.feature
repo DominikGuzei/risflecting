@@ -11,17 +11,17 @@ Feature: Edit profile
     When I click on 'Profil bearbeiten'
     Then I want to see the form to edit my profile information
 
-  Scenario: Keep existing profile information
-    Given I am on the page with the profile edit form
-    When I change none of my informations
-    And I save the page anyway
-    Then I want to see the existing informations on my profile page
-
   Scenario: Change my profile information
     Given I am on the page with the profile edit form
     When I change my name, email and phone
     And I save the changes
     Then I want to see the changes on my profile page
+
+  Scenario: Keep existing profile information
+    Given I am on the page with the profile edit form
+    When I change none of my informations
+    And I save the informations anyway
+    Then I want to see the existing informations on my profile page
 
   Scenario: Remove my profile information
     Given I am on the page with the profile edit form

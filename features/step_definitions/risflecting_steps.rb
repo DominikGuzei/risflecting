@@ -10,7 +10,7 @@ Then /^I want to get feedback that the (\w+) was created successfully$/ do |word
   page.should have_selector '.flash-message.alert-success'
 end
 
-When /^I save the ([^"]*?)$/ do |expression|
+When /^I save the (\w+)$/ do |expression|
   click_on 'submit'
 end
 

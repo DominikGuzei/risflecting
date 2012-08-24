@@ -178,6 +178,10 @@ When /^I change none of my informations$/ do
   }
 end
 
+When /^I save the informations anyway$/ do
+  step 'I save the changes'
+end
+
 Then /^I want to see the existing informations on my profile page$/ do
   page.should have_content @current_user_data[:surname]
   page.should have_content @current_user_data[:forename]
