@@ -1,6 +1,6 @@
 <div class="row">
   <div class="span3" id="avatar">
-    <%= image_tag avatar_url(@user.avatar), :alt => "#{@user.forename} #{@user.surname}" %><br/><br/>
+    <%= image_tag avatar_url(@user.avatar), :alt => @user.full_name %><br/><br/>
     <%= link_to 'Profil bearbeiten', edit_intern_profile_path, :class => 'btn btn-info' %><br/>
   </div>
   <div class="span4" id="info">
