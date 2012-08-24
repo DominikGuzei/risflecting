@@ -25,7 +25,7 @@ Then /^I want to see the newly created project$/ do
 end
 
 Given /^there is a project$/ do
-  @project_data = { :title => 'Stupid title', :body => 'A question or message ...' }
+  @project_data = { :title => 'Stupid title for a stupid project', :body => 'My really aweful experiences...' }
   @project = FactoryGirl.create :project, @project_data
 end
 

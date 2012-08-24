@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 Given /^I am signed in as a user$/ do
   user = FactoryGirl.create :user
 
@@ -145,4 +147,30 @@ end
 
 Then /^I want to see the newly uploaded avatar on my profile page$/ do
   page.should have_image "test.jpg" # this must be .jpg as the uploader converts it
+end
+
+When /^I click on the name of the (\w+)´s author$/ do |word|
+  @author = instance_variable_get("@#{word}").send :author
+  click_link @author.full_name
+end
+
+Then /^I want to see the author´s profile$/ do
+  current_path.should == intern_account_path(@author)
+end
+
+Given /^the question has a comment$/ do
+  @comment = FactoryGirl.create :comment, :question => @question, :author => @author
+end
+
+Given /^(\d+) user already accepted that appointment$/ do |arg1|
+  appointment_response = FactoryGirl.create :appointment_response, :appointment => @appointment, :accepted => true
+  @accepted_user = appointment_response.user
+end
+
+When /^I click on the user´s name$/ do
+  click_link @accepted_user.formal_name
+end
+
+Then /^I want to see the user´s profile$/ do
+  current_path.should == intern_account_path(@accepted_user)
 end
