@@ -7,7 +7,7 @@ Risflecting::Application.routes.draw do
     end
 
     resource :dashboard, :only => [:show]
-    resources :accounts, :only => [:create, :new]
+    resources :accounts, :only => [:create, :new, :show]
     resource :profile, :only => [:show, :edit, :update], :controller => :accounts
 
     resources :questions, :only => [:index, :show, :new, :create] do
