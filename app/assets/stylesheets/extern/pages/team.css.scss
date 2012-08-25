@@ -1,4 +1,25 @@
 #content {
+  
+  section {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed #CED8E9;    
+  }
+  
+  #koller-intro {
+    font-family: 'Open Sans Condensed', sans-serif;
+    margin-top: 20px;
+    font-size: 16px;
+  }
+  
+  .content-box {
+    margin-bottom: 20px;
+  }
+  
+  .intro {
+    margin: 0 20px;
+  }
+  
   .portrait {
     position: relative;
     margin-bottom: 20px;
