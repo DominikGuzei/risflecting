@@ -34,6 +34,7 @@ class Intern::AccountsController < InternController
   end
 
   def update
+    @user = current_intern_user
     if current_intern_user.update_attributes params[:user]
       redirect_to intern_profile_path
       flash[:success] = 'Deine Änderungen wurden erfolgreich gespeichert'
