@@ -4,7 +4,7 @@
     <% if attachment.errors.any? %>
     <div class="alert alert-error"><strong>Achtung!</strong> Beim Versuch die Datei hochzuladen sind Fehler aufgetreten.</div>
     <% end %>
-    <%= form.file_field :file, :label => false, :button_label => 'Auswählen' %>
+    <%= form.file_field :file, :label => false, :button => { :label => 'Auswählen' } %>
     <div class="pull-right"><%= form.submit 'Hochladen' %></div>
   </fieldset>
 <% end %>

@@ -10,10 +10,10 @@ Then /^I want to get feedback that the (\w+) was created successfully$/ do |word
   page.should have_selector '.flash-message.alert-success'
 end
 
-When /^I save the (\w+)$/ do |word|
+When /^I save the (\w+)$/ do |expression|
   click_on 'submit'
 end
 
 Then /^I want to see (\d+) errors?$/ do |amount_of_errors|
-  all('.control-group.error').count == amount_of_errors.to_i
+  all('.control-group.error').count.should == amount_of_errors.to_i
 end

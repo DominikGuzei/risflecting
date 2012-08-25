@@ -171,14 +171,15 @@ module BootstrapFormBuilder
       errorText = get_error_text(object, field, options)
       wrapperClass = 'control-group' + (errorText.empty? ? '' : ' error')
       errorSpan = if errorText.empty? then "" else "<span class='help-inline'>#{errorText}</span>" end
-
       labelTag = options[:label] ? get_label(field, options) : ''
+      options[:button][:label] = 'Choose' if options[:button].nil? or options[:button][:label].nil?
+
       ("<div class='#{wrapperClass}'>" +
         labelTag +
         "<div class='controls'>" +
-          "<div class='input-prepend file-input hidden'>" +
-            @template.button_tag(options[:button_label], :class => 'btn', :id => 'file_browse_button', :type => 'button') +
-            @template.text_field_tag("file_name_field", '', { :placeholder => placeholder_text, :class => options[:class], :disabled => true }) +
+          "<div class='input-prepend file-input hidden #{options[:class]}'>" +
+            @template.button_tag(options[:button][:label], { :class => 'btn', :id => 'file_browse_button', :type => 'button' }.merge(options[:button] || {})) +
+            @template.text_field_tag("file_name_field", '', { :placeholder => placeholder_text, :disabled => true }) +
             super(field, {:id => id }) +
           "</div>" +
           errorSpan +
