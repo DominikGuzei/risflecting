@@ -1,131 +1,168 @@
-#content article {
-  width: 620px;
-  margin: 0 auto;
-  text-align: justify;
+//= require vendor/supersized
+//= require extern/base/sticky_footer
+//= require extern/base/fonts
+//= require extern/base/text
+
+$page_width: 960px;
+
+header {
+  height: 33px;
+  
+  background: #222;
+  border-bottom: 1px solid #424242;
 }
 
-#circle-navigation {
-  text-align: center;
-  position: relative;
-  height: 461px;
-  left: 30px;
+section#content {
   
-  * {
-    z-index: 100;
+  color: white;
+  
+  .container {
+    padding: 40px 0 140px 0;
   }
-  
-  ul {
-    list-style: none;
-    margin: 0;
+
+  h1 {
+    margin: 33px 0 10px 0;
+    line-height: 80px;
+    font-size: 64px;
   }
-  
-  a {
-    position: absolute;
+
+  h2 {
+    font-size: 35px;
+    line-height: 50px;
+    margin-bottom: 30px;
+  }
+
+  .intro {
     font-size: 16px;
+    line-height: 24px;
+    width: 32em;
+  }
+
+}
+
+article {
+  width: $page_width;
+  margin: 0 auto;
+  position: relative;
+  background: image-url('willkommen/circle-navigation-background.png') no-repeat;
+
+  .intro {
+    width: 730px;
+  }
+}
+
+#reading-sign {
+  width: 209px;
+  height: 228px;
+  
+  position: absolute;
+  right: 0;
+  top: -40px;
+  
+  text-align:center;
+  padding: 0;
+  background: image-url('willkommen/reading-sign.png') no-repeat;
+
+  &:hover {
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  > * {
+    position: relative;
+    left: -3px;
+  }
+
+  #logo-text {
+    font-size: 29px;
     font-weight: bold;
+    margin: 30px 0 20px 0;
+  }
+  
+  span {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 18px;
+  }
+}
+
+#content {
+  
+  #circle-navigation {
+    width: 885px;
+    height: 440px;
+    position: relative;
+  
+    ul {
+      list-style: none;
+      margin: 0;
+    }
+  
+    a {
+      position: absolute;
+      font-size: 16px;
+      font-weight: bold;
+      color: white;
+      padding-top: 80px;
     
-    span {
-      display: block;
-      margin-top: 10px;
+      span {
+        display: block;
+        margin-top: 10px;
+      }
+    }
+  
+    img#background {
+      width: 80%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 99;
     }
   }
-  
-  h2 {
-    font-size: 24px;
-    font-weight: bold;
-    position: absolute;
-    top: 50%;
-    left: 34%;
-    color: white;
-    z-index: 1000;
-  }
-  
-  img#background {
-    width: 80%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 99;
-  }
-}
-
-#interaction-hint {
-  position: absolute;
-  top: 40px;
-  left: -80px;
-  width: 200px;
-  color: #A1A1A1;
-  font-family: 'Open Sans Condensed', sans-serif;
-  font-weight: bold;
 }
 
 #circle-info-text {
-  font-size: 16px;
+  font-size: 15px;
+  line-height: 24px;
   position: absolute;
-  top: 50%;
-  width: 30%;
+  top: 100px;
+  width: 300px;
   text-align: center;
-  left: 28.5%;
+  left: 300px;
   color: white;
   z-index: 1000;
-  font-family: 'Open Sans Condensed', sans-serif;
-  display: none;
 }
 
 #circle-konzept {
-  top: 24%;
-  left: 23.5%;
+  top: 70px;
+  left: 10px;
 }
 
 #circle-projekte {
-  top: 24%;
-  left: 53.4%;
+  top: 235px;
+  left: 121px;
 }
 
 #circle-weiterbildung {
-  top: 56.5%;
-  left: 67.3%;
+  top: 290px;
+  left: 300px;
 }
 
 #circle-faq {
-  top: 92.5%;
-  left: 56.5%;
+  top: 290px;
+  left: 528px;
 }
 
 #circle-team {
-  top: 92.5%;
-  left: 25.5%;
+  top: 240px;
+  left: 704px;
 }
 
 #circle-publikationen {
-  top: 56.5%;
-  left: 2.3%;
+  top: 67px;
+  left: 793px;
 }
 
-// changes for big desktop screens
-@media (min-width: 1200px) {
-
-  #content article {
-    width: 770px;
-  }
-
-  #circle-navigation {
-    height: 577px;
-
-    a {
-      font-size: 20px;
-    }
-    
-    h2 {
-       font-size: 30px;
-    }
-  }
-
-  #circle-info-text {
-    font-size: 18px;
-  }
-
-  #interaction-hint {
-    top: 50px;
-  }
+#supersized img {
+  max-width: inherit;
 }
