@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120823121142) do
+ActiveRecord::Schema.define(:version => 20120827075040) do
 
   create_table "appointment_responses", :force => true do |t|
     t.integer  "user_id"
@@ -96,6 +96,7 @@ ActiveRecord::Schema.define(:version => 20120823121142) do
     t.string   "surname"
     t.string   "phone"
     t.string   "avatar"
+    t.text     "description"
   end
 
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true

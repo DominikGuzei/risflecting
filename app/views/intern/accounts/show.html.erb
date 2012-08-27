@@ -1,15 +1,23 @@
 <div class="row">
+  <div class="span12">
+  <div class="page-header">
+    <h2>
+      <%= @user.full_name %>
+        <%= link_to edit_intern_profile_path, :class => 'pull-right btn btn-info' do %>
+          <i class="icon-pencil"></i>&nbsp; Profil bearbeiten
+        <% end %>
+    </h2>
+  </div>
+  </div>
   <div class="span3" id="avatar">
     <%= image_tag avatar_url(@user.avatar), :alt => "#{@user.forename} #{@user.surname}" %><br/><br/>
-    <%= link_to 'Profil bearbeiten', edit_intern_profile_path, :class => 'btn btn-info' %><br/>
   </div>
-  <div class="span4" id="info">
-    <strong>Name</strong>: <%= @user.full_name %><br/>
+  <div class="span9" id="info">
     <strong>E-Mail</strong>: <%= @user.email %><br/>
-    <strong>Telefon</strong>: <%= @user.phone %><br/>
+    <strong>Telefon</strong>: <%= @user.phone %><br/><br/>
     <strong>Mitglied seit</strong>: <%= l @user.created_at, :format => :short %><br/>
-    <strong>Zuletzt online</strong>: <%= l @user.current_sign_in_at, :format => :short %><br/>
-  </div>
-  <div class="span5" id="activities">
+    <strong>Zuletzt online</strong>: <%= l @user.current_sign_in_at, :format => :short %><br/><br/>
+    <strong>Informationen</strong>:<br/>
+    <%= simple_format(auto_link @user.description) %>
   </div>
 </div>
