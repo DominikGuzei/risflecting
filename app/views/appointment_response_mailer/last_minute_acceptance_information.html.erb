@@ -4,5 +4,5 @@ Folgende Benutzer haben zu diesem Termin zugesagt:
 <br>
 
 <% @appointment.accepting_users.each do |user| %>
-  <br><%= user.full_name %>
+  <br><%= user.formal_name %>
 <% end %>
