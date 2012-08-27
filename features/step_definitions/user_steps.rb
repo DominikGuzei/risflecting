@@ -188,3 +188,15 @@ Then /^I want to see the existing informations on my profile page$/ do
   page.should have_content @current_user_data[:email]
   page.should have_content @current_user_data[:phone]
 end
+
+When /^I add a description with some informations about me$/ do
+  fill_in 'user_description', :with => 'Description with some informations about me'
+end
+
+Then /^I want to see the description on my profile page$/ do
+  page.should have_content 'Description with some informations about me'
+end
+
+Then /^I want to see feedback that the changes were successfully saved$/ do
+  page.should have_selector '.flash-message.alert-success'
+end

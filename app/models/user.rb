@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :confirmable, :recoverable, :rememberable, :trackable, :validatable
   mount_uploader :avatar, AvatarUploader
 
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :forename, :surname, :phone, :avatar, :avatar_cache
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :forename, :surname, :phone, :description, :avatar, :avatar_cache
 
   validates :forename, :surname, :phone, :presence => true
   validate :phone_number_has_correct_format
