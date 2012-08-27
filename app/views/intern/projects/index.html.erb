@@ -13,7 +13,7 @@
       <div class="span6 title">
         <h4>
           <%= link_to project.title, intern_project_path(project) %>
-          <br><small class="author">von <%= project.author.surname %> <%= project.author.forename %></small>
+          <br><small class="author">von <%= link_to project.author.full_name, intern_account_path(project.author) %></small>
         </h4>
       </div>
       <div class="span3 pull-right bonus-info">

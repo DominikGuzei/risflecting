@@ -124,9 +124,15 @@ describe User do
     it 'should return the user´s full name' do
       user = FactoryGirl.create :user
 
-      full_name = user.full_name
-      full_name.should include user.surname
-      full_name.should include user.forename
+      user.full_name.should == user.forename + ' ' + user.surname
+    end
+  end
+
+  describe '#formal_name' do
+    it 'should return the user´s full name' do
+      user = FactoryGirl.create :user
+
+      user.formal_name.should == user.surname + ' ' + user.forename
     end
   end
 

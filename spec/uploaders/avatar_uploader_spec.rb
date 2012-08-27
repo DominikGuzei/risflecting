@@ -22,7 +22,7 @@ describe AvatarUploader do
 
   context 'small version' do
     it 'should scale down the avatar be exactly 48 by 48 pixels' do
-      @uploader.small.should have_dimensions(48, 48)
+      @uploader.small.should have_dimensions(56, 56)
     end
   end
 

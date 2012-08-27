@@ -10,7 +10,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
   process :resize_to_fill => [220, 300]
   process :convert => 'jpg'
 
-  version(:small) { process :resize_to_fill => [48, 48] }
+  version(:small) { process :resize_to_fill => [56, 56] }
   version(:tiny) { process :resize_to_fill => [20, 20] }
 
   def filename

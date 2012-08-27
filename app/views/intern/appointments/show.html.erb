@@ -44,35 +44,7 @@
         </div>
       </div>
     </div>
-    <div class="row">
-      <div class="span6">
-        <div class="well">
-          <h4>Zusagen<span class="badge badge-info pull-right"><%= @accepting_users.length %></span></h4>
-          <% unless @accepting_users.length == 0 %>
-          <hr>
-          <ul id="acceptances" class="unstyled">
-          <% @accepting_users.each_with_index do |user, index| %>
-            <li class="pull-left <%= index % 2 == 0 ? 'even' : 'odd' %>"><%= user.full_name %></li>
-          <% end %>
-          </ul>
-          <% end %>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="span6">
-        <div class="well">
-          <h4>Absagen<span class="badge badge-info pull-right"><%= @rejecting_users.length %></span></h4>
-          <% unless @rejecting_users.length == 0 %>
-          <hr>
-          <ul id="rejections" class="unstyled">
-          <% @rejecting_users.each_with_index do |user, index| %>
-            <li class="pull-left <%= index % 2 == 0 ? 'even' : 'odd' %>"><%= user.full_name %></li>
-          <% end %>
-          </ul>
-          <% end %>
-        </div>
-      </div>
-    </div>
+    <%= render :partial => 'acceptances_rejections_list', :locals => { :users => @accepting_users, :title => 'Zusagen', :list_id => 'acceptances'} %>
+    <%= render :partial => 'acceptances_rejections_list', :locals => { :users => @rejecting_users, :title => 'Absagen', :list_id => 'rejections'} %>
   </div>
 </div>

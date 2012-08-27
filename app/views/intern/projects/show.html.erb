@@ -11,7 +11,10 @@
   <div class="span8">
     <p class="description"><%= auto_link @project.body, :html => { :target => '_blank' } %></p>
     <p class="author-details">
-      Erstellt am <strong><%= @project.created_at.strftime('%d. %B \'%y') %></strong> von <strong><%= @project.author.surname %> <%= @project.author.forename %></strong>
+      von
+      <%= image_tag avatar_url(@project.author.avatar, :tiny), :alt => @project.author.full_name %>
+      <%= link_to intern_account_path @project.author do %><strong><%= @project.author.full_name %></strong><% end %>
+      am <strong><%= @project.created_at.strftime('%d. %B %Y') %></strong><br/>
     </p>
   </div>
 

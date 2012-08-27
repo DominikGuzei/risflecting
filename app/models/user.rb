@@ -42,6 +42,10 @@ class User < ActiveRecord::Base
   end
 
   def full_name
+    [forename, surname].join(' ')
+  end
+
+  def formal_name
     [surname, forename].join(' ')
   end
 

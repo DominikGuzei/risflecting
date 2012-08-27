@@ -6,7 +6,10 @@
     <% recent_alternative_questions.each do |question| %>
       <li>
         <%= link_to question.title, intern_question_path(question) %><br>
-        <small>von <strong><%= question.author.surname %> <%= question.author.forename %></strong> am <strong><%= question.created_at.strftime('%d. %B \'%y') %></strong></small>
+        <small>
+          <%= image_tag avatar_url(question.author.avatar, :tiny), :alt => question.author.full_name %>
+          <strong><%= question.author.full_name %></strong> am <strong><%= question.created_at.strftime('%d. %B \'%y') %></strong>
+        </small>
       </li>
     <% end %>
   </ul>

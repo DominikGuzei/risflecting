@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="span6">
+    <div class="well">
+      <h4><%= title %><span class="badge badge-info pull-right"><%= users.length %></span></h4>
+      <% unless users.length == 0 %>
+      <hr>
+      <ul id="<%= list_id %>" class="unstyled">
+      <% users.each_with_index do |user, index| %>
+        <li class="pull-left <%= index % 2 == 0 ? 'even' : 'odd' %>">
+          <%= image_tag avatar_url(user.avatar, :tiny), :alt => user.full_name %>
+          <%= link_to user.formal_name, intern_account_path(user) %>
+        </li>
+      <% end %>
+      </ul>
+      <% end %>
+    </div>
+  </div>
+</div>

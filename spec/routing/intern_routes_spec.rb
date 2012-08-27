@@ -9,6 +9,16 @@ describe 'Intern' do
   end
 end
 
+describe 'Intern::Account' do
+  it 'should route GET /intern/accounts/:id to the account show action' do
+    { :get => '/intern/accounts/1' }.should route_to(
+      :controller => 'intern/accounts',
+      :action => 'show',
+      :id => '1'
+    )
+  end
+end
+
 describe 'Intern::Profile' do
   it 'should route GET /intern/profile to the account show action' do
     { :get => '/intern/profile' }.should route_to(

@@ -8,10 +8,14 @@
 <ul id="comments-list" class="unstyled">
 <% comments.each do |comment| %>
   <li>
-    <div class="pull-left"><%= image_tag asset_path('intern/default-avatar.jpg'), :class => 'avatar' %></div>
+    <div class="pull-left">
+      <%= link_to intern_account_path(comment.author) do %>
+        <%= image_tag avatar_url(comment.author.avatar, :small), :class => 'avatar' %>
+      <% end %>
+    </div>
     <div class="span7 comment pull-right">
       <div class="head">
-        <em><%= link_to '#' do %><%= comment.author.forename %> <%= comment.author.surname %><% end %> schrieb:</em>
+        <%= link_to intern_account_path(comment.author) do %><strong><%= comment.author.full_name %></strong><% end %> <em>schrieb:</em>
         <em class="pull-right"><%= comment.created_at.strftime('%d. %b, %H:%I Uhr') %></em>
       </div>
       <p><%= auto_link comment.text, :html => { :target => '_blank' } %></p>

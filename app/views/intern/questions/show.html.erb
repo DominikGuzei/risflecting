@@ -11,7 +11,10 @@
   <div class="span8">
     <p class="description"><%= auto_link @question.body, :html => { :target => '_blank' } %></p>
     <p class="author-details">
-      Erstellt am <strong><%= @question.created_at.strftime('%d. %B \'%y') %></strong> von <strong><%= @question.author.surname %> <%= @question.author.forename %></strong>
+      von
+      <%= image_tag avatar_url(@question.author.avatar, :tiny), :alt => @question.author.full_name %>
+      <%= link_to intern_account_path @question.author do %><strong><%= @question.author.full_name %></strong><% end %>
+      am <strong><%= @question.created_at.strftime('%d. %B %Y') %></strong><br/>
     </p>
     <%= render :partial => 'intern/comments/list', :locals => { :comments => @question.comments(true) } %>
     <%= render :partial => 'intern/comments/form', :locals => { :question => @question, :comment => @comment ||= @question.comments.new } %>
