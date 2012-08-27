@@ -14,6 +14,18 @@ class Appointment < ActiveRecord::Base
 
   after_create :created
 
+  def self.past
+    Appointment.where('endtime < NOW()').order(:starttime).reverse
+  end
+
+  def self.future
+    Appointment.where('endtime > NOW()').order(:starttime)
+  end
+
+  def future?
+    endtime > Time.now
+  end
+
   protected
   def created
     SmsHub.appointment_created self

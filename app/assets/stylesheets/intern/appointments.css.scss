@@ -8,7 +8,8 @@
   &.btn { margin-top: 5px; }
 }
 
-#appointment-list {
+#future-appointments, #past-appointments {
+  margin-bottom: 30px;
   li.well {
     padding: 5px 0;
     margin-bottom: 7px;
