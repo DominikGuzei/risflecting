@@ -18,6 +18,7 @@
 <body class="no-js">
 
   <header>
+    <% unless params[:id] == 'willkommen' %>
     <nav>
       <div class="container">
         
@@ -39,7 +40,7 @@
       <%= image_tag 'layout/header-image-rope-dancing.jpg', :id => 'header-image' %>
       <%= yield :headline %>
     </div>
-    
+    <% end %>
   </header>
 
   <section id="content">
