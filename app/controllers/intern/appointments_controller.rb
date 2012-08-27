@@ -3,9 +3,8 @@ class Intern::AppointmentsController < InternController
   load_and_authorize_resource
 
   def index
-    @appointments = Appointment.all
-    @accepted_appointments = current_intern_user.accepted_appointments
-    @rejected_appointments = current_intern_user.rejected_appointments
+    @past_appointments = Appointment.past
+    @future_appointments = Appointment.future
   end
 
   def new

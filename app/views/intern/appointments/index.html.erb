@@ -9,42 +9,9 @@
   </h2>
 </div>
 
-<ul id="appointment-list" class="unstyled">
-<% @appointments.each do |appointment| %>
-  <li class="well">
-    <div class="span3 date">
-      <%= format_time_period appointment.starttime, appointment.endtime %>
-    </div>
-    <div class="span6">
-      <h4>
-        <%= link_to appointment.title, intern_appointment_path(appointment) %>
-        <br><small class="location"><%= appointment.location %></small>
-      </h4>
-    </div>
+<%= render :partial => 'list', :locals => { :appointments => @future_appointments, :display_response_buttons => true, :list_id => 'future-appointments' } %>
 
-    <% if can? :destroy, Appointment %>
-      <div class="pull-right admin-tools">
-        <%= link_to '',
-          intern_appointment_path(appointment),
-          :method => :delete,
-          :data => { :confirm => 'Soll dieser Termin tatsächlich gelöscht werden? Diese Aktion kann nicht mehr rückgängig gemacht werden.' },
-          :class => 'trash icon-trash'
-        %>
-      </div>
-    <% end %>
-
-    <div class="pull-right buttons">
-    <% if @accepted_appointments.include? appointment %>
-      <%= render :partial => 'accepted_appointment' %>
-      <%= rejection_button 'Absagen', { :appointment => appointment, :remote => true }%>
-    <% elsif @rejected_appointments.include? appointment %>
-      <%= render :partial => 'rejected_appointment' %>
-      <%= acceptance_button 'Zusagen', { :appointment => appointment, :remote => true } %>
-    <% else %>
-      <%= acceptance_button 'Zusagen', { :appointment => appointment, :remote => true } %>
-      <%= rejection_button 'Absagen', { :appointment => appointment, :remote => true }%>
-    <% end %>
-    </div>
-  </li>
-<% end %>
-</ul>
+<div class="page-header">
+  <h3>Vergangene Termine & Meetings</h3>
+</div>
+<%= render :partial => 'list', :locals => { :appointments => @past_appointments, :display_response_buttons => false, :list_id => 'past-appointments' } %>
