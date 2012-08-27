@@ -58,11 +58,23 @@ footer {
     }
   }
   
-  section.navigation {
-    font-size: 13px;
-    
-    li {
-      margin-bottom: 5px;
+  #footer-faq {
+    * {
+      float: left;
     }
+    
+    a {
+      font-size: 26px;
+      font-weight: bold;
+      margin: 20px 0 0 20px;
+    }
+    
+    p {
+      margin: 10px 0 0 20px;
+    }
+  }
+  
+  #footer-navigation {
+    font-size: 13px;
   }
 }
