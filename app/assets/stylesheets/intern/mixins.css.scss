@@ -28,6 +28,10 @@
       border-right: 2px solid #ccc;
     }
 
+    .creation-date, .update-date {
+      color: #777;
+    }
+
     small.author {
       color: #aaa;
     }
@@ -35,9 +39,6 @@
     .bonus-info {
       text-align: right;
       padding-right: 10px;
-    }
-    .update-date {
-      line-height: 2.6em;
     }
   }
 }

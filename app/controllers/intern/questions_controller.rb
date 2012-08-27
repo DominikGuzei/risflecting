@@ -1,7 +1,7 @@
 # encoding: utf-8
 class Intern::QuestionsController < InternController
   def index
-    @questions = Question.order(:updated_at).page(params[:page]).per(15).reverse_order
+    @questions = Question.includes(:comments).order(:updated_at).page(params[:page]).per(15).reverse_order
   end
 
   def show

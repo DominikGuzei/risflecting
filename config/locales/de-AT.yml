@@ -20,3 +20,7 @@ de-AT:
       rmagick_processing_error: "Die Bearbeitung mit rmagick ist fehlgeschlagen, möglicherweise handelt es sich nicht um ein Bild? Ursprünglicher Fehler: %{e}"
       mime_types_processing_error: "Die Verarbeitung der Datei mit MIME::Types ist fehlgeschlagen, möglicherweise handelt es sich um einen unbekannten Content-Typ? Ursprünglicher Fehler: %{e}"
       mini_magick_processing_error: "Die Bearbeitung mit MiniMagick ist fehlgeschlagen, möglicherweise handelt es sich nicht um ein Bild? Ursprünglicher Fehler: %{e}"
+  pluralization:
+    comments:
+      one: Kommentar
+      other: Kommentare
