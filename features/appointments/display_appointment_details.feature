@@ -13,6 +13,6 @@ Feature: Appoinment details
     Then I want to see the details of the appointment
 
   Scenario: Appointment is in the past
-    Given there is a past appointment
+    Given there is an appointment in the past
     And I am on the appointment details page
     Then I do not want to see buttons to accept or reject

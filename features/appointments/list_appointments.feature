@@ -7,14 +7,14 @@ Feature: Appoinments list
     Given I am signed in as a user
 
   Scenario: View appointments
-    Given there are 5 future appointments
+    Given there are 5 appointments in the future
     And I am on the Dashboard
     When I navigate to 'Termine' through the main navigation
     Then I want to see all appointments listed
 
   Scenario: Display appointments separated past and future ones
-    Given there is a past appointment
-    And there are 2 future appointments
+    Given there is an appointment in the past
+    And there are 2 appointments in the future
     And I am on the appointments overview page
     Then I want to see a list containing 2 future appointments
     And I want to see a list containing 1 past appointment

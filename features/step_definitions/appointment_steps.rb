@@ -16,7 +16,7 @@ Then /^I want to see the newly created appointment$/ do
   page.should have_content 'Sonnenhof, A-7022 Schattendorf'
 end
 
-Given /^there are (\d+) ?(future)? appointments$/ do |amount_of_appointments, word|
+Given /^there are (\d+) appointments ?(in the future)?$/ do |amount_of_appointments, expression|
   @amount_of_appointments = amount_of_appointments.to_i
   FactoryGirl.create_list(:appointment, @amount_of_appointments)
 end
@@ -168,7 +168,7 @@ Then /^I do not want to see a trash bin icon$/ do
   page.should_not have_selector '.admin-tools a.trash'
 end
 
-Given /^there is a past appointment$/ do
+Given /^there is an appointment in the past$/ do
   @appointment = FactoryGirl.create :appointment, :starttime => 3.days.ago, :endtime => 2.days.ago
 end
 
