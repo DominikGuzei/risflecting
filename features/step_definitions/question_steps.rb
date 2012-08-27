@@ -165,3 +165,7 @@ Then /^I want to receive a file$/ do
   # test file is a PNG image - this is not a proper solution
   page.response_headers['Content-Type'].should == 'image/png'
 end
+
+Then /^I want to see that the question has (\d+) comments$/ do |amount_of_comments|
+  page.should have_content (amount_of_comments + ' Kommentare')
+end
