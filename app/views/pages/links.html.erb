@@ -1,42 +1,60 @@
+<% page_title('Links') %>
+<% page_stylesheet('extern/pages/links', :media => 'all') %>
+
 <% content_for :headline  do %>
   <h1>Hotspots und Links</h1>
-  <div id="sub-headline">
-    Erst der Dialog ermöglicht den Schritt von der Bewahrungs- zur Bewährungspädagogik
-  </div>
 <% end %>
 
-<p>Die Kultivierung von Rauschkultur und Risikokompetenz wird von namhaften Einrichtungen getragen und von Partnerorganisationen im gesamten deutschsprachigen Raum weiter entwickelt. Um die Angebote der risflecting-Partner und -Träger näher kennen zu lernen, klicken sie den Namen der jeweiligen Einrichtung an:</p>
+<%= content_for :footer_portrait do %>
+  <%= render :partial => 'shared/footer_portrait' %>
+<% end %>
 
-<strong>Träger:</strong>
-<ul>
-  <li><%= link_to "Stadt Wien / MA 13 - Jugendreferat", "http://www.bildungjugend.wien.at", target: :new %></li>
-  <li><%= link_to "Landesjugendreferat Salzburg", "http://www.salzburg.gv.at/themen/gv/landesjugendreferat.htm", target: :new %></li>
-  <li><%= link_to "Amt für Jugendarbeit Provinz Bozen-Südtirol", "http://www.provinz.bz.it/kulturabteilung/jugendarbeit/", target: :new %></li>
-  <li><%= link_to "Alpenverein ÖAV", "http://www.alpenverein.at", target: :new %></li>
-  <li><%= link_to "Landesjugendreferat Steiermark", "http://www.jugendreferat.steiermark.at/", target: :new %></li>
-  <li><%= link_to "Landesjugendreferat Niederösterreich", "http://www.jugend-ok.at/", target: :new %></li>
-  <li><%= link_to "Büro Vital", "http://www.vitalcommunities.at/", target: :new %></li>
-</ul>
+<article class="row">
 
-<strong>Partner CH: </strong>
-<ul>
-  <li><%= link_to "www.stadt-zuerich.ch/risikotest", "http://www.stadt-zuerich.ch/risikotest", target: :new %></li>
-  <li><%= link_to "www.proception.ch", "http://www.proception.ch", target: :new %></li>
-</ul>
+  <p class="span12">Die Kultivierung von Rauschkultur und Risikokompetenz wird von namhaften Einrichtungen getragen und von Partnerorganisationen im gesamten deutschsprachigen Raum weiter entwickelt. Um die Angebote der risflecting-Partner und -Träger näher kennen zu lernen, klicken sie den Namen der jeweiligen Einrichtung an:</p>
 
-<strong>Partner A: </strong>
-<ul>
-  <li><%= link_to "Verein Nomad", "http://www.nomad.or.at/index.php?seite=verein", target: :new %></li>
-  <li><%= link_to "Erlebnisagentur Pyhrn-Priel", "http://www.erlebnisagentur.info/", target: :new %></li>
-</ul>
-
-<strong>Partner D: </strong>
-<ul>
-  <li><%= link_to "www.genusskultur.eu ", "http://www.genusskultur.eu", target: :new %></li>
-  <li><%= link_to "hafen und abenteuer", "http://www.hafenundabenteuer.de/", target: :new %></li>
-</ul>
-
-<strong>Koordinationseinrichtung: </strong>
-<ul>
-  <li><%= link_to "Forum Lebensqualität Österreich", "http://www.qualitaetleben.at/", target: :new %></li>
-</ul>
+  <section class="span6 vertical">
+    <h2>Träger / Kuratorium:</h2>
+    <ul>
+      <li><%= link_to "Stadt Wien / MA 13 - Jugendreferat", "http://www.bildungjugend.wien.at" %></li>
+      <li><%= link_to "Landesjugendreferat Salzburg", "http://www.salzburg.gv.at/themen/gv/landesjugendreferat.htm" %></li>
+      <li><%= link_to "Amt für Jugendarbeit Provinz Bozen-Südtirol", "http://www.provinz.bz.it/kulturabteilung/jugendarbeit/" %></li>
+      <li><%= link_to "Alpenverein ÖAV", "http://www.alpenverein.at" %></li>
+      <li><%= link_to "Landesjugendreferat Steiermark", "http://www.jugendreferat.steiermark.at/" %></li>
+      <li><%= link_to "Landesjugendreferat Niederösterreich", "http://www.jugend-ok.at/" %></li>
+      <li><%= link_to "Büro Vital", "http://www.vitalcommunities.at/" %></li>
+    </ul>
+  </section>
+  
+  <section class="span6">
+    <h2>Partner Schweiz:</h2>
+    <ul>
+      <li><%= link_to "www.stadt-zuerich.ch/risikotest", "http://www.stadt-zuerich.ch/risikotest" %></li>
+      <li><%= link_to "www.proception.ch", "http://www.proception.ch" %></li>
+    </ul>
+  </section>
+  
+  <section class="span6">
+    <h2>Partner Österreich:</h2>
+    <ul>
+      <li><%= link_to "Verein Nomad", "http://www.nomad.or.at/index.php?seite=verein" %></li>
+      <li><%= link_to "Erlebnisagentur Pyhrn-Priel", "http://www.erlebnisagentur.info/" %></li>
+    </ul>
+  </section>
+  
+  <section class="span6">
+    <h2>Partner Deutschland: </h2>
+    <ul>
+      <li><%= link_to "www.genusskultur.eu ", "http://www.genusskultur.eu" %></li>
+      <li><%= link_to "hafen und abenteuer", "http://www.hafenundabenteuer.de/" %></li>
+    </ul>
+  </section>
+  
+  <section class="span6">
+    <h2>risflecting-Koordination:</h2>
+    <ul>
+      <li><%= link_to "Forum Lebensqualität Österreich", "http://www.qualitaetleben.at/" %></li>
+    </ul>
+  </section>
+  
+</article>

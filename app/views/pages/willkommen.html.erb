@@ -2,34 +2,43 @@
 <% page_stylesheet('extern/pages/willkommen', :media => 'all') %>
 <% page_javascript('extern/pages/willkommen') %>
 
-<% content_for :headline  do %>
-  <h1>risflecting: Leben in Rausch- und Risikobalance</h1>
+<%= content_for :footer_portrait do %>
+  <%= render :partial => 'shared/footer_portrait' %>
 <% end %>
 
-<article>
-  <p>
-    Mehr als einen Klick braucht es, um den integrativen Ansatz von risflecting, der 
-    einen optimierteren Umgang mit Rausch- und Risikosituationen erreichen möchte, 
-    weiter zu entwickeln: Gespräche, Austausch, Diskussionen - es braucht also 
-    Kommunikation!
-  </p>
-
-  <div id="circle-navigation">
-    <h2>risflecting</h2>
+<article id="content">
+  <h1>risflecting<sup>&copy;</sup></h1>
+  <h2>Leben in Rausch- und Risikobalance</h2>
   
-    <p id="interaction-hint">
-      Entdecke risflecting!<br />
-      Bewege deine Maus über die Links für einen schnellen Überblick
-    </p>
+  <div id="reading-sign">
+    <span id="logo-text">risflecting</span>
+    <div id="slogan">
+      <span>ExpertInnenpool</span>
+      <span>für Rausch&ndash; und</span>
+      <span>Risikopädagogik</span>
+    </div>
+  </div>
+  
+  <p class="intro"><strong>Willkommen bei risflecting!</strong><br />Dieser weltweit innovative 
+    pädagogische Ansatz will gemeinsam mit Dir / Ihnen den souveränen Umgang mit Rausch
+    und Risiko fördern.</p>
+  
+  <div id="circle-navigation">
 
     <p id="circle-info-text">
-      Risikopädagogische BegleiterInnen vermitteln bewährte und gewinnbringende Kulturtechniken
+      <strong>Entdecke risflecting!</strong><br />
+      Bewege deine Maus über die Links<br />
+      um mehr darüber zu erfahren.
     </p>
-  
+
     <ul id="circle-links">
       <li>
         <%= link_to "Konzept", static_path(:konzept), :id => "circle-konzept", 
               :title => "Rausch- und Risikopädagogik fördert eine Kultur der Balance" %>
+      </li>
+      <li>
+        <%= link_to "Studie", static_path(:studie), :id => "circle-studie", 
+              :title => "als pädagogischer Ansatz nimmt risflecting menschliche Bedürfnisse nach Rausch und Risiko ernst" %>
       </li>
       <li>
         <%= link_to "Projekte", static_path(:projekte), :id => "circle-projekte",
@@ -40,10 +49,6 @@
               :title => "Risikopädagogische BegleiterInnen vermitteln bewährte und gewinnbringende Kulturtechniken" %>
       </li>
       <li>
-        <%= link_to "FAQs", static_path(:faq), :id => "circle-faq", 
-              :title => "als pädagogischer Ansatz nimmt risflecting menschliche Bedürfnisse nach Rausch und Risiko ernst" %>
-      </li>
-      <li>
         <%= link_to "Team", static_path(:team), :id => "circle-team", 
               :title => "Ein internationales Netzwerk von ExpertInnen entwickelt risflecting weiter" %>
       </li>
@@ -52,7 +57,6 @@
               :title => "Balance kann nur in einem Klima des tabufreien Dialogs geübt werden" %>
       </li>
     </ul>
-    
-    <%= image_tag 'willkommen/willkommen-circle-background.png', :id => 'background' %>
   </div>
 </article>
+

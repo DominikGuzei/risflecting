@@ -18,6 +18,8 @@
         </h4>
       </div>
       <div class="span3 pull-right bonus-info">
+        <span class="badge<%= ' badge-info' if question.comments.length > 0 %>"><%= question.comments.length %></span>
+        <%= t 'pluralization.comments', :count => question.comments.length %><br/>
         <span class="update-date">zuletzt geändert <em><%= l question.updated_at, :format => '%d. %b, %H:%I Uhr' %></em></span>
       </div>
       <div class="span2 pull-right creation-date">

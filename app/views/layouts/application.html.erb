@@ -18,6 +18,7 @@
 <body class="no-js">
 
   <header>
+    <% unless params[:id] == 'willkommen' %>
     <nav>
       <div class="container">
         
@@ -39,7 +40,7 @@
       <%= image_tag 'layout/header-image-rope-dancing.jpg', :id => 'header-image' %>
       <%= yield :headline %>
     </div>
-    
+    <% end %>
   </header>
 
   <section id="content">
@@ -55,42 +56,26 @@
       <div class="row">
       
         <section class="portrait span4 offset1">
-          <%= image_tag('layout/footer-portrait-gerald-koller.jpg') %>
-          <p class="name">Gerald Koller<p>
-          <p class="info">
-            <span>risflecting focal point</span>
-            <span class="email">
-              <%= link_to "Email schicken", "mailto:gerald.koller@qualitaetleben.at" %>
-            </span>
-          </p>
+          <%= yield :footer_portrait %>
         </section>
     
-        <section class="navigation span7">
-          <div class="row">
-            <ul class="span2">          
-              <li><%= link_to 'Konzept', static_path(:konzept) %></li>
-              <li><%= link_to 'Studie', static_path(:studie) %></li>
-              <li><%= link_to 'Projekte', static_path(:projekte) %></li>
-              <li><%= link_to 'Weiterbildung', static_path(:weiterbildung) %></li>
-            </ul>
-        
-            <ul class="span2">
-              <li><%= link_to 'FAQs', static_path(:faq) %></li>
-              <li><%= link_to 'Team', static_path(:team) %></li>
-              <li><%= link_to 'Publikationen', static_path(:publikationen) %></li>
-              <li><%= link_to 'Links', static_path(:links) %></li>
-            </ul>
-            
-            <ul class="span3">
-              <li><%= link_to 'Kontakt', static_path(:kontakt) %></li>
-              <li><%= link_to 'Impressum', static_path(:impressum) %></li>
-            </ul>
-          </div>
+        <section id="footer-faq" class="span4">
+          <%= image_tag('layout/footer-faq-icon.png') %>
+          <%= link_to 'FAQs', static_path(:faq) %>
+          <p>Häufige Fragen</p>
+        </section>
+    
+        <section id="footer-navigation" class="span3">
+          <h3>Weitere Inhalte:</h3>
+          <ul>
+            <li><%= link_to 'Links', static_path(:links) %></li>
+            <li><%= link_to 'Kontakt', static_path(:kontakt) %></li>
+            <li><%= link_to 'Impressum', static_path(:impressum) %></li>
+          </ul>
         </section>
     
       </div>
     </div>
   </footer>
-
 </body>
 </html>

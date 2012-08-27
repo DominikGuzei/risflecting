@@ -174,3 +174,57 @@ end
 Then /^I want to see the user´s profile$/ do
   current_path.should == intern_account_path(@accepted_user)
 end
+
+When /^I change my name, email and phone$/ do
+  fill_in 'user_surname', :with => 'Potter'
+  fill_in 'user_forename', :with => 'Lili'
+  fill_in 'user_email', :with => 'lili@potter.at'
+  fill_in 'user_phone', :with => '+431111111111'
+end
+
+Then /^I want to see the changes on my profile page$/ do
+  page.should have_content 'Potter'
+  page.should have_content 'Lili'
+  page.should have_content 'lili@potter.at'
+  page.should have_content '+431111111111'
+end
+
+When /^I remove my name, email and phone$/ do
+  fill_in 'user_surname', :with => ''
+  fill_in 'user_forename', :with => ''
+  fill_in 'user_email', :with => ''
+  fill_in 'user_phone', :with => ''
+end
+
+When /^I change none of my informations$/ do
+  # do nothing
+  @current_user_data = {
+    :surname => @current_user.surname,
+    :forename => @current_user.forename,
+    :email => @current_user.email,
+    :phone => @current_user.phone
+  }
+end
+
+When /^I save the informations anyway$/ do
+  step 'I save the changes'
+end
+
+Then /^I want to see the existing informations on my profile page$/ do
+  page.should have_content @current_user_data[:surname]
+  page.should have_content @current_user_data[:forename]
+  page.should have_content @current_user_data[:email]
+  page.should have_content @current_user_data[:phone]
+end
+
+When /^I add a description with some informations about me$/ do
+  fill_in 'user_description', :with => 'Description with some informations about me'
+end
+
+Then /^I want to see the description on my profile page$/ do
+  page.should have_content 'Description with some informations about me'
+end
+
+Then /^I want to see feedback that the changes were successfully saved$/ do
+  page.should have_selector '.flash-message.alert-success'
+end

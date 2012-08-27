@@ -15,4 +15,8 @@ module ApplicationHelper
       javascript_include_tag path
     end
   end
+  
+  def encoded_email(title, address)
+     mail_to address, title, :encode => 'javascript'
+  end
 end

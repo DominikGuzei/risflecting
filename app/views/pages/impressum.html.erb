@@ -1,30 +1,57 @@
+<% page_title('Impressum') %>
+<% page_stylesheet('extern/pages/impressum', :media => 'all') %>
+
 <% content_for :headline  do %>
   <h1>Impressum</h1>
-  <div id="sub-headline">
-    Ein Blick hinter die Kulissen
-  </div>
 <% end %>
 
-<p>Risflecting freut sich über Ihren Besuch auf dieser Website und Ihr Interesse. Sie werden eventuell um die Angabe persönlicher Informationen gebeten. Die Beantwortung dieser Fragen ist freiwillig. Ihre persönlichen Daten werden in Übereinstimmung mit den Datenschutzbestimmungen Österreichs gespeichert.</p>
+<%= content_for :footer_portrait do %>
+  <%= render :partial => 'shared/footer_portrait' %>
+<% end %>
 
-<strong>Datenschutz</strong>
+<article class="span8 offset2">
+  
+  <div class="content-box">
+    <p>Risflecting freut sich über Ihren Besuch auf dieser Website und Ihr Interesse. 
+      Sie werden eventuell um die Angabe persönlicher Informationen gebeten. Die 
+      Beantwortung dieser Fragen ist freiwillig. Ihre persönlichen Daten werden in 
+      Übereinstimmung mit den Datenschutzbestimmungen Österreichs gespeichert.</p>
+  </div>
+  
+  <h2>Datenschutz</h2>
 
-<p>Sämtliche auf dieser Website erhobenen persönlichen Daten werden ausschließlich zu Ihrer individuellen Betreuung, der Übersendung von Produktinformationen gespeichert. Die Firma Risflecting sichert zu, dass Ihre Angaben entsprechend den geltenden datenschutzrechtlichen Bestimmungen vertraulich behandelt werden.</p>
+  <p>Sämtliche auf dieser Website erhobenen persönlichen Daten werden ausschließlich 
+    zu Ihrer individuellen Betreuung, der Übersendung von Produktinformationen 
+    gespeichert. Die Firma Risflecting sichert zu, dass Ihre Angaben entsprechend 
+    den geltenden datenschutzrechtlichen Bestimmungen vertraulich behandelt werden.</p>
 
-<strong>Copyright</strong>
+  <h2>Copyright</h2>
 
-<p>Alle Rechte vorbehalten. Text, Bilder, Grafiken, Sound, Animationen und Videos sowie deren Anordnung.</p>
+  <p>Alle Rechte vorbehalten. Text, Bilder, Grafiken, Sound, Animationen und Videos 
+    sowie deren Anordnung.</p>
 
-<p>Websites unterliegen dem Schutz des Urheberrechts und anderer Schutzgesetze.
-Der Inhalt dieser Websites darf nicht zu kommerziellen Zwecken kopiert, verbreitet, verändert oder Dritten zugänglich gemacht werden.</p>
+  <p>Websites unterliegen dem Schutz des Urheberrechts und anderer Schutzgesetze.
+  Der Inhalt dieser Websites darf nicht zu kommerziellen Zwecken kopiert, verbreitet, 
+  verändert oder Dritten zugänglich gemacht werden.</p>
 
+  <h2>Garantie</h2>
 
-<strong>Garantie</strong>
+  <p>Diese Website wurde mit größtmöglicher Sorgfalt zusammengestellt. Trotzdem 
+    kann Risflecting für die Fehlerfreiheit und Genauigkeit der enthaltenen 
+    Informationen nicht garantieren. Risflecting schließt jegliche Haftung für 
+    Schäden, die direkt oder indirekt aus der Benutzung dieser Website entstehen, 
+    aus, soweit diese nicht auf Vorsatz oder grober Fahrlässigkeit von Risflecting 
+    beruhen.</p>
 
-<p>Diese Website wurde mit größtmöglicher Sorgfalt zusammengestellt. Trotzdem kann Risflecting für die Fehlerfreiheit und Genauigkeit der enthaltenen Informationen nicht garantieren. Risflecting schließt jegliche Haftung für Schäden, die direkt oder indirekt aus der Benutzung dieser Website entstehen, aus, soweit diese nicht auf Vorsatz oder grober Fahrlässigkeit von Risflecting beruhen.</p>
+  <h2>FORUM LEBENSQUALITÄT ÖSTERREICH</h2>
 
+  <p><strong>Vereinssitz:</strong> Pfarrgasse 10, A-2340 Mödling<br/>
+  <strong>Büro:</strong> Wiesenerstraße 5, A-7202 Bad Sauerbrunn</p>
+  
+  <h2>Website Gestaltung &amp; Programmierung<h2>
+  <p><strong>Dominik Guzei</strong> 
+    (<%= encoded_email 'Email senden', 'dominik.guzei@gmail.com' %> |
+     <%= link_to 'Website', 'http://wizzart.at' %>)
+  </p>
 
-<strong>FORUM LEBENSQUALITÄT ÖSTERREICH</strong>
-
-<p>Vereinssitz: Pfarrgasse 10, A-2340 Mödling<br/>
-Büro: Wiesenerstraße 5, A-7202 Bad Sauerbrunn</p>
+</article>

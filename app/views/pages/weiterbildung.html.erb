@@ -5,9 +5,21 @@
   <h1>Weiterbildung und Lehrgänge</h1>
 <% end %>
 
+<%= content_for :footer_portrait do %>
+  <%= render :partial => 'shared/footer_portrait', :locals => {
+        :name => 'Herbert Tarmann',
+        :role => 'risflecting guide',
+        :image => 'portraits/thumb-portrait-herbert-tarmann.jpg',
+        :email => 'her_tarmann@hotmail.com'
+      }
+  %>
+<% end %>
+
 <div class="span12">
   
   <h2>Studienweg zur Risikopädagogischen Begleitung 2012</h2>
+    
+  <p>Unsere Weiterbildungen dienen dazu, durch Theorie-Impulse, Selbsterfahrung und Praxisaustausch einen umfassenden Einblick in risflecting zu gewährleisten und den Kreis der "HüterInnen des Themas" zu erweitern.</p>
     
   <article class="row content-box">
     <h3 class="span12">BASICS (32 Einheiten)</h3>
@@ -75,8 +87,6 @@
   </article>
 
   <aside class="info">
-    <p>Unsere Weiterbildungen dienen dazu, durch Theorie-Impulse, Selbsterfahrung und Praxisaustausch einen umfassenden Einblick in risflecting zu gewährleisten und den Kreis der "HüterInnen des Themas" zu erweitern.</p>
-
     <p>Detailierte Informationen zu unseren Lehrgängen und Fortbildungen finden sie <%= link_to "hier", asset_path("weiterbildung-2012.pdf"), :target => '_blank' %>.<br/>
     Das <%= link_to "Anmeldeformular", asset_path("anmeldeformular-2012.pdf"), :target => '_blank' %> gibt es hier als Download (PDF).</p>
 
