@@ -27,18 +27,24 @@
         <% if @accepting_users.include? current_intern_user %>
           <div class="pull-left">Du hast <%= render :partial => 'accepted_appointment' %>.</div>
           <div class="pull-right">
-            <%= rejection_button 'Absagen', { :appointment => @appointment } %>
+            <%= rejection_button 'Absagen', { :appointment => @appointment } if @appointment.future? %>
           </div>
         <% elsif @rejecting_users.include? current_intern_user %>
           <div class="pull-left">Du hast <%= render :partial => 'rejected_appointment' %>.</div>
           <div class="pull-right">
-            <%= acceptance_button 'Zusagen', { :appointment => @appointment } %>
+            <%= acceptance_button 'Zusagen', { :appointment => @appointment } if @appointment.future? %>
           </div>
         <% else %>
-          <div class="pull-left">Du hast noch keine Entscheidung getroffen.</div>
+          <div class="pull-left">
+            <% if @appointment.future? %>
+              Du hast noch keine Entscheidung getroffen.
+            <% else %>
+              Du hast weder zu- noch abgesagt.
+            <% end %>
+          </div>
           <div class="pull-right">
-            <%= acceptance_button 'Zusagen', { :appointment => @appointment } %>
-            <%= rejection_button 'Absagen', { :appointment => @appointment } %>
+            <%= acceptance_button 'Zusagen', { :appointment => @appointment } if @appointment.future? %>
+            <%= rejection_button 'Absagen', { :appointment => @appointment } if @appointment.future? %>
           </div>
         <% end %>
         </div>
