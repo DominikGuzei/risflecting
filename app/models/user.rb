@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  has_and_belongs_to_many :roles
+  belongs_to :role
   has_many :questions
   has_many :projects
   has_many :comments
@@ -38,7 +38,7 @@ class User < ActiveRecord::Base
   end
 
   def has_role? role
-    self.roles.exists?(:name => role.to_s.camelize)
+    self.role.name == role.to_s.camelize
   end
 
   def full_name
