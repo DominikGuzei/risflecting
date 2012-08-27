@@ -5,9 +5,14 @@ Feature: Appoinment details
 
   Background:
     Given I am signed in as a user
-    And there is an appointment
 
   Scenario: View appointment
-    Given I am on the appointments overview page
+    Given there is an appointment
+    And I am on the appointments overview page
     When I click on the title of the appointment
     Then I want to see the details of the appointment
+
+  Scenario: Appointment is in the past
+    Given there is a past appointment
+    And I am on the appointment details page
+    Then I do not want to see buttons to accept or reject
