@@ -5,6 +5,16 @@
   <h1>Publikationen</h1>
 <% end %>
 
+<%= content_for :footer_portrait do %>
+  <%= render :partial => 'shared/footer_portrait', :locals => {
+        :name => 'Frank Schulte-Derne',
+        :role => 'risflecting guide',
+        :image => 'portraits/thumb-portrait-frank-schulte-derne.jpg',
+        :email => 'fschulte-derne@arcor.de'
+      }
+  %>
+<% end %>
+
 <article class="row content-box">
   <h2 class="span12">SPRING ... UND LANDE </h2>
   
