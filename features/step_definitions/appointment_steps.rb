@@ -16,7 +16,7 @@ Then /^I want to see the newly created appointment$/ do
   page.should have_content 'Sonnenhof, A-7022 Schattendorf'
 end
 
-Given /^there are (\d+) appointments$/ do |amount_of_appointments|
+Given /^there are (\d+) appointments ?(in the future)?$/ do |amount_of_appointments, expression|
   @amount_of_appointments = amount_of_appointments.to_i
   FactoryGirl.create_list(:appointment, @amount_of_appointments)
 end
@@ -25,8 +25,8 @@ When /^I navigate to '([^"]+?)' through the main navigation$/ do |label|
   click_on label
 end
 
-Then /^I want to see a list of all appointments$/ do
-  find('#appointment-list').all('li').count.should == @amount_of_appointments
+Then /^I want to see all appointments listed$/ do
+  find('#future-appointments').all('li').count.should == @amount_of_appointments
 end
 
 Given /^there is an appointment$/ do
@@ -161,9 +161,33 @@ Then /^I want to get feedback that the appointment was deleted$/ do
 end
 
 Then /^I want the appointment to be removed from the list$/ do
-  find('ul#appointment-list').all('li').count.should == 0
+  find('ul#future-appointments').all('li').count.should == 0
 end
 
 Then /^I do not want to see a trash bin icon$/ do
   page.should_not have_selector '.admin-tools a.trash'
+end
+
+Given /^there is an appointment in the past$/ do
+  @appointment = FactoryGirl.create :appointment, :starttime => 3.days.ago, :endtime => 2.days.ago
+end
+
+Then /^I want to see a list containing (\d+) future appointments$/ do |amount_of_list_items|
+  find('#future-appointments').all('li').count.should == amount_of_list_items.to_i
+end
+
+Then /^I want to see a list containing (\d+) past appointment$/ do |amount_of_list_items|
+  find('#past-appointments').all('li').count.should == amount_of_list_items.to_i
+end
+
+Then /^I want the past appointment not to be acceptable or rejectable$/ do
+  within('#past-appointments') do
+    should_not have_button 'Zusagen'
+    should_not have_button 'Absagen'
+  end
+end
+
+Then /^I do not want to see buttons to accept or reject$/ do
+  should_not have_button 'Zusagen'
+  should_not have_button 'Absagen'
 end
