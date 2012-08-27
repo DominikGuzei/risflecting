@@ -6,6 +6,16 @@
     <% end %>
     <%= form.text_field :title, :class => 'span6', :label => { :text => 'Titel' } %>
     <%= form.text_area :body, :rows => 15, :class => 'span6', :label => { :text => 'Beschreibung' } %>
+
+    <div class="control-group">
+      <div class="control-label">Anhänge und Dokumente</div>
+      <div class="controls">
+        <div class="alert alert-info">
+          Falls du zu deinem Eintrag noch zusätzliches Material hochladen willst, hast du im nächsten Schritt die Möglichkeit dazu. Erstelle zunächst deinen Eintrag, und verwende das Formular auf der nächsten Seite, um Dateien hochzuladen.
+        </div>
+      </div>
+    </div>
+
     <div class="form-actions">
       <%= form.submit 'Eintrag speichern' %>
       <%= link_to 'Abbrechen', intern_projects_path, :class => 'btn' %>
