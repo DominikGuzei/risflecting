@@ -5,6 +5,16 @@
   <h1>Weiterbildung und Lehrgänge</h1>
 <% end %>
 
+<%= content_for :footer_portrait do %>
+  <%= render :partial => 'shared/footer_portrait', :locals => {
+        :name => 'Herbert Tarmann',
+        :role => 'risflecting guide',
+        :image => 'portraits/thumb-portrait-herbert-tarmann.jpg',
+        :email => 'her_tarmann@hotmail.com'
+      }
+  %>
+<% end %>
+
 <div class="span12">
   
   <h2>Studienweg zur Risikopädagogischen Begleitung 2012</h2>

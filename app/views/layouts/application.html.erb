@@ -56,14 +56,7 @@
       <div class="row">
       
         <section class="portrait span3 offset2">
-          <%= image_tag('layout/footer-portrait-gerald-koller.jpg') %>
-          <h3>Gerald Koller</h3>
-          <p class="info">
-            <span>risflecting focal point</span>
-            <span class="email">
-              <%= encoded_email 'Email senden', 'gerald.koller@qualitaetleben.at' %>
-            </span>
-          </p>
+          <%= yield :footer_portrait %>
         </section>
     
         <section id="footer-faq" class="span3">
@@ -84,6 +77,5 @@
       </div>
     </div>
   </footer>
-
 </body>
 </html>

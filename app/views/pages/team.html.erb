@@ -6,6 +6,16 @@
   <h1>Das Team</h1>
 <% end %>
 
+<%= content_for :footer_portrait do %>
+  <%= render :partial => 'shared/footer_portrait', :locals => {
+        :name => 'Agnes Koller',
+        :role => 'riflecting coordination',
+        :image => 'portraits/thumb-portrait-agnes-koller.jpg',
+        :email => 'agnes.koller@qualitaetleben.at'
+      }
+  %>
+<% end %>
+
 <!-- uses http://emailencryptor.com/simple.html to encrypt mail adresses -->
 
 <article>
@@ -87,7 +97,7 @@
         <p class="details">
           <span class="name">Eva Deutsch</span>
           <span class="email">
-            Email senden
+            <%= encoded_email 'Email senden', 'eva.deutsch@styriavitalis.at' %>
           </span>
         </p>
       </div>
@@ -107,7 +117,7 @@
         <p class="details">
           <span class="name">Wolfgang Schöngruber</span>
           <span class="email">
-            Email senden
+            <%= encoded_email 'Email senden', 'wo.schoengruber@ppea.at' %>
           </span>
         </p>
       </div>

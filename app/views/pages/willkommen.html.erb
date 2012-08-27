@@ -2,6 +2,10 @@
 <% page_stylesheet('extern/pages/willkommen', :media => 'all') %>
 <% page_javascript('extern/pages/willkommen') %>
 
+<%= content_for :footer_portrait do %>
+  <%= render :partial => 'shared/footer_portrait' %>
+<% end %>
+
 <article id="content">
   <h1>risflecting<sup>&copy;</sup></h1>
   <h2>Leben in Rausch- und Risikobalance</h2>
