@@ -58,11 +58,25 @@ footer {
     }
   }
   
-  section.navigation {
-    font-size: 13px;
-    
-    li {
-      margin-bottom: 5px;
+  #footer-faq {
+    img {
+      float: left;
+      margin-right: 20px;
     }
+    
+    a {
+      display: block;
+      font-size: 26px;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+    
+    p {
+      margin-top: 10px;
+    }
+  }
+  
+  #footer-navigation {
+    font-size: 13px;
   }
 }

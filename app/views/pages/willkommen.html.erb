@@ -2,6 +2,10 @@
 <% page_stylesheet('extern/pages/willkommen', :media => 'all') %>
 <% page_javascript('extern/pages/willkommen') %>
 
+<%= content_for :footer_portrait do %>
+  <%= render :partial => 'shared/footer_portrait' %>
+<% end %>
+
 <article id="content">
   <h1>risflecting<sup>&copy;</sup></h1>
   <h2>Leben in Rausch- und Risikobalance</h2>
@@ -33,16 +37,16 @@
               :title => "Rausch- und Risikopädagogik fördert eine Kultur der Balance" %>
       </li>
       <li>
+        <%= link_to "Studie", static_path(:studie), :id => "circle-studie", 
+              :title => "als pädagogischer Ansatz nimmt risflecting menschliche Bedürfnisse nach Rausch und Risiko ernst" %>
+      </li>
+      <li>
         <%= link_to "Projekte", static_path(:projekte), :id => "circle-projekte",
               :title => "Rausch- und Risikobalance heißt: das wilde Tier reiten zu lernen" %>
       </li>
       <li>
         <%= link_to "Weiterbildung", static_path(:weiterbildung), :id => "circle-weiterbildung", 
               :title => "Risikopädagogische BegleiterInnen vermitteln bewährte und gewinnbringende Kulturtechniken" %>
-      </li>
-      <li>
-        <%= link_to "FAQs", static_path(:faq), :id => "circle-faq", 
-              :title => "als pädagogischer Ansatz nimmt risflecting menschliche Bedürfnisse nach Rausch und Risiko ernst" %>
       </li>
       <li>
         <%= link_to "Team", static_path(:team), :id => "circle-team", 

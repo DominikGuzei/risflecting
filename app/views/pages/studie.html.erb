@@ -6,13 +6,23 @@
   <h1>Die Studie</h1>
 <% end %>
 
+<%= content_for :footer_portrait do %>
+  <%= render :partial => 'shared/footer_portrait', :locals => {
+        :name => 'Eva Deutsch',
+        :role => 'risflecting guide',
+        :image => 'portraits/thumb-portrait-eva-deutsch.jpg',
+        :email => 'eva.deutsch@styriavitalis.at'
+      }
+  %>
+<% end %>
+
 <section>
   <p>
     Die vorliegende Studie fasst theoretische Konzepte, Analysen relevanter theoretischer Literatur und Praxiserfahrungen aus der Arbeit mit Jugendlichen zu einem Überblick über Rausch- und Risikopädagogik zusammen.
   </p>
   <p>
      Die Studie behandelt Grundlagen, Statements und Modelle zur Rausch und Risikopädagogik.
-     <%= link_to 'Gesamte Studie downloaden (PDF)', asset_path('studie.pdf')  %>
+     <%= link_to 'Gesamte Studie downloaden (PDF)', asset_path('gerald-koller-studie-risflecting.pdf')  %>
   </p>
 </section>
 
