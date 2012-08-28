@@ -231,7 +231,7 @@ Then /^I want to see feedback that the changes were successfully saved$/ do
 end
 
 When /^I select the '([^"]+?)' group for the user$/ do |group|
-  select(group, :from => 'Gruppe')
+  select group, :from => 'Gruppe'
 end
 
 Then /^the user should belong to the '([^"]+?)' group$/ do |group|
