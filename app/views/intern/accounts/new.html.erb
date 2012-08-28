@@ -6,6 +6,18 @@
 
     <%= form.select(:role_id, options_for_select([['Pool', Role.find_by_name('Member').id], ['Steuergruppe', Role.find_by_name('Coordinator').id], ['Administratoren', Role.find_by_name('Admin').id]]), :class => 'span4', :label => { :text => 'Gruppe' }) %>
 
+    <div class="control-group">
+      <div class="controls">
+        <div class="alert alert-info">
+          Der <strong>Pool</strong> kann keine Termine erstellen, neue Benutzer einladen oder Dokumente hochladen.
+          <br><br>
+          Die  <strong>Steuerungsgruppe</strong> kann keine Termine erstellen und neue Benutzer einladen.
+          <br><br>
+          Die <strong>Administratoren</strong> können alles.
+        </div>
+      </div>
+    </div>
+
     <div class="form-actions">
       <%= form.submit 'Benutzer einladen' %>
     </div>
