@@ -16,7 +16,7 @@
     <div class="span7 comment pull-right">
       <div class="head">
         <%= link_to intern_account_path(comment.author) do %><strong><%= comment.author.full_name %></strong><% end %> <em>schrieb:</em>
-        <em class="pull-right"><%= comment.created_at.strftime('%d. %b, %H:%I Uhr') %></em>
+        <em class="pull-right"><%= comment.created_at.strftime('%d. %b, %H:%M Uhr') %></em>
       </div>
       <p><%= auto_link comment.text, :html => { :target => '_blank' } %></p>
     </div>
