@@ -60,7 +60,7 @@ Then /^I do not want to see a link to create a new appointment$/ do
 end
 
 Then /^I want to get feedback that my acceptance succeeded$/ do
-  page.should_not have_button('Zusagen')
+  page.should_not have_link('Zusagen')
   page.should have_content('zugesagt')
 end
 
@@ -81,7 +81,7 @@ Then /^I want to see (\d+) appointments? accepted$/ do |amount_of_appointments|
 end
 
 Then /^I want to get feedback that my rejection succeeded$/ do
-  page.should_not have_button('Absagen')
+  page.should_not have_link('Absagen')
   page.should have_content('abgesagt')
 end
 
@@ -182,12 +182,12 @@ end
 
 Then /^I want the past appointment not to be acceptable or rejectable$/ do
   within('#past-appointments') do
-    should_not have_button 'Zusagen'
-    should_not have_button 'Absagen'
+    should_not have_link 'Zusagen'
+    should_not have_link 'Absagen'
   end
 end
 
 Then /^I do not want to see buttons to accept or reject$/ do
-  should_not have_button 'Zusagen'
-  should_not have_button 'Absagen'
+  should_not have_link 'Zusagen'
+  should_not have_link 'Absagen'
 end
