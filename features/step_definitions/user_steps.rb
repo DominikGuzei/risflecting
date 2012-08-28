@@ -54,6 +54,7 @@ end
 
 Given /^I have an invitation email$/ do
   user = User.new :email => 'invite@test.com'
+  user.role = Role.find_by_name 'Member'
   user.save :validate => false
 end
 
@@ -227,4 +228,21 @@ end
 
 Then /^I want to see feedback that the changes were successfully saved$/ do
   page.should have_selector '.flash-message.alert-success'
+end
+
+When /^I select the '([^"]+?)' group for the user$/ do |group|
+  select group, :from => 'Gruppe'
+end
+
+Then /^the user should belong to the '([^"]+?)' group$/ do |group|
+  case group
+  when 'Pool'
+    role = :member
+  when 'Steuergruppe'
+    role = :coordinator
+  when 'Administratoren'
+    role = :admin
+  end
+
+  User.last.has_role?(role).should be true
 end
