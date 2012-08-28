@@ -8,7 +8,7 @@
                                                   ['Pool', Role.find_by_name('Member').id],
                                                   ['Steuergruppe', Role.find_by_name('Coordinator').id],
                                                   ['Administratoren', Role.find_by_name('Admin').id]
-                                                ]), :class => 'span4', :label => { :text => 'Gruppe' }) %>
+                                                ]), {}, { :label => { :text => 'Gruppe'}, :class => 'span2' } ) %>
 
     <div class="control-group">
       <div class="controls">
