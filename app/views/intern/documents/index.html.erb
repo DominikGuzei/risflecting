@@ -1,0 +1,9 @@
+<div class="page-header">
+  <h2>Dokumente & Unterlagen
+    <% if can? :create, Document %>
+    <%= link_to new_intern_document_path, :class => 'pull-right btn btn-info' do %>
+      <i class="icon-plus"></i> &nbsp;neues Dokument hinzufügen
+    <% end %>
+    <% end %>
+  </h2>
+</div>

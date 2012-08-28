@@ -7,8 +7,9 @@ Risflecting::Application.routes.draw do
     end
 
     resource :dashboard, :only => [:show]
-    resources :accounts, :only => [:create, :new, :show]
     resource :profile, :only => [:show, :edit, :update], :controller => :accounts
+    resources :accounts, :only => [:create, :new, :show]
+    resources :documents, :only => [:index, :new, :create]
 
     resources :questions, :only => [:index, :show, :new, :create] do
       resources :comments, :only => [:create]
@@ -19,6 +20,7 @@ Risflecting::Application.routes.draw do
       post :accept, :on => :member
       post :reject, :on => :member
     end
+
     resources :projects, :only => [:new, :create, :index, :show] do
       resources :attachments, :only => [:create]
     end

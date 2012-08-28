@@ -155,7 +155,7 @@ module BootstrapFormBuilder
       file_input_javascript = "
         <script type='text/javascript'>
           $(function() {
-            $('##{@object_name}_#{field}').css({ visibility: 'hidden', height: '1px', opacity: 0 });
+            $('##{@object_name}_#{field}').css({ visibility: 'hidden', height: '1px', width: '1px', opacity: 0 });
             $('.file-input.hidden').removeClass('hidden');
             $('##{@object_name}_#{field}').change(function() {
               var value = $(this).val()

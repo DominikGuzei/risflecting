@@ -17,10 +17,6 @@ When /^I fill in all fields of the question form$/ do
   fill_in 'question_body', :with => 'Some big problems ...'
 end
 
-Then /^I want some feedback that the question was created successfully$/ do
-  page.should have_selector('.flash-message.alert-success')
-end
-
 Then /^I want to see the newly created question$/ do
   page.should have_content 'A new question'
   page.should have_content 'Some big problems ...'
