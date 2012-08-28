@@ -15,7 +15,7 @@ Feature: Publish a project
     Given I visit the form to create a new project
     When I fill in all fields of the project form
     And I save the project
-    Then I want some feedback that the project was created successfully
+    Then I want to get feedback that the project was created successfully
     And I want to see the newly created project
 
   Scenario: Leave all fields empty

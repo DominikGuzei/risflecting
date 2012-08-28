@@ -20,6 +20,15 @@ Given /^I am signed in as an admin$/ do
   click_on 'submit'
 end
 
+Given /^I am signed in as a coordinator$/ do
+  user = FactoryGirl.create :coordinator
+
+  visit '/intern'
+  fill_in 'intern_user_email', :with => user.email
+  fill_in 'intern_user_password', :with => user.password
+  click_on 'submit'
+end
+
 Given /^I am signed out$/ do
   visit '/intern/users/sign_out'
 end

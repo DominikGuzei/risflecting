@@ -8,11 +8,13 @@ describe User do
   it { should validate_presence_of :phone }
 
   it { should belong_to :role }
+  it { should have_many :documents }
   it { should have_many :questions }
   it { should have_many :projects }
   it { should have_many :comments }
   it { should have_many :appointment_responses }
   it { should have_many(:accepted_appointments).through :appointment_responses }
+  it { should have_many(:rejected_appointments).through :appointment_responses }
 
   describe '#passwords_match?' do
     it 'should return true if both passwords match' do
@@ -160,6 +162,7 @@ describe User do
       it { should_not be_able_to :update,  Appointment.new }
       it { should_not be_able_to :destroy, Appointment.new }
       it { should_not be_able_to :create,  User.new }
+      it { should_not be_able_to :create,  Document.new }
 
       it { should be_able_to :add_attachment, user.questions.new }
       it { should_not be_able_to :add_attachment, Question.new }

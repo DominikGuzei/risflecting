@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   belongs_to :role
+  has_many :documents
   has_many :questions
   has_many :projects
   has_many :comments

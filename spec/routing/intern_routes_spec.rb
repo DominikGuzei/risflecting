@@ -112,6 +112,29 @@ describe 'Intern::Questions' do
   end
 end
 
+describe 'Intern::Documents' do
+  it 'should route GET /intern/documents to the documents list' do
+    { :get => '/intern/documents' }.should route_to(
+      :controller => 'intern/documents',
+      :action => 'index'
+    )
+  end
+
+  it 'should route GET /intern/documents/new to the document creation form' do
+    { :get => '/intern/documents/new' }.should route_to(
+      :controller => 'intern/documents',
+      :action => 'new'
+    )
+  end
+
+  it 'should route POST /intern/documents to the document create action' do
+    { :post => '/intern/documents' }.should route_to(
+      :controller => 'intern/documents',
+      :action => 'create'
+    )
+  end
+end
+
 describe 'Intern::Projects' do
   it 'should route GET /intern/projects to the projects list' do
     { :get => '/intern/projects' }.should route_to(
