@@ -15,7 +15,7 @@ Feature: Post a question
     Given I visit the form to create a new question
     When I fill in all fields of the question form
     And I save the question
-    Then I want some feedback that the question was created successfully
+    Then I want to get feedback that the question was created successfully
     And I want to see the newly created question
 
   Scenario: Leave all fields empty
