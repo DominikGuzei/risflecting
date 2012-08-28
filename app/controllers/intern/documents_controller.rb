@@ -1,4 +1,6 @@
 class Intern::DocumentsController < InternController
+  load_and_authorize_resource
+
   def index
   end
 
