@@ -8,6 +8,7 @@ describe User do
   it { should validate_presence_of :phone }
 
   it { should belong_to :role }
+  it { should have_many :documents }
   it { should have_many :questions }
   it { should have_many :projects }
   it { should have_many :comments }
