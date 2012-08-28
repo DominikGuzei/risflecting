@@ -4,7 +4,11 @@
   <fieldset>
     <%= form.email_field :email, :class => 'span4', :label => { :text => 'E-Mail' } %>
 
-    <%= form.select(:role_id, options_for_select([['Pool', Role.find_by_name('Member').id], ['Steuergruppe', Role.find_by_name('Coordinator').id], ['Administratoren', Role.find_by_name('Admin').id]]), :class => 'span4', :label => { :text => 'Gruppe' }) %>
+    <%= form.select(:role_id, options_for_select([
+                                                  ['Pool', Role.find_by_name('Member').id],
+                                                  ['Steuergruppe', Role.find_by_name('Coordinator').id],
+                                                  ['Administratoren', Role.find_by_name('Admin').id]
+                                                ]), :class => 'span4', :label => { :text => 'Gruppe' }) %>
 
     <div class="control-group">
       <div class="controls">
