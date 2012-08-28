@@ -18,7 +18,6 @@ class Intern::AccountsController < InternController
       flash[:error] = "Der Benutzer #{params[:user][:email]} wurde bereits eingeladen"
     else
       @user = User.new params[:user]
-      @user.role = Role.find_by_name('Member')
 
       @user.save :validate => false
 
