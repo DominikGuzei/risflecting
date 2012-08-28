@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  has_and_belongs_to_many :roles
+  belongs_to :role
   has_many :questions
   has_many :projects
   has_many :comments
@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :confirmable, :recoverable, :rememberable, :trackable, :validatable
   mount_uploader :avatar, AvatarUploader
 
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :forename, :surname, :phone, :description, :avatar, :avatar_cache
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :forename, :surname, :phone, :description, :avatar, :avatar_cache, :role_id
 
   validates :forename, :surname, :phone, :presence => true
   validate :phone_number_has_correct_format
@@ -37,8 +37,8 @@ class User < ActiveRecord::Base
     password == password_confirmation && !password.blank?
   end
 
-  def has_role? role
-    self.roles.exists?(:name => role.to_s.camelize)
+  def has_role? role_name
+    role.name == role_name.to_s.camelize
   end
 
   def full_name

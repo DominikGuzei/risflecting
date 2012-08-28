@@ -3,4 +3,5 @@ Before do
   # Therefore we will create them for every scenario
   Role.find_or_create_by_name 'Admin'
   Role.find_or_create_by_name 'Member'
+  Role.find_or_create_by_name 'Coordinator'
 end

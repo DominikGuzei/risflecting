@@ -16,11 +16,15 @@ FactoryGirl.define do
     confirmed_at          Time.now
     current_sign_in_at    Time.now
     last_sign_in_at       Time.now
-    roles                 { [ Role.find_or_create_by_name('Member') ] }
+    role                  { Role.find_or_create_by_name('Member') }
   end
 
   factory :admin, :parent => :user do
-    roles   { [ Role.find_or_create_by_name('Admin') ] }
+    role  { Role.find_or_create_by_name('Admin') }
+  end
+
+  factory :coordinator, :parent => :user do
+    role  { Role.find_or_create_by_name('Coordinator') }
   end
 
   factory :question do

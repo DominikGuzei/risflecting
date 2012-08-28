@@ -7,7 +7,7 @@ describe User do
   it { should validate_presence_of :surname }
   it { should validate_presence_of :phone }
 
-  it { should have_and_belong_to_many :roles }
+  it { should belong_to :role }
   it { should have_many :questions }
   it { should have_many :projects }
   it { should have_many :comments }
@@ -43,7 +43,7 @@ describe User do
     end
 
     it 'should return true if the user has a specific role' do
-      user.roles << Role.find_by_name('Test')
+      user.role = Role.find_by_name('Test')
 
       user.has_role?(:test).should be true
     end
@@ -53,7 +53,7 @@ describe User do
     end
 
     it 'should also work with two worded roles' do
-      user.roles << Role.find_by_name('TestTest')
+      user.role = Role.find_by_name('TestTest')
 
       user.has_role?(:test_test).should be true
     end
@@ -155,6 +155,21 @@ describe User do
 
     context 'normal user' do
       let(:user) { FactoryGirl.create :user }
+
+      it { should_not be_able_to :create,  Appointment.new }
+      it { should_not be_able_to :update,  Appointment.new }
+      it { should_not be_able_to :destroy, Appointment.new }
+      it { should_not be_able_to :create,  User.new }
+
+      it { should be_able_to :add_attachment, user.questions.new }
+      it { should_not be_able_to :add_attachment, Question.new }
+
+      it { should be_able_to :add_attachment, user.projects.new }
+      it { should_not be_able_to :add_attachment, Project.new }
+    end
+
+    context 'coordinator user' do
+      let(:user) { FactoryGirl.create :coordinator }
 
       it { should_not be_able_to :create,  Appointment.new }
       it { should_not be_able_to :update,  Appointment.new }
