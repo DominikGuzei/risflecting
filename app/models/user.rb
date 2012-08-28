@@ -37,8 +37,8 @@ class User < ActiveRecord::Base
     password == password_confirmation && !password.blank?
   end
 
-  def has_role? role
-    self.role.name == role.to_s.camelize
+  def has_role? role_name
+    role.name == role_name.to_s.camelize
   end
 
   def full_name
