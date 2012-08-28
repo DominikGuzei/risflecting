@@ -20,7 +20,7 @@ Feature: Upload documents
   Scenario: Fill in all form fields and submit
     Given I am signed in as a coordinator
     And I am on the page with the document upload form
-    When I choose a file to uplaod and fill in a title
+    When I choose a file to upload and fill in a title
     And I save the document
     Then I want to get feedback that the document was created successfully
 

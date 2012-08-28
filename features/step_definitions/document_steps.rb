@@ -12,7 +12,7 @@ Given /^I am on the page with the document upload form$/ do
   visit new_intern_document_path
 end
 
-When /^I choose a file to uplaod and fill in a title$/ do
+When /^I choose a file to upload and fill in a title$/ do
   fill_in 'document_title', :with => 'A nice name for a document'
   attach_file 'document_asset', "#{Rails.root}/features/fixtures/test.png"
 end
