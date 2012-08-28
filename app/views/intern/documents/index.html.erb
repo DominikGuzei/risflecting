@@ -7,3 +7,21 @@
     <% end %>
   </h2>
 </div>
+<table id="documents-list" class="table table-striped">
+  <tbody>
+    <% @documents.each_with_index do |document, index| %>
+    <tr class="<%= 'first' if index == 0 %>">
+      <td class="first">
+        <%= generate_file_type_icon File.extname document.asset.url %>
+        <%= link_to document.title, document.asset.url, :target => '_blank' %>
+      </td>
+      <td><%= File.extname document.asset.url %></td>
+      <td class="size"><%= number_to_human_size document.asset.file.size %></td>
+      <td style="text-align:right"><%= l document.created_at, :format => '%d. %B, %H:%M Uhr' %></td>
+      <td class="last">
+        <%= link_to document.asset.url, :class => 'btn pull-right', :target => '_blank' do%><i class="icon-arrow-down"></i>&nbsp;Download<% end %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

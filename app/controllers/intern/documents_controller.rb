@@ -1,7 +1,8 @@
 class Intern::DocumentsController < InternController
-  load_and_authorize_resource
+  authorize_resource
 
   def index
+    @documents = Document.order(:created_at).reverse_order
   end
 
   def new
