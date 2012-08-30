@@ -13,7 +13,9 @@
   li.well {
     padding: 5px 0;
     margin-bottom: 7px;
+
     @include clearfix;
+    @include admin-tools;
 
     .date {
       text-align: right;
@@ -40,25 +42,7 @@
       color: #aaa;
       font-size: 12px;
     }
-
-    .admin-tools {
-      height: 28px;
-      padding: 6px 7px 6px 0;
-      font-size: 24px;
-      line-height: 1.3em;
-      @include clearfix;
-
-      a {
-        vertical-align: middle;
-        color: #555;
-        &:hover, &:active, &:focus {
-          text-decoration: none;
-          color: #eb5d59;
-        }
-      }
-      .icon-trash { width: auto; }
-    }
-
+    .admin-tools { padding: 6px 7px 6px 0; }
     .buttons {
       height: 28px;
       padding: 6px 7px;
