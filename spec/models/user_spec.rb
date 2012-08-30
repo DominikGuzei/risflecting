@@ -163,6 +163,7 @@ describe User do
       it { should_not be_able_to :destroy, Appointment.new }
       it { should_not be_able_to :create,  User.new }
       it { should_not be_able_to :create,  Document.new }
+      it { should_not be_able_to :destroy, Document.new }
 
       it { should be_able_to :add_attachment, user.questions.new }
       it { should_not be_able_to :add_attachment, Question.new }
