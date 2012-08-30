@@ -5,7 +5,11 @@
     <% end %>
   </h2>
 </div>
-
+<% if @projects.empty? %>
+<div class="alert alert-info">
+  Es gibt noch keine Einträge in der Tatenbank!
+</div>
+<% else %>
 <ul id="projects-list" class="unstyled">
 <% @projects.each do |project| %>
   <li class="well">
@@ -26,3 +30,4 @@
   </li>
 <% end %>
 </ul>
+<% end %>

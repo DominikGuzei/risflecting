@@ -7,6 +7,11 @@
     <% end %>
   </h2>
 </div>
+<% if @documents.empty? %>
+<div class="alert alert-info">
+  Es gibt noch keine hochgeladenen Dokumente & Unterlagen!
+</div>
+<% else %>
 <table id="documents-list" class="table table-striped">
   <tbody>
     <% @documents.each_with_index do |document, index| %>
@@ -25,3 +30,4 @@
     <% end %>
   </tbody>
 </table>
+<% end %>

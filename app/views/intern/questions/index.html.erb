@@ -6,6 +6,11 @@
   </h2>
 </div>
 
+<% if @questions.empty? %>
+<div class="alert alert-info">
+  Es gibt noch keine Fragen & Mitteilungen!
+</div>
+<% else %>
 <ul id="questions-list" class="unstyled">
 <% @questions.each do |question| %>
   <li class="well">
@@ -31,3 +36,4 @@
 </ul>
 
 <%= paginate @questions %>
+<% end %>

@@ -161,7 +161,7 @@ Then /^I want to get feedback that the appointment was deleted$/ do
 end
 
 Then /^I want the appointment to be removed from the list$/ do
-  find('ul#future-appointments').all('li').count.should == 0
+  page.should_not have_selector('ul#future-appointments')
 end
 
 Then /^I do not want to see a trash bin icon$/ do
