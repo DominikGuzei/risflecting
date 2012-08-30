@@ -8,9 +8,17 @@
   </h2>
 </div>
 
+<% if @future_appointments.empty? %>
+<div class="alert alert-info">
+  Es gibt noch keine Termine & Meetings!
+</div>
+<% else %>
 <%= render :partial => 'list', :locals => { :appointments => @future_appointments, :display_response_buttons => true, :list_id => 'future-appointments' } %>
+<% end %>
 
+<% unless @past_appointments.empty? %>
 <div class="page-header">
   <h3>Vergangene Termine & Meetings</h3>
 </div>
 <%= render :partial => 'list', :locals => { :appointments => @past_appointments, :display_response_buttons => false, :list_id => 'past-appointments' } %>
+<% end %>
