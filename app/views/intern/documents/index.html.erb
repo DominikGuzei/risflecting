@@ -24,6 +24,17 @@
       <td class="size"><%= number_to_human_size document.asset.file.size %></td>
       <td style="text-align:right"><%= l document.created_at, :format => '%d. %B, %H:%M Uhr' %></td>
       <td class="last">
+        <% if can? :destroy, Document %>
+          <div class="pull-right admin-tools">
+            <%= link_to '',
+              intern_document_path(document),
+              :method => :delete,
+              :data => { :confirm => 'Soll dieses Dokument tatsächlich gelöscht werden? Diese Aktion kann nicht mehr rückgängig gemacht werden.' },
+              :class => 'trash icon-trash'
+            %>
+          </div>
+        <% end %>
+
         <%= link_to document.asset.url, :class => 'btn pull-right', :target => '_blank' do%><i class="icon-arrow-down"></i>&nbsp;Download<% end %>
       </td>
     </tr>

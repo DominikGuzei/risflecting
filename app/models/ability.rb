@@ -21,6 +21,6 @@ class Ability
 
   def member
     coordinator
-    cannot :create, Document
+    cannot [:create, :destroy], Document
   end
 end

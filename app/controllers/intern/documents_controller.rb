@@ -1,3 +1,4 @@
+# encoding: utf-8
 class Intern::DocumentsController < InternController
   authorize_resource
 
@@ -17,5 +18,16 @@ class Intern::DocumentsController < InternController
     else
       render :new
     end
+  end
+
+  def destroy
+    @document = Document.find params[:id]
+    if @document.destroy
+      flash[:success] = "Das Dokument '#{@document.title}' wurde erfolgreich gelöscht"
+    else
+      flash[:error] = "Das Dokument '#{@document.title}' konnte nicht gelöscht werden. Bitte versuche es erneut, oder wende dich an das Entwicklerteam."
+    end
+
+    redirect_to intern_documents_path
   end
 end
