@@ -1,0 +1,17 @@
+#documents-list {
+  td {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.7em;
+  }
+  tr.first td { border-top: none; }
+  td.first {
+    img {
+      width: 22px;
+      height: 22px;
+      margin-right: 5px;
+    }
+  }
+  td.last { padding: 5px 10px; }
+  td.size { text-align: right; }
+}

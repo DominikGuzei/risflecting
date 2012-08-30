@@ -18,5 +18,26 @@ When /^I choose a file to upload and fill in a title$/ do
 end
 
 Then /^I do not want to see the button to add a new document$/ do
-  page.should have_link 'neues Dokument hinzufügen'
+  page.should_not have_link 'neues Dokument hinzufügen'
+end
+
+Given /^there are (\d+) documents$/ do |amount_of_documents|
+  FactoryGirl.create_list :document, amount_of_documents.to_i
+end
+
+Then /^I want to be on the documents overview page$/ do
+  current_path.should == intern_documents_path
+end
+
+Then /^I want to see (\d+) documents listed$/ do |amount_of_list_items|
+  find('#documents-list').all('tbody tr').count.should == amount_of_list_items.to_i
+end
+
+Given /^there is a document$/ do
+  @document_data = { :title => 'My new document'}
+  @document = FactoryGirl.create :document, @document_data
+end
+
+When /^I click on the document´s title$/ do
+  within('#documents-list') { click_on @document_data[:title] }
 end

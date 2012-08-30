@@ -6,7 +6,7 @@ FactoryGirl.define do
     endtime       { generate :date }
   end
 
-  factory :user, :aliases => [:author] do
+  factory :user, :aliases => [:author, :uploader] do
     email                 { generate :email }
     forename              { generate :forename }
     surname               { generate :surname }
@@ -16,15 +16,15 @@ FactoryGirl.define do
     confirmed_at          Time.now
     current_sign_in_at    Time.now
     last_sign_in_at       Time.now
-    role                  { Role.find_or_create_by_name('Member') }
+    role                  { Role.find_or_create_by_name 'Member' }
   end
 
   factory :admin, :parent => :user do
-    role  { Role.find_or_create_by_name('Admin') }
+    role  { Role.find_or_create_by_name 'Admin' }
   end
 
   factory :coordinator, :parent => :user do
-    role  { Role.find_or_create_by_name('Coordinator') }
+    role  { Role.find_or_create_by_name 'Coordinator' }
   end
 
   factory :question do
@@ -55,8 +55,15 @@ FactoryGirl.define do
     file        { File.open "#{Rails.root}/features/fixtures/test.png" }
   end
 
+  factory :document do
+    title       { generate :title }
+    asset       { File.open "#{Rails.root}/features/fixtures/test.png" }
+    uploader
+  end
+
   sequence(:date)     { |n| n.days.from_now }
   sequence(:email)    { |n| "tester#{n}@test.com" }
   sequence(:forename) { |n| "Marvin#{n}" }
   sequence(:surname)  { |n| "Hubot#{n}" }
+  sequence(:title)    { |n| "Random title #{n}" }
 end
