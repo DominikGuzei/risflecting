@@ -41,3 +41,12 @@ end
 When /^I click on the document´s title$/ do
   within('#documents-list') { click_on @document_data[:title] }
 end
+
+Then /^I want to get feedback that the document was deleted$/ do
+  page.should have_selector '.flash-message.alert-success'
+end
+
+Then /^I want the document to be removed from the list$/ do
+  page.should_not have_selector '#documents-list'
+end
+
