@@ -34,4 +34,36 @@ describe Intern::DocumentsController do
       end
     end
   end
+  describe '#destroy' do
+    describe 'when logged in as an coordinator' do
+      before :each do
+        sign_in FactoryGirl.create(:coordinator)
+        @document = FactoryGirl.create :document
+      end
+
+      it 'should delete the document' do
+        delete :destroy, :id => @document
+
+        Document.all.should_not include @document
+      end
+
+      it 'should set the flash if deletion was successful' do
+        delete :destroy, :id => @document
+
+        should set_the_flash.to /erfolgreich/i
+      end
+    end
+
+    describe 'when logged in as a user' do
+      it 'should deny normal user access' do
+        sign_in FactoryGirl.create :user
+        document = FactoryGirl.create :document
+
+        delete :destroy, :id => document
+
+        should redirect_to intern_root_url
+        should set_the_flash
+      end
+    end
+  end
 end

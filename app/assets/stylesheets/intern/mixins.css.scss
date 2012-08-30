@@ -42,3 +42,22 @@
     }
   }
 }
+
+@mixin admin-tools {
+  .admin-tools {
+    height: 28px;
+    font-size: 24px;
+    line-height: 1.3em;
+    @include clearfix;
+
+    a {
+      vertical-align: middle;
+      color: #555;
+      &:hover, &:active, &:focus {
+        text-decoration: none;
+        color: #eb5d59;
+      }
+    }
+    .icon-trash { width: auto; }
+  }
+}
