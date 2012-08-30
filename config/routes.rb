@@ -9,7 +9,7 @@ Risflecting::Application.routes.draw do
     resource :dashboard, :only => [:show]
     resource :profile, :only => [:show, :edit, :update], :controller => :accounts
     resources :accounts, :only => [:create, :new, :show]
-    resources :documents, :only => [:index, :new, :create]
+    resources :documents, :only => [:index, :new, :create, :destroy]
 
     resources :questions, :only => [:index, :show, :new, :create] do
       resources :comments, :only => [:create]
