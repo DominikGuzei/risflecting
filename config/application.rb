@@ -67,6 +67,30 @@ module Risflecting
 
     # Devise
     config.assets.initialize_on_precompile = false
+    
+    # precompile page specific styles and javascripts
+    config.assets.precompile += [
+      # styles
+      'extern/pages/english.css', 
+      'extern/pages/faqs.css',
+      'extern/pages/impressum.css', 
+      'extern/pages/kontakt.css',
+      'extern/pages/konzept.css',
+      'extern/pages/links.css',
+      'extern/pages/profil_gerald_koller.css',
+      'extern/pages/projekte.css',
+      'extern/pages/publikationen.css',
+      'extern/pages/studie.css',
+      'extern/pages/team.css',
+      'extern/pages/weiterbildung.css',
+      'extern/pages/willkommen.css',
+      
+      # javascripts
+      'extern/pages/faqs.js',
+      'extern/pages/konzept.js',
+      'extern/pages/studie.js',
+      'extern/pages/willkommen.js',
+    ]
 
     # Send mails with Gmail
     config.action_mailer.delivery_method = :smtp
