@@ -27,20 +27,15 @@
       }
     }
   }
-  
-  article {
-    section {
-      display: none;
-      
-      &.active {
-        display: block;
-      }
-    }
-  }
 }
 
-.no-js section#content article section {
-  display: block;
+// javascript is available -> hide all chapters
+.js section#content article section {
+  display: none;
+  
+  &.active {
+    display: block;
+  }
 }
 
 #chapter-page-navigation {

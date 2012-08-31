@@ -1,4 +1,4 @@
-#= require extern/paging_chapters_viewer
+#= require extern/_paging_chapters_viewer
 
 jQuery ->
   

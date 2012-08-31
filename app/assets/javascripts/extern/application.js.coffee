@@ -1,6 +1,5 @@
 #= require jquery
 #= require jquery_ujs
-
-jQuery -> $('body').removeClass('no-js')
+#= require vendor/_modernizr
 
 @risflecting = {}

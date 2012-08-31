@@ -1,4 +1,4 @@
-#= require extern/chapters_viewer
+#= require extern/_chapters_viewer
 
 jQuery ->
   

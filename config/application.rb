@@ -67,6 +67,19 @@ module Risflecting
 
     # Devise
     config.assets.initialize_on_precompile = false
+    
+    # precompile all assets that don't start with an underscore '_'
+    # so we don't have to list all of them here. This is similar to
+    # the view layer where files with '_' are partials which are only
+    # included in other files.
+    # idea taken from: https://github.com/rails/rails/issues/3094
+    config.assets.precompile = [ /
+      ^          # Start of path
+      ((.*?)\/)? # Any directories
+      (?!_)      # Leading underscore
+      [^\/]*     # Everything else
+      $          # End of path
+    /x ]
 
     # Send mails with Gmail
     config.action_mailer.delivery_method = :smtp

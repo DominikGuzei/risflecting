@@ -1,4 +1,4 @@
-#= require ./chapters_viewer
+#= require ./_chapters_viewer
 
 class risflecting.PagingChaptersViewer extends risflecting.ChaptersViewer
   

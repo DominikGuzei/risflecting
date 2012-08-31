@@ -1,4 +1,4 @@
-#= require vendor/jquery.hashchange
+#= require vendor/_jquery.hashchange
 
 class risflecting.ChaptersViewer
   links: null
