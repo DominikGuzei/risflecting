@@ -1,1 +1,35 @@
-Dashboard
+<div class="page-header">
+  <h2>Aktuelles</h2>
+</div>
+
+<div class="row">
+  <%= render :partial => 'list', :locals => {
+    :collection => @appointments,
+    :collection_link => 'Alle Termine ansehen',
+    :title_text => 'Termine',
+    :empty_text => 'Es gibt im Moment keine anstehenden Termine & Meetings!'
+  } %>
+
+  <%= render :partial => 'list', :locals => {
+    :collection => @questions,
+    :collection_link => 'Alle Fragen & Mitteilungen ansehen',
+    :title_text => 'Fragen & Mitteilungen',
+    :empty_text => 'Es gibt im Moment keine aktuellen Fragen & Mitteilungen!'
+  } %>
+</div>
+
+<div class="row">
+  <%= render :partial => 'list', :locals => {
+    :collection => @projects,
+    :collection_link => 'Alle Erfahrungsberichte ansehen',
+    :title_text => 'Tatenbank',
+    :empty_text => 'Es gibt im Moment keine aktuellen Erfahrungsberichte!'
+  } %>
+
+  <%= render :partial => 'list', :locals => {
+    :collection => @documents,
+    :collection_link => 'Alle Dokumente ansehen',
+    :title_text => 'Dokumente',
+    :empty_text => 'Es gibt im Moment keine aktuellen Dokumente!'
+  } %>
+</div>

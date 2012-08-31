@@ -1,0 +1,33 @@
+<div class="span6">
+  <div class="well headline">
+    <h4><%= title_text %></h4>
+  </div>
+
+  <% if collection.empty? %>
+    <div class="alert alert-info">
+      <%= empty_text %>
+    </div>
+  <% else %>
+    <ul class="unstyled dashboard-list">
+      <% collection.each do |resource| %>
+        <%
+          if resource.class == Appointment
+            time_text = "in #{distance_of_time_in_words_to_now resource.starttime}"
+          else
+            time_text = "vor #{time_ago_in_words resource.updated_at}"
+          end
+
+          available_length = 75 - time_text.size
+          title = truncate resource.title, :length => available_length, :separator => ' ', :omission => ' ...'
+        %>
+
+        <li>
+          <%= link_to title, [:intern, resource] %>
+          <small class="pull-right"><%= time_text %></small>
+        </li>
+      <% end %>
+
+      <li><%= link_to collection_link, [:intern, collection.first.class], :class => 'pull-right' %></li>
+    </ul>
+  <% end %>
+</div>
