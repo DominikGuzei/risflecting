@@ -16,13 +16,10 @@
           else
             time_text = "vor #{time_ago_in_words resource.updated_at}"
           end
-
-          available_length = 75 - time_text.size
-          title = truncate resource.title, :length => available_length, :separator => ' ', :omission => ' ...'
         %>
 
         <li>
-          <%= link_to title, [:intern, resource] %>
+          <%= link_to truncate_title(resource.title, time_text), [:intern, resource] %>
           <small class="pull-right"><%= time_text %></small>
         </li>
       <% end %>
