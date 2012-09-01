@@ -5,7 +5,7 @@
 
   <% if collection.empty? %>
     <div class="alert alert-info">
-      <%= empty_text %>
+      Es gibt im Moment keine aktuellen <%= resource_name %>!
     </div>
   <% else %>
     <ul class="unstyled dashboard-list">
@@ -27,7 +27,7 @@
         </li>
       <% end %>
 
-      <li><%= link_to collection_link, [:intern, collection.first.class], :class => 'pull-right' %></li>
+      <li><%= link_to "Alle #{resource_name} ansehen", [:intern, collection.first.class], :class => 'pull-right' %></li>
     </ul>
   <% end %>
 </div>
