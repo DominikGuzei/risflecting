@@ -1,1 +1,31 @@
-Dashboard
+<div class="page-header">
+  <h2>Aktuelles</h2>
+</div>
+
+<div class="row">
+  <%= render :partial => 'list', :locals => {
+    :collection => @appointments,
+    :resource_name => 'Termine',
+    :title_text => 'Termine'
+  } %>
+
+  <%= render :partial => 'list', :locals => {
+    :collection => @questions,
+    :resource_name => 'Fragen & Mitteilungen',
+    :title_text => 'Fragen & Mitteilungen'
+  } %>
+</div>
+
+<div class="row">
+  <%= render :partial => 'list', :locals => {
+    :collection => @projects,
+    :resource_name => 'Erfahrungsberichte',
+    :title_text => 'Tatenbank'
+  } %>
+
+  <%= render :partial => 'list', :locals => {
+    :collection => @documents,
+    :resource_name => 'Dokumente',
+    :title_text => 'Dokumente'
+  } %>
+</div>

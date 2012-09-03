@@ -1,0 +1,20 @@
+.dashboard-list {
+  margin-left: 0px;
+  margin-bottom: 50px;
+  padding: 0 5px;
+
+  li {
+    padding: 5px 0;
+    margin: 5px 0;
+    border-bottom: 1px dotted #bbb;
+
+    &:last-child {
+      border-bottom: 0px;
+    }
+  }
+
+  small {
+    color: #aaa;
+    font-size: 12px;
+  }
+}
