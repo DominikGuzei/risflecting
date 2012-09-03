@@ -29,7 +29,7 @@ group :assets do
 
   # limit version to ensure that phantomjs works
   # see https://github.com/jonleighton/poltergeist/issues/44
-  gem 'twitter-bootstrap-rails', '2.0.8'
+  gem 'twitter-bootstrap-rails', :git => 'https://github.com/tombu/twitter-bootstrap-rails.git', :branch => 'bug/fix-fontawesome-font-declaration'
 end
 
 group :test do

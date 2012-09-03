@@ -12,6 +12,12 @@
   }
 }
 
+@mixin box-sizing($type) {
+  -webkit-box-sizing: $type; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: $type;    /* Firefox, other Gecko */
+  box-sizing: $type;         /* Opera/IE 8+ */
+}
+
 @mixin item-list {
   li.well {
     padding: 5px 0;
@@ -23,16 +29,19 @@
     }
     h4 { line-height: 1.3em; }
     .creation-date {
+      font-size: 13px;
       text-align: right;
       padding-right: 20px;
       border-right: 2px solid #ccc;
     }
 
     .creation-date, .update-date {
+      font-size: 13px;
       color: #777;
     }
 
     small.author {
+      font-size: 13px;
       color: #aaa;
     }
 
@@ -47,17 +56,18 @@
   .admin-tools {
     height: 28px;
     font-size: 24px;
-    line-height: 1.3em;
+    line-height: 1.2em;
     @include clearfix;
 
-    a {
+    a.trash {
       vertical-align: middle;
       color: #555;
+      width: 18px;
+      line-height: 35px;
       &:hover, &:active, &:focus {
         text-decoration: none;
         color: #eb5d59;
       }
     }
-    .icon-trash { width: auto; }
   }
 }

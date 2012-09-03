@@ -3,7 +3,7 @@
 Given /^I am signed in as a user$/ do
   user = FactoryGirl.create :user
 
-  visit '/intern'
+  visit new_intern_user_session_path
   fill_in 'intern_user_email', :with => user.email
   fill_in 'intern_user_password', :with => user.password
   click_on 'submit'
@@ -14,7 +14,7 @@ end
 Given /^I am signed in as an admin$/ do
   user = FactoryGirl.create :admin
 
-  visit '/intern'
+  visit new_intern_user_session_path
   fill_in 'intern_user_email', :with => user.email
   fill_in 'intern_user_password', :with => user.password
   click_on 'submit'
@@ -23,14 +23,14 @@ end
 Given /^I am signed in as a coordinator$/ do
   user = FactoryGirl.create :coordinator
 
-  visit '/intern'
+  visit new_intern_user_session_path
   fill_in 'intern_user_email', :with => user.email
   fill_in 'intern_user_password', :with => user.password
   click_on 'submit'
 end
 
 Given /^I am signed out$/ do
-  visit '/intern/users/sign_out'
+  visit destroy_intern_user_session_path
 end
 
 Given /^I visit the form to invite a new user$/ do

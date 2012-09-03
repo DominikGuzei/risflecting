@@ -1,6 +1,6 @@
 <%= form_for [:intern, @user], :url => intern_profile_path, :html => { :class => 'form-horizontal well', :id => 'account-edit-form'} do |form| %>
-  <%= content_tag :legend, 'Benutzerinformationen ändern' %>
   <fieldset>
+    <%= content_tag :legend, 'Benutzerinformationen ändern' %>
     <% if @user.errors.any? %>
     <div class="alert alert-error"><strong>Achtung!</strong> Beim Versuch deine Angaben zu ändern sind Fehler aufgetreten.</div>
     <% end %>

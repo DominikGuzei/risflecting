@@ -7,14 +7,14 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
 </head>
 <body>
-  <div class="navbar navbar-fixed-top" id="main-navigation">
+  <div class="navbar navbar-inverse navbar-fixed-top" id="main-navigation">
     <div class="navbar-inner">
       <div class="container">
         <%= link_to 'risflecting Intern', intern_root_path, :class => 'brand' %>
 
         <% if intern_user_signed_in? %>
         <ul class="nav">
-          <li><%= link_to '', intern_dashboard_path, :class => 'icon-home' %></li>
+          <li><%= link_to '', intern_dashboard_path, :class => 'icon-home icon-white' %></li>
           <li><%= link_to 'Termine', intern_appointments_path %></li>
           <li><%= link_to 'Fragen & Mitteilungen', intern_questions_path %></li>
           <li><%= link_to 'Tatenbank', intern_projects_path %></li>
@@ -23,7 +23,7 @@
 
         <ul class="nav pull-right" id="account-dropdown">
           <li class="dropdown">
-            <%= link_to '#', :class => 'dropdown-toggle', :data => { :toggle => 'dropdown'} do %>
+            <%= link_to '#', :class => 'dropdown-toggle', :data => { :toggle => 'dropdown' } do %>
               <%= image_tag avatar_url(current_intern_user.avatar, :tiny), :alt => current_intern_user.full_name %>&nbsp;&nbsp;<%= current_intern_user.full_name %> <b class="caret"></b>
             <% end %>
             <ul class="dropdown-menu">
@@ -31,7 +31,7 @@
               <li><%= link_to new_intern_account_path do %><i class="icon-envelope"></i> Benutzer einladen<% end %></li>
               <% end %>
               <li><%= link_to intern_profile_path do %><i class="icon-user"></i> Mein Profil<% end %></li>
-              <li><%= link_to destroy_intern_user_session_path, :method => :delete do %><i class="icon-off"></i> Abmelden<% end %></li>
+              <li><%= link_to destroy_intern_user_session_path do %><i class="icon-off"></i> Abmelden<% end %></li>
             </ul>
           </li>
         </ul>
