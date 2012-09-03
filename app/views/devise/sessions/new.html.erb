@@ -1,9 +1,8 @@
 <div class="row">
 
   <%= form_for resource, :as => resource_name, :url => session_path(resource_name), :html => { :class => 'form-vertical well span4 offset4'} do |form| %>
-    <%= content_tag :legend, 'Anmeldung' %>
-
     <fieldset>
+      <%= content_tag :legend, 'Anmeldung' %>
       <%= form.email_field :email, :class => 'span4', :label => { :text => 'E-Mail' } %>
       <%= form.password_field :password, :class => 'span4', :label => { :text => 'Passwort' } %>
       <% if devise_mapping.rememberable? -%>

@@ -1,9 +1,8 @@
 <div class="row">
 
   <%= form_for resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post, :class => 'form-vertical well span4 offset4'} do |form| %>
-    <%= content_tag :legend, 'Passwort vergessen' %>
-
     <fieldset>
+      <%= content_tag :legend, 'Passwort vergessen' %>
       <%= form.email_field :email, :class => 'span4', :label => { :text => 'E-Mail' } %>
       <div class="form-actions">
         <%= form.submit 'Passwort zurücksetzen' %>

@@ -23,13 +23,35 @@ select.hours-select, select.minutes-select {
   margin-left: 6px;
 }
 
+h1, h2, h3, h4, h5, h6 { margin: 0; }
+
+h2 { font-size: 26px; }
+h3 { font-size: 20px; }
+h4 { font-size: 16px; }
+
 .page-header {
-  padding-bottom: 0px;
+  padding-bottom: 0;
+  margin-bottom: 10px;
   h1 { padding-bottom: 5px; }
-  h2, h3, h4, h5, h6 { padding-bottom: 0px; }
+  h2, h3, h4, h5, h6 { padding-bottom: 0; }
 }
 
 .form-vertical .form-actions {
   padding-left: 0;
   padding-right: 0;
 }
+
+.icon-white,
+.nav > .active > a > [class^="icon-"],
+.nav > .active > a > [class*=" icon-"],
+.dropdown-menu > li > a:hover > [class^="icon-"],
+.dropdown-menu > li > a:hover > [class*=" icon-"],
+.dropdown-menu > .active > a > [class^="icon-"],
+.dropdown-menu > .active > a > [class*=" icon-"] {
+  background-image: none;
+}
+
+form legend + .control-group {
+  margin-top: 0;
+}
+
