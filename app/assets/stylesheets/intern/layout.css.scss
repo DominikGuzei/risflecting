@@ -11,10 +11,24 @@
   .nav > li > a {
     font-size: 15px;
     color: #ddd;
-    &:hover { background-color: #555; }
+    height: 20px;
+    line-height: 20px;
+    &:hover {
+      background-color: #555;
+      color: #3FA5C3;
+    }
   }
 }
 
 .container > .page-header {
   margin-top: 0;
+}
+
+.navbar .nav > li > a.icon-home {
+  font-size: 18px;
+}
+
+#account-dropdown {
+  margin-right: 0;
+  li { white-space: nowrap; }
 }

@@ -155,16 +155,21 @@ module BootstrapFormBuilder
       file_input_javascript = "
         <script type='text/javascript'>
           $(function() {
-            $('##{@object_name}_#{field}').css({ visibility: 'hidden', height: '1px', width: '1px', opacity: 0 });
-            $('.file-input.hidden').removeClass('hidden');
-            $('##{@object_name}_#{field}').change(function() {
-              var value = $(this).val()
-              var parts = value.split(/[\\\\/]/);
-              $('#file_name_field').val(parts[parts.length-1]);
-            });
-            $('#file_browse_button, #file_name_field').click(function() {
-              $('##{@object_name}_#{field}').click();
-            });
+            if($.browser.msie) {
+              // use default file field in IE because otherwise IE emties file field before submit
+              $('.file-input .hidden').remove()
+            } else {
+              $('.file-input .hidden').removeClass('hidden');
+              $('##{@object_name}_#{field}')
+                .css({ height: '1px', width: '1px', visibility: 'hidden', opacity: 0 })
+                .change(function() {
+                  var parts = ($(this).val()).split(/[\\\\/]/);
+                  $('#file_name_field').val(parts[parts.length-1]);
+                });
+              $('#file_browse_button, #file_name_field').click(function() {
+                $('##{@object_name}_#{field}').click();
+              });
+            }
           });
         </script>"
 
@@ -177,10 +182,10 @@ module BootstrapFormBuilder
       ("<div class='#{wrapperClass}'>" +
         labelTag +
         "<div class='controls'>" +
-          "<div class='input-prepend file-input hidden #{options[:class]}'>" +
-            @template.button_tag(options[:button][:label], { :class => 'btn', :id => 'file_browse_button', :type => 'button' }.merge(options[:button] || {})) +
-            @template.text_field_tag("file_name_field", '', { :placeholder => placeholder_text, :disabled => true }) +
-            super(field, {:id => id }) +
+          "<div class='input-prepend file-input #{options[:class]}'>" +
+            @template.button_tag(options[:button][:label], { :class => 'btn hidden', :id => 'file_browse_button', :type => 'button' }.merge(options[:button] || {})) +
+            @template.text_field_tag("file_name_field", '', { :placeholder => placeholder_text, :disabled => true, :class => 'hidden' }) +
+            super(field, {:id => id, :class => 'span4' }) +
           "</div>" +
           errorSpan +
           file_input_javascript +

@@ -1,3 +1,5 @@
+@import "mixins";
+
 .well.headline {
   padding: 5px 10px;
   margin-bottom: 5px;
@@ -8,6 +10,11 @@
   margin-bottom: 0;
 }
 
-.navbar .nav > li > a.icon-home {
-  font-size: 18px;
+.hidden {
+  display: none;
+  visibility: hidden;
+}
+
+input, textarea {
+  @include box-sizing(border-box);
 }

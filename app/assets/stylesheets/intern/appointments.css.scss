@@ -25,6 +25,7 @@
       margin-left: -22px;
       padding-right: 20px;
       border-right: 2px solid #ccc;
+      line-height: 1.1em;
     }
     .times {
       font-size: 12px;
@@ -42,14 +43,15 @@
       color: #aaa;
       font-size: 12px;
     }
-    .admin-tools { padding: 6px 7px 6px 0; }
+    .admin-tools { padding: 2px 7px 2px 0; }
     .buttons {
       height: 28px;
-      padding: 6px 7px;
+      padding: 2px 7px;
       @include clearfix;
 
       .btn {
         margin: 0 0 0 3px;
+        font-size: 13px;
       }
       .label {
         display: inline-block;
