@@ -1,7 +1,6 @@
 <%= form_for [:intern, @user], :url => intern_accounts_path, :html => { :class => 'form-horizontal well'} do |form| %>
-  <%= content_tag :legend, 'Neuen Benutzer einladen' %>
-
   <fieldset>
+    <%= content_tag :legend, 'Neuen Benutzer einladen' %>
     <%= form.email_field :email, :class => 'span4', :label => { :text => 'E-Mail' } %>
 
     <%= form.select(:role_id, options_for_select([
