@@ -10,8 +10,8 @@ describe 'Intern' do
 end
 
 describe 'Intern::Account' do
-  it 'should route GET /intern/accounts/:id to the account show action' do
-    { :get => '/intern/accounts/1' }.should route_to(
+  it 'should route GET /intern/benutzer/:id to the account show action' do
+    { :get => '/intern/benutzer/1' }.should route_to(
       :controller => 'intern/accounts',
       :action => 'show',
       :id => '1'
@@ -20,22 +20,22 @@ describe 'Intern::Account' do
 end
 
 describe 'Intern::Profile' do
-  it 'should route GET /intern/profile to the account show action' do
-    { :get => '/intern/profile' }.should route_to(
+  it 'should route GET /intern/profil to the account show action' do
+    { :get => '/intern/profil' }.should route_to(
       :controller => 'intern/accounts',
       :action => 'show'
     )
   end
 
-  it 'should route GET /intern/profile/edit to the account edit action' do
-    { :get => '/intern/profile/edit' }.should route_to(
+  it 'should route GET /intern/profil/bearbeiten to the account edit action' do
+    { :get => '/intern/profil/bearbeiten' }.should route_to(
       :controller => 'intern/accounts',
       :action => 'edit'
     )
   end
 
-  it 'should route PUT /intern/profile to the account update action' do
-    { :put => '/intern/profile' }.should route_to(
+  it 'should route PUT /intern/profil to the account update action' do
+    { :put => '/intern/profil' }.should route_to(
       :controller => 'intern/accounts',
       :action => 'update'
     )
@@ -43,45 +43,45 @@ describe 'Intern::Profile' do
 end
 
 describe 'Intern::Appointment' do
-  it 'should route GET /intern/appointments to the appointment list' do
-    { :get => '/intern/appointments' }.should route_to(
+  it 'should route GET /intern/termine to the appointment list' do
+    { :get => '/intern/termine' }.should route_to(
       :controller => 'intern/appointments',
       :action => 'index'
     )
   end
 
-  it 'should route GET /intern/appointments/new to the appointment creation form' do
-    { :get => '/intern/appointments/new' }.should route_to(
+  it 'should route GET /intern/termine/neu to the appointment creation form' do
+    { :get => '/intern/termine/neu' }.should route_to(
       :controller => 'intern/appointments',
       :action => 'new'
     )
   end
 
-  it 'should route POST /intern/appointments to the appointment create action' do
-    { :post => '/intern/appointments' }.should route_to(
+  it 'should route POST /intern/termine to the appointment create action' do
+    { :post => '/intern/termine' }.should route_to(
       :controller => 'intern/appointments',
       :action => 'create'
     )
   end
 
-  it 'should route POST /intern/appointments/:id/accept to the appointment accept action' do
-    { :post => '/intern/appointments/1/accept' }.should route_to(
+  it 'should route POST /intern/termine/:id/zusagen to the appointment accept action' do
+    { :post => '/intern/termine/1/zusagen' }.should route_to(
       :controller => 'intern/appointments',
       :action => 'accept',
       :id => '1'
     )
   end
 
-  it 'should route POST /intern/appointments/:id/reject to the appointment reject action' do
-    { :post => '/intern/appointments/1/reject' }.should route_to(
+  it 'should route POST /intern/termine/:id/absagen to the appointment reject action' do
+    { :post => '/intern/termine/1/absagen' }.should route_to(
       :controller => 'intern/appointments',
       :action => 'reject',
       :id => '1'
     )
   end
 
-  it 'should route DELETE /intern/appointments/:id to the appointment destroy action' do
-    { :delete => '/intern/appointments/1' }.should route_to(
+  it 'should route DELETE /intern/termine/:id to the appointment destroy action' do
+    { :delete => '/intern/termine/1' }.should route_to(
       :controller => 'intern/appointments',
       :action => 'destroy',
       :id => '1'
@@ -90,22 +90,22 @@ describe 'Intern::Appointment' do
 end
 
 describe 'Intern::Questions' do
-  it 'should route GET /intern/questions to the questions list' do
-    { :get => '/intern/questions' }.should route_to(
+  it 'should route GET /intern/fragen-und-mitteilungen to the questions list' do
+    { :get => '/intern/fragen-und-mitteilungen' }.should route_to(
       :controller => 'intern/questions',
       :action => 'index'
     )
   end
 
-  it 'should route GET /intern/questions/new to the question creation form' do
-    { :get => '/intern/questions/new' }.should route_to(
+  it 'should route GET /intern/fragen-und-mitteilungen/neu to the question creation form' do
+    { :get => '/intern/fragen-und-mitteilungen/neu' }.should route_to(
       :controller => 'intern/questions',
       :action => 'new'
     )
   end
 
-  it 'should route POST /intern/questions to the question create action' do
-    { :post => '/intern/questions' }.should route_to(
+  it 'should route POST /intern/fragen-und-mitteilungen to the question create action' do
+    { :post => '/intern/fragen-und-mitteilungen' }.should route_to(
       :controller => 'intern/questions',
       :action => 'create'
     )
@@ -113,22 +113,22 @@ describe 'Intern::Questions' do
 end
 
 describe 'Intern::Documents' do
-  it 'should route GET /intern/documents to the documents list' do
-    { :get => '/intern/documents' }.should route_to(
+  it 'should route GET /intern/dokumente to the documents list' do
+    { :get => '/intern/dokumente' }.should route_to(
       :controller => 'intern/documents',
       :action => 'index'
     )
   end
 
-  it 'should route GET /intern/documents/new to the document creation form' do
-    { :get => '/intern/documents/new' }.should route_to(
+  it 'should route GET /intern/dokumente/neu to the document creation form' do
+    { :get => '/intern/dokumente/neu' }.should route_to(
       :controller => 'intern/documents',
       :action => 'new'
     )
   end
 
-  it 'should route POST /intern/documents to the document create action' do
-    { :post => '/intern/documents' }.should route_to(
+  it 'should route POST /intern/dokumente to the document create action' do
+    { :post => '/intern/dokumente' }.should route_to(
       :controller => 'intern/documents',
       :action => 'create'
     )
@@ -136,22 +136,22 @@ describe 'Intern::Documents' do
 end
 
 describe 'Intern::Projects' do
-  it 'should route GET /intern/projects to the projects list' do
-    { :get => '/intern/projects' }.should route_to(
+  it 'should route GET /intern/tatenbank to the projects list' do
+    { :get => '/intern/tatenbank' }.should route_to(
       :controller => 'intern/projects',
       :action => 'index'
     )
   end
 
-  it 'should route GET /intern/projects/new to the project creation form' do
-    { :get => '/intern/projects/new' }.should route_to(
+  it 'should route GET /intern/tatenbank/neu to the project creation form' do
+    { :get => '/intern/tatenbank/neu' }.should route_to(
       :controller => 'intern/projects',
       :action => 'new'
     )
   end
 
-  it 'should route POST /intern/projects to the project create action' do
-    { :post => '/intern/projects' }.should route_to(
+  it 'should route POST /intern/tatenbank to the project create action' do
+    { :post => '/intern/tatenbank' }.should route_to(
       :controller => 'intern/projects',
       :action => 'create'
     )
@@ -159,16 +159,16 @@ describe 'Intern::Projects' do
 end
 
 describe 'Intern::Attachments' do
-  it 'should route POST /intern/projects/:id/attachments to the project attachment create action' do
-    { :post => '/intern/projects/1/attachments' }.should route_to(
+  it 'should route POST /intern/tatenbank/:id/anhang to the project attachment create action' do
+    { :post => '/intern/tatenbank/1/anhang' }.should route_to(
       :controller => 'intern/attachments',
       :project_id => '1',
       :action => 'create'
     )
   end
 
-  it 'should route POST /intern/questions/:id/attachments to the question attachment create action' do
-    { :post => '/intern/questions/1/attachments' }.should route_to(
+  it 'should route POST /intern/fragen-und-mitteilungen/:id/anhang to the question attachment create action' do
+    { :post => '/intern/fragen-und-mitteilungen/1/anhang' }.should route_to(
       :controller => 'intern/attachments',
       :question_id => '1',
       :action => 'create'
@@ -177,8 +177,8 @@ describe 'Intern::Attachments' do
 end
 
 describe 'Intern::Comments' do
-  it 'should route POST /intern/questions/:id/comments to the question create action' do
-    { :post => '/intern/questions/1/comments' }.should route_to(
+  it 'should route POST /intern/fragen-und-mitteilungen/:id/kommentare to the question create action' do
+    { :post => '/intern/fragen-und-mitteilungen/1/kommentare' }.should route_to(
       :controller => 'intern/comments',
       :question_id => '1',
       :action => 'create'

@@ -7,7 +7,7 @@ Feature: Upload documents
   Scenario: Visit documents overview as a coordinator
     Given I am signed in as a coordinator
     And I am on the documents overview page
-    When I click on 'neues Dokument hinzufügen'
+    When I click on 'Dokument hinzufügen'
     Then I want to see the form to upload documents
 
   Scenario: Submit form without filling any fields

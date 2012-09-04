@@ -1,8 +1,10 @@
 <div class="page-header">
   <h2><%= @user.full_name %></h2>
+  <% if can? :edit, @user %>
     <%= link_to edit_intern_profile_path, :class => 'pull-right btn btn-info' do %>
       <i class="icon-pencil"></i>&nbsp; Profil bearbeiten
     <% end %>
+  <% end %>
 </div>
 <div class="row">
   <div class="span3" id="avatar">
