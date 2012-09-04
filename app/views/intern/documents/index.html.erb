@@ -1,11 +1,10 @@
 <div class="page-header">
-  <h2>Dokumente & Unterlagen
-    <% if can? :create, Document %>
+  <h2>Dokumente & Unterlagen</h2>
+  <% if can? :create, Document %>
     <%= link_to new_intern_document_path, :class => 'pull-right btn btn-info' do %>
       <i class="icon-plus"></i> &nbsp;Dokument hinzufügen
     <% end %>
-    <% end %>
-  </h2>
+  <% end %>
 </div>
 <% if @documents.empty? %>
 <div class="alert alert-info">
@@ -18,7 +17,7 @@
     <tr class="<%= 'first' if index == 0 %>">
       <td class="first">
         <%= generate_file_type_icon File.extname document.asset.url %>
-        <%= link_to document.title, document.asset.url, :target => '_blank' %>
+        <%= link_to truncate_list_title(document.title, 60), document.asset.url, :target => '_blank' %>
       </td>
       <td><%= File.extname document.asset.url %></td>
       <td class="size"><%= number_to_human_size document.asset.file.size %></td>

@@ -1,13 +1,5 @@
 @import "mixins";
 
-.page-header h2 a {
-  font-weight: normal;
-  font-size: 13px;
-  line-height: 1.2em;
-  margin-top: 15px;
-  &.btn { margin-top: 5px; }
-}
-
 #future-appointments, #past-appointments {
   margin-bottom: 30px;
   li.well {

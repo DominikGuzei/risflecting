@@ -31,4 +31,8 @@ module InternHelper
       file.url
     end
   end
+
+  def truncate_list_title text, length
+    truncate text, :length => length, :separator => ' ', :omission => ' ...'
+  end
 end

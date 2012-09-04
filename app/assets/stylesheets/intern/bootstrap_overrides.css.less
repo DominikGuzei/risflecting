@@ -13,9 +13,8 @@
 @gridColumnWidth: 60px;
 @gridGutterWidth: 20px;
 
-input[type=text], input[type=email], input[type=password], textarea {
-  height: auto;
-}
+input[type=text], input[type=email], input[type=password], textarea { height: auto; }
+input[type=text], input[type=email], input[type=password], input[type=number] { max-height: 31px; }
 
 .datepicker.dropdown-menu { font-size: 10px; }
 
@@ -27,14 +26,7 @@ h1, h2, h3, h4, h5, h6 { margin: 0; }
 
 h2 { font-size: 26px; }
 h3 { font-size: 20px; }
-h4 { font-size: 16px; }
-
-.page-header {
-  padding-bottom: 0;
-  margin-bottom: 10px;
-  h1 { padding-bottom: 5px; }
-  h2, h3, h4, h5, h6 { padding-bottom: 0; }
-}
+h4 { font-size: 15px; }
 
 .form-vertical .form-actions {
   padding-left: 0;
@@ -50,8 +42,3 @@ h4 { font-size: 16px; }
 .dropdown-menu > .active > a > [class*=" icon-"] {
   background-image: none;
 }
-
-form legend + .control-group {
-  margin-top: 0;
-}
-

@@ -19,7 +19,7 @@
         %>
 
         <li>
-          <%= link_to truncate_title(resource.title, time_text), [:intern, resource] %>
+          <%= link_to truncate_title(resource.title, time_text), [:intern, resource], :class => 'pull-left' %>
           <small class="pull-right"><%= time_text %></small>
         </li>
       <% end %>

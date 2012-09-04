@@ -1,9 +1,7 @@
 <% unless comments.empty? %>
 <div class="well headline">
-  <h4>
-    Kommentare
-    <span class="badge pull-right"><%= comments.length %></span>
-  </h4>
+  <h4 class="pull-left">Kommentare</h4>
+  <span class="badge pull-right"><%= comments.length %></span>
 </div>
 <ul id="comments-list" class="unstyled">
 <% comments.each do |comment| %>
@@ -15,7 +13,10 @@
     </div>
     <div class="span7 comment pull-right">
       <div class="head">
-        <%= link_to intern_account_path(comment.author) do %><strong><%= comment.author.full_name %></strong><% end %> <em>schrieb:</em>
+        <span class="pull-left">
+          <%= link_to intern_account_path(comment.author) do %><strong><%= comment.author.full_name %></strong><% end %>
+          <em>schrieb:</em>
+        </span>
         <em class="pull-right"><%= comment.created_at.strftime('%d. %b, %H:%M Uhr') %></em>
       </div>
       <p><%= auto_link comment.text, :html => { :target => '_blank' } %></p>
