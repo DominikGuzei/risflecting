@@ -27,8 +27,7 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
 
-  # limit version to ensure that phantomjs works
-  # see https://github.com/jonleighton/poltergeist/issues/44
+  # use custom fork to ensure icons to work in IE8
   gem 'twitter-bootstrap-rails', :git => 'https://github.com/tombu/twitter-bootstrap-rails.git', :branch => 'bug/fix-fontawesome-font-declaration'
 end
 
