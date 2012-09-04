@@ -10,7 +10,7 @@
   </div>
   </div>
   <div class="span3" id="avatar">
-    <%= image_tag avatar_url(@user.avatar), :alt => @user.full_name %><br/><br/>
+    <%= avatar_image_tag @user.avatar, :normal, :alt => @user.full_name %><br/><br/>
   </div>
   <div class="span9" id="info">
     <strong>E-Mail</strong>: <%= @user.email %><br/>

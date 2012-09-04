@@ -15,7 +15,7 @@
 
     <div class="control-group">
       <label class="control-label">aktuelles Avatarbild</label>
-      <div class="controls"><%= image_tag avatar_url(@user.avatar, :small) %></div>
+      <div class="controls"><%= avatar_image_tag @user.avatar, :small %></div>
     </div>
     <%= form.file_field :avatar, :label => { :text => 'neues Avatarbild' }, :button => { :label => 'Auswählen' } %>
     <%= form.hidden_field :avatar_cache %>

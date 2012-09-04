@@ -23,12 +23,19 @@ module InternHelper
     image_tag asset_path("intern/file-types/#{icon_type.downcase}.png")
   end
 
-  def avatar_url file, size = :normal
+  def avatar_url file, version = :normal
     if file.url.blank?
-      asset_path "intern/#{['default', 'avatar', size.to_s].join('-')}.jpg"
+      asset_path "intern/#{['default', 'avatar', version.to_s].join('-')}.jpg"
     else
-      file = file.send(size.to_sym) unless size == :normal
+      file = file.send(version.to_sym) unless version == :normal
       file.url
     end
+  end
+
+  def avatar_image_tag avatar, version, options = {}
+    options.symbolize_keys!
+    options[:class] = [(options[:class] ||= ''), 'rounded'].join(' ')
+
+    image_tag avatar_url(avatar, version), :alt => options[:alt], :class => options[:class], :size => AvatarUploader.get_version_dimension(version).join('x')
   end
 end
