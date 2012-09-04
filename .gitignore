@@ -23,3 +23,5 @@
 
 # ignore app configuration file
 /config/configuration.yml
+
+chromedriver.log
