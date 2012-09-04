@@ -18,6 +18,13 @@
   box-sizing: $type;         /* Opera/IE 8+ */
 }
 
+@mixin border-radius($px) {
+  -webkit-border-radius: $px;
+  -moz-border-radius: $px;
+  -khtml-border-radius: $px;
+  border-radius: $px;
+}
+
 @mixin item-list {
   li.well {
     padding: 5px 0;
@@ -26,6 +33,7 @@
 
     .title {
       padding-left: 10px;
+      width: 520px;
     }
     h4 { line-height: 1.3em; }
     .creation-date {
@@ -38,6 +46,10 @@
     .creation-date, .update-date {
       font-size: 13px;
       color: #777;
+    }
+    .creation-date {
+      margin-left: 0;
+      width: 130px;
     }
 
     small.author {

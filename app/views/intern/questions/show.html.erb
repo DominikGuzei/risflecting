@@ -1,8 +1,6 @@
 <div class="page-header">
-  <h2>
-    <%= @question.title %>
-    <small><%= link_to intern_questions_path, :class => 'pull-right' do %>&laquo; zurück zur Übersicht<% end %></small>
-  </h2>
+  <h3><%= @question.title %></h3>
+  <%= link_to intern_questions_path, :class => 'pull-right' do %>&laquo; zurück zur Übersicht<% end %>
 </div>
 
 <div class="row">

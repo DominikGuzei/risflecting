@@ -4,7 +4,7 @@
     <% if @document.errors.any? %>
     <div class="alert alert-error"><strong>Achtung!</strong> Beim Versuch die Datei hochzuladen oder zu speichern sind Fehler aufgetreten.</div>
     <% end %>
-    <%= form.text_field :title, :class => 'span4', :label => { :text => 'Titel' } %>
+    <%= form.text_field :title, :class => 'span6', :label => { :text => 'Titel' } %>
     <%= form.file_field :asset, :label => { :text => 'Datei' }, :button => { :label => 'Auswählen' } %>
     <%= form.hidden_field :asset_cache %>
 
