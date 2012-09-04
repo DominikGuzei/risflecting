@@ -8,7 +8,7 @@
   <li>
     <div class="pull-left">
       <%= link_to intern_account_path(comment.author) do %>
-        <%= image_tag avatar_url(comment.author.avatar, :small), :class => 'avatar' %>
+        <%= avatar_image_tag comment.author.avatar, :small, :class => 'avatar' %>
       <% end %>
     </div>
     <div class="span7 comment pull-right">

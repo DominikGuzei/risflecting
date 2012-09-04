@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html>
+<html lang="de">
 <head>
   <title>Risflecting Intern</title>
   <%= stylesheet_link_tag "intern/application", :media => "all" %>
@@ -24,7 +25,7 @@
         <ul class="nav pull-right" id="account-dropdown">
           <li class="dropdown">
             <%= link_to '#', :class => 'dropdown-toggle', :data => { :toggle => 'dropdown' } do %>
-              <%= image_tag avatar_url(current_intern_user.avatar, :tiny), :alt => current_intern_user.full_name %>&nbsp;&nbsp;<%= current_intern_user.full_name %> <b class="caret"></b>
+              <%= avatar_image_tag current_intern_user.avatar, :tiny, :alt => current_intern_user.full_name %>&nbsp;&nbsp;<%= current_intern_user.full_name %> <b class="caret"></b>
             <% end %>
             <ul class="dropdown-menu">
               <% if can? :create, User %>

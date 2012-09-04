@@ -6,12 +6,18 @@ class AvatarUploader < CarrierWave::Uploader::Base
   include CarrierWave::MimeTypes
   include CarrierWave::RMagick
 
+  @@version_dimensions = {
+    :normal => [220, 300],
+    :small  => [56, 56],
+    :tiny   => [20, 20]
+  }
+
   process :set_content_type
-  process :resize_to_fill => [220, 300]
+  process :resize_to_fill => @@version_dimensions[:normal]
   process :convert => 'jpg'
 
-  version(:small) { process :resize_to_fill => [56, 56] }
-  version(:tiny) { process :resize_to_fill => [20, 20] }
+  version(:small) { process :resize_to_fill => @@version_dimensions[:small] }
+  version(:tiny) { process :resize_to_fill => @@version_dimensions[:tiny] }
 
   def filename
     super != nil ? super.split('.').first + '.jpg' : super
@@ -23,5 +29,9 @@ class AvatarUploader < CarrierWave::Uploader::Base
 
   def store_dir
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+  end
+
+  def self.get_version_dimension version
+    @@version_dimensions[version.to_sym]
   end
 end

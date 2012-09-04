@@ -7,7 +7,7 @@
       <li>
         <%= link_to question.title, intern_question_path(question) %><br>
         <small>
-          <%= image_tag avatar_url(question.author.avatar, :tiny), :alt => question.author.full_name %>
+          <%= avatar_image_tag question.author.avatar, :tiny, :alt => question.author.full_name %>
           <strong><%= question.author.full_name %></strong> am <strong><%= question.created_at.strftime('%d. %B \'%y') %></strong>
         </small>
       </li>
