@@ -7,7 +7,7 @@
       <ul id="<%= list_id %>" class="unstyled">
       <% users.each_with_index do |user, index| %>
         <li class="pull-left <%= index % 2 == 0 ? 'even' : 'odd' %>">
-          <%= image_tag avatar_url(user.avatar, :tiny), :alt => user.full_name %>
+          <%= avatar_image_tag user.avatar, :tiny, :alt => user.full_name %>
           <%= link_to user.formal_name, intern_account_path(user) %>
         </li>
       <% end %>
