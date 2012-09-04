@@ -1,8 +1,64 @@
 @import "mixins";
 
+.page-header {
+  padding-bottom: 0;
+  margin-bottom: 15px;
+  h1 { padding-bottom: 5px; }
+  h2, h3, h4, h5, h6 { padding-bottom: 0; }
+  h1, h2, h3, h4, h5, h6 { float: left; }
+  h2 { font-size: 23px; }
+  a {
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 1.2em;
+    margin-top: 15px;
+    &.btn {
+      margin-top: 5px;
+      line-height: 1.3em;
+    }
+  }
+  @include clearfix;
+}
+
+form {
+  legend { margin-bottom: 10px; }
+  .alert { margin-top: 10px; }
+  .btn {
+    line-height: 1.2em;
+    padding: 6px 14px;
+  }
+  select, textarea, input[type="text"], input[type="password"], input[type="datetime"],
+  input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"],
+  input[type="week"], input[type="number"], input[type="email"], input[type="url"],
+  input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+    padding: 6px;
+    line-height: 1;
+  }
+  textarea {
+     line-height: 1.4em;
+     max-height: 300px;
+  }
+  .input-append, .input-prepend {
+    vertical-align: middle;
+    .add-on {
+     i {
+        font-size: 15px;
+        line-height: 1.3em;
+        margin: 2px 0 3px;
+      }
+      height: auto;
+      max-height: 20px;
+    }
+  }
+  #file_name_field { max-width: 190px; }
+}
+
+
 .well.headline {
   padding: 5px 10px;
   margin-bottom: 5px;
+  @include clearfix;
+  .badge { margin: 2px 0; }
 }
 
 .controls .alert {
@@ -18,3 +74,5 @@
 input, textarea {
   @include box-sizing(border-box);
 }
+
+img.rounded { @include border-radius(3px); }

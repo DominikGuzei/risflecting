@@ -1,14 +1,10 @@
+<div class="page-header">
+  <h2><%= @user.full_name %></h2>
+    <%= link_to edit_intern_profile_path, :class => 'pull-right btn btn-info' do %>
+      <i class="icon-pencil"></i>&nbsp; Profil bearbeiten
+    <% end %>
+</div>
 <div class="row">
-  <div class="span12">
-  <div class="page-header">
-    <h2>
-      <%= @user.full_name %>
-        <%= link_to edit_intern_profile_path, :class => 'pull-right btn btn-info' do %>
-          <i class="icon-pencil"></i>&nbsp; Profil bearbeiten
-        <% end %>
-    </h2>
-  </div>
-  </div>
   <div class="span3" id="avatar">
     <%= image_tag avatar_url(@user.avatar), :alt => @user.full_name %><br/><br/>
   </div>

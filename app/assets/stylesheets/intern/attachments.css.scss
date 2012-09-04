@@ -2,15 +2,22 @@
 
 #attachment-form {
   padding: 10px;
+  margin-bottom: 30px;
+  @include clearfix;
+
   legend {
     margin-bottom: 10px;
     font-size: 15px;
     line-height: 1.5em;
   }
-  #file_name_field { width: 195px; }
+  #file_name_field {
+    width: 195px;
+    max-width: none;
+  }
   #file_browse_button {
     width: 85px;
-    padding: 4px 0;
+    padding-left: 0;
+    padding-right: 0;
   }
   input[type=file] { width: 278px; }
 }
@@ -35,18 +42,16 @@
       line-height: 1.3em;
       vertical-align: middle;
     }
-    padding: 7px 0;
+    padding: 5px 0;
     border-bottom: 1px dotted #bbb;
 
-    &:last-child {
-      border-bottom: 0px;
-    }
+    &:last-child { border-bottom: 0px; }
+    @include clearfix;
   }
 
   small {
     color: #aaa;
     font-size: 12px;
-    line-height: 1.8em;
     text-align: right;
   }
 }
