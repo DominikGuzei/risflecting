@@ -15,7 +15,7 @@
 #comments-list {
   li {
     @include clearfix;
-    padding: 10px 0;
+    padding: 15px 0 5px;
     border-bottom: 1px dotted #bbb;
     &:last-child { border-bottom: none; }
   }

@@ -1,9 +1,8 @@
 <div class="page-header">
-  <h2>Fragen & Mitteilungen
-    <%= link_to new_intern_question_path, :class => 'pull-right btn btn-info' do %>
-      <i class="icon-plus"></i> &nbsp;Frage oder Mitteilung verfassen
-    <% end %>
-  </h2>
+  <h2>Fragen & Mitteilungen</h2>
+  <%= link_to new_intern_question_path, :class => 'pull-right btn btn-info' do %>
+    <i class="icon-plus"></i> &nbsp;Frage oder Mitteilung verfassen
+  <% end %>
 </div>
 
 <% if @questions.empty? %>
@@ -17,7 +16,7 @@
     <div class="row">
       <div class="span6 title">
         <h4>
-          <%= link_to question.title, intern_question_path(question) %>
+          <%= link_to truncate_list_title(question.title, 65), intern_question_path(question) %>
           <br>
           <small class="author">von <%= link_to question.author.full_name, intern_account_path(question.author) %></small>
         </h4>
