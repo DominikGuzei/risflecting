@@ -11,6 +11,10 @@ Spork.prefork do
   require 'cucumber/rails'
   require 'capybara/poltergeist'
 
+  Capybara.register_driver :selenium do |app|
+    Capybara::Selenium::Driver.new(app, :browser => :chrome)
+  end
+
   # Capybara defaults to XPath selectors rather than Webrat's default of CSS3. In
   # order to ease the transition to Capybara we set the default here. If you'd
   # prefer to use XPath just remove this line and adjust any selectors in your
@@ -18,7 +22,8 @@ Spork.prefork do
   Capybara.default_selector = :css
 
   # Sets the javascript driver for specs. Possible options: webkit, selenium, poltergeist
-  Capybara.javascript_driver = :poltergeist
+  # Use :selenium until the poltergeist issue is fixed: https://github.com/jonleighton/poltergeist/issues/44
+  Capybara.javascript_driver = :selenium
 
 end
 

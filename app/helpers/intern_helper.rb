@@ -38,4 +38,8 @@ module InternHelper
 
     image_tag avatar_url(avatar, version), :alt => options[:alt], :class => options[:class], :size => AvatarUploader.get_version_dimension(version).join('x')
   end
+
+  def truncate_list_title text, length
+    truncate text, :length => length, :separator => ' ', :omission => ' ...'
+  end
 end

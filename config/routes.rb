@@ -15,7 +15,7 @@ Risflecting::Application.routes.draw do
 
     resources :questions, :only => [:index, :show, :new, :create], :path => 'fragen-und-mitteilungen' do
       resources :comments, :only => [:create], :path => 'kommentare'
-      resources :attachments, :only => [:create]
+      resources :attachments, :only => [:create], :path => 'anhang'
     end
 
     resources :appointments, :except => [:edit, :update], :path => 'termine', :path_names => { :accept => 'zusagen', :reject => 'absagen' } do
@@ -24,7 +24,7 @@ Risflecting::Application.routes.draw do
     end
 
     resources :projects, :only => [:new, :create, :index, :show], :path => 'tatenbank' do
-      resources :attachments, :only => [:create]
+      resources :attachments, :only => [:create], :path => 'anhang'
     end
 
     root :to => 'dashboards#show'
