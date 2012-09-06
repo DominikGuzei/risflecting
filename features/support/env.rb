@@ -12,7 +12,10 @@ Spork.prefork do
   require 'capybara/poltergeist'
 
   Capybara.register_driver :selenium do |app|
-    Capybara::Selenium::Driver.new(app, :browser => :chrome)
+    args = []
+    args << "--window-size=1200,768"
+
+    Capybara::Selenium::Driver.new(app, :browser => :chrome, :args => args)
   end
 
   # Capybara defaults to XPath selectors rather than Webrat's default of CSS3. In
