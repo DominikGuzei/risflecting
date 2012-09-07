@@ -20,7 +20,7 @@
         <%= link_to truncate_list_title(document.title, 60), document.asset.url, :target => '_blank' %>
       </td>
       <td><%= File.extname document.asset.url %></td>
-      <td class="size"><%= number_to_human_size document.asset.file.size %></td>
+      <td class="size"><%= number_to_human_size document.size %></td>
       <td style="text-align:right"><%= l document.created_at, :format => '%d. %B, %H:%M Uhr' %></td>
       <td class="last">
         <% if can? :destroy, Document %>
