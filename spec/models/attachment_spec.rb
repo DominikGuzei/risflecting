@@ -22,4 +22,20 @@ describe Attachment do
     FactoryGirl.create :attachment, :attachable => project
     original_updated_at.should_not == Project.last.updated_at # performs new query - project.updated_at is cached
   end
+
+  it 'should call the save_size method before a save' do
+    attachment = FactoryGirl.build :attachment
+
+    attachment.should_receive(:save_size).once
+
+    attachment.save
+  end
+
+  describe '#save_size' do
+    it 'should save the file size' do
+      attachment = FactoryGirl.create :attachment
+
+      attachment.size.should == attachment.file.file.size
+    end
+  end
 end
