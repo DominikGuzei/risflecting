@@ -11,6 +11,8 @@ development: &defaults
   s3_access_key_id:
   s3_secret_access_key:
   application_email_address:
+  fehlergrube_api_key:
+  fehlergrube_host:
 
 test:
   <<: *defaults

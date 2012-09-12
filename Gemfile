@@ -20,6 +20,8 @@ gem 'carrierwave'
 gem 'rmagick'
 gem 'fog'
 
+gem 'airbrake'
+
 group :assets do
   gem 'sass', '3.1.20'
   gem 'sass-rails',   '~> 3.2.3'
