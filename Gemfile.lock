@@ -1,14 +1,3 @@
-GIT
-  remote: https://github.com/tombu/twitter-bootstrap-rails.git
-  revision: 26b92afa8948aa8690fb4653751d5159ad4c3030
-  branch: bug/fix-fontawesome-font-declaration
-  specs:
-    twitter-bootstrap-rails (2.1.3)
-      actionpack (>= 3.1)
-      less-rails (~> 2.2.3)
-      railties (>= 3.1)
-      therubyracer (~> 0.10.2)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -243,6 +232,11 @@ GEM
       builder (>= 2.1.2)
       jwt (>= 0.1.2)
       multi_json (>= 1.3.0)
+    twitter-bootstrap-rails (2.0.8)
+      actionpack (>= 3.1)
+      less-rails (~> 2.2.2)
+      railties (>= 3.1)
+      therubyracer (~> 0.10.1)
     tzinfo (0.3.33)
     uglifier (1.3.0)
       execjs (>= 0.3.0)
@@ -290,5 +284,5 @@ DEPENDENCIES
   sms-spec
   spork
   twilio-ruby
-  twitter-bootstrap-rails!
+  twitter-bootstrap-rails
   uglifier (>= 1.0.3)

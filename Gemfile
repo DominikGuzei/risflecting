@@ -26,9 +26,9 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
 
   gem 'uglifier', '>= 1.0.3'
-
+  
   # use custom fork to ensure icons to work in IE8
-  gem 'twitter-bootstrap-rails', :git => 'https://github.com/tombu/twitter-bootstrap-rails.git', :branch => 'bug/fix-fontawesome-font-declaration'
+  gem 'twitter-bootstrap-rails'
 end
 
 group :test do
