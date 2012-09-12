@@ -7,13 +7,17 @@
   <![endif]-->
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+
   <%= stylesheet_link_tag    "extern/application", :media => "all" %>
 
   <%= yield :stylesheet_includes %>
   <%= javascript_include_tag "extern/application" %>
   <%= yield :javascript_includes %>
   <%= csrf_meta_tags %>
+
+  <% if Rails.env.production? %>
+    <%= render :partial => 'shared/google_analytics' %>
+  <% end %>
 </head>
 <body>
 
@@ -21,7 +25,7 @@
     <% unless params[:id] == 'willkommen' %>
     <nav>
       <div class="container">
-        
+
         <a href="<%= static_path(:willkommen) %>" id="welcome">
           <span id="logo-text">risflecting</span>
           <div id="slogan">
@@ -30,12 +34,12 @@
             <span>Risikopädagogik</span>
           </div>
         </a>
-      
+
         <%= render_navigation %>
-      
+
       </div>
     </nav>
-    
+
     <div id="headline" class="container">
       <%= image_tag 'layout/header-image-rope-dancing.jpg', :id => 'header-image' %>
       <%= yield :headline %>
@@ -47,24 +51,24 @@
     <div class="container">
       <%= yield %>
     </div>
-    
+
     <div id="sticky-footer-pusher"></div>
   </section>
 
   <footer>
     <div class="container">
       <div class="row">
-      
+
         <section class="portrait span4 offset1">
           <%= yield :footer_portrait %>
         </section>
-    
+
         <section id="footer-faq" class="span4">
           <%= image_tag('layout/footer-faq-icon.png') %>
           <%= link_to 'FAQs', static_path(:faq) %>
           <p>Häufige Fragen</p>
         </section>
-    
+
         <section id="footer-navigation" class="span3">
           <h3>Weitere Inhalte:</h3>
           <ul>
@@ -73,7 +77,7 @@
             <li><%= link_to 'Impressum', static_path(:impressum) %></li>
           </ul>
         </section>
-    
+
       </div>
     </div>
   </footer>
