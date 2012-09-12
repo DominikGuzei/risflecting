@@ -34,4 +34,14 @@ class AvatarUploader < CarrierWave::Uploader::Base
   def self.get_version_dimension version
     @@version_dimensions[version.to_sym]
   end
+
+  def filename
+    "#{file_timestamp}_#{original_filename}" if original_filename.present?
+  end
+
+  protected
+  def file_timestamp
+    variable = :"@#{mounted_as}_file_timestamp"
+    model.instance_variable_get(variable) or model.instance_variable_set(variable, model.updated_at.to_i)
+  end
 end
