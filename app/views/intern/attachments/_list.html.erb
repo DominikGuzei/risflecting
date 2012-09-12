@@ -10,7 +10,7 @@
       <span class="icon"><%= generate_file_type_icon File.extname attachment.file.url %></span>
       <%= link_to File.basename(attachment.file.url), attachment.file.url, :target => '_blank' %>
     </div>
-    <small class="pull-right"><%= number_to_human_size attachment.file.file.size %></small>
+    <small class="pull-right"><%= number_to_human_size attachment.size %></small>
   </li>
 <% end %>
 </ul>
