@@ -8,6 +8,14 @@ h1 {
   filter: dropshadow(color=#000000, offx=-1, offy=1);
 }
 
+h1, h2, h3, h4, h5 {
+  margin: 0;
+}
+
+h3 {
+  line-height: 30px;
+}
+
 a:link, a:visited {
   text-decoration: none;
   color: white;
@@ -22,10 +30,6 @@ section#content {
 }
 
 #content {
-
-  a:link, a:visited {
-    color: #C27410;
-  }
 
   h2 {
     font-size: 18px;
@@ -43,6 +47,10 @@ section#content {
   h4 {
     margin-top: 20px;
     margin-bottom: 20px;
+  }
+
+  a:link, a:visited {
+    color: #C27410;
   }
 
   ul {
