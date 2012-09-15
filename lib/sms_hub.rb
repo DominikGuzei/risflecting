@@ -11,8 +11,11 @@ module SmsHub
 
   def self.send sms
     if self.should_send_sms? sms
-      client = Twilio::REST::Client.new ENV['TWILIO_ACCOUNT_SID'], ENV['TWILIO_AUTH_TOKEN']
-      client.account.sms.messages.create sms
+      begin
+        client = Twilio::REST::Client.new ENV['TWILIO_ACCOUNT_SID'], ENV['TWILIO_AUTH_TOKEN']
+        client.account.sms.messages.create sms
+      rescue
+      end
     end
   end
 
