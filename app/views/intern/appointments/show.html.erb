@@ -14,6 +14,9 @@
       <dd><%= l @appointment.endtime, :format => :long %></dd>
     </dl>
     <p><%= auto_link @appointment.description, :html => { :target => '_blank' } %></p>
+    <% if can? :edit, @appointment %>
+      <p><%= link_to edit_intern_appointment_path(@appointment) do %>Termin bearbeiten<% end %></p>
+    <% end %>
   </div>
 
   <div class="span6">

@@ -87,6 +87,22 @@ describe 'Intern::Appointment' do
       :id => '1'
     )
   end
+
+  it 'should route GET /intern/termine/:id/bearbeiten to the appointments edit action' do
+    { :get => '/intern/termine/1/bearbeiten' }.should route_to(
+      :controller => 'intern/appointments',
+      :action => 'edit',
+      :id => '1'
+    )
+  end
+
+  it 'should route PUT /intern/termine/:id to the appointments update action' do
+    { :put => '/intern/termine/1' }.should route_to(
+      :controller => 'intern/appointments',
+      :action => 'update',
+      :id => '1'
+    )
+  end
 end
 
 describe 'Intern::Questions' do

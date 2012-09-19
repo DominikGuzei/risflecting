@@ -156,7 +156,7 @@ When /^I choose a new avatar image$/ do
 end
 
 Then /^I want to see the newly uploaded avatar on my profile page$/ do
-  page.should have_image "test.jpg" # this must be .jpg as the uploader converts it
+  page.should have_image @current_user.avatar.filename
 end
 
 When /^I click on the name of the (\w+)´s author$/ do |word|

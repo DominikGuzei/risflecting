@@ -11,4 +11,3 @@ Feature: Upload profile avatar
     When I choose a new avatar image
     And I save the changes
     Then I want to see the newly uploaded avatar on my profile page
-

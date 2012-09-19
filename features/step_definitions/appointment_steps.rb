@@ -191,3 +191,50 @@ Then /^I do not want to see buttons to accept or reject$/ do
   should_not have_link 'Zusagen'
   should_not have_link 'Absagen'
 end
+
+Then /^I want to see the form to edit the appointment$/ do
+  page.should have_selector '#appointment-edit-form'
+end
+
+Given /^I am on the appointment edit page$/ do
+  visit edit_intern_appointment_path @appointment
+end
+
+When /^I change the title, description, location and time$/ do
+  @changed_title = 'Changed Title'
+  @changed_description = 'Changed Description'
+  @changed_location = 'Changed Location'
+
+  fill_in 'appointment_title', :with => @changed_title
+  fill_in 'appointment_description', :with => @changed_description
+  fill_in 'appointment_location', :with => @changed_location
+end
+
+Then /^I want to see the changes on the appointment details page$/ do
+  page.should have_content @changed_title
+  page.should have_content @changed_description
+  page.should have_content @changed_location
+end
+
+When /^I change none of the appointment information$/ do
+  # do nothing
+end
+
+When /^I safe the appointment anyway$/ do
+  step 'I save the changes'
+end
+
+Then /^I wan to see the existing appointment information on the appointment details page$/ do
+  page.should have_content @appointment.title
+  page.should have_content @appointment.description
+  page.should have_content @appointment.location
+end
+
+When /^I remove the title and location$/ do
+  fill_in 'appointment_title', :with => ''
+  fill_in 'appointment_location', :with => ''
+end
+
+Then /^I should not see a '([^"]+?)' link$/ do |word|
+  page.should_not have_content word
+end

@@ -21,6 +21,21 @@ class Intern::AppointmentsController < InternController
     end
   end
 
+  def edit
+    @appointment = Appointment.find params[:id]
+  end
+
+  def update
+    @appointment = Appointment.find params[:id]
+
+    if @appointment.update_attributes params[:appointment]
+      redirect_to intern_appointment_path @appointment
+      flash[:success] = 'Deine Änderungen wurden erfolgreich gespeichert'
+    else
+      render :edit
+    end
+  end
+
   def show
     @appointment = Appointment.find params[:id]
     @accepting_users = @appointment.accepting_users
