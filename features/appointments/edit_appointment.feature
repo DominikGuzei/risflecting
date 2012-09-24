@@ -29,7 +29,7 @@ Feature: Edit appointment
     And I am on the appointment edit page
     When I change none of the appointment information
     And I safe the appointment anyway
-    Then I wan to see the existing appointment information on the appointment details page
+    Then I want to see the existing appointment information on the appointment details page
 
   Scenario: Remove appointment information
     Given I am signed in as an admin

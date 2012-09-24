@@ -224,7 +224,7 @@ When /^I safe the appointment anyway$/ do
   step 'I save the changes'
 end
 
-Then /^I wan to see the existing appointment information on the appointment details page$/ do
+Then /^I want to see the existing appointment information on the appointment details page$/ do
   page.should have_content @appointment.title
   page.should have_content @appointment.description
   page.should have_content @appointment.location
