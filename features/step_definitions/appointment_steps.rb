@@ -200,20 +200,22 @@ Given /^I am on the appointment edit page$/ do
   visit edit_intern_appointment_path @appointment
 end
 
-When /^I change the title, description, location and time$/ do
-  @changed_title = 'Changed Title'
-  @changed_description = 'Changed Description'
-  @changed_location = 'Changed Location'
+When /^I change the title, description and location$/ do
+  @changed_appointment = {
+    :title => 'Changed Title',
+    :description => 'Changed Description',
+    :location => 'Changed Location'
+  }
 
-  fill_in 'appointment_title', :with => @changed_title
-  fill_in 'appointment_description', :with => @changed_description
-  fill_in 'appointment_location', :with => @changed_location
+  fill_in 'appointment_title', :with => @changed_appointment[:title]
+  fill_in 'appointment_description', :with => @changed_appointment[:description]
+  fill_in 'appointment_location', :with => @changed_appointment[:location]
 end
 
 Then /^I want to see the changes on the appointment details page$/ do
-  page.should have_content @changed_title
-  page.should have_content @changed_description
-  page.should have_content @changed_location
+  page.should have_content @changed_appointment[:title]
+  page.should have_content @changed_appointment[:description]
+  page.should have_content @changed_appointment[:location]
 end
 
 When /^I change none of the appointment information$/ do

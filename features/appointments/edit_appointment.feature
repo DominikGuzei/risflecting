@@ -20,7 +20,7 @@ Feature: Edit appointment
   Scenario: Change appointment information
     Given I am signed in as an admin
     And I am on the appointment edit page
-    When I change the title, description, location and time
+    When I change the title, description and location
     And I save the changes
     Then I want to see the changes on the appointment details page
 
