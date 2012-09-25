@@ -163,7 +163,7 @@ describe User do
 
       it { should_not be_able_to :create,  Appointment.new }
       it { should_not be_able_to :update,  Appointment.new }
-      it { should_not be_able_to :edit,  Appointment.new }
+      it { should_not be_able_to :edit,    Appointment.new }
       it { should_not be_able_to :destroy, Appointment.new }
       it { should_not be_able_to :create,  User.new }
       it { should_not be_able_to :create,  Document.new }
@@ -184,7 +184,7 @@ describe User do
 
       it { should_not be_able_to :create,  Appointment.new }
       it { should_not be_able_to :update,  Appointment.new }
-      it { should_not be_able_to :edit,  Appointment.new }
+      it { should_not be_able_to :edit,    Appointment.new }
       it { should_not be_able_to :destroy, Appointment.new }
       it { should_not be_able_to :create,  User.new }
 
