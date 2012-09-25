@@ -71,14 +71,14 @@
     line-height: 1.2em;
     @include clearfix;
 
-    a.trash {
+    a.trash, a.pencil {
       vertical-align: middle;
       color: #555;
       width: 18px;
       line-height: 35px;
       &:hover, &:active, &:focus {
         text-decoration: none;
-        color: #eb5d59;
+        color: #222;
       }
     }
   }
