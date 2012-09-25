@@ -237,6 +237,19 @@ When /^I remove the title and location$/ do
   fill_in 'appointment_location', :with => ''
 end
 
-Then /^I should not see a '([^"]+?)' link$/ do |word|
+Then /^I do not want to see a '([^"]+?)' link$/ do |word|
   page.should_not have_content word
 end
+
+Then /^I want to be on the appointments overview page$/ do
+  current_path.should == intern_appointments_path
+end
+
+When /^I click on the pencil icon$/ do
+  find('.admin-tools a.pencil').click
+end
+
+Then /^I do not want to see a pencil icon$/ do
+  page.should_not have_selector '.admin-tools a.pencil'
+end
+

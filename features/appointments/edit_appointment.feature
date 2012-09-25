@@ -6,15 +6,26 @@ Feature: Edit appointment
   Background:
     Given there is an appointment
 
-  Scenario: As a user
+  Scenario: As a user on the details page
     Given I am signed in as a user
     And I am on the appointment details page
-    Then I should not see a 'Termin bearbeiten' link
+    Then I do not want to see a 'Bearbeiten' link
 
-  Scenario: Navigate to edit form as admin
+  Scenario: As a user on the overview
+    Given I am signed in as a user
+    And I am on the appointments overview page
+    Then I do not want to see a pencil icon
+
+  Scenario: Navigate to edit form from overview as admin
+    Given I am signed in as an admin
+    And I am on the appointments overview page
+    When I click on the pencil icon
+    Then I want to see the form to edit the appointment
+
+  Scenario: Navigate to edit form from details page as admin
     Given I am signed in as an admin
     And I am on the appointment details page
-    When I click on 'Termin bearbeiten'
+    When I click on 'Bearbeiten'
     Then I want to see the form to edit the appointment
 
   Scenario: Change appointment information
