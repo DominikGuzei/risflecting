@@ -2,6 +2,11 @@
 class Intern::DocumentsController < InternController
   authorize_resource
 
+  def show
+    @document = Document.find params[:id]
+    redirect_to @document.asset.url
+  end
+
   def index
     @documents = Document.order(:created_at).reverse_order
   end

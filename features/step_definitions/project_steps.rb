@@ -65,3 +65,7 @@ end
 Then /^I want to see a list of (\d+) projects$/ do |amount_of_projects|
   find('#projects-list').all('li').count.should == amount_of_projects.to_i
 end
+
+When /^I click on the title of the project$/ do
+  click_on @project.title
+end

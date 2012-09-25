@@ -253,3 +253,6 @@ Then /^I do not want to see a pencil icon$/ do
   page.should_not have_selector '.admin-tools a.pencil'
 end
 
+Then /^I want to be on the appointment details page$/ do
+  current_path.should == intern_appointment_path(@appointment)
+end
