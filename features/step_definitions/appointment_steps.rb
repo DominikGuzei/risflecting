@@ -191,3 +191,65 @@ Then /^I do not want to see buttons to accept or reject$/ do
   should_not have_link 'Zusagen'
   should_not have_link 'Absagen'
 end
+
+Then /^I want to see the form to edit the appointment$/ do
+  page.should have_selector '#appointment-edit-form'
+end
+
+Given /^I am on the appointment edit page$/ do
+  visit edit_intern_appointment_path @appointment
+end
+
+When /^I change the title, description and location$/ do
+  @changed_appointment = {
+    :title => 'Changed Title',
+    :description => 'Changed Description',
+    :location => 'Changed Location'
+  }
+
+  fill_in 'appointment_title', :with => @changed_appointment[:title]
+  fill_in 'appointment_description', :with => @changed_appointment[:description]
+  fill_in 'appointment_location', :with => @changed_appointment[:location]
+end
+
+Then /^I want to see the changes on the appointment details page$/ do
+  page.should have_content @changed_appointment[:title]
+  page.should have_content @changed_appointment[:description]
+  page.should have_content @changed_appointment[:location]
+end
+
+When /^I change none of the appointment information$/ do
+  # do nothing
+end
+
+When /^I safe the appointment anyway$/ do
+  step 'I save the changes'
+end
+
+Then /^I want to see the existing appointment information on the appointment details page$/ do
+  page.should have_content @appointment.title
+  page.should have_content @appointment.description
+  page.should have_content @appointment.location
+end
+
+When /^I remove the title and location$/ do
+  fill_in 'appointment_title', :with => ''
+  fill_in 'appointment_location', :with => ''
+end
+
+Then /^I do not want to see a '([^"]+?)' link$/ do |word|
+  page.should_not have_content word
+end
+
+Then /^I want to be on the appointments overview page$/ do
+  current_path.should == intern_appointments_path
+end
+
+When /^I click on the pencil icon$/ do
+  find('.admin-tools a.pencil').click
+end
+
+Then /^I do not want to see a pencil icon$/ do
+  page.should_not have_selector '.admin-tools a.pencil'
+end
+

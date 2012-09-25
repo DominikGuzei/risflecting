@@ -126,4 +126,26 @@ describe Intern::AppointmentsController do
       end
     end
   end
+
+  describe '#update' do
+    let(:appointment) { FactoryGirl.create :appointment}
+
+    it 'should return to the appointment details page' do
+      sign_in FactoryGirl.create :admin
+
+      put :update, :appointment => { :title => 'Updated title' }, :id => appointment.id
+
+      should redirect_to intern_appointment_path appointment
+      should set_the_flash[:success].to /erfolgreich/i
+    end
+
+    it 'should deny normal user access' do
+      sign_in FactoryGirl.create :user
+
+      put :update, :appointment => { :title => 'Updated title' }, :id => appointment.id
+
+      should redirect_to intern_root_url
+      should set_the_flash
+    end
+  end
 end

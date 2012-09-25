@@ -11,14 +11,21 @@
       </h4>
     </div>
 
-    <% if can? :destroy, Appointment %>
-      <div class="pull-right admin-tools">
+
+    <% if can?(:destroy, Appointment) || can?(:edit, Appointment) %>
+      <div class="pull-left admin-tools">
+        <% if can? :edit, Appointment %>
+          <%= link_to '', edit_intern_appointment_path(appointment), :class => 'pencil icon-pencil', :title => 'Bearbeiten' %>
+        <% end %>
+        <% if can? :destroy, Appointment %>
         <%= link_to '',
           intern_appointment_path(appointment),
           :method => :delete,
           :data => { :confirm => 'Soll dieser Termin tatsächlich gelöscht werden? Diese Aktion kann nicht mehr rückgängig gemacht werden.' },
-          :class => 'trash icon-trash'
+          :class => 'trash icon-trash',
+          :title => 'Löschen'
         %>
+        <% end %>
       </div>
     <% end %>
 

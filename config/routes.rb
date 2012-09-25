@@ -18,7 +18,7 @@ Risflecting::Application.routes.draw do
       resources :attachments, :only => [:create], :path => 'anhang'
     end
 
-    resources :appointments, :except => [:edit, :update], :path => 'termine', :path_names => { :accept => 'zusagen', :reject => 'absagen' } do
+    resources :appointments, :path => 'termine', :path_names => { :accept => 'zusagen', :reject => 'absagen' } do
       post :accept, :on => :member
       post :reject, :on => :member
     end
