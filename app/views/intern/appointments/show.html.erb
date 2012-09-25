@@ -14,6 +14,30 @@
       <dd><%= l @appointment.endtime, :format => :long %></dd>
     </dl>
     <p><%= simple_format(auto_link @appointment.description, :html => { :target => '_blank' }) %></p>
+
+    <% if can?(:destroy, Appointment) || can?(:edit, Appointment) %>
+      <br/>
+      <div class="btn-group">
+
+        <% if can? :edit, Appointment %>
+          <%= link_to edit_intern_appointment_path(@appointment), :class => 'btn' do %>
+            <i class="icon-pencil"></i>&nbsp; Bearbeiten
+          <% end %>
+        <% end %>
+
+        <% if can? :destroy, Appointment %>
+          <%= link_to intern_appointment_path(@appointment),
+              :method => :delete,
+              :data => { :confirm => 'Soll dieser Termin tatsächlich gelöscht werden? Diese Aktion kann nicht mehr rückgängig gemacht werden.' },
+              :class => 'btn' do
+          %>
+            <i class="icon-trash"></i>&nbsp; Löschen
+          <% end %>
+        <% end %>
+
+      </div>
+    <% end %>
+
   </div>
 
   <div class="span6">
