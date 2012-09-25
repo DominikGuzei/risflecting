@@ -13,7 +13,7 @@
       <dt>Ende</dt>
       <dd><%= l @appointment.endtime, :format => :long %></dd>
     </dl>
-    <p><%= auto_link @appointment.description, :html => { :target => '_blank' } %></p>
+    <p><%= simple_format(auto_link @appointment.description, :html => { :target => '_blank' }) %></p>
   </div>
 
   <div class="span6">
