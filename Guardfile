@@ -4,7 +4,7 @@
 guard :cucumber, :cli => '--drb', :all_on_start => false do
   watch(%r{^features/.+\.feature$})
   watch(%r{^features/support/.+$})                      { 'features' }
-  watch(%r{^features/step_definitions/(.+)_steps\.rb$}) { |m| Dir[File.join("features/#{m[1]}s/")][0] || 'features' }
+  # watch(%r{^features/step_definitions/(.+)_steps\.rb$}) { |m| Dir[File.join("features/#{m[1]}s/")][0] || 'features' }
 end
 
 guard :rspec, :cli => '--drb', :all_on_start => false do
@@ -19,13 +19,6 @@ guard :rspec, :cli => '--drb', :all_on_start => false do
   watch(%r{^spec/support/(.+)\.rb$})                  { "spec" }
   watch('config/routes.rb')                           { "spec/routing" }
   watch('app/controllers/application_controller.rb')  { "spec/controllers" }
-
-  # Capybara request specs
-  watch(%r{^app/views/(.+)/.*\.(erb|haml)$})          { |m| "spec/requests/#{m[1]}_spec.rb" }
-
-  # Turnip features and steps
-  watch(%r{^spec/acceptance/(.+)\.feature$})
-  watch(%r{^spec/acceptance/steps/(.+)_steps\.rb$})   { |m| Dir[File.join("**/#{m[1]}.feature")][0] || 'spec/acceptance' }
 end
 
 guard :spork, :cucumber_env => { 'RAILS_ENV' => 'test' }, :rspec_env => { 'RAILS_ENV' => 'test' }, :test_unit => false, :bundler => false do
