@@ -50,3 +50,11 @@ Then /^I want the document to be removed from the list$/ do
   page.should_not have_selector '#documents-list'
 end
 
+When /^I click on the title of the document$/ do
+  click_on @document.title
+end
+
+Then /^I want to see the document$/ do
+  current_path.should == @document.asset.url
+end
+

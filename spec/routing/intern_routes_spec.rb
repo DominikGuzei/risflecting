@@ -149,6 +149,14 @@ describe 'Intern::Documents' do
       :action => 'create'
     )
   end
+
+  it 'should route GET /intern/dokumente/:id to the document file' do
+    { :get => '/intern/dokumente/1' }.should route_to(
+      :controller => 'intern/documents',
+      :action => 'show',
+      :id => '1'
+    )
+  end
 end
 
 describe 'Intern::Projects' do

@@ -11,7 +11,7 @@ Risflecting::Application.routes.draw do
     resource :dashboard, :only => [:show], :path => 'aktuelles'
     resource :profile, :only => [:show, :edit, :update], :controller => :accounts, :path => 'profil'
     resources :accounts, :only => [:create, :new, :show], :path => 'benutzer', :path_names => { :new => 'einladen' }
-    resources :documents, :only => [:index, :new, :create, :destroy], :path => 'dokumente'
+    resources :documents, :except => [:edit, :update], :path => 'dokumente'
 
     resources :questions, :only => [:index, :show, :new, :create], :path => 'fragen-und-mitteilungen' do
       resources :comments, :only => [:create], :path => 'kommentare'
