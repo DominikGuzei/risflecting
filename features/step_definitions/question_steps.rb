@@ -165,3 +165,44 @@ end
 Then /^I want to see that the question has (\d+) comments$/ do |amount_of_comments|
   page.should have_content (amount_of_comments + ' Kommentare')
 end
+
+Then /^I want to see the form to edit the question$/ do
+  current_path.should == edit_intern_question_path(@question)
+end
+
+Given /^I am on the question edit page$/ do
+  visit edit_intern_question_path(@question)
+end
+
+When /^I change the title and description$/ do
+  @changed_question = {
+    :title => 'Changed Title',
+    :body => 'Changed Description'
+  }
+
+  fill_in 'question_title', :with => @changed_question[:title]
+  fill_in 'question_body', :with => @changed_question[:body]
+end
+
+When /^I remove the title and description$/ do
+  fill_in 'question_title', :with => ''
+  fill_in 'question_body', :with => ''
+end
+
+Then /^I want to see the changes on the question details page$/ do
+  page.should have_content @changed_question[:title]
+  page.should have_content @changed_question[:body]
+end
+
+When /^I change none of the question information$/ do
+  # do nothing
+end
+
+When /^I save the question anyway$/ do
+  step 'I save the changes'
+end
+
+Then /^I want to see the existing question information on the question details page$/ do
+  page.should have_content @question[:title]
+  page.should have_content @question[:body]
+end
