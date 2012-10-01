@@ -23,7 +23,7 @@ jQuery ->
 
   mouseInHandler = ->
     cancelCurrentAnimations()
-    titleOfHoveredLink = ($(this).attr 'title')
+    titleOfHoveredLink = ($(this).attr 'data-title')
     showText(titleOfHoveredLink)
 
   mouseOutHandler = -> 
