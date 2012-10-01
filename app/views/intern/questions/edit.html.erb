@@ -1,0 +1,24 @@
+<%= form_for [:intern, @question], :html => { :class => 'form-horizontal well'} do |form| %>
+  <fieldset>
+    <%= content_tag :legend, 'Frage oder Mitteilung bearbeiten' %>
+    <% if @question.errors.any? %>
+    <div class="alert alert-error"><strong>Achtung!</strong> Beim Versuch die Frage/Mitteilung zu speichern sind Fehler aufgetreten.</div>
+    <% end %>
+    <%= form.text_field :title, :class => 'span6', :label => { :text => 'Titel' } %>
+    <%= form.text_area :body, :rows => 15, :class => 'span6', :label => { :text => 'Beschreibung' } %>
+
+    <div class="control-group">
+      <div class="control-label">Anhänge und Dokumente</div>
+      <div class="controls">
+        <div class="alert alert-info">
+          Falls du zu deiner Frage oder Mitteilung noch zusätzliches Material hochladen bzw. altes Material löschen willst, hast du auf <%= link_to 'dieser Seite', intern_question_path(@question) %> die Möglichkeit dazu.
+        </div>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <%= form.submit 'Frage oder Mitteilung speichern' %>
+      <%= link_to 'Abbrechen', intern_question_path(@question), :class => 'btn' %>
+    </div>
+  </fieldset>
+<% end %>
