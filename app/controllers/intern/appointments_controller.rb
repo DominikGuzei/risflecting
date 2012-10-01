@@ -1,6 +1,6 @@
 # encoding: UTF-8
 class Intern::AppointmentsController < InternController
-  load_and_authorize_resource
+  authorize_resource
 
   def index
     @past_appointments = Appointment.past
@@ -61,11 +61,11 @@ class Intern::AppointmentsController < InternController
   end
 
   def destroy
-    appointment = Appointment.find params[:id]
-    if appointment.destroy
-      flash[:success] = "Der Termin '#{appointment.title}' wurde erfolgreich gelöscht."
+    @appointment = Appointment.find params[:id]
+    if @appointment.destroy
+      flash[:success] = "Der Termin '#{@appointment.title}' wurde erfolgreich gelöscht."
     else
-      flash[:error] = "Der Termin '#{appointment.title}' konnte nicht gelöscht werden. Bitte versuche es erneut, oder wende dich an das Entwicklerteam."
+      flash[:error] = "Der Termin '#{@appointment.title}' konnte nicht gelöscht werden. Bitte versuche es erneut, oder wende dich an das Entwicklerteam."
     end
 
     redirect_to intern_appointments_path
