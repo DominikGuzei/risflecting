@@ -13,7 +13,7 @@ Risflecting::Application.routes.draw do
     resources :accounts, :only => [:create, :new, :show], :path => 'benutzer', :path_names => { :new => 'einladen' }
     resources :documents, :except => [:edit, :update], :path => 'dokumente'
 
-    resources :questions, :only => [:index, :show, :new, :create], :path => 'fragen-und-mitteilungen' do
+    resources :questions, :except => [:destroy], :path => 'fragen-und-mitteilungen' do
       resources :comments, :only => [:create], :path => 'kommentare'
       resources :attachments, :only => [:create], :path => 'anhang'
     end
