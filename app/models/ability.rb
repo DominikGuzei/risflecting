@@ -8,6 +8,9 @@ class Ability
     cannot :add_attachment, [Question, Project]
     can :add_attachment, [Question, Project], :user_id => user.id
 
+    cannot :remove_attachment, [Question, Project]
+    can :remove_attachment, [Question, Project], :user_id => user.id
+
     cannot :edit, User
     can :edit, User, :id => user.id
   end
