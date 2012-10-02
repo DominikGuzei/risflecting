@@ -1,3 +1,4 @@
+# encoding: utf-8
 class Intern::AttachmentsController < InternController
   before_filter :find_attachable
 
@@ -12,6 +13,19 @@ class Intern::AttachmentsController < InternController
       instance_variable_set "@#{@attachable.class.to_s.downcase}", @attachable
       render "intern/#{@attachable.class.to_s.pluralize}/show"
     end
+  end
+
+  def destroy
+    authorize! :remove_attachment, @attachable
+    @attachment = @attachable.attachments.find params[:id]
+
+    if @attachment.destroy
+      flash[:success] = "Die Datei wurde erfolgreich gelöscht"
+    else
+      flash[:error] = "Die Datei konnte nicht gelöscht werden"
+    end
+
+    redirect_to :controller => @attachable.class.to_s.pluralize.downcase, :action => :show, :id => @attachable.id
   end
 
   private
