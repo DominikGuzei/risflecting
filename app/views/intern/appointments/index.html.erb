@@ -9,7 +9,7 @@
 
 <% if @future_appointments.empty? %>
 <div class="alert alert-info">
-  Es gibt noch keine Termine & Meetings!
+  Es gibt keine zukünftigen Termine & Meetings!
 </div>
 <% else %>
 <%= render :partial => 'list', :locals => { :appointments => @future_appointments, :display_response_buttons => true, :list_id => 'future-appointments' } %>
