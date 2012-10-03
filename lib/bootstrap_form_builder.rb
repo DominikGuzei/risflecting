@@ -60,7 +60,7 @@ module BootstrapFormBuilder
     end
 
     def submit(value, options = {}, *args)
-      super(value, {:class => "btn btn-inverse", :id => 'submit'}.merge(options), *args)
+      super(value, {:class => "btn btn-inverse", :id => 'submit'}.merge(options){ |key, first, second| first + " " + second }, *args)
     end
 
     def check_box(field, options = {}, *args)
