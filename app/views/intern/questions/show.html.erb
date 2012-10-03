@@ -6,12 +6,23 @@
 <div class="row">
   <div class="span8" id="question-details">
     <p class="description"><%= simple_format(auto_link @question.body, :html => { :target => '_blank' }) %></p>
-    <p class="author-details">
+    <div class="author-details">
       von
       <%= avatar_image_tag @question.author.avatar, :tiny, :alt => @question.author.full_name %>
       <%= link_to intern_account_path @question.author do %><strong><%= @question.author.full_name %></strong><% end %>
-      am <strong><%= @question.created_at.strftime('%d. %B %Y') %></strong><br/>
-    </p>
+      am <strong><%= @question.created_at.strftime('%d. %B %Y') %></strong>
+
+      <div class="btn-group pull-right">
+        <% if can? :edit, @question %>
+          <%= link_to edit_intern_question_path(@question), :class => 'btn' do %>
+            <i class="icon-pencil"></i>&nbsp; Bearbeiten
+          <% end %>
+        <% end %>
+      </div>
+
+      <br/>
+    </div>
+
     <%= render :partial => 'intern/comments/list', :locals => { :comments => @question.comments(true) } %>
     <%= render :partial => 'intern/comments/form', :locals => { :question => @question, :comment => @comment ||= @question.comments.new } %>
   </div>

@@ -120,6 +120,29 @@ describe 'Intern::Questions' do
     )
   end
 
+  it 'should route GET /intern/fragen-und-mitteilungen/1/bearbeiten to the question edit form' do
+    { :get => '/intern/fragen-und-mitteilungen/1/bearbeiten' }.should route_to(
+      :controller => 'intern/questions',
+      :action => 'edit',
+      :id => '1'
+    )
+  end
+
+  it 'should route PUT /intern/fragen-und-mitteilungen/1 to the question edit form' do
+    { :put => '/intern/fragen-und-mitteilungen/1' }.should route_to(
+      :controller => 'intern/questions',
+      :action => 'update',
+      :id => '1'
+    )
+  end
+
+  it 'should route GET /intern/fragen-und-mitteilungen/neu to the question creation form' do
+    { :get => '/intern/fragen-und-mitteilungen/neu' }.should route_to(
+      :controller => 'intern/questions',
+      :action => 'new'
+    )
+  end
+
   it 'should route POST /intern/fragen-und-mitteilungen to the question create action' do
     { :post => '/intern/fragen-und-mitteilungen' }.should route_to(
       :controller => 'intern/questions',
