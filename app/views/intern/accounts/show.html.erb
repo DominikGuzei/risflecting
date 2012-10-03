@@ -16,7 +16,7 @@
     <strong>Mitglied seit</strong>: <%= l @user.created_at, :format => :short %><br/>
     <strong>Zuletzt online</strong>: <%= l @user.current_sign_in_at, :format => :short %><br/><br/>
 
-    <% unless @user.description.empty? %>
+    <% unless @user.description.blank? %>
     <strong>Informationen</strong>:<br/>
     <%= simple_format(auto_link @user.description) %>
     <% end %>
