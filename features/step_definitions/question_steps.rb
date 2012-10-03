@@ -206,3 +206,19 @@ Then /^I want to see the existing question information on the question details p
   page.should have_content @question[:title]
   page.should have_content @question[:body]
 end
+
+Then /^I want to see a trash bin next to the attachment$/ do
+  within('#attachments-list') { should have_selector('.trash') }
+end
+
+Then /^I do not want to see a trash bin next to the attachment$/ do
+  within('#attachments-list') { should_not have_selector('.trash') }
+end
+
+When /^I click the trash bin next to the attachment$/ do
+  within('#attachments-list') { find('.trash').click }
+end
+
+Then /^I want the attachment to be removed from the list$/ do
+  page.should_not have_selector '#attachments-list'
+end

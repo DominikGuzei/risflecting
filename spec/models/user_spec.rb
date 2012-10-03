@@ -157,6 +157,12 @@ describe User do
       it { should be_able_to :edit, user.questions.new }
       it { should_not be_able_to :edit, Question.new }
 
+      it { should be_able_to :remove_attachment, user.questions.new }
+      it { should_not be_able_to :remove_attachment, Question.new }
+
+      it { should be_able_to :remove_attachment, user.projects.new }
+      it { should_not be_able_to :remove_attachment, Project.new }
+
       it { should be_able_to :edit, user }
       it { should_not be_able_to :edit, User.new }
     end
@@ -181,6 +187,12 @@ describe User do
       it { should be_able_to :edit, user.questions.new }
       it { should_not be_able_to :edit, Question.new }
 
+      it { should be_able_to :remove_attachment, user.questions.new }
+      it { should_not be_able_to :remove_attachment, Question.new }
+
+      it { should be_able_to :remove_attachment, user.projects.new }
+      it { should_not be_able_to :remove_attachment, Project.new }
+
       it { should be_able_to :edit, user }
       it { should_not be_able_to :edit, User.new }
     end
@@ -202,6 +214,12 @@ describe User do
 
       it { should be_able_to :edit, user.questions.new }
       it { should_not be_able_to :edit, Question.new }
+
+      it { should be_able_to :remove_attachment, user.questions.new }
+      it { should_not be_able_to :remove_attachment, Question.new }
+
+      it { should be_able_to :remove_attachment, user.projects.new }
+      it { should_not be_able_to :remove_attachment, Project.new }
 
       it { should be_able_to :edit, user }
       it { should_not be_able_to :edit, User.new }

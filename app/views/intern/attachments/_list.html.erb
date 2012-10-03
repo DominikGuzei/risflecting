@@ -7,9 +7,20 @@
 <% attachments.each do |attachment| %>
   <li>
     <div class="pull-left">
-      <span class="icon"><%= generate_file_type_icon File.extname attachment.file.url %></span>
+      <span class="icon pull-left"><%= generate_file_type_icon File.extname attachment.file.url %></span>
       <%= link_to File.basename(attachment.file.url), attachment.file.url, :target => '_blank' %>
     </div>
+
+    <% if can? :remove_attachment, attachment.attachable %>
+      <%= link_to '',
+        [:intern, attachment.attachable, attachment],
+        :method => :delete,
+        :data => { :confirm => 'Soll diese Datei tatsächlich gelöscht werden? Diese Aktion kann nicht mehr rückgängig gemacht werden.' },
+        :class => 'trash icon-trash pull-right',
+        :title => 'Löschen'
+      %>
+    <% end %>
+
     <small class="pull-right"><%= number_to_human_size attachment.size %></small>
   </li>
 <% end %>

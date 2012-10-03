@@ -214,11 +214,29 @@ describe 'Intern::Attachments' do
     )
   end
 
+  it 'should route DELETE /intern/tatenbank/:project_id/anhang/:id to the project attachment destroy action' do
+    { :delete => '/intern/tatenbank/1/anhang/1' }.should route_to(
+      :controller => 'intern/attachments',
+      :project_id => '1',
+      :id => '1',
+      :action => 'destroy'
+    )
+  end
+
   it 'should route POST /intern/fragen-und-mitteilungen/:id/anhang to the question attachment create action' do
     { :post => '/intern/fragen-und-mitteilungen/1/anhang' }.should route_to(
       :controller => 'intern/attachments',
       :question_id => '1',
       :action => 'create'
+    )
+  end
+
+  it 'should route DELETE /intern/fragen-und-mitteilungen/:question_id/anhang/:id to the question attachment destroy action' do
+    { :delete => '/intern/fragen-und-mitteilungen/1/anhang/1' }.should route_to(
+      :controller => 'intern/attachments',
+      :question_id => '1',
+      :id => '1',
+      :action => 'destroy'
     )
   end
 end
