@@ -1,0 +1,24 @@
+<%= form_for [:intern, @project], :html => { :class => 'form-horizontal well'} do |form| %>
+  <fieldset>
+    <%= content_tag :legend, 'Eintrag bearbeiten' %>
+    <% if @project.errors.any? %>
+    <div class="alert alert-error"><strong>Achtung!</strong> Beim Versuch den Eintrag zu speichern sind Fehler aufgetreten.</div>
+    <% end %>
+    <%= form.text_field :title, :class => 'span6', :label => { :text => 'Titel' } %>
+    <%= form.text_area :body, :rows => 15, :class => 'span6', :label => { :text => 'Beschreibung' } %>
+
+    <div class="control-group">
+      <div class="control-label">Anhänge und Dokumente</div>
+      <div class="controls">
+        <div class="alert alert-info">
+          Falls du zu deinem Eintrag noch zusätzliches Material hochladen bzw. altes Material löschen willst, hast du auf <%= link_to 'dieser Seite', intern_project_path(@project) %> die Möglichkeit dazu.
+        </div>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <%= form.submit 'Änderungen speichern' %>
+      <%= link_to 'Abbrechen', intern_project_path(@project), :class => 'btn' %>
+    </div>
+  </fieldset>
+<% end %>

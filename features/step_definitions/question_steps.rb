@@ -1,4 +1,4 @@
-#encoding: utf-8
+# encoding: utf-8
 
 Given /^I am on the questions overview page$/ do
   visit intern_questions_path
@@ -174,7 +174,7 @@ Given /^I am on the question edit page$/ do
   visit edit_intern_question_path(@question)
 end
 
-When /^I change the title and description$/ do
+When /^I change the question´s title and description$/ do
   @changed_question = {
     :title => 'Changed Title',
     :body => 'Changed Description'
@@ -184,7 +184,7 @@ When /^I change the title and description$/ do
   fill_in 'question_body', :with => @changed_question[:body]
 end
 
-When /^I remove the title and description$/ do
+When /^I remove the question´s title and description$/ do
   fill_in 'question_title', :with => ''
   fill_in 'question_body', :with => ''
 end

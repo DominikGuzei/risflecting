@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 Given /^I am on the projects overview page$/ do
   visit intern_projects_path
 end
@@ -68,4 +70,42 @@ end
 
 When /^I click on the title of the project$/ do
   click_on @project.title
+end
+
+Then /^I want to see the form to edit the project$/ do
+  current_path.should == edit_intern_project_path(@project)
+end
+
+Given /^I am on the project edit page$/ do
+  visit edit_intern_project_path @project
+end
+
+Then /^I want to see the changes on the project details page$/ do
+  page.should have_content @changed_project[:title]
+  page.should have_content @changed_project[:body]
+end
+
+When /^I change the project´s title and description$/ do
+  @changed_project = { :title => 'Changed project title', :body => 'Changed project description' }
+
+  fill_in 'project_title', :with => @changed_project[:title]
+  fill_in 'project_body', :with => @changed_project[:body]
+end
+
+When /^I remove the project´s title and description$/ do
+  fill_in 'project_title', :with => ''
+  fill_in 'project_body', :with => ''
+end
+
+When /^I change none of the project information$/ do
+  # do nothing
+end
+
+When /^I save the project anyway$/ do
+  step 'I save the changes'
+end
+
+Then /^I want to see the existing project information on the project details page$/ do
+  page.should have_content @project.title
+  page.should have_content @project.body
 end

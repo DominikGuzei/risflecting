@@ -28,4 +28,22 @@ describe Intern::ProjectsController do
       should render_template :new
     end
   end
+
+  describe '#update' do
+    before(:each) { sign_in FactoryGirl.create :user }
+    let(:project) { FactoryGirl.create :project }
+
+    it 'should redirect to the project details if update was successful' do
+      put :update, :id => project.id, :project => { :title => 'A changed title', :body => 'Some awesome stuff I did ... changed' }
+
+      should redirect_to intern_project_path Project.last
+      should set_the_flash.to(/erfolgreich/i)
+    end
+
+    it 'should render the form again if update failed' do
+      put :update, :id => project.id, :project => { :title => 'A changed title', :body => '' } # :body is required
+
+      should render_template :edit
+    end
+  end
 end
