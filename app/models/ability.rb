@@ -14,8 +14,8 @@ class Ability
     cannot :edit, User
     can :edit, User, :id => user.id
 
-    cannot :edit, Question
-    can :edit, Question, :user_id => user.id
+    cannot :edit, [Question, Project]
+    can :edit, [Question, Project], :user_id => user.id
   end
 
   def admin

@@ -6,12 +6,22 @@
 <div class="row">
   <div class="span8" id="project-details">
     <p class="description"><%= simple_format(auto_link @project.body, :html => { :target => '_blank' }) %></p>
-    <p class="author-details">
+    <div class="author-details">
       von
       <%= avatar_image_tag @project.author.avatar, :tiny, :alt => @project.author.full_name %>
       <%= link_to intern_account_path @project.author do %><strong><%= @project.author.full_name %></strong><% end %>
-      am <strong><%= @project.created_at.strftime('%d. %B %Y') %></strong><br/>
-    </p>
+      am <strong><%= @project.created_at.strftime('%d. %B %Y') %></strong>
+
+      <div class="btn-group pull-right">
+        <% if can? :edit, @project %>
+          <%= link_to edit_intern_project_path(@project), :class => 'btn' do %>
+            <i class="icon-pencil"></i>&nbsp; Bearbeiten
+          <% end %>
+        <% end %>
+      </div>
+
+      <br/>
+    </div>
   </div>
 
   <div class="span4">

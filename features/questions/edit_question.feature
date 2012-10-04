@@ -20,7 +20,7 @@ Feature: Edit question
   Scenario: Change question information
     Given there is one question from myself
     And I am on the question edit page
-    When I change the title and description
+    When I change the question´s title and description
     And I save the changes
     Then I want to see the changes on the question details page
 
@@ -34,6 +34,6 @@ Feature: Edit question
   Scenario: Remove question information
     Given there is one question from myself
     And I am on the question edit page
-    When I remove the title and description
+    When I remove the question´s title and description
     And I save the changes
     Then I want to see 2 errors
