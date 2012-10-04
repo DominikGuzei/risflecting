@@ -23,7 +23,7 @@ Risflecting::Application.routes.draw do
       post :reject, :on => :member
     end
 
-    resources :projects, :only => [:new, :create, :index, :show], :path => 'tatenbank' do
+    resources :projects, :except => [:destroy], :path => 'tatenbank' do
       resources :attachments, :only => [:create, :destroy], :path => 'anhang'
     end
 

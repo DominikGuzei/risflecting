@@ -128,7 +128,7 @@ describe 'Intern::Questions' do
     )
   end
 
-  it 'should route PUT /intern/fragen-und-mitteilungen/1 to the question edit form' do
+  it 'should route PUT /intern/fragen-und-mitteilungen/1 to the question update action' do
     { :put => '/intern/fragen-und-mitteilungen/1' }.should route_to(
       :controller => 'intern/questions',
       :action => 'update',
@@ -194,6 +194,22 @@ describe 'Intern::Projects' do
     { :get => '/intern/tatenbank/neu' }.should route_to(
       :controller => 'intern/projects',
       :action => 'new'
+    )
+  end
+
+  it 'should route GET /intern/tatenbank/1/bearbeiten to the project edit form' do
+    { :get => '/intern/tatenbank/1/bearbeiten' }.should route_to(
+      :controller => 'intern/projects',
+      :action => 'edit',
+      :id => '1'
+    )
+  end
+
+  it 'should route PUT /intern/tatenbank/1 to the project update action' do
+    { :put => '/intern/tatenbank/1' }.should route_to(
+      :controller => 'intern/projects',
+      :action => 'update',
+      :id => '1'
     )
   end
 
