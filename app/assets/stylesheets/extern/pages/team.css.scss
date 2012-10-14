@@ -49,15 +49,34 @@
 				font-size: 1.1em;
       }
 			
-			.location, .occupation, .website, .email {
-				display: block;
-				margin-left: 10px;
-				margin-top: 0.5em;
+			.location, .occupation {
+				margin: 0 10px;
 			}
 			
-			.website, .email {
-				float: left;
+			.occupation {
+				font-family: 'Open Sans Condensed';
+				font-size: 1.2em;
 			}
+			
+			.location {
+				margin-top: 1em;
+			}
+			
+			.web {
+				position: absolute;
+				bottom: 10px;
+				left: 10px;
+			}
+			
+			.website {
+				float: left;
+				margin-right: 10px;
+			}
+			
+			.email {
+				display: inline;
+			}
+			
     }
 		
 		&:hover {
@@ -68,6 +87,10 @@
         opacity: 1;
 				height: 9em;
 			}
+		}
+		
+		&#helga-schoengruber .details .name{
+			font-size: 0.9em;
 		}
   }
   

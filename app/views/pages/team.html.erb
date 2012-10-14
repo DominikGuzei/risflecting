@@ -24,27 +24,31 @@
     <div class="span3">
       <div class="portrait">
         <%= image_tag 'portraits/portrait-gerald-koller.jpg' %>
-        <p class="details">
-          <span class="name">Gerald Koller</span>
-          <span class="email">
-            <%= encoded_email 'Email senden', 'gerald.koller@qualitaetleben.at' %>
-          </span>
-        </p>
+        <div class="details">
+          <div class="name">Gerald Koller</div>
+          <div class="occupation">Gesundheit und Kommunikation</div>
+  		    <div class="location"><strong>Standort: </strong>Österreich</div>
+          
+          <div class="web">
+            <a class="website" href="/profil_gerald_koller">&gt; Mehr zur Person</a>
+            <div class="email"><%= encoded_email '> Email senden', 'gerald.koller@qualitaetleben.at' %></div>
+          </div>
+        </div>
       </div>
 
-      <p id="koller-intro">Focal point dieser Gruppe ist der Entwickler und Koordinator von
-      risflecting <%= link_to "Gerald Koller", static_path(:profil_gerald_koller) %>.</p>
+      <div id="koller-intro">Focal point dieser Gruppe ist der Entwickler und Koordinator von
+      risflecting <%= link_to "Gerald Koller", static_path(:profil_gerald_koller) %>.</div>
     </div>
 
     <div class="span9">
       <div class="content-box">
-        <p class="intro">Der risflecting-pool besteht aus etwa 60 PraktikerInnen und WissenschafterInnen, die sich in Projekten,
+        <div class="intro">Der risflecting-pool besteht aus etwa 60 PraktikerInnen und WissenschafterInnen, die sich in Projekten,
         Studien und politischen Überlegungen um die Weiterentwicklung der Rausch- und Risikopädagogik bemühen.
-        Der pool verfolgt dabei folgende Ziele:</p>
+        Der pool verfolgt dabei folgende Ziele:</div>
       </div>
 
-      <p>Durch die Bereitstellung von wissenschaftlichen Grundlagen, Methoden und Dialogräumen soll der Entwicklung
-        von Rausch- und Risikobalance auf drei Ebenen gedient werden:</p>
+      <div>Durch die Bereitstellung von wissenschaftlichen Grundlagen, Methoden und Dialogräumen soll der Entwicklung
+        von Rausch- und Risikobalance auf drei Ebenen gedient werden:</div>
 
        <ul>
         <li>der Erhöhung der Kompetenzen im Umgang mit Rausch und Risiko (R+R-Kompetenz)</li>
@@ -56,165 +60,281 @@
 
   <section id="portraits" class="row">
     <div class="span12">
-      <p><strong>Neben Gerald Koller entwickelt ein internationaler Stab von TrainerInnen
-        risflecting weiter &hellip;</strong></p>
+      <div><strong>Neben Gerald Koller entwickelt ein internationaler Stab von TrainerInnen
+        risflecting weiter &hellip;</strong></div>
       <h2>Hier einige Mitglieder des internationalen Stabs von TrainerInnen:</h2>
     </div>
 
     <div class="portrait span3">
       <%= image_tag 'portraits/portrait-frank-schulte-derne.jpg' %>
       <div class="details">
-        <span class="name">Frank Schulte-Derne</span>
-		<span class="location"><strong>Standort: </strong>Deutschland</span>
-        <span class="email"><%= encoded_email 'Email senden', 'fschulte-derne@arcor.de' %></span>
+        <div class="name">Frank Schulte-Derne</div>
+        <div class="occupation">Sozialpädagogik</div>
+		    <div class="location"><strong>Standort: </strong>Deutschland</div>
+        
+        <div class="web">
+          <div class="email"><%= encoded_email '> Email senden', 'fschulte-derne@arcor.de' %></div>
+        </div>
       </div>
     </div>
 
     <div class="portrait span3">
       <%= image_tag 'portraits/portrait-herbert-tarmann.jpg' %>
       <div class="details">
-        <span class="name">Herbert Tarmann</span>
-		<span class="location"><strong>Standort: </strong>Österreich</span>
-        <span class="email"><%= encoded_email 'Email senden', 'her_tarmann@hotmail.com' %></span>
+        <div class="name">Herbert Tarmann</div>
+        <div class="occupation">Sozialpädagoge</div>
+		    <div class="location"><strong>Standort: </strong>Österreich</div>
+        
+        <div class="web">
+          <div class="email"><%= encoded_email '> Email senden', 'her_tarmann@hotmail.com' %></div>
+        </div>
       </div>
     </div>
 
     <div class="portrait span3">
       <%= image_tag 'portraits/portrait-agnes-koller.jpg' %>
       <div class="details">
-        <span class="name">Agnes Koller</span>
-		<span class="location"><strong>Standort: </strong>Österreich</span>
-        <span class="email"><%= encoded_email 'Email senden', 'agnes.koller@qualitaetleben.at' %></span>
+        <div class="name">Agnes Koller</div>
+        <div class="occupation">Organisationsmanagement</div>
+		    <div class="location"><strong>Standort: </strong>Österreich</div>
+        
+        <div class="web">
+          <div class="email"><%= encoded_email '> Email senden', 'agnes.koller@qualitaetleben.at' %></div>
+        </div>
       </div>
     </div>
 
     <div class="portrait span3">
       <%= image_tag 'portraits/portrait-eva-deutsch.jpg' %>
-      <p class="details">
-        <span class="name">Eva Deutsch</span>
-		<span class="location"><strong>Standort: </strong>Österreich</span>
-        <span class="email"><%= encoded_email 'Email senden', 'eva.deutsch@styriavitalis.at' %></span>
-      </p>
+      <div class="details">
+        <div class="name">Eva Maria Deutsch</div>
+        <div class="occupation">Gesundheitsförderung</div>
+		    <div class="location"><strong>Standort: </strong>Österreich</div>
+        
+        <div class="web">
+          <div class="email"><%= encoded_email '> Email senden', 'eva.deutsch@styriavitalis.at' %></div>
+        </div>
+      </div>
     </div>
 
     <div class="portrait span3">
       <%= image_tag 'portraits/portrait-stefan-deuss.jpg' %>
-      <p class="details">
-        <span class="name">Stefan Deuss</span>
-		<span class="location"><strong>Standort: </strong>Deutschland</span>
-		<span class="occupation"><strong>Berufsfeld: </strong>Kinder- und Jugendarbeit</span>
-		<a class="website" href="http://www.hafenundabenteuer.de/">Website besuchen</a>
-        <span class="email"><%= encoded_email 'Email senden', 'stefan@hafenundabenteuer.de' %></span>
-      </p>
+      <div class="details">
+        <div class="name">Stefan Deuss</div>
+		    <div class="occupation">Kinder- und Jugendarbeit</div>
+		    <div class="location"><strong>Standort: </strong>Deutschland</div>
+		
+        <div class="web">
+          <a class="website" href="http://www.hafenundabenteuer.de/">&gt; Website</a>
+          <div class="email"><%= encoded_email '> Email senden', 'stefan@hafenundabenteuer.de' %></div>
+        </div>
+      </div>
     </div>
 
     <div class="portrait span3">
       <%= image_tag 'portraits/portrait-wolfgang-schoengruber.jpg' %>
-      <p class="details">
-        <span class="name">Wolfgang Schöngruber</span>
-		<span class="location"><strong>Standort: </strong>Österreich</span>
-		<span class="occupation"><strong>Berufsfeld: </strong>Erlebnispädagogik, Erwachsenenbildung</span>
-		<a class="website" href="http://www.pyhrnpriel-erlebnisagentur.at/">Website besuchen</a>
-        <span class="email"><%= encoded_email 'Email senden', 'wo.schoengruber@ppea.at' %></span>
-      </p>
+      <div class="details">
+        <div class="name">Wolfgang Schöngruber</div>
+		    <div class="occupation">Erlebnispädagogik, Erwachsenenbildung</div>
+		    <div class="location"><strong>Standort: </strong>Österreich</div>
+		      
+        <div class="web">
+          <a class="website" href="http://www.pyhrnpriel-erlebnisagentur.at/">&gt; Website</a>
+          <div class="email"><%= encoded_email '> Email senden', 'wo.schoengruber@ppea.at' %></div>
+        </div>
+      </div>
     </div>
 	
     <div class="portrait span3">
       <%= image_tag 'portraits/portrait-daniel-seebacher.jpg' %>
-      <p class="details">
-        <span class="name">Daniel Seebacher</span>
-		<span class="location"><strong>Standort: </strong>Österreich</span>
-		<span class="occupation"><strong>Beruf: </strong>pyhrnPriel-erlebnisagentur</span>
-		<a class="website" href="http://www.pyhrnpriel-erlebnisagentur.at/">Website besuchen</a>
-        <span class="email"><%= encoded_email 'Email senden', 'd.seebacher@ppea.at' %></span>
-      </p>
+      <div class="details">
+        <div class="name">Daniel Seebacher</div>
+		    <div class="occupation">pyhrnPriel-erlebnisagentur</div>
+		    <div class="location"><strong>Standort: </strong>Österreich</div>
+
+        <div class="web">
+          <a class="website" href="http://www.pyhrnpriel-erlebnisagentur.at/">&gt; Website</a>
+          <div class="email"><%= encoded_email '> Email senden', 'd.seebacher@ppea.at' %></div>
+        </div>
+      </div>
     </div>
 	
     <div class="portrait span3">
       <%= image_tag 'portraits/portrait-harald-jansenberger.jpg' %>
       <div class="details">
-        <span class="name">Harald Jansenberger</span>
-		<span class="location"><strong>Standort: </strong>Österreich</span>
-		<span class="occupation"><strong>Beruf: </strong>pyhrnPriel-erlebnisagentur</span>
-		<a class="website" href="http://www.pyhrnpriel-erlebnisagentur.at/">Website besuchen</a>
-        <span class="email"><%= encoded_email 'Email senden', 'h.jansenberger@ppea.at' %></span>
+        <div class="name">Harald Jansenberger</div>
+		    <div class="occupation">pyhrnPriel-erlebnisagentur</div>
+		    <div class="location"><strong>Standort: </strong>Österreich</div>
+		      
+        <div class="web">
+          <a class="website" href="http://www.pyhrnpriel-erlebnisagentur.at/">&gt; Website</a>
+          <div class="email"><%= encoded_email '> Email senden', 'h.jansenberger@ppea.at' %></div>
+        </div>
       </div>
     </div>
 	
     <div class="portrait span3">
       <%= image_tag 'portraits/portrait-gary-diderich.jpg' %>
-      <p class="details">
-        <span class="name">Gary Diderich</span>
-		<span class="location"><strong>Standort: </strong>Luxemburg</span>
-		<span class="occupation"><strong>Beruf: </strong>Trainer &amp; Facilitator</span>
-		<a class="website" href="http://www.4motion.lu/">Website besuchen</a>
-        <span class="email"><%= encoded_email 'Email senden', 'gary.diderich@4motion.lu' %></span>
-      </p>
+      <div class="details">
+        <div class="name">Gary Diderich</div>
+		    <div class="occupation">Trainer &amp; Facilitator</div>
+		    <div class="location"><strong>Standort: </strong>Luxemburg</div>
+		
+        <div class="web">
+          <a class="website" href="http://www.4motion.lu/">&gt; Website</a>
+          <div class="email"><%= encoded_email '> Email senden', 'gary.diderich@4motion.lu' %></div>
+        </div>
+      </div>
     </div>
 	
     <div class="portrait span3">
       <%= image_tag 'portraits/portrait-annemarie-ohnoutka.jpg' %>
-      <p class="details">
-        <span class="name">AnneMarie Ohnoutka, MSc</span>
-		<span class="location"><strong>Standort: </strong>Österreich</span>
-		<span class="occupation"><strong>Berufsfeld: </strong>Gesundheitsprojekte, Unternehmensberatung</span>
-        <span class="email"><%= encoded_email 'Email senden', 'annemarie.ohnoutka@aon.at' %></span>
-      </p>
+      <div class="details">
+        <div class="name">AnneMarie Ohnoutka, MSc</div>
+		    <div class="occupation">Gesundheitsprojekte, Unternehmensberatung</div>
+        <div class="location"><strong>Standort: </strong>Österreich</div>
+		    
+        <div class="web">
+          <div class="email"><%= encoded_email '> Email senden', 'annemarie.ohnoutka@aon.at' %></div>
+        </div>
+      </div>
     </div>
 	
     <div class="portrait span3">
       <%= image_tag 'portraits/portrait-kurt-koenigsberger.jpg' %>
-      <p class="details">
-        <span class="name">E.Kurt Königsberger</span>
-		<span class="location"><strong>Standort: </strong>Österreich</span>
-		<span class="occupation"><strong>Beruf: </strong>Rausch &amp; Risikopädagoge</span>
-		<a class="website" href="http://www.elkurto.at.tc/">Website besuchen</a>
-        <span class="email"><%= encoded_email 'Email senden', 'svbmost@yahoo.de' %></span>
-      </p>
+      <div class="details">
+        <div class="name">E.Kurt Königsberger</div>
+		    <div class="occupation">Rausch &amp; Risikopädagoge</div>
+		    <div class="location"><strong>Standort: </strong>Österreich</div>
+		    
+        <div class="web">
+          <a class="website" href="http://www.elkurto.at.tc/">&gt; Website</a>
+          <div class="email"><%= encoded_email '> Email senden', 'svbmost@yahoo.de' %></div>
+        </div>
+      </div>
     </div>
 	
     <div class="portrait span3">
       <%= image_tag 'portraits/portrait-christine-pichlhoefer.jpg' %>
-      <p class="details">
-        <span class="name">Christine Pichlhöfer, MSc</span>
-		<span class="location"><strong>Standort: </strong>Österreich</span>
-		<span class="occupation"><strong>Berufsfeld: </strong>Geschlechtersensible Psychotherapie</span>
-		<a class="website" href="http://members.aon.at/psychodrama">Website besuchen</a>
-        <span class="email"><%= encoded_email 'Email senden', 'psychodrama@net-works.at' %></span>
-      </p>
+      <div class="details">
+        <div class="name">Christine Pichlhöfer, MSc</div>
+		    <div class="occupation">Geschlechtersensible Psychotherapie</div>
+		    <div class="location"><strong>Standort: </strong>Österreich</div>
+		      
+        <div class="web">
+          <a class="website" href="http://members.aon.at/psychodrama">&gt; Website</a>
+          <div class="email"><%= encoded_email '> Email senden', 'psychodrama@net-works.at' %></div>
+        </div>
+      </div>
     </div>
 	
     <div class="portrait span3">
       <%= image_tag 'portraits/portrait-gerald-brandtner.jpg' %>
-      <p class="details">
-        <span class="name">Gerald Brandtner</span>
-		<span class="location"><strong>Standort: </strong>Österreich</span>
-		<span class="occupation"><strong>Berufsfeld: </strong>Suchtprävention</span>
-		<a class="website" href="http://www.akzente.net/Fachstelle.1474.0.html">Website besuchen</a>
-        <span class="email"><%= encoded_email 'Email senden', 'g.brandtner@akzente.net' %></span>
-      </p>
+      <div class="details">
+        <div class="name">Gerald Brandtner</div>
+		    <div class="occupation">Suchtprävention</div>
+		    <div class="location"><strong>Standort: </strong>Österreich</div>
+		      
+        <div class="web">
+          <a class="website" href="http://www.akzente.net/Fachstelle.1474.0.html">&gt; Website</a>
+          <div class="email"><%= encoded_email '> Email senden', 'g.brandtner@akzente.net' %></div>
+        </div>
+      </div>
     </div>
 	
     <div class="portrait span3">
       <%= image_tag 'portraits/portrait-peter-holzknecht.jpg' %>
-      <p class="details">
-        <span class="name">Peter Holzknecht</span>
-		<span class="location"><strong>Standort: </strong>Italien</span>
-		<span class="occupation"><strong>Berufsfeld: </strong>Offene Jugendarbeit</span>
-		<a class="website" href="http://bunkertreff.school-award.it/">Website besuchen</a>
-        <span class="email"><%= encoded_email 'Email senden', 'info@bunkertreff.com' %></span>
-      </p>
+      <div class="details">
+        <div class="name">Peter Holzknecht</div>
+		    <div class="occupation">Offene Jugendarbeit</div>
+		    <div class="location"><strong>Standort: </strong>Italien</div>
+		    
+        <div class="web">
+          <a class="website" href="http://bunkertreff.school-award.it/">&gt; Website</a>
+          <div class="email"><%= encoded_email '> Email senden', 'info@bunkertreff.com' %></div>
+        </div>
+      </div>
     </div>
 	
     <div class="portrait span3">
       <%= image_tag 'portraits/portrait-achim-lernbass.jpg' %>
-      <p class="details">
-        <span class="name">Achim Lernbass</span>
-		<span class="location"><strong>Standort: </strong>Österreich</span>
-		<span class="occupation"><strong>Berufsfeld: </strong>streetwork, jugendsozialarbeit</span>
-		<a class="website" href="http://www.streetworkmuerztal.at/">Website besuchen</a>
-        <span class="email"><%= encoded_email 'Email senden', 'achim.lernbass@isop.at' %></span>
-      </p>
+      <div class="details">
+        <div class="name">Achim Lernbass</div>
+		    <div class="occupation">streetwork, jugendsozialarbeit</div>
+		    <div class="location"><strong>Standort: </strong>Österreich</div>
+		    
+        <div class="web">
+          <a class="website" href="http://www.streetworkmuerztal.at/">&gt; Website</a>
+          <div class="email"><%= encoded_email '> Email senden', 'achim.lernbass@isop.at' %></div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="portrait span3">
+      <%= image_tag 'portraits/portrait-maria-greussing.jpg' %>
+      <div class="details">
+        <div class="name">Maria Greußing</div>
+        <div class="occupation">Offene Jugendarbeit</div>
+		    <div class="location"><strong>Standort: </strong>Österreich</div>
+		
+        <div class="web">
+          <div class="email"><%= encoded_email '> Email senden', 'maria.greussing@gmail.com' %></div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="portrait span3">
+      <%= image_tag 'portraits/portrait-barbara-wendl.jpg' %>
+      <div class="details">
+        <div class="name">Barbara Wendl</div>
+        <div class="occupation">Sozial- und Jugendarbeit</div>
+		    <div class="location"><strong>Standort: </strong>Österreich</div>
+        
+        <div class="web">
+          <div class="email"><%= encoded_email '> Email senden', 'barbara.wendl@commit.cc' %></div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="portrait span3">
+      <%= image_tag 'portraits/portrait-michael-guzei.jpg' %>
+      <div class="details">
+        <div class="name">Michael Guzei</div>
+        <div class="occupation">Suchtvorbeugung &amp; Gesundheitsförderung</div>
+		    <div class="location"><strong>Standort: </strong>Österreich</div>
+        
+        <div class="web">
+          <a class="website" href="http://www.kreativdesign.at">&gt; Website</a>
+          <div class="email"><%= encoded_email '> Email senden', 'm.guzei@kreativdesign.at' %></div>
+        </div>
+      </div>
+    </div>
+    
+    <div id="helga-schoengruber" class="portrait span3">
+      <%= image_tag 'portraits/portrait-helga-schoengruber.jpg' %>
+      <div class="details">
+        <div class="name">Dipl.-Päd. VOL Helga Schöngruber</div>
+        <div class="occupation">Pädagogin</div>
+		    <div class="location"><strong>Standort: </strong>Österreich</div>
+        
+        <div class="web">
+          <div class="email"><%= encoded_email '> Email senden', 'helga.schoengruber@pptv.at' %></div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="portrait span3">
+      <%= image_tag 'portraits/portrait-stefan-koller.jpg' %>
+      <div class="details">
+        <div class="name">Stephan Koller</div>
+        <div class="occupation">Gesundheitsförderung &amp; Prävention</div>
+		    <div class="location"><strong>Standort: </strong>Schweiz</div>
+        
+        <div class="web">
+          <a class="website" href="http://www.proception.ch/">&gt; Website</a>
+          <div class="email"><%= encoded_email '> Email senden', 'proception@me.com' %></div>
+        </div>
+      </div>
     </div>
   </section>
 
