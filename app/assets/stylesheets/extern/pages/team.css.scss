@@ -35,13 +35,14 @@
 			bottom: 0;
 			left: 0;
 			width: 100%;
-			height: 0;
+			height: 0px;
+			overflow: hidden;
       margin: 0;
-      padding: 10px 0;
+      padding: 0;
 			opacity: 0;
 			color: #555;
       background-color: white;
-      
+			
       .name {
         font-weight: bold;
         margin-left: 10px;
@@ -86,6 +87,7 @@
 			.details {
         opacity: 1;
 				height: 9em;
+				padding: 10px 0;
 			}
 		}
 		
