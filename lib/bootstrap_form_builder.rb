@@ -102,7 +102,7 @@ module BootstrapFormBuilder
                 date.setHours($('##{field}_hours').val());
                 date.setMinutes($('##{field}_minutes').val());
               }
-              $('##{@object_name}_#{field}').val(date.toString());
+              $('##{@object_name}_#{field}').val(date.toUTCString());
             });" +
             "$('##{field}_date, ##{field}_hours, ##{field}_minutes').on('change', function(event) {
               $('##{field}_datepicker').trigger('changeDate');
