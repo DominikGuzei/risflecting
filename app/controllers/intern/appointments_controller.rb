@@ -28,9 +28,6 @@ class Intern::AppointmentsController < InternController
   def update
     @appointment = Appointment.find params[:id]
 
-    params[:appointment][:starttime] = Time.zone.parse params[:appointment][:starttime]
-    params[:appointment][:endtime] = Time.zone.parse params[:appointment][:endtime]
-
     if @appointment.update_attributes params[:appointment]
       redirect_to intern_appointment_path @appointment
       flash[:success] = 'Deine Änderungen wurden erfolgreich gespeichert'
