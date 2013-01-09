@@ -133,7 +133,7 @@ module BootstrapFormBuilder
       ("<div class='#{wrapperClass}'>" +
         labelTag +
         "<div class='controls'>" +
-          @template.hidden_field(@object_name, field, :id => id) +
+          @template.hidden_field(@object_name, field, :value => object.send(field.to_sym), :id => id) +
           "<div class='input-append date' id='#{field}_datepicker'>" +
             @template.text_field_tag("#{field}_date", '', {
               :placeholder => placeholder_text, :value => date_string, :class => options[:class]
