@@ -19,6 +19,8 @@ de-AT:
       invalid_token: 'Der Anmelde-Token ist ungültig.'
       timeout: 'Deine Sitzung ist abgelaufen, bitte melde Dich erneut an.'
       inactive: 'Dein Account ist nicht aktiv.'
+      intern_user:
+        not_found_in_database: 'Es wurde kein Account mit dieser E-Mail Adresse gefunden.'
     sessions:
       signed_in: 'Erfolgreich angemeldet.'
       signed_out: 'Erfolgreich abgemeldet.'
