@@ -8,6 +8,7 @@ de-AT:
       not_saved:
         one: "Konnte %{resource} nicht speichern: ein Fehler."
         other: "Konnte %{resource} nicht speichern: %{count} Fehler."
+      confirmation_period_expired: "muss innerhalb %{period} bestätigt werden, bitte fordere eine neue Einladung an."
 
   devise:
     failure:
@@ -15,8 +16,8 @@ de-AT:
       unauthenticated: 'Du musst Dich anmelden, bevor Du fortfahren kannst.'
       unconfirmed: 'Du musst Deinen Account bestätigen, bevor Du fortfahren kannst.'
       locked: 'Dein Account ist gesperrt.'
-      invalid: 'Ungültige Anmeldedaten.'
       not_found_in_database: 'Ungültige Anmeldedaten.'
+      invalid: 'Ungültige Anmeldedaten.'
       invalid_token: 'Der Anmelde-Token ist ungültig.'
       timeout: 'Deine Sitzung ist abgelaufen, bitte melde Dich erneut an.'
       inactive: 'Dein Account ist nicht aktiv.'
@@ -28,6 +29,7 @@ de-AT:
       updated: 'Dein Passwort wurde geändert. Du bist jetzt angemeldet.'
       updated_not_active: 'Dein Passwort wurde geändert.'
       send_paranoid_instructions: "Falls Deine E-Mail-Adresse in unserer Datenbank existiert erhältst Du in wenigen Minuten eine E-Mail mit der Anleitung, wie Du Dein Passwort zurücksetzen können."
+      no_token: "Du kannst diese Seite nicht verwenden ohne den Link aus der Email zum Passwort zurücksetzen zu verwenden. Falls du den Link aus einer solchen Email hast, überprüfe, ob du die komplette URL verwendest."
     confirmations:
       send_instructions: 'Du erhältst in wenigen Minuten eine E-Mail, mit der Du Deine Registrierung bestätigen kannst.'
       send_paranoid_instructions: 'Falls Deine E-Mail-Adresse in unserer Datenbank existiert erhältst Du in wenigen Minuten eine E-Mail mit der Du Deine Registrierung bestätigen kannst.'
