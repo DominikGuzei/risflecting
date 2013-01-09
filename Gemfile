@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.6'
+gem 'rails', '3.2.11'
 
 gem 'pg'
 gem 'jquery-rails'
@@ -16,9 +16,9 @@ gem 'phony'
 gem 'kaminari', '>= 0.13.0'
 gem 'rinku', '~> 1.7.0', :require => 'rails_rinku'
 
-gem 'carrierwave'
+gem 'carrierwave', '~> 0.6.2'
 gem 'rmagick'
-gem 'fog'
+gem 'fog', '~> 1.5.0'
 
 gem 'airbrake'
 
@@ -28,7 +28,7 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
 
   gem 'uglifier', '>= 1.0.3'
-  
+
   # use custom fork to ensure icons to work in IE8
   gem 'twitter-bootstrap-rails', :git => 'https://github.com/tombu/twitter-bootstrap-rails.git', :branch => 'bug/fix-fontawesome-font-declaration'
 end
@@ -44,7 +44,7 @@ group :test do
 
   gem 'database_cleaner'
   gem 'factory_girl_rails', '~> 4.0'
-  gem 'shoulda-matchers'
+  gem 'shoulda-matchers', '1.3.0'
   gem 'email_spec'
   gem 'sms-spec'
 
