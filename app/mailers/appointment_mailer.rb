@@ -7,4 +7,11 @@ class AppointmentMailer < ActionMailer::Base
 
     mail :to => recipient.email, :subject => "#{user.full_name} hat zum Termin '#{appointment.title}' zugesagt"
   end
+
+  def new_appointment_information user, appointment
+    @user = user
+    @appointment = appointment
+
+    mail :to => @user.email, :subject => "Neuer risflecting Termin '#{appointment.title}'"
+  end
 end

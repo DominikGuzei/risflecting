@@ -1,0 +1,5 @@
+Hallo <%= @user.full_name %>,
+<br><br>
+ein neuer risflecting Termin <strong><%= @appointment.title %></strong> wurde erstellt.
+<br><br>
+Unter diesem Link kannst du zu oder absagen: <%= link_to intern_appointment_url(@appointment), intern_appointment_url(@appointment) %>

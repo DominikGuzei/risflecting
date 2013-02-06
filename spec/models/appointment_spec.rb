@@ -17,6 +17,28 @@ describe Appointment do
     appointment.valid?.should be false
   end
 
+  describe 'after_create callback' do
+    it 'should call the AppointmentMailer with itself' do
+      user = FactoryGirl.create :user
+      appointment = FactoryGirl.build :appointment
+
+      AppointmentMailer.should_receive(:new_appointment_information).with(user, appointment).and_return(double('mailer', :deliver => true))
+
+      appointment.save
+    end
+
+    it 'should call the AppointmentMailer only for confirmed users' do
+      FactoryGirl.create :user
+      unconfirmed_user = FactoryGirl.create :user
+      unconfirmed_user.confirmed_at = nil
+      unconfirmed_user.save
+
+      AppointmentMailer.should_receive(:new_appointment_information).exactly(1).times.and_return(double('mailer', :deliver => true))
+
+      FactoryGirl.create :appointment
+    end
+  end
+
   describe '#past' do
     it 'should return all past appointments' do
       amount_of_past_appointments = 3

@@ -26,4 +26,21 @@ describe AppointmentMailer do
       @mail.should have_body_text /#{@appointment.title}/
     end
   end
+
+  describe '#new_appointment_information' do
+    before :each do
+      @appointment = FactoryGirl.create :appointment
+      @user = FactoryGirl.create :user
+      @mail = AppointmentMailer.new_appointment_information @user, @appointment
+    end
+
+    it 'should contain the appointment title in the subject' do
+      @mail.should have_subject /#{@appointment.title}/
+    end
+
+    it 'should contain the appointment information and link in the body' do
+      @mail.should have_body_text /#{@appointment.title}/
+      @mail.should have_body_text /#{intern_appointment_url(@appointment)}/
+    end
+  end
 end
