@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe AppointmentResponseMailer do
+describe AppointmentMailer do
   include EmailSpec::Helpers
   include EmailSpec::Matchers
 
@@ -9,7 +9,7 @@ describe AppointmentResponseMailer do
       @admin = FactoryGirl.create :admin
       @user = FactoryGirl.create :user
       @appointment = FactoryGirl.create :appointment
-      @mail = AppointmentResponseMailer.last_minute_acceptance_information @admin, @user, @appointment
+      @mail = AppointmentMailer.last_minute_acceptance_information @admin, @user, @appointment
     end
 
     it 'should be sent to the admin' do

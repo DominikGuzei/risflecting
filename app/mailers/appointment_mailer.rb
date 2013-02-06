@@ -1,4 +1,4 @@
-class AppointmentResponseMailer < ActionMailer::Base
+class AppointmentMailer < ActionMailer::Base
   default from: "Risflecting Intern <#{ENV['APPLICATION_EMAIL_ADDRESS']}>"
 
   def last_minute_acceptance_information recipient, user, appointment

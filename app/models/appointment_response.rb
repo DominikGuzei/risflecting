@@ -24,7 +24,7 @@ class AppointmentResponse < ActiveRecord::Base
 
   def deliver_last_minute_acceptance_information
     Role.find_by_name('Admin').users.each do |admin|
-      AppointmentResponseMailer.last_minute_acceptance_information(admin, user, appointment).deliver
+      AppointmentMailer.last_minute_acceptance_information(admin, user, appointment).deliver
     end
   end
 end
