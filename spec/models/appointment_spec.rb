@@ -17,16 +17,6 @@ describe Appointment do
     appointment.valid?.should be false
   end
 
-  describe 'after_create callback' do
-    it 'should call the SmsHub method and pass an instance of itself' do
-      appointment = FactoryGirl.build :appointment
-
-      SmsHub.should_receive(:appointment_created).with appointment
-
-      appointment.save
-    end
-  end
-
   describe '#past' do
     it 'should return all past appointments' do
       amount_of_past_appointments = 3

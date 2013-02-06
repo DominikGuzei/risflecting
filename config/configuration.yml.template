@@ -4,9 +4,6 @@ development: &defaults
   postgres_password:
   gmail_username:
   gmail_password:
-  twilio_account_sid:
-  twilio_auth_token:
-  twilio_phone_number:
   developer_phone_numbers:
   s3_access_key_id:
   s3_secret_access_key:

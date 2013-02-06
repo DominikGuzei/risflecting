@@ -74,5 +74,3 @@ end
 Spork.each_run do
   FactoryGirl.reload
 end
-
-SmsSpec.driver = :'twilio-ruby'
