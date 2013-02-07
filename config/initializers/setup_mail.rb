@@ -1,9 +1,8 @@
 ActionMailer::Base.smtp_settings = {
-  :address              => "smtp.gmail.com",
-  :port                 => 587,
-  :domain               => "gmail.com",
-  :user_name            => ENV["GMAIL_USERNAME"],
-  :password             => ENV["GMAIL_PASSWORD"],
+  :address              => "smtp.postmarkapp.com",
+  :port                 => 25,
+  :user_name            => ENV["POSTMARK_API_KEY"],
+  :password             => ENV["POSTMARK_API_KEY"],
   :authentication       => "plain",
   :enable_starttls_auto => true
 }

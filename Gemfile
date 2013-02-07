@@ -11,7 +11,6 @@ gem 'rails-i18n'
 
 gem 'cancan'
 gem 'devise'
-gem 'twilio-ruby'
 gem 'phony'
 gem 'kaminari', '>= 0.13.0'
 gem 'rinku', '~> 1.7.0', :require => 'rails_rinku'
@@ -46,7 +45,6 @@ group :test do
   gem 'factory_girl_rails', '~> 4.0'
   gem 'shoulda-matchers', '1.3.0'
   gem 'email_spec'
-  gem 'sms-spec'
 
   gem 'guard-rspec'
   gem 'guard-cucumber'
