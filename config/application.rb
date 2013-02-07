@@ -67,7 +67,7 @@ module Risflecting
 
     # Devise
     config.assets.initialize_on_precompile = false
-    
+
     # precompile all assets that don't start with an underscore '_'
     # so we don't have to list all of them here. This is similar to
     # the view layer where files with '_' are partials which are only
@@ -81,7 +81,7 @@ module Risflecting
       $          # End of path
     /x ]
 
-    # Send mails with Gmail
+    # Send mails via SMTP
     config.action_mailer.delivery_method = :smtp
   end
 end

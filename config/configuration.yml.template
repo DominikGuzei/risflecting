@@ -4,12 +4,12 @@ development: &defaults
   postgres_password:
   gmail_username:
   gmail_password:
-  developer_phone_numbers:
   s3_access_key_id:
   s3_secret_access_key:
   application_email_address:
   fehlergrube_api_key:
   fehlergrube_host:
+  postmark_api_key:
 
 test:
   <<: *defaults
