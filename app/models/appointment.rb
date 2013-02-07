@@ -28,7 +28,9 @@ class Appointment < ActiveRecord::Base
 
   protected
   def created
-    SmsHub.appointment_created self
+    User.all.each do |user|
+      AppointmentMailer.new_appointment_information(user, self).deliver unless user.confirmed_at == nil
+    end
   end
 
   def starttime_is_before_endtime

@@ -18,12 +18,24 @@ describe Appointment do
   end
 
   describe 'after_create callback' do
-    it 'should call the SmsHub method and pass an instance of itself' do
+    it 'should call the AppointmentMailer with itself' do
+      user = FactoryGirl.create :user
       appointment = FactoryGirl.build :appointment
 
-      SmsHub.should_receive(:appointment_created).with appointment
+      AppointmentMailer.should_receive(:new_appointment_information).with(user, appointment).and_return(double('mailer', :deliver => true))
 
       appointment.save
+    end
+
+    it 'should call the AppointmentMailer only for confirmed users' do
+      FactoryGirl.create :user
+      unconfirmed_user = FactoryGirl.create :user
+      unconfirmed_user.confirmed_at = nil
+      unconfirmed_user.save
+
+      AppointmentMailer.should_receive(:new_appointment_information).exactly(1).times.and_return(double('mailer', :deliver => true))
+
+      FactoryGirl.create :appointment
     end
   end
 

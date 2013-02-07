@@ -69,7 +69,7 @@ describe AppointmentResponse do
     it 'should deliver the mail with the correct data' do
       admin = FactoryGirl.create :admin
 
-      AppointmentResponseMailer.should_receive(:last_minute_acceptance_information).with(admin, @user, @appointment).and_return(double('mailer', :deliver => true))
+      AppointmentMailer.should_receive(:last_minute_acceptance_information).with(admin, @user, @appointment).and_return(double('mailer', :deliver => true))
 
       @appointment_response.save
     end
@@ -78,7 +78,7 @@ describe AppointmentResponse do
       number_of_admins = 5
       FactoryGirl.create_list :admin, number_of_admins
 
-      AppointmentResponseMailer.should_receive(:last_minute_acceptance_information).exactly(number_of_admins).times.and_return(double('mailer', :deliver => true))
+      AppointmentMailer.should_receive(:last_minute_acceptance_information).exactly(number_of_admins).times.and_return(double('mailer', :deliver => true))
 
       @appointment_response.save
     end
