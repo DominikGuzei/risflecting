@@ -34,4 +34,4 @@ class risflecting.ChaptersViewer
     
     @scrollToTop()
     
-  scrollToTop: -> $(window).scrollTop(0)
+  scrollToTop: -> $('body').animate scrollTop: '200px'
