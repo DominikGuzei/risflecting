@@ -1,5 +1,5 @@
 <% 
-  role = 'risflecting focal point' if local_assigns[:role].nil? 
+  role = 'risflecting<sup>&copy;</sup> focal point' if local_assigns[:role].nil? 
   image = 'portraits/thumb-portrait-gerald-koller.jpg' if local_assigns[:image].nil?
   name = 'Gerald Koller' if local_assigns[:name].nil?
   email = 'gerald.koller@qualitaetleben.at' if local_assigns[:email].nil?
@@ -10,7 +10,7 @@
 <h3><%= name %></h3>
 
 <p class="info">
-  <span><%= role %></span>
+  <span><%= raw role %></span>
   <span class="email">
     <%= encoded_email 'Email senden', email %>
   </span>
