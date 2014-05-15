@@ -57,7 +57,7 @@ Then /^I want to see the details of the question$/ do
 end
 
 When /^I click on the first question$/ do
-  click_on Question.first.title
+  first(:link, Question.first.title).click
 end
 
 Then /^I want to see a list containing (\d+) recent alternative questions$/ do |amount_of_list_items|

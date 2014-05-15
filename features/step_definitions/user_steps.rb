@@ -161,7 +161,7 @@ end
 
 When /^I click on the name of the (\w+)´s author$/ do |word|
   @author = instance_variable_get("@#{word}").send :author
-  click_link @author.full_name
+  first(:link, @author.full_name).click
 end
 
 Then /^I want to see the author´s profile$/ do
