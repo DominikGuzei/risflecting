@@ -9,20 +9,13 @@
 <article id="content">
   <h1>risflecting<sup>&reg;</sup></h1>
   <h2>Leben in Rausch- und Risikobalance</h2>
-  
-  <div id="reading-sign">
-    <span id="logo-text">risflecting<sup>&reg;</sup></span>
-    <div id="slogan">
-      <span>ExpertInnenpool</span>
-      <span>für Rausch&ndash; und</span>
-      <span>Risikopädagogik</span>
-    </div>
-  </div>
-  
-  <p class="intro"><strong>Willkommen bei risflecting<sup>&reg;</sup>!</strong><br />Dieser weltweit innovative 
+
+  <%= link_to "High & Responsible Award 2014", static_path('projekte/high-and-responsible'), :id => "reading-sign" %>
+
+  <p class="intro"><strong>Willkommen bei risflecting<sup>&reg;</sup>!</strong><br />Dieser weltweit innovative
     pädagogische Ansatz will gemeinsam mit Dir / Ihnen den souveränen Umgang mit Rausch
     und Risiko fördern.</p>
-  
+
   <div id="circle-navigation">
 
     <p id="circle-info-text">
@@ -33,11 +26,11 @@
 
     <ul id="circle-links">
       <li>
-        <%= link_to "Konzept", static_path(:konzept), :id => "circle-konzept", 
+        <%= link_to "Konzept", static_path(:konzept), :id => "circle-konzept",
               'data-title' => "Rausch- und Risikopädagogik fördert eine Kultur der Balance" %>
       </li>
       <li>
-        <%= link_to "Studie", static_path(:studie), :id => "circle-studie", 
+        <%= link_to "Studie", static_path(:studie), :id => "circle-studie",
               'data-title' => "als pädagogischer Ansatz nimmt risflecting<sup>&reg;</sup> menschliche Bedürfnisse nach Rausch und Risiko ernst" %>
       </li>
       <li>
@@ -45,18 +38,17 @@
               'data-title' => "Rausch- und Risikobalance heißt: das wilde Tier reiten zu lernen" %>
       </li>
       <li>
-        <%= link_to "Weiterbildung", static_path(:weiterbildung), :id => "circle-weiterbildung", 
+        <%= link_to "Weiterbildung", static_path(:weiterbildung), :id => "circle-weiterbildung",
               'data-title' => "Risikopädagogische BegleiterInnen vermitteln bewährte und gewinnbringende Kulturtechniken" %>
       </li>
       <li>
-        <%= link_to "Team", static_path(:team), :id => "circle-team", 
+        <%= link_to "Team", static_path(:team), :id => "circle-team",
               'data-title' => "Ein internationales Netzwerk von ExpertInnen entwickelt risflecting<sup>&reg;</sup> weiter" %>
       </li>
       <li>
-        <%= link_to "Publikationen", static_path(:publikationen), :id => "circle-publikationen", 
+        <%= link_to "Publikationen", static_path(:publikationen), :id => "circle-publikationen",
               'data-title' => "Balance kann nur in einem Klima des tabufreien Dialogs geübt werden" %>
       </li>
     </ul>
   </div>
 </article>
-
