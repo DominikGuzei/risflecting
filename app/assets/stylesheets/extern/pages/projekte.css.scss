@@ -1,35 +1,80 @@
 
 #content {
-  
+
+  .row, .info {
+    border-top: 1px solid #CCC;
+    padding-top: 60px;
+    margin-top: 60px;
+  }
+
+  .row {
+
+    .image img {
+      width: 100%;
+      margin: 0;
+    }
+
+    &#face-the-risk .image img {
+      width: 80%;
+      margin-left: 10%;
+    }
+
+    &#oeav-schools .image img {
+      width: 60%;
+      margin-left: 20%;
+    }
+
+    &#aha .image img {
+      width: 90%;
+      margin-left: 6%;
+    }
+
+    .teaser {
+
+      h2, h3 {
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 300;
+        line-height: 1.5em;
+      }
+
+      h2 {
+        font-size: 30px;
+      }
+
+      h3 {
+        font-size: 18px;
+      }
+
+    }
+
+    .links {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+  }
+
   aside.intro {
     margin-bottom: 20px;
   }
-  
-  article {
-    img {
-      margin: 0;
-      border: 1px solid white;
-      -webkit-box-shadow: 1px 1px 5px 1px rgba(100, 100, 100, 0.3);
-      box-shadow: 1px 1px 5px 1px rgba(100, 100, 100, 0.3)
-    }
-  }
-  
+
   .description h3 {
     margin-top: 0;
   }
-  
+
   .persona {
     p, h3 {
       font-family: 'Open Sans Condensed', sans-serif;
       font-size: 16px;
       line-height: 22px;
     }
-    
+
     .wrapper {
       padding-right: 20px;
     }
   }
-  
+
   aside.info {
     margin-top: 40px;
   }
