@@ -7,63 +7,67 @@ nav {
   left: 0;
   z-index: 100;
   font-size: 16px;
-  
+
   background-color: #222;
-  border-bottom: 1px solid #424242; 
-  
+  border-bottom: 1px solid #424242;
+
   .container {
     position: relative;
   }
-  
+
   ul {
     list-style: none;
     margin-left: 20%;
   }
-  
+
   li {
     padding: 7px 1.5%;
     float: left;
   }
-  
+
+  ul li ul {
+    display: none;
+  }
+
   a:link, a:visited {
     display: block;
     color: white;
   }
-  
+
   a.active {
     text-decoration: underline;
     font-weight: bold;
   }
-  
+
   a#welcome {
     width: 169px;
     height: 148px;
-    
+
     position: absolute;
     z-index: 100;
     left: 0;
     top: 0;
-    
+
     text-align:center;
     padding: 0;
     background: image-url('layout/header-lesezeichen-background.png') no-repeat;
-  
+
     &:hover {
       text-decoration: none;
       cursor: pointer;
     }
-  
+
     > * {
       position: relative;
       left: -3px;
     }
-  
+
     #logo-text {
       font-size: 20px;
       font-weight: bold;
       margin: 14px 0 10px 0;
     }
-    
+
     span {
       display: block;
       margin-bottom: 5px;
@@ -71,10 +75,10 @@ nav {
       line-height: 16px;
     }
   }
-  
+
   #language-switch {
     padding: 0;
-        
+
     a:link, a:visited {
       background-color: #2e4672;
       font-size: 12px;
@@ -82,7 +86,7 @@ nav {
       padding: 2px 10px;
       margin: 4px 0 0 40px;
     }
-    
+
     a:hover {
       text-decoration:none;
       background-color: #375B9E;
