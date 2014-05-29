@@ -26,7 +26,7 @@ Spork.prefork do
 
   # Sets the javascript driver for specs. Possible options: webkit, selenium, poltergeist
   # Use :selenium until the poltergeist issue is fixed: https://github.com/jonleighton/poltergeist/issues/44
-  Capybara.javascript_driver = :selenium
+  Capybara.javascript_driver = :poltergeist
 
 end
 
