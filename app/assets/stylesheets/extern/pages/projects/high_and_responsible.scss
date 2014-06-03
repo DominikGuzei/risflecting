@@ -1,0 +1,115 @@
+
+#hr-award {
+
+  .header {
+    width: 540px;
+    margin: 0 auto;
+    text-align: center;
+
+    p {
+      margin-top: 20px;
+    }
+
+    .hr-award-badge {
+      width: 400px;
+    }
+
+    .transition {
+      font-weight: 700;
+      width: 400px;
+      margin: 40px auto;
+    }
+  }
+
+  .categories {
+
+    .category {
+
+      text-align: center;
+      padding-bottom: 60px;
+
+      .logo {
+        width: 70%;
+      }
+
+      h2 {
+        font-size: 24px;
+        font-weight: 300;
+        margin: 10px 0 40px;
+      }
+
+      .register {
+        padding: 11px 35px;
+        border-radius: 8px;
+        font-size: 18px;
+        font-weight: 400;
+        color: #FFF;
+        display: block;
+        width: 170px;
+        margin: 0 auto;
+      }
+
+      &.sport {
+
+        padding-right: 20px;
+        border-right: 2px solid #C6C6C6;
+        margin-left: 165px;
+
+        @media (min-width: 1200px) {
+          padding-right: 30px;
+          margin-left: 215px;
+        }
+
+        .register {
+          background-color: #3a9d6e;
+        }
+      }
+
+      &.nightlife .register {
+        background-color: #9f3074;
+      }
+
+    }
+
+  }
+
+  .certification {
+
+    width: 400px;
+    margin: 30px auto;
+    text-align: center;
+
+    h3 {
+      color: #cccbcb;
+      font-size: 22px;
+      margin-bottom: 30px;
+    }
+
+    .intro {
+      font-weight: 700;
+      font-size: 16px;
+      margin-bottom: 30px;
+    }
+
+    .benefits {
+      margin-bottom: 20px;
+      list-style-type: square;
+      display: inline-block;
+      text-align: left;
+      list-style-position: inside;
+    }
+  }
+
+  .sponsors {
+
+    border-top: 1px solid #C6C6C6;
+    padding-top: 20px;
+
+    .logos {
+      list-style-type: none;
+      padding: 0;
+    }
+
+  }
+
+}

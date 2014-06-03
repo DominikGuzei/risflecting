@@ -1,0 +1,99 @@
+<% page_title('High & Responsible Award 2014') %>
+<% page_stylesheet('extern/pages/projects/high_and_responsible', :media => 'all') %>
+
+<% content_for :headline  do %>
+  <h1>Der High &amp; Responsible Award</h1>
+<% end %>
+
+<%= content_for :footer_portrait do %>
+  <%= render :partial => 'shared/footer_portrait' %>
+<% end %>
+
+<div id="hr-award">
+
+  <div class="header">
+
+    <%= image_tag 'shared/hr-award-2014-logo.svg', :class => 'hr-award-badge' %>
+
+    <p>
+      Business as unusual – nachhaltige Beiträge zu einer gelingenden Rausch-
+      und Risikokultur  von 16- bis 25- Jährigen sind gefragt – in Vergnügungsparks,
+      Discos, Einkaufszentren und Gastronomiebetrieben ebenso wie auf Sport- und
+      Spielplätzen, Kletterhallen, Berghütten, Schwimmbädern und Hochseilgärten …
+    </p>
+
+    <p>
+      Jährlich werden 15 Betriebe, die einem von ExpertInnen entwickelten
+      Bewertungsverfahren entsprechen, als <strong>High &amp; Responsible Location
+      Certified 2014/15/16</strong> ausgezeichnet: Sie werden in  Medienpräsentationen
+      vorgestellt und sind in einer österreichweiten web-Landkarte vertreten.
+      Sie prägen als Vorreiter eine neue Erlebniskultur: high and responsible!
+    </p>
+
+    <p class="transition">
+      Und so geht’s: Bis zum Jahresende werden Betriebe in folgenden
+      Sparten auf Ihre Angebote zur Rausch- und Risikobalance getestet:
+    </p>
+
+  </div>
+
+  <div class="categories row">
+
+    <div class="category sport span4">
+
+      <%= image_tag 'shared/hr-award-sport-location-2014-badge.svg', :class => 'logo' %>
+
+      <h2>Spiel &amp; Sport</h2>
+
+      <%= link_to "Jetzt Anmelden!", static_path('projekte/high-and-responsible/spiel-sport'), :class => 'register' %>
+
+    </div>
+
+    <div class="category nightlife span4">
+
+      <%= image_tag 'shared/hr-award-nightlife-location-2014-badge.svg', :class => 'logo' %>
+
+      <h2>Gastro &amp; Nightlife</h2>
+
+      <%= link_to "Jetzt Anmelden!", static_path('projekte/high-and-responsible/gastro-nightlife'), :class => 'register' %>
+
+    </div>
+
+  </div>
+
+  <div class="certification">
+
+    <h3>CERTIFIED LOCATION</h3>
+
+    <p class="intro">Die Benefits für 15 High &amp; Responsible Locations:</p>
+
+    <ul class="benefits">
+
+      <li>Plakette „High &amp; Responsible Location 2014(15/16)“</li>
+      <li>Infomaterial für BesucherInnen</li>
+      <li>Kostenlose Rauch-Fruchtsäfte für eine Veranstaltung</li>
+      <li>Einladung zum High &amp; Responsible Medienevent</li>
+      <li>Dokumentation im gemeinsamen Werbefilm</li>
+      <li>Linksetzung zur Unternehmenswebsite auf der High &amp; Responsible Landkarte</li>
+
+    </ul>
+
+  </div>
+
+  <div class="sponsors row">
+
+    <div class="span8 offset2">
+      <ul class="logos row">
+
+        <li class="span2"><%= image_tag 'projects/hr-award/pernot-ricard-austria-logo.svg', :class => 'logo' %></li>
+        <li class="span2"><%= image_tag 'projects/hr-award/bi-logo.png', :class => 'logo' %></li>
+        <li class="span1"><%= image_tag 'projects/hr-award/liga-logo.svg', :class => 'logo' %></li>
+        <li class="span1"><%= image_tag 'projects/hr-award/oeav-logo.png', :class => 'logo' %></li>
+        <li class="span2"><%= image_tag 'projects/hr-award/rauch-logo.png', :class => 'logo' %></li>
+
+      </ul>
+    </div>
+
+  </div>
+
+</div>

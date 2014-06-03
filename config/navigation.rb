@@ -47,12 +47,18 @@ SimpleNavigation::Configuration.run do |navigation|
     #           :method - Specifies the http-method for the generated link - default is :get.
     #           :highlights_on - if autohighlighting is turned off and/or you want to explicitly specify
     #                            when the item should be highlighted, you can set a regexp which is matched
-    #                            against the current URI.  You may also use a proc, or the symbol <tt>:subpath</tt>. 
+    #                            against the current URI.  You may also use a proc, or the symbol <tt>:subpath</tt>.
     #
     primary.item :willkommen, 'Home', static_path(:willkommen)
     primary.item :konzept, 'Konzept', static_path(:konzept)
     primary.item :studie, 'Studie', static_path(:studie)
-    primary.item :projekte, 'Projekte', static_path(:projekte)
+
+    primary.item :projekte, 'Projekte', static_path(:projekte) do |projects|
+
+      projects.item :high_and_responsible, 'High & Responsible', static_path('projekte/high-and-responsible')
+
+    end
+
     primary.item :weiterbildung, 'Weiterbildung', static_path(:weiterbildung)
     primary.item :team, 'Team', static_path(:team)
     primary.item :publikationen, 'Publikationen', static_path(:publikationen)
