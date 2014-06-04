@@ -1,0 +1,101 @@
+<% page_title('Spiel und Sport | High & Responsible Award 2014 | Risflecting') %>
+<% page_stylesheet('extern/pages/projects/high_and_responsible/registration', :media => 'all') %>
+
+<% content_for :headline  do %>
+  <h1>Spiel und Sport | High &amp; Responsible Award 2014</h1>
+<% end %>
+
+<%= content_for :footer_portrait do %>
+  <%= render :partial => 'shared/footer_portrait' %>
+<% end %>
+
+<div id="sport-hr-award" class="registration">
+
+  <div class="nav">
+    <%= link_to "< zurück zur Übersicht", static_path('projekte/high-and-responsible'), :class => 'back' %>
+  </div>
+
+  <div class="intro">
+
+    <h2>Der High &amp; Responsible Award 2014</h2>
+    <p class="category">In der Kategorie: Spiel und Sport</p>
+
+    <h3>Der Weg zur zertifizierten High &amp; Responsible Location:</h3>
+
+    <%= image_tag 'projects/hr-award/spiel-sport-badge.svg', :class => 'logo' %>
+
+    <h4>Nennung:</h4>
+
+    <p>durch Eigen- oder Fremdnennung eines Unternehmens.</p>
+
+    <h4>Assessment:</h4>
+
+    <p>
+      Durch eine ExpertInnenjury werden neben der Einhaltung und Umsetzung
+      gesetzlicher und ethischer Kriterien die Maßnahmen und Angebote  zur Rausch-
+      und Risikobalance bewertet:
+    </p>
+
+  </div>
+
+  <ol class="steps">
+
+    <li>
+
+      <h5>Basics</h5>
+
+      <ul>
+        <li>Gesetzliche Bestimmungen</li>
+        <li>Jugendschutz</li>
+        <li>keine Dumping-aktionen</li>
+        <li>kontinuierliches Angebot</li>
+      </ul>
+
+    </li>
+
+    <li>
+
+      <h5>Criterias:</h5>
+
+      <ul>
+        <li>Infrastruktur (z.B. chillout-Bereiche…)</li>
+        <li>Kultur (z.B. Design, Bildungsimpulse…)</li>
+        <li>Soziale Verantwortung (z.B.Löhne,CSR…)</li>
+        <li>Ökologische Verantwortung (z.B. öffentliche Erreichbarkeit, Müllvermeidung)</li>
+      </ul>
+    </li>
+
+    <li>
+
+      <h5>HIGH &amp; RESPONSIBLE Specials:</h5>
+
+      <p>Bezugnahme auf zumindest eine der drei folgenden Kulturtechniken:</p>
+
+    </li>
+
+  </ol>
+
+  <ul class="techniques">
+
+    <li>
+      <span class="title">TAKE A BREAK:</span>
+      <span class="description">Förderung von Chilloutbereichen  und Entscheidungskultur.</span>
+    </li>
+
+    <li>
+      <span class="title">LOOK AT YOUR FRIENDS:</span>
+      <span class="description">Unterstützung für risikobewusste Gruppen</span>
+    </li>
+
+    <li>
+      <span class="title">REFLECT:</span>
+      <span class="description">Lernen für’s nächste Mal</span>
+    </li>
+
+  </ul>
+
+  <p class="register">
+    <%= encoded_email 'Location jetzt per Email anmelden', 'agnes.koller@qualitaetleben.at' %>
+  </p>
+
+</div>

@@ -1,0 +1,165 @@
+
+$sport-theme-color: #369664;
+$nightlife-theme-color: #9f3074;
+
+#content .registration {
+
+  position: relative;
+  padding-top: 40px;
+  width: 940px;
+  margin: 0 auto;
+
+  .nav {
+    margin-bottom: 30px;
+  }
+
+  .intro {
+    width: 640px;
+  }
+
+  h2 {
+    font-size: 30px;
+    font-weight: 300;
+  }
+
+  h3 {
+    font-size: 15px;
+    font-weight: 700;
+  }
+
+  h4, h5 {
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  p.category {
+    font-size: 18px;
+    font-weight: 300;
+  }
+
+  ol.steps {
+    list-style-type: none;
+
+    margin: 40px 0 0 21px;
+    padding: 0;
+
+    counter-reset: li-counter;
+
+    ul {
+      list-style-type: square;
+      padding-left: 44px;
+      border-left: 2px solid #CCC;
+      margin: 20px 0 0 -24px;
+    }
+  }
+
+  ol.steps > li {
+      position: relative;
+      margin-bottom: 20px;
+      padding-left: 0.5em;
+      min-height: 3em;
+
+      p {
+        margin-top: 1em;
+      }
+  }
+
+  ol.steps > li:before {
+      position: absolute;
+      top: -2px;
+      left: -1em;
+      width: 0.8em;
+
+      font-size: 22px;
+      line-height: 1;
+      font-weight: 700;
+
+      content: counter(li-counter);
+      counter-increment: li-counter;
+  }
+
+  .techniques {
+
+    list-style-type: none;
+    border: 4px dashed;
+    padding: 60px 17%;
+    font-size: 16px;
+    margin-left: 0;
+
+    .title {
+      font-weight: 700;
+    }
+
+  }
+
+  .logo {
+    position: absolute;
+    top:0;
+    right: 0;
+    width: 420px;
+  }
+
+  .register {
+
+    margin-top: 40px;
+
+    a:link, a:visited {
+      display: block;
+      text-align: center;
+      width: 400px;
+      padding: 20px 0;
+      border-radius: 10px;
+      color: white;
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+  }
+
+  &#sport-hr-award {
+
+    h3 {
+      color: $sport-theme-color
+    }
+
+    ol.steps > li:before {
+      color: $sport-theme-color;
+    }
+
+    .techniques {
+      border-color: $sport-theme-color;
+    }
+
+    .register {
+
+      a {
+        background-color: $sport-theme-color;
+      }
+    }
+
+  }
+
+  &#nightlife-hr-award {
+
+    h3 {
+      color: $nightlife-theme-color
+    }
+
+    ol.steps > li:before {
+      color: $nightlife-theme-color;
+    }
+
+    .techniques {
+      border-color: $nightlife-theme-color;
+    }
+
+    .register {
+
+      a {
+        background-color: $nightlife-theme-color;
+      }
+    }
+
+  }
+
+}
