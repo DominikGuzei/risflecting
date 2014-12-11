@@ -6,12 +6,14 @@ class Intern::AttachmentsController < InternController
     authorize! :add_attachment, @attachable
     @attachment = @attachable.attachments.new params[:attachment]
 
+    attachable_name = @attachable.class.to_s.downcase
+
     if @attachment.save
-      redirect_to :controller => @attachable.class.to_s.pluralize.downcase, :action => :show, :id => @attachable.id
+      redirect_to :controller => attachable_name.pluralize, :action => :show, :id => @attachable.id
       flash[:success] = 'Deine Datei wurde erfolgreich hochgeladen'
     else
-      instance_variable_set "@#{@attachable.class.to_s.downcase}", @attachable
-      render "intern/#{@attachable.class.to_s.pluralize}/show"
+      instance_variable_set "@#{attachable_name}", @attachable
+      render "intern/#{attachable_name.pluralize}/show"
     end
   end
 

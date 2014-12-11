@@ -23,3 +23,10 @@ Feature: Attach files to projects
     And I upload the attachment
     Then I want some feedback that the attachment was successfully uploaded
     And I want to be on the project details page
+
+  Scenario: Forget to add attachment before uploading it to a project of my own
+    Given there is a project of my own
+    And I am on the project details page
+    When I forget choose a file
+    And I click the upload button
+    Then I want some feedback that the file is missing

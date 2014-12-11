@@ -116,12 +116,23 @@ When /^I add an attachment$/ do
   attach_file 'attachment_file', "#{Rails.root}/features/fixtures/test.png"
 end
 
-When /^I upload the attachment$/ do
+When /^(I upload the attachment|I click the upload button)$/ do |action|
   within('#attachment-form') { click_on 'Hochladen' }
+end
+
+When /^I forget choose a file$/ do
+  # do nothing
 end
 
 Then /^I want some feedback that the attachment was successfully uploaded$/ do
   page.should have_selector '.flash-message.alert-success'
+end
+
+Then /^I want some feedback that the file is missing$/ do
+  within('#attachment-form') do
+    should have_selector '.alert.alert-error', text: 'Achtung! Beim Versuch die Datei hochzuladen sind Fehler aufgetreten.'
+    should have_selector '.error .file-input + span', text: I18n.t('errors.messages.blank')
+  end
 end
 
 Then /^I want to be on the question details page$/ do
