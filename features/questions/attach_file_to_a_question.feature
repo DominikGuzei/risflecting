@@ -26,3 +26,11 @@ Feature: Attach a file to a question
     And I upload the attachment
     Then I want some feedback that the attachment was successfully uploaded
     And I want to be on the question details page
+
+  Scenario: Forget to add attachment before uploading it
+    Given there is one question from myself
+    And I am on the questions overview page
+    When I click on the title of the question
+    And I forget choose a file
+    And I click the upload button
+    Then I want some feedback that the file is missing
