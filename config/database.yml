@@ -1,6 +1,7 @@
 development:
   adapter: postgresql
   encoding: unicode
+  host: localhost
   database: risflecting_development
   pool: 5
   username: <%= ENV['POSTGRES_USERNAME'] %>
