@@ -21,28 +21,9 @@
 
   <section id="intro" class="row">
 
-    <div class="span3">
-      <div class="portrait">
-        <%= image_tag 'portraits/portrait-gerald-koller.jpg' %>
-        <div class="details">
-          <div class="name">Gerald Koller</div>
-          <div class="occupation">Gesundheit und Kommunikation</div>
-  		    <div class="location"><strong>Standort: </strong>Österreich</div>
-
-          <div class="web">
-            <a class="website" href="/profil_gerald_koller">&gt; Mehr zur Person</a>
-            <div class="email"><%= encoded_email '> Email senden', 'gerald.koller@qualitaetleben.at' %></div>
-          </div>
-        </div>
-      </div>
-
-      <div id="koller-intro">Focal point dieser Gruppe ist der Entwickler und Koordinator von
-      risflecting<sup>&reg;</sup> <%= link_to "Gerald Koller", static_path(:profil_gerald_koller) %>.</div>
-    </div>
-
-    <div class="span9">
+    <div class="span6">
       <div class="content-box">
-        <div class="intro">Der risflecting<sup>&reg;</sup>-pool besteht aus etwa 60 PraktikerInnen und WissenschafterInnen, die sich in Projekten,
+        <div class="intro">Der risflecting<sup>&reg;</sup>-pool besteht aus 80 ExpertInnen, die sich in Projekten,
         Studien und politischen Überlegungen um die Weiterentwicklung der Rausch- und Risikopädagogik bemühen.
         Der pool verfolgt dabei folgende Ziele:</div>
       </div>
@@ -55,14 +36,49 @@
         <li>der Verbesserung der Begleitung von Jugendlichen (R+R-Pädagogik)</li>
         <li>der Etablierung einer Kultur der Auseinandersetzung im gesellschaftlichen Dialog (R+R-Kultur)</li>
       </ul>
+
     </div>
+
+    <div class="portrait span3">
+      <%= image_tag 'portraits/portrait-gerald-koller.jpg' %>
+      <div class="details">
+        <div class="name">Gerald Koller</div>
+        <div class="occupation">Gesundheit und Kommunikation</div>
+		    <div class="location"><strong>Standort: </strong>Österreich</div>
+
+        <div class="web">
+          <a class="website" href="/profil_gerald_koller">&gt; Mehr zur Person</a>
+          <div class="email"><%= encoded_email '> Email senden', 'gerald.koller@qualitaetleben.at' %></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="portrait span3">
+      <%= image_tag 'portraits/portrait-agnes-koller.jpg' %>
+      <div class="details">
+        <div class="name">Agnes Koller</div>
+        <div class="occupation">focalpoint, Koordination intern</div>
+        <div class="location"><strong>Standort: </strong>Österreich</div>
+
+        <div class="web">
+          <div class="email"><%= encoded_email '> Email senden', 'agnes.koller@qualitaetleben.at' %></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="shift6 span3">Focal point dieser Gruppe ist der Entwickler und Koordinator von
+    risflecting<sup>&reg;</sup> <%= link_to "Gerald Koller", static_path(:profil_gerald_koller) %>.</div>
+
+    <div class="span3">Die Dialogagentur des Vereins „risflecting Pool“ betreut <%= encoded_email 'Agnes Koller', 'agnes.koller@qualitaetleben.at' %></div>
+
   </section>
 
   <section id="portraits" class="row">
     <div class="span12">
-      <div><strong>Neben Gerald Koller entwickelt ein internationaler Stab von TrainerInnen
-        risflecting<sup>&reg;</sup> weiter &hellip;</strong></div>
-      <h2>Hier einige Mitglieder des internationalen Stabs von TrainerInnen:</h2>
+      <p><strong>
+        Neben Gerald Koller entwickelt ein internationales Netzwerk von
+        ExpertInnen Maßnahmen zur Rausch- und Risikobalance weiter:
+      </strong></p>
     </div>
 
     <div class="portrait span3">
@@ -87,19 +103,6 @@
 
         <div class="web">
           <div class="email"><%= encoded_email '> Email senden', 'her_tarmann@hotmail.com' %></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="portrait span3">
-      <%= image_tag 'portraits/portrait-agnes-koller.jpg' %>
-      <div class="details">
-        <div class="name">Agnes Koller</div>
-        <div class="occupation">focalpoint, Koordination intern</div>
-		    <div class="location"><strong>Standort: </strong>Österreich</div>
-
-        <div class="web">
-          <div class="email"><%= encoded_email '> Email senden', 'agnes.koller@qualitaetleben.at' %></div>
         </div>
       </div>
     </div>
