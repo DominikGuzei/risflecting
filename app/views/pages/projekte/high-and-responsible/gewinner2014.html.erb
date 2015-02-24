@@ -1,0 +1,30 @@
+<% page_title('Die Gewinner 2014 | High & Responsible Award') %>
+<% page_stylesheet('extern/pages/projects/high_and_responsible/winners', :media => 'all') %>
+
+<% content_for :headline  do %>
+  <h1>Die Gewinner 2014 | High &amp; Responsible Award</h1>
+<% end %>
+
+<%= content_for :footer_portrait do %>
+  <%= render :partial => 'shared/footer_portrait' %>
+<% end %>
+
+<div id="hr-gewinner2014" class="winners">
+
+  <div class="intro">
+
+    <h2>Der High &amp; Responsible Award 2014</h2>
+
+    <p>
+      Die Gewinner des High &amp; Responsible Awards werden im Rahmen einer
+      Medienveranstaltung am 16.4. bekannt gegeben. Ab 20.4. können Sie hier
+      alle Informationen zu den Gewinnern einsehen.
+    </p>
+
+    <div class="nav">
+      <%= link_to "< zurück zur Projektübersicht", static_path('projekte'), :class => 'back' %>
+    </div>
+
+  </div>
+
+</div>
