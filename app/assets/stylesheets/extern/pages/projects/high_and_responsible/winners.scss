@@ -1,5 +1,259 @@
-.winners {
-  width: 540px;
-  margin: 0 auto;
-  text-align: center;
+#hr-gewinner2014 {
+
+  .sponsors {
+
+    border-top: 1px solid #C6C6C6;
+    padding-top: 20px;
+
+    .logos {
+      list-style-type: none;
+      padding: 0;
+    }
+  }
+
+  .map {
+
+    width: 940px;
+    margin: 0 auto;
+    position: relative;
+
+    .legend {
+
+      .locations {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 0;
+        background-size: 20px;
+        background-repeat: no-repeat;
+
+        ul {
+          list-style-type: square;
+        }
+
+        &.nightlife {
+          width: 300px;
+          background-image: image-url('projects/hr-award/map/pin-nightlife-icon.svg');
+        }
+
+        &.sport {
+          left: 320px;
+          background-image: image-url('projects/hr-award/map/pin-sport-icon.svg');
+        }
+
+        a {
+          color: #666;
+          display: block;
+
+          &:hover, &.is-hovered {
+            color: #C27410;
+            text-decoration: underline;
+          }
+        }
+      }
+
+      h2 {
+        margin-top: 5px;
+        margin-left: 33px;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  .pins {
+
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+    .pin {
+
+      width: 0;
+
+      &.is-open {
+        width: 30px;
+        z-index: 9999;
+      }
+
+      .content {
+        display: none;
+      }
+
+      &.is-open .content {
+        position: relative;
+        display: block;
+        margin-top: 10px;
+        width: 260px;
+        padding: 10px;
+        background: white;
+        position: relative;
+        left: -125px;
+        box-shadow: 3px 2px 3px #EDEDED;
+        z-index: 1000;
+        border: 1px solid;
+
+        &:after, &:before {
+        	bottom: 100%;
+        	left: 50%;
+        	border: 2px solid transparent;
+        	content: " ";
+        	height: 0;
+        	width: 0;
+        	position: absolute;
+        	pointer-events: none;
+        }
+
+        &:after {
+        	border-color: rgba(255, 255, 255, 0);
+        	border-bottom-color: #ffffff;
+        	border-width: 10px;
+        	margin-left: -10px;
+        }
+
+        &:before {
+        	border-color: rgba(159, 49, 116, 0);
+        	border-width: 11px;
+        	margin-left: -11px;
+        }
+
+        h3 {
+          margin-top: 0;
+        }
+      }
+
+      .marker {
+        min-width: 30px;
+        min-height: 60px;
+        display: inline-block;
+        background-position: top center;
+        background-size: 30px 60px;
+        background-repeat: no-repeat;
+        color: #888;
+      }
+
+      &.is-open .marker, .marker:hover {
+        cursor: pointer;
+        color: #000;
+        text-shadow: 1px 1px 2px #C7C7C7;
+      }
+
+      .city {
+        width: 80px;
+        text-align: center;
+        position: relative;
+        left: -24px;
+        line-height: 1em;
+      }
+    }
+
+    .nightlife .pin .content {
+      border-color: #9F3174;
+      &:before {
+        border-bottom-color: #9F3174;
+      }
+    }
+
+    .sport .pin .content {
+      border-color: #3B9D6F;
+      &:before {
+        border-bottom-color: #3B9D6F;
+      }
+    }
+
+    .nightlife .marker {
+      background-image: image-url('projects/hr-award/map/pin-nightlife.svg');
+    }
+
+    .sport .marker {
+      background-image: image-url('projects/hr-award/map/pin-sport.svg');
+    }
+
+    .wiesen {
+      position: absolute;
+      top: 41%;
+      left: 88%;
+      .city {
+        font-size: 11px;
+      }
+    }
+
+    .linz {
+      position: absolute;
+      top: 26%;
+      left: 60%;
+    }
+
+    .wien {
+      position: absolute;
+      top: 28.5%;
+      left: 88%;
+    }
+
+    .graz {
+      position: absolute;
+      top: 60%;
+      left: 77%;
+    }
+
+    .salzburg {
+      position: absolute;
+      top: 39%;
+      left: 45%;
+    }
+
+    .zell {
+      position: absolute;
+      top: 50%;
+      left: 41%;
+    }
+
+    .dornbirn {
+      position: absolute;
+      top: 52%;
+      left: 1%;
+    }
+
+    .puchberg {
+      position: absolute;
+      top: 40%;
+      left: 82%;
+
+      .city {
+        font-size: 11px;
+      }
+    }
+
+    .first .marker, .second .marker {
+      -ms-transform-origin: 50% 95%; /* IE 9 */
+      -webkit-transform-origin: 50% 95%; /* Chrome, Safari, Opera */
+      transform-origin: 50% 95%;
+    }
+
+    .pin.first {
+      width: 0;
+      &:hover {
+        width: 30px;
+      }
+      .marker {
+        -ms-transform: rotate(30deg); /* IE 9 */
+        -webkit-transform: rotate(30deg); /* Chrome, Safari, Opera */
+        transform: rotate(30deg);
+      }
+    }
+
+    .pin.second {
+      width: 0;
+      &:hover {
+        width: 30px;
+      }
+      .marker {
+        -ms-transform: rotate(-30deg); /* IE 9 */
+        -webkit-transform: rotate(-30deg); /* Chrome, Safari, Opera */
+        transform: rotate(-30deg);
+      }
+    }
+
+  }
 }
