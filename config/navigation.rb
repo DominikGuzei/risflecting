@@ -55,7 +55,8 @@ SimpleNavigation::Configuration.run do |navigation|
 
     primary.item :projekte, 'Projekte', static_path(:projekte) do |projects|
 
-      projects.item :high_and_responsible, 'High & Responsible', static_path('projekte/high-and-responsible') do |high_and_responsible|
+      projects.item :high_and_responsible, 'High & Responsible', static_path('projekte/high-and-responsible/') do |high_and_responsible|
+        high_and_responsible.item :info, 'Info & Anmeldung', static_path('projekte/high-and-responsible/info')
         high_and_responsible.item :spiel_sport, 'Spiel & Sport', static_path('projekte/high-and-responsible/spiel-sport')
         high_and_responsible.item :nightlife, 'Gastro & Nightlife', static_path('projekte/high-and-responsible/gastro-nightlife')
       end
