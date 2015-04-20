@@ -1,18 +1,42 @@
-<% page_title('Die Gewinner des High & Responsible Awards 2014') %>
-<% page_stylesheet('extern/pages/projects/high_and_responsible/winners', :media => 'all') %>
+<% page_title('Der High & Responsible Award') %>
+<% page_stylesheet('extern/pages/projects/high_and_responsible', :media => 'all') %>
 <% page_javascript('extern/pages/hr-winners') %>
 
 <% content_for :headline  do %>
-  <h1>Die Gewinner des High & Responsible Awards 2014</h1>
+  <h1>Der High &amp; Responsible Award</h1>
 <% end %>
 
 <%= content_for :footer_portrait do %>
   <%= render :partial => 'shared/footer_portrait' %>
 <% end %>
 
-<div id="hr-gewinner2014" class="winners">
+<div id="hr-award">
+
+  <div class="header">
+
+    <%= image_tag 'shared/hr-award-logo.svg', :class => 'hr-award-badge' %>
+
+    <p>
+      Business as unusual – nachhaltige Beiträge zu einer gelingenden Rausch-
+      und Risikokultur  von 16- bis 25- Jährigen sind gefragt – in Vergnügungsparks,
+      Discos, Einkaufszentren und Gastronomiebetrieben ebenso wie auf Sport- und
+      Spielplätzen, Kletterhallen, Berghütten, Schwimmbädern und Hochseilgärten …
+    </p>
+
+    <p>
+      Jährlich werden 10 Betriebe, die einem von ExpertInnen entwickelten
+      Bewertungsverfahren entsprechen, als <strong>High &amp; Responsible Location
+      Certified 2014/15/16</strong> ausgezeichnet: Sie werden in  Medienpräsentationen
+      vorgestellt und sind in einer österreichweiten web-Landkarte vertreten.
+      Sie prägen als Vorreiter eine neue Erlebniskultur: high and responsible!
+    </p>
+
+  </div>
+
+  <h2 id="winners">DIE GEWINNER 2014:</h2>
 
   <div class="map">
+
     <%= image_tag 'projects/hr-award/map/austria-map.svg', :class => 'country' %>
 
     <div class="pins">
@@ -23,7 +47,7 @@
           <div class="marker"></div>
           <div class="city">Wiesen</div>
           <div class="content">
-            <h3>Jazzpub und Festivalgelände</h3>
+            <h4>Jazzpub und Festivalgelände</h4>
             <p class="reason">für die 40 jährige Betreuung eines der stimmigsten
               Festivalgelände Europas–und der Jugendkultur</p>
             <a class="link" href="http://www.wiesen.at" target="_blank">www.wiesen.at</a>
@@ -34,7 +58,7 @@
           <div class="marker"></div>
           <div class="city">Linz</div>
           <div class="content">
-            <h3>Frau Dietrich</h3>
+            <h4>Frau Dietrich</h4>
             <p class="reason">für vorbildhafte Gestaltung des
               Schwellenbereichs und Pflege der Baratmosphäre</p>
             <a class="link" href="http://www.frau-dietrich.at/" target="_blank">www.frau-dietrich.at</a>
@@ -45,7 +69,7 @@
           <div class="marker"></div>
           <div class="city">Wien</div>
           <div class="content">
-            <h3>Club Courage</h3>
+            <h4>Club Courage</h4>
             <p class="reason">für die Förderung von Zivilcourage in der Clubkultur</p>
             <a class="link" href="http://www.clubcourage.at" target="_blank">www.clubcourage.at</a>
           </div>
@@ -55,7 +79,7 @@
           <div class="marker"></div>
           <div class="city">Graz</div>
           <div class="content">
-            <h3>Jugendkulturzentrum Explosiv</h3>
+            <h4>Jugendkulturzentrum Explosiv</h4>
             <p class="reason">für die Entwicklung einer sozialen Lokalatmosphäre
               und Weiterbildung der Ehrenamtlichen</p>
             <a class="link" href="http://www.explosiv.at" target="_blank">www.explosiv.at</a>
@@ -66,7 +90,7 @@
           <div class="marker"></div>
           <div class="city">Salzburg</div>
           <div class="content">
-            <h3>220°</h3>
+            <h4>220°</h4>
             <p class="reason">für das Zusammenführen von Kaffee-Konsumkultur und sozialer Gerechtigkeit</p>
             <a class="link" href="http://www.220grad.com" target="_blank">www.220grad.com</a>
           </div>
@@ -76,7 +100,7 @@
           <div class="marker"></div>
           <div class="city">Zell am See</div>
           <div class="content">
-            <h3>Netzwerk Stadtgemeinde, Tourismusverband und Verein „Zell by night“</h3>
+            <h4>Netzwerk Stadtgemeinde, Tourismusverband und Verein „Zell by night“</h4>
             <p class="reason">für Impulse zu einem respektvollen Nachtleben</p>
             <a class="link" href="http://www.ginhouse.at" target="_blank">www.ginhouse.at</a>
           </div>
@@ -86,7 +110,7 @@
           <div class="marker"></div>
           <div class="city">Dornbirn</div>
           <div class="content">
-            <h3>Polizeisportverband Vorarlberg</h3>
+            <h4>Polizeisportverband Vorarlberg</h4>
             <p class="reason">für jugendgerechte Selbstverteidigungskurse mit Nightlife-Bezug</p>
             <a class="link" href="http://www.psv-vorarlberg.at" target="_blank">www.psv-vorarlberg.at</a>
           </div>
@@ -100,7 +124,7 @@
           <div class="marker"></div>
           <div class="city">Puchberg am<br>Schneeberg</div>
           <div class="content">
-            <h3>Move your mind</h3>
+            <h4>Move your mind</h4>
             <p class="reason">für aufmerksame Vorbereitung und allragsnahe
               Reflexion von Erlebnissen im Hochseilgarten</p>
             <a class="link" href="http://www.moveyourmind.at" target="_blank">www.moveyourmind.at</a>
@@ -111,7 +135,7 @@
           <div class="marker"></div>
           <div class="city">Graz</div>
           <div class="content">
-            <h3>Bloc-house</h3>
+            <h4>Bloc-house</h4>
             <p class="reason">für Impulse zu Entschleunigung und
               Beziehungskultur in der Boulderhalle.</p>
             <a class="link" href="http://www.bloc-house.at" target="_blank">www.bloc-house.at</a>
@@ -125,7 +149,7 @@
     <div class="legend">
 
       <div class="nightlife locations">
-        <h2>Gastronomie & Nightlife</h2>
+        <h3>Gastronomie & Nightlife</h3>
 
         <ul>
           <li><a data-location="1" href="http://www.wiesen.at" target="_blank">
@@ -160,7 +184,7 @@
       </div>
 
       <div class="sport locations">
-        <h2>Spiel & Sport</h2>
+        <h3>Spiel & Sport</h3>
         <ul>
           <li><a data-location="8" href="http://www.moveyourmind.at" target="_blank">
             Move your mind, Puchberg am Schneeberg
@@ -174,8 +198,88 @@
     </div>
   </div>
 
-  <div class="nav">
-    <%= link_to "< zurück zur Projektübersicht", static_path('projekte'), :class => 'back' %>
+  <div class="media">
+
+    <h2>Presse / Videos / Fotos</h2>
+
+    <%= link_to "Download Presseaussendung (PDF)",
+        asset_path("hra-2015-presseaussendung.pdf"),
+        :class => 'press-download', :target => '_blank' %>
+
+    <ul class="videos">
+
+      <li>
+        <iframe width="300" height="169"
+                src="https://www.youtube.com/embed/nHdkf1vq0i0?rel=0"
+                frameborder="0" allowfullscreen></iframe>
+      </li>
+
+      <li>
+        <iframe width="300" height="169"
+                src="https://www.youtube.com/embed/EFVVcWQsfg8?rel=0"
+                frameborder="0" allowfullscreen></iframe>
+      </li>
+
+      <li>
+        <iframe width="300" height="169"
+                src="https://www.youtube.com/embed/Y1mTiIKX06A?rel=0"
+                frameborder="0" allowfullscreen></iframe>
+      </li>
+
+    </ul>
+
+    <%= image_tag 'projects/hr-award/winners-photo-banner.jpg', :class => 'photos' %>
+
+  </div>
+
+  <div class="header">
+    <p class="transition">
+      Und so geht’s: Bis zum Jahresende werden Betriebe zur Rausch- und
+      Risikobalance nach folgenden Kriterien getestet:
+    </p>
+  </div>
+
+  <div class="categories row">
+
+    <div class="category sport span4">
+
+      <%= image_tag 'shared/hr-award-sport-location-badge.svg', :class => 'logo' %>
+
+      <h2>Spiel &amp; Sport</h2>
+
+      <%= link_to "Kriterien ansehen", static_path('projekte/high-and-responsible/spiel-sport'), :class => 'register' %>
+
+    </div>
+
+    <div class="category nightlife span4">
+
+      <%= image_tag 'shared/hr-award-nightlife-location-badge.svg', :class => 'logo' %>
+
+      <h2>Gastro &amp; Nightlife</h2>
+
+      <%= link_to "Kriterien ansehen", static_path('projekte/high-and-responsible/gastro-nightlife'), :class => 'register' %>
+
+    </div>
+
+  </div>
+
+  <div class="certification">
+
+    <h3>CERTIFIED LOCATION</h3>
+
+    <p class="intro">Die Benefits für 10 High &amp; Responsible Locations:</p>
+
+    <ul class="benefits">
+
+      <li>Zertifikat HIGH+REPONSIBLE LOCATION 2014(15/16)</li>
+      <li>Infomaterial für BesucherInnen</li>
+      <li>Kostenlose Rauch-Fruchtsäfte für eine Veranstaltung</li>
+      <li>Einladung zum High &amp; Responsible Medienevent</li>
+      <li>Dokumentation im gemeinsamen Werbefilm</li>
+      <li>Linksetzung zur Unternehmenswebsite auf der High &amp; Responsible Landkarte</li>
+
+    </ul>
+
   </div>
 
   <div class="sponsors row">
@@ -214,6 +318,13 @@
         </li>
 
       </ul>
+
+      <p class="become-sponsor">
+        Wenn auch sie Rausch- und Risikobalance fördern und ins High &
+        Responsible-Netzwerk als Sponsor einsteigen wollen, senden Sie uns ein
+        <%= encoded_email 'E-Mail', 'agnes.koller@qualitaetleben.at' %> – gerne kommen wir mit Ihnen in Kontakt.
+      </p>
     </div>
+  </div>
 
 </div>
