@@ -58,5 +58,13 @@
     <%= bootstrap_flash_messages %>
     <%= yield %>
   </div>
+
+  <%= javascript_include_tag "sentry_raven" %>
+  <script>
+    Raven.config("<%= ENV['SENTRY_PUBLIC_DSN'] %>", {
+      tags: { environment: '<%= Rails.env %>' },
+      whitelistUrls: [/risflecting\.at\/assets/]
+    }).install();
+  </script>
 </body>
 </html>
