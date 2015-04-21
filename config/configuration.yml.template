@@ -10,6 +10,8 @@ development: &defaults
   fehlergrube_api_key:
   fehlergrube_host:
   postmark_api_key:
+  sentry_private_dsn:
+  sentry_public_dsn:
 
 test:
   <<: *defaults
