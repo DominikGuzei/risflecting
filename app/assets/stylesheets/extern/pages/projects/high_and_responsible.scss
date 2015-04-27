@@ -378,9 +378,11 @@
       margin: 0 0 1em 0;
     }
 
-    .press-download {
+    .links {
       text-align: center;
-      display: block;
+      a {
+        display: block;
+      }
     }
 
     .videos {

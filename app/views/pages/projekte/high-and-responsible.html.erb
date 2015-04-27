@@ -202,9 +202,15 @@
 
     <h2>Presse / Videos / Fotos</h2>
 
-    <%= link_to "Download Presseaussendung (PDF)",
-        asset_path("hra-2015-presseaussendung.pdf"),
-        :class => 'press-download', :target => '_blank' %>
+    <div class="links">
+      <%= link_to "Download Presseaussendung (PDF)",
+                  asset_path("hra-2015-presseaussendung.pdf"),
+                  :target => '_blank' %>
+
+      <%= link_to "Artikel im KURIER, 23.4.2015",
+                  "http://m.kurier.at/karrieren/management/risiko-und-verantwortung-sind-kein-gegensatz/126.767.598",
+                  :target => '_blank' %>
+    </div>
 
     <ul class="videos">
 
