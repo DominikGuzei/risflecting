@@ -12,6 +12,7 @@ development: &defaults
   postmark_api_key:
   sentry_private_dsn:
   sentry_public_dsn:
+  skylight_authentication:
 
 test:
   <<: *defaults

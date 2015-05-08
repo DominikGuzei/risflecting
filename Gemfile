@@ -22,6 +22,7 @@ gem 'fog', '~> 1.5.0'
 
 gem 'airbrake'
 gem 'sentry-raven'
+gem 'skylight'
 
 group :assets do
   gem 'sass', '3.1.20'
