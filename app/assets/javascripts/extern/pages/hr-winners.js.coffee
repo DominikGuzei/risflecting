@@ -5,6 +5,8 @@ $(document).ready ->
   pins = map.find '.pins .pin'
   legend = $('.legend')
   legendItems = legend.find '.locations a'
+  yearSelect = $('.map .years select')
+  currentWinners = $('.map .winners.active')
 
   # ====== HELPERS ========= #
 
@@ -35,3 +37,9 @@ $(document).ready ->
   pins.hover handlePinHover, handlePinOut
 
   pins.click -> $(this).find('.link')[0].click()
+
+  yearSelect.change (event) ->
+    currentWinners.removeClass 'active'
+    currentWinners = map.find ".winners[data-year='#{$(this).val()}']"
+    currentWinners.addClass 'active'
+

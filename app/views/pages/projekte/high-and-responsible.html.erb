@@ -33,11 +33,28 @@
 
   </div>
 
-  <h2 id="winners">DIE GEWINNER 2014:</h2>
+  <h2 id="winners">DIE GEWINNER:</h2>
 
   <div class="map">
     <%= image_tag 'projects/hr-award/map/austria-map.svg', :class => 'country' %>
-    <%= render 'pages/projekte/hr-winners/2014-hr-winners' %>
+
+    <div class="years">
+      <div class="button custom-select">
+        <select>
+          <option value="2015" selected>Jahr 2015</li>
+          <option value="2014">Jahr 2014</li>
+        </select>
+      </div>
+    </div>
+
+    <div class="winners active" data-year="2015">
+      <%= render 'pages/projekte/hr-winners/2015-hr-winners' %>
+    </div>
+
+    <div class="winners" data-year="2014">
+      <%= render 'pages/projekte/hr-winners/2014-hr-winners' %>
+    </div>
+
   </div>
 
   <div class="media">
