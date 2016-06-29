@@ -1,0 +1,45 @@
+<% page_title('Studienzentrum') %>
+<% page_stylesheet('extern/pages/studienzentrum', :media => 'all') %>
+
+<% content_for :headline  do %>
+  <h1>Studienzentrum Risflecting</h1>
+<% end %>
+
+<%= content_for :footer_portrait do %>
+  <%= render :partial => 'shared/footer_portrait', :locals => {
+        :name => 'Eva Deutsch',
+        :role => 'risflecting<sup>&reg;</sup> guide',
+        :image => 'portraits/thumb-portrait-eva-deutsch.jpg',
+        :email => 'eva.deutsch@styriavitalis.at'
+      }
+  %>
+<% end %>
+
+<section class="row">
+  <div class="span4 sophie-portrait">
+    <%= image_tag "studienzentrum/sophia-reisinger-portrait.jpg" %>
+    <div class="name">Sophia Reisinger, MSc</div>
+    <div class="occupation">Sozial- und Erlebnispädagogin, Social Management</div>
+    <div class="occupation">Aufbau des Studienzentrum Risflecting</div>
+  </div>
+
+  <div class="span8">
+    <p>
+      Das SZR stellt Fachwissen zu den Themenfeldern Rausch- & Risiko, sowie den
+      dahinterliegenden Dynamiken zur Verfügung. Es bietet Entscheidungsträgern
+      die benötigten Expertiesen um fundierte Strategien und Konzepte zu entwickeln.
+      Außerdem hilft es Fachleuten & Praktikern, die in diesen Themenbereichen
+      tätig sind, Erfolgsmodelle zu finden und neue Ansätze zu erkunden. Dafür
+      werden Expertisen in verschiedenster Form zusammengetragen und ausgewertet.
+    </p>
+    <p>
+       Die Studie behandelt Grundlagen, Statements und Modelle zur Rausch und Risikopädagogik.
+       <ul>
+         <li><%= link_to 'Studie online lesen', static_path('studie') %></li>
+         <li><%= link_to 'Gesamte Studie downloaden (PDF)', asset_path('gerald-koller-studie-risflecting.pdf') %></li>
+       </ul>
+    </p>
+  </div>
+</section>
+
+</div>
