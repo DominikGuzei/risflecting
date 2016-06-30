@@ -51,7 +51,7 @@ SimpleNavigation::Configuration.run do |navigation|
     #
     primary.item :willkommen, 'Home', static_path(:willkommen)
     primary.item :konzept, 'Konzept', static_path(:konzept)
-    primary.item :studie, 'Studie', static_path(:studie)
+    primary.item :studie, 'Studienzentrum', static_path(:studienzentrum)
 
     primary.item :projekte, 'Projekte', static_path(:projekte) do |projects|
 
