@@ -29,3 +29,32 @@
     margin: 0;
   }
 }
+
+#content .contact {
+  padding-bottom: 1em;
+  border-bottom: 1px solid #eee;
+  
+  .intro-german, .intro-english {
+    display: block;
+    font-weight: bold;
+  }
+  
+  .intro-english {
+    color: #666;
+  }
+  
+  a:link, a:visited {
+    text-align: center;
+    color: white;
+    display: block;
+    padding: 1em;
+    margin-top: 1em;
+    border: 2px solid #2e4671;
+    border-radius: 5px;
+    background-color: #5b7ab0;
+    &:hover {
+      background-color: #46649a;
+      text-decoration: none;
+    }
+  }
+}
