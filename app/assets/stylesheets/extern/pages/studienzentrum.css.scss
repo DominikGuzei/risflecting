@@ -21,6 +21,10 @@
   .nav-pills a {
     display: inline-block
   }
+
+  .bibbase_paper_content {
+    display: none;
+  }
 }
 
 #content .zotero-bibbase {
@@ -33,16 +37,16 @@
 #content .contact {
   padding-bottom: 1em;
   border-bottom: 1px solid #eee;
-  
+
   .intro-german, .intro-english {
     display: block;
     font-weight: bold;
   }
-  
+
   .intro-english {
     color: #666;
   }
-  
+
   a:link, a:visited {
     text-align: center;
     color: white;
